@@ -49,7 +49,7 @@ export const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="/" className="flex items-center gap-2 group" aria-label="AI Crafters home">
+        <a href="/" className="flex items-center gap-2 group text-slate-400 hover:text-cyan-400 transition-colors" aria-label="AI Crafters home">
           <Image
             src="/images/logo.png"
             alt="AI Crafters"
@@ -58,6 +58,9 @@ export const Navbar = () => {
             className="h-10 w-auto object-contain transition-transform scale-150 group-hover:scale-[175%]"
             priority
           />
+          <div className="text-xs font-mono font-medium uppercase tracking-widest relative group">
+            AI Crafters
+          </div>
         </a>
 
         {/* Desktop Menu */}

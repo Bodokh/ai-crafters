@@ -103,16 +103,19 @@
   "testimonials": {
     "title": "Client Success",
     "1": {
-      "quote": "AI Crafters' agents took over our entire scheduling department. We saved 40 hours a week immediately.",
-      "role": "CEO, TechFlow SMB"
+      "quote": "From idea to launch, everything was handled – development, cloud setup, and scalability. They guided us through the process with clarity and professionalism. A strong team that knows how to deliver results.",
+      "name": "Yogev Moyal",
+      "role": "CTO at Worklik"
     },
     "2": {
-      "quote": "We reduced our support staff overhead by 60% while increasing customer satisfaction. Unbelievable results.",
-      "role": "Director, Global Retail"
+      "quote": "Eran played a central role in helping us build and refine our product. His structured approach and technical expertise made a significant difference. It was easy to work with him, and he always focused on delivering real value.",
+      "name": "Nadia Senft",
+      "role": "Chief Data Officer at EveryWatch"
     },
     "3": {
-      "quote": "Finally, an AI solution that actually solves business problems instead of just being a shiny toy.",
-      "role": "Founder, StartScale"
+      "quote": "Eran brought strong technological leadership and precise execution to our organizational development. They handled complex challenges without complicating the process and delivered a structured, working solution, while also providing assistance at the strategic and managerial level.",
+      "name": "Saar Litmanovitz",
+      "role": "CTO at Colors AI"
     }
   },
   "contact": {
