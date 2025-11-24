@@ -1,0 +1,175 @@
+{
+  "nav": {
+    "services": "פתרונות",
+    "process": "תהליך",
+    "work": "פרויקטים",
+    "contact": "צור קשר",
+    "start": "התחל עכשיו",
+    "careers": "קריירה"
+  },
+  "hero": {
+    "badge": "סוכנים חכמים ואוטומציה v2.0",
+    "title": {
+      "1": "סוכנים חכמים.",
+      "2": "יעילות אמיתית."
+    },
+    "desc": "אנו בונים סוכנים חכמים ומטמיעים פתרונות AI לעסקים קטנים, בינוניים וגדולים. שפרו את היעילות, צמצמו כוח אדם ומכנו את העבודה.",
+    "cta": {
+      "primary": "התחל אוטומציה",
+      "secondary": "צפה בפתרונות"
+    },
+    "feature": {
+      "fast": "אוטומציה חכמה",
+      "fastDesc": "צמצום 80% מהמשימות הידניות",
+      "secure": "אינטגרציה עסקית",
+      "secureDesc": "חיבור חלק לזרימת העבודה",
+      "global": "התייעלות כלכלית",
+      "globalDesc": "החזר השקעה מקסימלי"
+    }
+  },
+  "services": {
+    "title": "פתרונות",
+    "titleHighlight": "אינטליגנטיים",
+    "subtitle": "אנו מחליפים משימות חוזרות בסוכנים חכמים, ומאפשרים לצוות שלכם להתמקד בצמיחה ואסטרטגיה."
+  },
+  "service": {
+    "web": {
+      "title": "סוכנים אוטונומיים",
+      "desc": "הפעילו עובדים דיגיטליים המטפלים בשירות לקוחות, הזנת נתונים ותיאום פגישות 24/7 ללא התערבות אדם."
+    },
+    "mobile": {
+      "title": "אוטומציה של תהליכים",
+      "desc": "חברו את הכלים הקיימים (CRM, מייל, סלאק) למערכת אקולוגית אחת מאוחדת ונוהגת-מעצמה."
+    },
+    "cloud": {
+      "title": "בינה עסקית",
+      "desc": "הפכו נתונים גולמיים לתובנות מעשיות באמצעות ניתוח חיזוי ומערכות דיווח אוטומטיות."
+    },
+    "ai": {
+      "title": "אינטגרציה מותאמת אישית",
+      "desc": "פתרונות AI תפורים לפי מידה המותאמים בדיוק לצרכים התפעוליים והמטרות של החברה שלכם."
+    },
+    "backend": {
+      "title": "ניהול ידע",
+      "desc": "ריכוז הידע הארגוני והנגשתו המיידית לעובדים וללקוחות באמצעות צ'אט."
+    },
+    "security": {
+      "title": "צמיחה סקיילבילית",
+      "desc": "הגדילו את הפעילות באופן מיידי ללא צורך בגיוס, הכשרה וניהול של צוותים חדשים וגדולים."
+    }
+  },
+  "projects": {
+    "title": "פרויקטים",
+    "titleHighlight": "נבחרים",
+    "subtitle": "הצצה למערכות החכמות שהטמענו עבור השותפים שלנו."
+  },
+  "project": {
+    "1": {
+      "title": "Colors AI Agent",
+      "desc": "מערכת הפעלה מבוססת בינה מלאכותית לארגונים, המאפשרת חיבור ודיאלוג ישיר עם מקורות נתונים מגוונים בזמן אמת",
+      "tag": "שירות לקוחות"
+    },
+    "2": {
+      "title": "RoadProtect Appeals Agent",
+      "desc": "סוכן בינה מלאכותית לערעור על דוחות חנייה ותנועה דרך וואטספ, יצירת מכתב ערעור ומחקר בהתאם לחוקי תנועה בישראל",
+      "tag": "רכב"
+    },
+    "3": {
+      "title": "SKYPAD Analytics Agent",
+      "desc": "סוכן בינה מלאכותית המתממשק עם פלטפורמת SKYPAD לניתוח מכירות ומלאי, מאפשר שאילתות בשפה טבעית וקבלת תובנות מונחות נתונים על ביצועי מכירות בערוצים מרובים",
+      "tag": "אנליטיקה ומכירות"
+    }
+  },
+  "process": {
+    "title": "הגישה שלנו",
+    "subtitle": "כיצד אנו משדרגים את הפעילות העסקית שלכם בארבעה צעדים פשוטים.",
+    "1": {
+      "title": "גילוי ומיפוי",
+      "desc": "אנו מנתחים את תהליכי העבודה הנוכחיים כדי לזהות צווארי בקבוק והזדמנויות לאוטומציה."
+    },
+    "2": {
+      "title": "אסטרטגיה",
+      "desc": "אנו מתכננים מפת דרכים ל-AI המותאמת אישית לגודל העסק וליעדים שלכם."
+    },
+    "3": {
+      "title": "אינטגרציה",
+      "desc": "אנו בונים ומחברים סוכנים חכמים שעובדים לצד הצוות והתוכנות הקיימות שלכם."
+    },
+    "4": {
+      "title": "אופטימיזציה",
+      "desc": "ניטור ושיפור מתמיד כדי להבטיח שהסוכנים תמיד משפרים את היעילות."
+    }
+  },
+  "testimonials": {
+    "title": "סיפורי הצלחה",
+    "1": {
+      "quote": "הסוכנים של AI Crafters לקחו פיקוד על כל מחלקת התיאום שלנו. חסכנו 40 שעות שבועיות באופן מיידי.",
+      "role": "מנכ\"ל, TechFlow SMB"
+    },
+    "2": {
+      "quote": "צמצמנו את עלויות צוות התמיכה ב-60% תוך העלאת שביעות רצון הלקוחות. תוצאות מדהימות.",
+      "role": "מנהלת, Global Retail"
+    },
+    "3": {
+      "quote": "סוף סוף, פתרון AI שבאמת פותר בעיות עסקיות במקום להיות סתם צעצוע נוצץ.",
+      "role": "מייסד, StartScale"
+    }
+  },
+  "contact": {
+    "location": "Tel Aviv, Israel",
+    "coverage": "052-357-8977",
+    "title": {
+      "1": "מוכנים",
+      "2": "לאוטומציה?"
+    },
+    "desc": "הפסיקו לבזבז זמן על משימות ידניות. בואו נבנה את כוח העבודה הדיגיטלי שלכם היום.",
+    "form": {
+      "firstName": "שם",
+      "lastName": "חברה",
+      "email": "אימייל",
+      "message": "איך נוכל לעזור?",
+      "submit": "קבל יעילות"
+    }
+  },
+  "footer": {
+    "rights": "AI Crafters. פתרונות עסקיים חכמים."
+  },
+  "careers": {
+    "hiring": "אנו מגייסים",
+    "title": "הצטרפו",
+    "highlight": "למהפכה",
+    "subtitle": "בנו את האינטליגנציה שמניעה את העתיד.",
+    "job": {
+      "title": "🚀 Senior Software Engineer - מומחה AI Agent",
+      "intro": "מי אנחנו מחפשים? אנחנו מגייסים Senior Software Engineer יוצא דופן, המשלב מומחיות פול-סטאק (Full-Stack) עמוקה עם התמחות חלוצית בתחום סוכני ה-AI וזרימות עבודה מונעות-מודל. זוהי משרת מפתח לארכיטקטורה ובניית מערכות AI מתוחכמות וסקיילביליות.",
+      "intro2": "אם אתה מהנדס תוכנה קודם כל, שיודע לבנות מערכות שמחזיקות מעמד, אבל השקעת גם עמוק בהבנת סוכני AI ואינטגרציה בטוחה של LLMs במערכות Production, המקום שלך איתנו!",
+      "requirements": {
+        "title": "דרישות חובה 🎯"
+      },
+      "req": {
+        "1": "ניסיון: מינימום 10 שנות ניסיון בפיתוח תוכנה מקצועי.",
+        "2": "שפות: מומחיות ב-Python ו-TypeScript.",
+        "3": "פרונטאנד: כישורי פיתוח חזקים עם React (ה-Framework המועדף).",
+        "4": "AI Agent & Workflow: ניסיון מעשי נרחב בבנייה ותזמור סוכני AI עם אינטגרציות כלים מרובות.",
+        "5": "ניסיון AI ב-Prod: מינימום שנתיים ניסיון בסביבת Production בבניית סוכני AI (לא כולל Low-Code/No-Code).",
+        "6": "ארכיטקטורה: הבנה עמוקה במערכות מרובות-סוכנים (Multi-Agent) ובארכיטקטורות RAG מתקדמות.",
+        "7": "בטיחות: ניסיון בהטמעת Guardrails, מנגנוני בטיחות ושכבות ולידציה.",
+        "8": "SQL: מומחיות עמוקה בבסיסי נתונים SQL ומודלי נתונים."
+      },
+      "advantages": {
+        "title": "יתרונות משמעותיים 🌟"
+      },
+      "adv": {
+        "1": "ניסיון עם LangGraph או Frameworks דומים לתזמור סוכנים.",
+        "2": "מומחיות בתשתיות ענן (AWS, GCP) ו-Infrastructure-as-code (Terraform).",
+        "3": "ידע ב-DevOps, Containerization (Docker/Kubernetes), ו-CI/CD.",
+        "4": "ניסיון ב-LLM Fine-Tuning או Model Evaluation."
+      },
+      "apply": {
+        "label": "הגש מועמדות",
+        "instructions": "להגשת מועמדות:",
+        "details": "אנא צרף דוגמאות למערכות מורכבות שתכננת, זרימות עבודה מרובות-סוכנים שבנית, והגישה שלך ליישום Guardrails."
+      }
+    }
+  }
+}

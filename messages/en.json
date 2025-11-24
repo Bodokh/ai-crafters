@@ -1,0 +1,175 @@
+{
+  "nav": {
+    "services": "Solutions",
+    "process": "Approach",
+    "work": "Projects",
+    "contact": "Contact",
+    "start": "Start Now",
+    "careers": "Careers"
+  },
+  "hero": {
+    "badge": "AI Automation Agents v2.0",
+    "title": {
+      "1": "Smart Agents.",
+      "2": "Real Efficiency."
+    },
+    "desc": "We build intelligent agents and integrate AI solutions for small, medium, and large companies. Improve efficiency, decrease manpower, and automate your workflow.",
+    "cta": {
+      "primary": "Automate Now",
+      "secondary": "View Solutions"
+    },
+    "feature": {
+      "fast": "Smart Automation",
+      "fastDesc": "Reduce manual tasks by 80%",
+      "secure": "Business Integration",
+      "secureDesc": "Seamless workflow connection",
+      "global": "Cost Efficiency",
+      "globalDesc": "Maximize ROI & reduce staff"
+    }
+  },
+  "services": {
+    "title": "Intelligent",
+    "titleHighlight": "Solutions",
+    "subtitle": "We replace repetitive tasks with smart agents, allowing your team to focus on growth and strategy."
+  },
+  "service": {
+    "web": {
+      "title": "Autonomous Agents",
+      "desc": "Deploy digital workers that handle customer support, data entry, and scheduling 24/7 without human intervention."
+    },
+    "mobile": {
+      "title": "Workflow Automation",
+      "desc": "Connect your existing tools (CRM, Email, Slack) into a unified, self-driving ecosystem."
+    },
+    "cloud": {
+      "title": "Business Intelligence",
+      "desc": "Turn raw data into actionable insights with predictive analytics and automated reporting systems."
+    },
+    "ai": {
+      "title": "Custom Integration",
+      "desc": "Tailor-made AI solutions that fit perfectly into your company's specific operational needs and goals."
+    },
+    "backend": {
+      "title": "Knowledge Base",
+      "desc": "Centralize your company knowledge, making it instantly accessible to employees and customers via chat."
+    },
+    "security": {
+      "title": "Scalable Growth",
+      "desc": "Grow your operations instantly without the need to hire, train, and manage large new teams."
+    }
+  },
+  "projects": {
+    "title": "Selected",
+    "titleHighlight": "Work",
+    "subtitle": "A glimpse into the intelligent systems we've deployed for our partners."
+  },
+  "project": {
+    "1": {
+      "title": "SupportBot Prime",
+      "desc": "A Tier-1 customer support agent capable of resolving 70% of tickets autonomously using RAG technology.",
+      "tag": "FinTech"
+    },
+    "2": {
+      "title": "LogiRoute AI",
+      "desc": "Dynamic supply chain optimization engine that reduced delivery times by 24% for a national courier.",
+      "tag": "Logistics"
+    },
+    "3": {
+      "title": "MedScan Assist",
+      "desc": "Computer vision system for preliminary analysis of X-ray imagery to assist radiologists in triage.",
+      "tag": "Healthcare"
+    }
+  },
+  "process": {
+    "title": "Our Approach",
+    "subtitle": "How we transform your business operations in four simple steps.",
+    "1": {
+      "title": "Discovery",
+      "desc": "We analyze your current workflows to identify bottlenecks and opportunities for automation."
+    },
+    "2": {
+      "title": "Strategy",
+      "desc": "We design a custom AI roadmap tailored to your specific business size and goals."
+    },
+    "3": {
+      "title": "Integration",
+      "desc": "We build and plug in smart agents that work alongside your existing team and software."
+    },
+    "4": {
+      "title": "Optimization",
+      "desc": "Continuous monitoring and refining to ensure your agents are always improving efficiency."
+    }
+  },
+  "testimonials": {
+    "title": "Client Success",
+    "1": {
+      "quote": "AI Crafters' agents took over our entire scheduling department. We saved 40 hours a week immediately.",
+      "role": "CEO, TechFlow SMB"
+    },
+    "2": {
+      "quote": "We reduced our support staff overhead by 60% while increasing customer satisfaction. Unbelievable results.",
+      "role": "Director, Global Retail"
+    },
+    "3": {
+      "quote": "Finally, an AI solution that actually solves business problems instead of just being a shiny toy.",
+      "role": "Founder, StartScale"
+    }
+  },
+  "contact": {
+    "title": {
+      "1": "Ready to",
+      "2": "Automate?"
+    },
+    "location": "Tel Aviv, Israel",
+    "coverage": "052-357-8977",
+    "desc": "Stop wasting time on manual tasks. Let's build your digital workforce today.",
+    "form": {
+      "firstName": "Name",
+      "lastName": "Company",
+      "email": "Email",
+      "message": "How can we help?",
+      "submit": "Get Efficiency"
+    }
+  },
+  "footer": {
+    "rights": "AI Crafters. Intelligent Business Solutions."
+  },
+  "careers": {
+    "hiring": "We are Hiring",
+    "title": "Join the",
+    "highlight": "Revolution",
+    "subtitle": "Build the intelligence that powers the future.",
+    "job": {
+      "title": "🚀 Senior Software Engineer - AI Agent Expert",
+      "intro": "Who are we looking for? We are hiring an exceptional Senior Software Engineer combining deep Full-Stack expertise with pioneering specialization in AI Agents and model-driven workflows. This is a key role for architecting and building sophisticated, scalable AI systems.",
+      "intro2": "If you are a software engineer first, who knows how to build robust production systems, but have also invested deeply in understanding AI agents and safely integrating LLMs into Production environments, your place is with us!",
+      "requirements": {
+        "title": "Mandatory Requirements"
+      },
+      "req": {
+        "1": "Experience: Minimum 10 years of professional software development experience.",
+        "2": "Languages: Expertise in Python and TypeScript.",
+        "3": "Frontend: Strong development skills with React (Preferred Framework).",
+        "4": "AI Agent & Workflow: Extensive hands-on experience building and orchestrating AI agents with multiple tool integrations.",
+        "5": "AI Prod Experience: Minimum 2 years production experience building AI agents (Not including Low-Code/No-Code).",
+        "6": "Architecture: Deep understanding of Multi-Agent systems and advanced RAG architectures.",
+        "7": "Safety: Experience implementing Guardrails, safety mechanisms, and validation layers.",
+        "8": "SQL: Deep expertise in SQL databases and data modeling."
+      },
+      "advantages": {
+        "title": "Significant Advantages"
+      },
+      "adv": {
+        "1": "Experience with LangGraph or similar frameworks for agent orchestration.",
+        "2": "Expertise in cloud infrastructure (AWS, GCP) and Infrastructure-as-code (Terraform).",
+        "3": "Knowledge in DevOps, Containerization (Docker/Kubernetes), and CI/CD.",
+        "4": "Experience in LLM Fine-Tuning or Model Evaluation."
+      },
+      "apply": {
+        "label": "Apply Now",
+        "instructions": "To Apply:",
+        "details": "Please attach examples of complex systems you designed, multi-agent workflows you built, and your approach to implementing Guardrails."
+      }
+    }
+  }
+}
