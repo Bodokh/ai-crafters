@@ -1,14 +1,105 @@
 'use client';
 
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Mail, MapPin, PhoneCall, Send, SendHorizonal, Terminal } from 'lucide-react';
+import { Mail, MapPin, PhoneCall, Send, SendHorizonal, Terminal } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
+
+type ContactFormState = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+};
+
+const initialFormState: ContactFormState = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  message: '',
+};
+
+type ContactFormErrors = Partial<Record<keyof ContactFormState, string>>;
 
 export const Contact = () => {
   const t = useTranslations();
   const locale = useLocale();
   const dir = locale === 'he' ? 'rtl' : 'ltr';
   const SendIcon = dir === 'rtl' ? SendHorizonal : Send;
+  const alignmentClass = dir === 'rtl' ? 'text-right' : 'text-left';
+
+  const [formData, setFormData] = useState<ContactFormState>(initialFormState);
+  const [errors, setErrors] = useState<ContactFormErrors>({});
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validate = (): ContactFormErrors => {
+    const validationErrors: ContactFormErrors = {};
+    if (!formData.firstName.trim()) {
+      validationErrors.firstName = t('contact.form.validation.firstName');
+    }
+    if (!formData.lastName.trim()) {
+      validationErrors.lastName = t('contact.form.validation.lastName');
+    }
+    if (!formData.email.trim()) {
+      validationErrors.email = t('contact.form.validation.email');
+    } else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(formData.email)) {
+      validationErrors.email = t('contact.form.validation.emailFormat');
+    }
+    if (!formData.message.trim()) {
+      validationErrors.message = t('contact.form.validation.message');
+    }
+    return validationErrors;
+  };
+
+  const handleChange =
+    (field: keyof ContactFormState) =>
+    (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFormData((prev) => ({ ...prev, [field]: event.target.value }));
+      setErrors((prev) => ({ ...prev, [field]: undefined }));
+      if (status !== 'idle') {
+        setStatus('idle');
+      }
+    };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const validationErrors = validate();
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setStatus('idle');
+
+    try {
+      const response = await fetch(`/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...formData, locale }),
+      });
+
+      if (!response.ok) {
+        const payload = await response.json().catch(() => null);
+        if (payload?.errors) {
+          setErrors((prev) => ({ ...prev, ...payload.errors }));
+        }
+        throw new Error('Failed to submit contact form');
+      }
+
+      setStatus('success');
+      setFormData(initialFormState);
+    } catch (error) {
+      console.error(error);
+      setStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" className="py-24 bg-slate-950 relative overflow-hidden border-t border-slate-900">
@@ -58,30 +149,112 @@ export const Contact = () => {
             className="p-1 rounded-3xl bg-gradient-to-b from-slate-800 to-slate-950"
           >
             <div className="bg-black rounded-[22px] p-8 border border-slate-800">
-                <form className="space-y-6">
-                <div className="grid grid-cols-2 gap-6">
+                <form className="space-y-6" noValidate onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                    <label className="text-xs font-mono text-cyan-500 uppercase tracking-wider">{t('contact.form.firstName')}</label>
-                    <input type="text" className="w-full bg-slate-900/50 border border-slate-800 rounded-none px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:bg-slate-900 transition-all font-sans" />
+                    <label className="text-xs font-mono text-cyan-500 uppercase tracking-wider" htmlFor="contact-first-name">
+                        {t('contact.form.firstName')}
+                    </label>
+                    <input
+                        id="contact-first-name"
+                        type="text"
+                        value={formData.firstName}
+                        onChange={handleChange('firstName')}
+                        className={`w-full bg-slate-900/50 border rounded-none px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:bg-slate-900 transition-all font-sans ${errors.firstName ? 'border-red-500' : 'border-slate-800'}`}
+                        aria-invalid={Boolean(errors.firstName)}
+                        aria-describedby={errors.firstName ? 'contact-first-name-error' : undefined}
+                    />
+                    {errors.firstName && (
+                        <p id="contact-first-name-error" className={`text-xs text-red-400 font-mono ${alignmentClass}`}>
+                        {errors.firstName}
+                        </p>
+                    )}
                     </div>
                     <div className="space-y-2">
-                    <label className="text-xs font-mono text-cyan-500 uppercase tracking-wider">{t('contact.form.lastName')}</label>
-                    <input type="text" className="w-full bg-slate-900/50 border border-slate-800 rounded-none px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:bg-slate-900 transition-all font-sans" />
+                    <label className="text-xs font-mono text-cyan-500 uppercase tracking-wider" htmlFor="contact-last-name">
+                        {t('contact.form.lastName')}
+                    </label>
+                    <input
+                        id="contact-last-name"
+                        type="text"
+                        value={formData.lastName}
+                        onChange={handleChange('lastName')}
+                        className={`w-full bg-slate-900/50 border rounded-none px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:bg-slate-900 transition-all font-sans ${errors.lastName ? 'border-red-500' : 'border-slate-800'}`}
+                        aria-invalid={Boolean(errors.lastName)}
+                        aria-describedby={errors.lastName ? 'contact-last-name-error' : undefined}
+                    />
+                    {errors.lastName && (
+                        <p id="contact-last-name-error" className={`text-xs text-red-400 font-mono ${alignmentClass}`}>
+                        {errors.lastName}
+                        </p>
+                    )}
                     </div>
                 </div>
                 
                 <div className="space-y-2">
-                    <label className="text-xs font-mono text-cyan-500 uppercase tracking-wider">{t('contact.form.email')}</label>
-                    <input type="email" className="w-full bg-slate-900/50 border border-slate-800 rounded-none px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:bg-slate-900 transition-all font-sans" />
+                    <label className="text-xs font-mono text-cyan-500 uppercase tracking-wider" htmlFor="contact-email">
+                    {t('contact.form.email')}
+                    </label>
+                    <input
+                    id="contact-email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange('email')}
+                    className={`w-full bg-slate-900/50 border rounded-none px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:bg-slate-900 transition-all font-sans ${errors.email ? 'border-red-500' : 'border-slate-800'}`}
+                    aria-invalid={Boolean(errors.email)}
+                    aria-describedby={errors.email ? 'contact-email-error' : undefined}
+                    />
+                    {errors.email && (
+                    <p id="contact-email-error" className={`text-xs text-red-400 font-mono ${alignmentClass}`}>
+                        {errors.email}
+                    </p>
+                    )}
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-xs font-mono text-cyan-500 uppercase tracking-wider">{t('contact.form.message')}</label>
-                    <textarea rows={4} className="w-full bg-slate-900/50 border border-slate-800 rounded-none px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:bg-slate-900 transition-all font-sans"></textarea>
+                    <label className="text-xs font-mono text-cyan-500 uppercase tracking-wider" htmlFor="contact-message">
+                    {t('contact.form.message')}
+                    </label>
+                    <textarea
+                    id="contact-message"
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleChange('message')}
+                    className={`w-full bg-slate-900/50 border rounded-none px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:bg-slate-900 transition-all font-sans ${errors.message ? 'border-red-500' : 'border-slate-800'}`}
+                    aria-invalid={Boolean(errors.message)}
+                    aria-describedby={errors.message ? 'contact-message-error' : undefined}
+                    ></textarea>
+                    {errors.message && (
+                    <p id="contact-message-error" className={`text-xs text-red-400 font-mono ${alignmentClass}`}>
+                        {errors.message}
+                    </p>
+                    )}
                 </div>
 
-                <button type="submit" className="scanline-effect w-full py-4 bg-cyan-600 hover:bg-cyan-500 text-white font-bold tracking-widest uppercase rounded-none transition-all flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] group">
-                    {t('contact.form.submit')} <SendIcon size={18} className={`transition-transform group-hover:-translate-x-2 ${dir === 'rtl' ? 'rotate-180' : 'group-hover:translate-x-1'}`} />
+                {status !== 'idle' && (
+                    <div
+                    className={`text-sm font-mono ${alignmentClass} ${
+                        status === 'success' ? 'text-emerald-400' : 'text-red-400'
+                    }`}
+                    role="status"
+                    aria-live="polite"
+                    >
+                    {status === 'success' ? t('contact.form.success') : t('contact.form.error')}
+                    </div>
+                )}
+
+                <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="scanline-effect w-full py-4 bg-cyan-600 hover:bg-cyan-500 disabled:bg-slate-700 disabled:text-slate-300 text-white font-bold tracking-widest uppercase rounded-none transition-all flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] group"
+                >
+                    {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
+                    <SendIcon
+                    size={18}
+                    className={`transition-transform ${dir === 'rtl' ? 'rotate-180' : 'group-hover:translate-x-1'} ${
+                        isSubmitting ? 'opacity-50' : ''
+                    }`}
+                    />
                 </button>
                 </form>
             </div>

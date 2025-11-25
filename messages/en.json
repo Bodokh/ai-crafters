@@ -131,7 +131,17 @@
       "lastName": "Company",
       "email": "Email",
       "message": "How can we help?",
-      "submit": "Get Efficiency"
+      "submit": "Get Efficiency",
+      "sending": "Sending...",
+      "success": "Message received! We'll reply within one business day.",
+      "error": "Something went wrong. Email automate@aicrafters.com and we'll help.",
+      "validation": {
+        "firstName": "Please tell us who we should contact.",
+        "lastName": "Let us know the company you represent.",
+        "email": "An email address is required.",
+        "emailFormat": "Enter a valid email address.",
+        "message": "Share a short description of your challenge."
+      }
     }
   },
   "footer": {

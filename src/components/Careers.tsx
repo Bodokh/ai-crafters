@@ -59,8 +59,8 @@ export const Careers: React.FC = () => {
                     <span>{t('hiring')}</span>
                 </motion.div>
                 
-                <h1 className="scanline-effect font-display font-bold text-5xl md:text-6xl text-white mb-6">
-                    {t('title')} <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-brand-500"><DecodedText text={t('highlight')} delay={0.5} /></span>
+                <h1 className="scanline-effect font-display font-bold text-5xl md:text-6xl text-white mb-6 min-h-14">
+                    <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-brand-500"><DecodedText text={t('title') + ' ' + t('highlight')} delay={0.5} /></span>
                 </h1>
                 <p className="text-slate-400 text-lg font-light">
                     {t('subtitle')}

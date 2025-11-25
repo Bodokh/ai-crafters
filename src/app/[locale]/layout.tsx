@@ -49,6 +49,7 @@ export default async function RootLayout({
   
     // Providing all messages to the client
     // side is the easiest way to get started
+    // getMessages() automatically detects locale from the [locale] route segment
     const messages = await getMessages();
 
     const dir = locale === 'he' ? 'rtl' : 'ltr';

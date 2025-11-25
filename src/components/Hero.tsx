@@ -66,7 +66,7 @@ const NeuralBackground = () => {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < 120) {
-            ctx.globalAlpha = (1 - dist / 120) * 0.5;
+            ctx.globalAlpha = (1 - dist / 120) * .8;
             ctx.beginPath();
             ctx.moveTo(node.x, node.y);
             ctx.lineTo(other.x, other.y);
@@ -80,7 +80,7 @@ const NeuralBackground = () => {
         const dy = node.y - mouse.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < 200) {
-            ctx.globalAlpha = (1 - dist / 200) * 0.8;
+            ctx.globalAlpha = (1 - dist / 200) * 1;
             ctx.strokeStyle = '#22d3ee'; // Cyan
             ctx.beginPath();
             ctx.moveTo(node.x, node.y);
@@ -183,7 +183,7 @@ export const Hero = () => {
           <DecodedText text={t('hero.badge')} delay={0.2} />
         </motion.div> */}
 
-        <div className="font-display font-bold text-5xl md:text-7xl lg:text-8xl tracking-tight text-white mb-8 leading-none">
+        <div className="font-display font-bold text-5xl md:text-7xl mt-10 lg:text-8xl tracking-tight text-white mb-8 leading-none">
           <div className="overflow-hidden mb-2">
             <motion.div initial={{ y: 100 }} animate={{ y: 0 }} transition={{ duration: 0.8, ease: "circOut" }} className="scanline-effect inline-block">
                 {t('hero.title.1')}
