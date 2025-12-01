@@ -7,6 +7,7 @@ import { Navbar } from './Navbar';
 import { Hero } from './Hero';
 import { Services } from './Services';
 import { Process } from './Process';
+import { AboutUs } from './AboutUs';
 import { Projects } from './Projects';
 import { TechStack } from './TechStack';
 import { Testimonials } from './Testimonials';
@@ -58,6 +59,7 @@ export const AppContent = () => {
         <Services />
         <Projects />
         <Process />
+        <AboutUs />
         <Testimonials />
         <Contact />
       </main>

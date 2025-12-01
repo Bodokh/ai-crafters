@@ -3,6 +3,7 @@
     "services": "Solutions",
     "process": "Approach",
     "work": "Projects",
+    "about": "Team",
     "contact": "Contact",
     "start": "Start Now",
     "careers": "Careers"
@@ -100,6 +101,30 @@
       "desc": "Continuous monitoring and refining to ensure your agents are always improving efficiency."
     }
   },
+  "about": {
+    "title": "Meet the Founders",
+    "saar": {
+      "name": "Saar Litmanovich",
+      "title": "CEO",
+      "desc1": "6 years in Unit 8200 (2x team lead, 1x training commander)",
+      "desc2": "CTO-as-a-Service & BizDev in cyber",
+      "desc3": "Co-Founder & CTO, ColorsAI – built 4 AI products, $500K sales"
+    },
+    "eran": {
+      "name": "Eran Bodokh",
+      "title": "CTO",
+      "desc1": "10+ years of experience in software development",
+      "desc2": "7+ years managing development teams in startups",
+      "desc3": "VP R&D and CTO at several startups – led teams of up to 15 developers, delivered 5+ AI products, sales of more than $2M"
+    },
+    "dvir": {
+      "name": "Dvir Cohen",
+      "title": "COO",
+      "desc1": "6+ years of experience in operations management: 90 employees, hundreds of clients, and tens of millions in revenue.",
+      "desc2": "Expertise in technological efficiency and system implementation that doubled profitability.",
+      "desc3": "Industrial Engineering and Management (B.Sc) + Data Analyst – business vision and data analysis."
+    }
+  },
   "testimonials": {
     "title": "Client Success",
     "1": {
@@ -152,36 +177,127 @@
     "title": "Join the",
     "highlight": "Revolution",
     "subtitle": "Build the intelligence that powers the future.",
-    "job": {
-      "title": "🚀 Senior Software Engineer - AI Agent Expert",
-      "intro": "Who are we looking for? We are hiring an exceptional Senior Software Engineer combining deep Full-Stack expertise with pioneering specialization in AI Agents and model-driven workflows. This is a key role for architecting and building sophisticated, scalable AI systems.",
-      "intro2": "If you are a software engineer first, who knows how to build robust production systems, but have also invested deeply in understanding AI agents and safely integrating LLMs into Production environments, your place is with us!",
-      "requirements": {
-        "title": "Mandatory Requirements"
+    "clickToExpand": "Click for full details →",
+    "jobs": {
+      "aiEngineer": {
+        "title": "🚀 Senior Software Engineer - AI Agent Expert",
+        "intro": "Who are we looking for? We are hiring an exceptional Senior Software Engineer combining deep Full-Stack expertise with pioneering specialization in AI Agents and model-driven workflows. This is a key role for architecting and building sophisticated, scalable AI systems.",
+        "intro2": "If you are a software engineer first, who knows how to build robust production systems, but have also invested deeply in understanding AI agents and safely integrating LLMs into Production environments, your place is with us!",
+        "requirements": {
+          "title": "Mandatory Requirements 🎯"
+        },
+        "req": {
+          "1": "Experience: Minimum 10 years of professional software development experience.",
+          "2": "Languages: Expertise in Python and TypeScript.",
+          "3": "Frontend: Strong development skills with React (Preferred Framework).",
+          "4": "AI Agent & Workflow: Extensive hands-on experience building and orchestrating AI agents with multiple tool integrations.",
+          "5": "AI Prod Experience: Minimum 2 years production experience building AI agents (Not including Low-Code/No-Code).",
+          "6": "Architecture: Deep understanding of Multi-Agent systems and advanced RAG architectures.",
+          "7": "Safety: Experience implementing Guardrails, safety mechanisms, and validation layers.",
+          "8": "SQL: Deep expertise in SQL databases and data modeling."
+        },
+        "advantages": {
+          "title": "Significant Advantages 🌟"
+        },
+        "adv": {
+          "1": "Experience with LangGraph or similar frameworks for agent orchestration.",
+          "2": "Expertise in cloud infrastructure (AWS, GCP) and Infrastructure-as-code (Terraform).",
+          "3": "Knowledge in DevOps, Containerization (Docker/Kubernetes), and CI/CD.",
+          "4": "Experience in LLM Fine-Tuning or Model Evaluation."
+        },
+        "apply": {
+          "label": "Apply Now",
+          "instructions": "To Apply:",
+          "details": "Please attach examples of complex systems you designed, multi-agent workflows you built, and your approach to implementing Guardrails."
+        }
       },
-      "req": {
-        "1": "Experience: Minimum 10 years of professional software development experience.",
-        "2": "Languages: Expertise in Python and TypeScript.",
-        "3": "Frontend: Strong development skills with React (Preferred Framework).",
-        "4": "AI Agent & Workflow: Extensive hands-on experience building and orchestrating AI agents with multiple tool integrations.",
-        "5": "AI Prod Experience: Minimum 2 years production experience building AI agents (Not including Low-Code/No-Code).",
-        "6": "Architecture: Deep understanding of Multi-Agent systems and advanced RAG architectures.",
-        "7": "Safety: Experience implementing Guardrails, safety mechanisms, and validation layers.",
-        "8": "SQL: Deep expertise in SQL databases and data modeling."
+      "seniorDev": {
+        "title": "💻 Senior Developer - Full Stack",
+        "intro": "We're looking for a Senior Developer with independent thinking and the ability to lead projects end-to-end. You'll work on advanced AI systems, integrate smart models into real products, and be part of a team that's changing how businesses operate.",
+        "intro2": "If you love solving complex problems, writing clean and scalable code, and staying at the forefront of technology - this is your opportunity to join a company leading the smart agents industry in Israel.",
+        "requirements": {
+          "title": "Mandatory Requirements 🎯"
+        },
+        "req": {
+          "1": "Experience: Minimum 5 years of professional software development experience.",
+          "2": "Languages: Expertise in Python and Node.js/TypeScript.",
+          "3": "Full-Stack: Ability to work on Backend and Frontend (React preferred).",
+          "4": "AI Integration: Experience integrating language model APIs (OpenAI, Anthropic, etc.).",
+          "5": "Databases: Experience with SQL and NoSQL (PostgreSQL, MongoDB).",
+          "6": "Git & CI/CD: Full proficiency in modern development workflows."
+        },
+        "advantages": {
+          "title": "Significant Advantages 🌟"
+        },
+        "adv": {
+          "1": "Experience building AI agents or RAG systems.",
+          "2": "Familiarity with LangChain, LangGraph or similar frameworks.",
+          "3": "Experience with cloud infrastructure (AWS, GCP).",
+          "4": "Contributions to open source projects or impressive personal portfolio."
+        },
+        "apply": {
+          "label": "Apply Now",
+          "instructions": "To Apply:",
+          "details": "Send your CV and a link to your GitHub or portfolio. We'd love to see projects you've built, especially those involving AI."
+        }
       },
-      "advantages": {
-        "title": "Significant Advantages"
+      "juniorDev": {
+        "title": "🌱 Junior Developer - 3 Years Experience",
+        "intro": "We're looking for a talented developer with 3 years of experience who wants to grow and develop in the AI world. This is a unique opportunity to learn from the best in the field, work on cutting-edge technologies, and build products that change the market.",
+        "intro2": "We believe in investing in people. If you have a strong desire to learn, technological curiosity, and the ability to function in a dynamic environment - we'll guide you on the path to becoming a leading AI developer.",
+        "requirements": {
+          "title": "Mandatory Requirements 🎯"
+        },
+        "req": {
+          "1": "Experience: 3 years of software development experience.",
+          "2": "Languages: Proficiency in Python or Node.js/TypeScript.",
+          "3": "Databases: Basic understanding of SQL.",
+          "4": "Git: Experience working with Version Control.",
+          "5": "Learning: Strong desire to learn and develop in the AI field."
+        },
+        "advantages": {
+          "title": "Significant Advantages 🌟"
+        },
+        "adv": {
+          "1": "Exposure to AI/ML tools or courses in the field.",
+          "2": "Experience with React or other modern frameworks.",
+          "3": "Personal projects or open source contributions.",
+          "4": "Basic familiarity with language model APIs."
+        },
+        "apply": {
+          "label": "Apply Now",
+          "instructions": "To Apply:",
+          "details": "Send your CV and tell us why you want to enter the AI world. We'd love to see personal projects or code you've written."
+        }
       },
-      "adv": {
-        "1": "Experience with LangGraph or similar frameworks for agent orchestration.",
-        "2": "Expertise in cloud infrastructure (AWS, GCP) and Infrastructure-as-code (Terraform).",
-        "3": "Knowledge in DevOps, Containerization (Docker/Kubernetes), and CI/CD.",
-        "4": "Experience in LLM Fine-Tuning or Model Evaluation."
-      },
-      "apply": {
-        "label": "Apply Now",
-        "instructions": "To Apply:",
-        "details": "Please attach examples of complex systems you designed, multi-agent workflows you built, and your approach to implementing Guardrails."
+      "salesManager": {
+        "title": "📊 Sales Manager - Government Sector",
+        "intro": "We're looking for an experienced Sales Manager with connections and deep understanding of the government and public sector. You'll lead our efforts to bring advanced AI solutions to authorities, government ministries, and public organizations.",
+        "intro2": "This is an opportunity to be part of the AI revolution in the public sector. If you have B2G sales experience, technological understanding, and the ability to build and maintain long-term relationships - we'd love to meet you.",
+        "requirements": {
+          "title": "Mandatory Requirements 🎯"
+        },
+        "req": {
+          "1": "Experience: 5+ years of B2B/B2G sales experience.",
+          "2": "Public Sector: Proven experience working with government bodies or authorities.",
+          "3": "Technical Understanding: Ability to understand and explain AI solutions to non-technical clients.",
+          "4": "Relationships: Existing connections in the government sector - significant advantage.",
+          "5": "Languages: Native Hebrew, high-level English."
+        },
+        "advantages": {
+          "title": "Significant Advantages 🌟"
+        },
+        "adv": {
+          "1": "Experience selling technology/SaaS solutions.",
+          "2": "Familiarity with tender and public procurement processes.",
+          "3": "Background in cyber or technology.",
+          "4": "Bachelor's degree in Business Administration, Marketing, or relevant field."
+        },
+        "apply": {
+          "label": "Apply Now",
+          "instructions": "To Apply:",
+          "details": "Send your CV and mention relevant experience in the government sector. We'd love to hear about significant deals you've closed and the relationships you've built."
+        }
       }
     }
   }

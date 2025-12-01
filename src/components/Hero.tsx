@@ -4,10 +4,13 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Bot, Zap, TrendingUp } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
+import { useTheme } from 'next-themes';
 
 // --- Neural Network Background Component ---
 const NeuralBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { theme, resolvedTheme } = useTheme();
+  const isDark = (resolvedTheme || theme) === 'dark';
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -41,8 +44,12 @@ const NeuralBackground = () => {
 
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = '#0ea5e9'; // Brand 500
-      ctx.strokeStyle = '#0ea5e9';
+      // Colors based on theme - darker colors for light mode for better visibility
+      const mainColor = isDark ? '#0ea5e9' : '#0369a1'; // brand-500 vs brand-700
+      const accentColor = isDark ? '#22d3ee' : '#0284c7'; // Cyan-400 for dark, brand-600 for light
+      
+      ctx.fillStyle = mainColor;
+      ctx.strokeStyle = mainColor;
 
       // Update and Draw Nodes
       nodes.forEach((node, i) => {
@@ -55,7 +62,7 @@ const NeuralBackground = () => {
 
         // Draw Node
         ctx.beginPath();
-        ctx.arc(node.x, node.y, 1.5, 0, Math.PI * 2);
+        ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
         ctx.fill();
 
         // Connect to neighbors
@@ -66,7 +73,7 @@ const NeuralBackground = () => {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < 120) {
-            ctx.globalAlpha = (1 - dist / 120) * .8;
+            ctx.globalAlpha = (1 - dist / 120) * 1;
             ctx.beginPath();
             ctx.moveTo(node.x, node.y);
             ctx.lineTo(other.x, other.y);
@@ -81,12 +88,12 @@ const NeuralBackground = () => {
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < 200) {
             ctx.globalAlpha = (1 - dist / 200) * 1;
-            ctx.strokeStyle = '#22d3ee'; // Cyan
+            ctx.strokeStyle = accentColor;
             ctx.beginPath();
             ctx.moveTo(node.x, node.y);
             ctx.lineTo(mouse.x, mouse.y);
             ctx.stroke();
-            ctx.strokeStyle = '#0ea5e9'; // Reset
+            ctx.strokeStyle = mainColor; // Reset
             ctx.globalAlpha = 1;
             
             // Push away slightly
@@ -113,9 +120,9 @@ const NeuralBackground = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [isDark]); // Re-run when theme changes
 
-  return <canvas ref={canvasRef} className="absolute inset-0 z-0 opacity-25" />;
+  return <canvas ref={canvasRef} className="absolute inset-0 z-0 opacity-50 dark:opacity-40" />;
 };
 
 // --- Decoding Text Effect ---
@@ -160,14 +167,17 @@ export const Hero = () => {
   const ArrowIcon = dir === 'rtl' ? ArrowLeft : ArrowRight;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-slate-950">
+    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-background">
       <NeuralBackground />
       
-      {/* Dark Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-transparent to-slate-950/90 pointer-events-none z-0"></div>
+      {/* Dark/Light Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background/90 pointer-events-none z-0"></div>
 
-      {/* Cyber Grid Floor */}
-      <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-[linear-gradient(to_right,#0ea5e910_1px,transparent_1px),linear-gradient(to_bottom,#0ea5e910_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:linear-gradient(to_top,black,transparent)] transform perspective-[1000px] rotateX(60deg) origin-bottom z-0"></div>
+      {/* Cyber Grid Floor - Dark Mode */}
+      <div className="hidden dark:block absolute bottom-0 left-0 right-0 h-1/2 bg-[linear-gradient(to_right,rgba(14,165,233,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(14,165,233,0.12)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:linear-gradient(to_top,black,transparent)] transform perspective-[1000px] rotateX(60deg) origin-bottom z-0"></div>
+      
+      {/* Cyber Grid Floor - Light Mode */}
+      <div className="dark:hidden absolute bottom-0 left-0 right-0 h-1/2 bg-[linear-gradient(to_right,rgba(100,116,139,0.2)_1px,transparent_1px),linear-gradient(to_bottom,rgba(100,116,139,0.2)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:linear-gradient(to_top,black,transparent)] transform perspective-[1000px] rotateX(60deg) origin-bottom z-0"></div>
 
       <div className="container mx-auto px-6 relative z-10 text-center">
         {/* <motion.div
@@ -183,13 +193,13 @@ export const Hero = () => {
           <DecodedText text={t('hero.badge')} delay={0.2} />
         </motion.div> */}
 
-        <div className="font-display font-bold text-5xl md:text-7xl mt-10 lg:text-8xl tracking-tight text-white mb-8 leading-none">
+        <div className="font-display font-bold text-5xl md:text-7xl mt-10 lg:text-8xl tracking-tight text-foreground mb-8 leading-none">
           <div className="overflow-hidden mb-2">
-            <motion.div initial={{ y: 100 }} animate={{ y: 0 }} transition={{ duration: 0.8, ease: "circOut" }} className="scanline-effect inline-block">
+            <motion.div initial={{ y: 100 }} animate={{ y: 0 }} transition={{ duration: 0.8, ease: "circOut" }} className="dark:scanline-effect inline-block">
                 {t('hero.title.1')}
             </motion.div>
           </div>
-          <div className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-brand-500 to-violet-500 pb-2 scanline-effect inline-block">
+          <div className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-brand-500 to-violet-500 pb-2 dark:scanline-effect inline-block">
              <DecodedText text={t('hero.title.2')} delay={0.8} />
           </div>
         </div>
@@ -198,7 +208,7 @@ export const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 mb-10 leading-relaxed font-light font-sans"
+          className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed font-light font-sans"
         >
           {t('hero.desc')}
         </motion.p>
@@ -211,7 +221,7 @@ export const Hero = () => {
         >
           <a
             href="#contact"
-            className="scanline-effect group relative px-8 py-4 bg-brand-600 rounded-none skew-x-[-10deg] text-white font-bold tracking-wider hover:bg-brand-500 transition-all border border-brand-400 shadow-[0_0_20px_rgba(14,165,233,0.4)]"
+            className="dark:scanline-effect group relative px-8 py-4 bg-brand-600 rounded-none skew-x-[-10deg] text-white font-bold tracking-wider hover:bg-brand-500 transition-all border border-brand-400 shadow-[0_0_20px_rgba(14,165,233,0.4)]"
           >
             <div className="skew-x-[10deg] flex items-center gap-2">
                {t('hero.cta.primary')} <ArrowIcon size={18} />
@@ -219,7 +229,7 @@ export const Hero = () => {
           </a>
           <a
             href="#services"
-            className="scanline-effect group px-8 py-4 rounded-none skew-x-[-10deg] bg-slate-900/50 border border-slate-700 text-slate-300 hover:text-cyan-400 hover:border-cyan-400 transition-all backdrop-blur-sm"
+            className="dark:scanline-effect group px-8 py-4 rounded-none skew-x-[-10deg] bg-muted/50 border border-border text-foreground hover:text-cyan-400 hover:border-cyan-400 transition-all backdrop-blur-sm"
           >
              <div className="skew-x-[10deg] flex items-center gap-2">
                 {t('hero.cta.secondary')}
@@ -244,15 +254,15 @@ export const Hero = () => {
               className="relative p-6 group"
             >
               {/* Corner Brackets */}
-              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-slate-700 group-hover:border-cyan-500 transition-colors duration-300"></div>
-              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-slate-700 group-hover:border-cyan-500 transition-colors duration-300"></div>
+              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-border group-hover:border-cyan-500 transition-colors duration-300"></div>
+              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-border group-hover:border-cyan-500 transition-colors duration-300"></div>
               
               <div className="flex flex-col items-center">
-                  <div className="p-4 rounded-full bg-slate-900/50 border border-slate-800 text-brand-400 mb-4 group-hover:text-cyan-400 group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(14,165,233,0.1)]">
+                  <div className="p-4 rounded-full bg-muted/50 border border-border text-brand-400 mb-4 group-hover:text-cyan-400 group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(14,165,233,0.1)]">
                     <item.icon size={28} strokeWidth={1.5} />
                   </div>
-                  <h3 className="scanline-effect text-white font-mono font-bold text-lg mb-1 tracking-wide">{t(item.label)}</h3>
-                  <p className="text-slate-500 text-sm font-sans">{t(item.desc)}</p>
+                  <h3 className="dark:scanline-effect text-foreground font-mono font-bold text-lg mb-1 tracking-wide">{t(item.label)}</h3>
+                  <p className="text-muted-foreground text-sm font-sans">{t(item.desc)}</p>
               </div>
             </div>
           ))}

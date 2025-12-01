@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Enable class-based dark mode for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: var(--font-outfit), Rubik, ui-sans-serif, system-ui;
   --font-display: var(--font-space-grotesk), Rubik, ui-sans-serif, system-ui;
@@ -25,6 +28,26 @@
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-spin-slow: spin 12s linear infinite;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 }
 
 @keyframes blob {
@@ -45,12 +68,59 @@
 }
 
 :root {
-  color-scheme: dark;
+  --background: #000206;
+  --foreground: #e2e8f0;
+  --card: #020617;
+  --card-foreground: #e2e8f0;
+  --popover: #000206;
+  --popover-foreground: #e2e8f0;
+  --primary: #0ea5e9;
+  --primary-foreground: #ffffff;
+  --secondary: #1e293b;
+  --secondary-foreground: #e2e8f0;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #1e293b;
+  --accent-foreground: #e2e8f0;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #fef2f2;
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #0ea5e9;
+  --radius: 0.5rem;
+
+  /* Custom */
+  --grid-color: rgba(14, 165, 233, 0.1); /* brand-500/10 */
+}
+
+.light {
+  --background: #ffffff;
+  --foreground: #0f172a; /* Darker slate for better contrast */
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #0284c7; /* Darker blue for better contrast */
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #475569; /* Darker muted text */
+  --accent: #f1f5f9;
+  --accent-foreground: #0f172a;
+  --destructive: #ef4444;
+  --destructive-foreground: #fef2f2;
+  --border: #cbd5e1; /* Darker border */
+  --input: #cbd5e1;
+  --ring: #0284c7;
+
+  /* Custom - Much lighter grid */
+  --grid-color: rgba(14, 165, 233, 0.03);
 }
 
 body {
-  background-color: #000206;
-  color: #e2e8f0;
+  background-color: var(--background);
+  color: var(--foreground);
   overflow-x: hidden;
 }
 

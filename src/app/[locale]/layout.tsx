@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 const outfit = Outfit({
     subsets: ['latin'],
@@ -55,14 +56,21 @@ export default async function RootLayout({
     const dir = locale === 'he' ? 'rtl' : 'ltr';
 
     return (
-        <html lang={locale} dir={dir} className="scroll-smooth">
+        <html lang={locale} dir={dir} className="scroll-smooth" suppressHydrationWarning>
             <body
-                className={`${outfit.variable} ${spaceGrotesk.variable} ${rubik.variable} ${jetbrainsMono.variable} bg-[#000206] text-[#e2e8f0]`}
+                className={`${outfit.variable} ${spaceGrotesk.variable} ${rubik.variable} ${jetbrainsMono.variable} antialiased bg-[var(--background)] text-[var(--foreground)]`}
             >
                 <NextIntlClientProvider messages={messages}>
-                    <Navbar />
-                    {children}
-                    <Footer />
+                    <ThemeProvider
+                         attribute="class"
+                         defaultTheme="dark"
+                         enableSystem={false}
+                         disableTransitionOnChange
+                    >
+                        <Navbar />
+                        {children}
+                        <Footer />
+                    </ThemeProvider>
                 </NextIntlClientProvider>
             </body>
         </html>

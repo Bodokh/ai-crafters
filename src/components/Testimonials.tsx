@@ -11,10 +11,10 @@ export const Testimonials = () => {
   const dir = locale === 'he' ? 'rtl' : 'ltr';
   
   return (
-    <section className="py-24 bg-slate-950 border-b border-slate-900">
+    <section className="py-24 bg-background border-b border-border">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-display font-bold text-4xl text-white mb-4">{t('testimonials.title')}</h2>
+          <h2 className="font-display font-bold text-4xl text-foreground mb-4">{t('testimonials.title')}</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -44,16 +44,16 @@ export const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="p-8 rounded-2xl bg-slate-900/40 border border-slate-800 relative group hover:bg-slate-900/60 transition-colors flex flex-col justify-between"
+              className="p-8 rounded-2xl bg-muted/40 border border-border relative group hover:bg-muted/60 transition-colors flex flex-col justify-between"
             >
               {/* Conditional positioning for the quote icon */}
-              <Quote className={`text-slate-700 absolute top-6 ${dir === 'rtl' ? 'left-6' : 'right-6'}`} size={40} />
+              <Quote className={`text-muted-foreground absolute top-6 ${dir === 'rtl' ? 'left-6' : 'right-6'}`} size={40} />
               
-              <p className="text-slate-300 mb-8 leading-relaxed relative z-10 font-sans">"{t(item.quoteKey)}"</p>
+              <p className="text-muted-foreground mb-8 leading-relaxed relative z-10 font-sans">"{t(item.quoteKey)}"</p>
               <div className="flex items-center gap-4">
-                <Image src={item.img} alt={t(item.nameKey)} width={48} height={48} className="w-12 h-12 rounded-full border-2 border-slate-800" />
+                <Image src={item.img} alt={t(item.nameKey)} width={48} height={48} className="w-12 h-12 rounded-full border-2 border-border" />
                 <div>
-                  <h4 className="text-white font-semibold">{t(item.nameKey)}</h4>
+                  <h4 className="text-foreground font-semibold">{t(item.nameKey)}</h4>
                   <span className="text-sm text-brand-400">{t(item.roleKey)}</span>
                 </div>
               </div>

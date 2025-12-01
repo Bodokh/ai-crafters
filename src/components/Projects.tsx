@@ -37,13 +37,13 @@ export const Projects = () => {
     ];
 
     return (
-        <section id="work" className="py-24 bg-slate-950 relative border-t border-slate-900">
+        <section id="work" className="py-24 bg-background relative border-t border-border">
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-20">
-                    <h2 className="scanline-effect inline-block font-display font-bold text-4xl md:text-5xl text-white mb-6">
-                        {t('projects.title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-brand-500">{t('projects.titleHighlight')}</span>
+                    <h2 className="dark:scanline-effect inline-block font-display font-bold text-4xl md:text-5xl text-foreground mb-6">
+                        {t('projects.title')} <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-brand-500">{t('projects.titleHighlight')}</span>
                     </h2>
-                    <p className="text-lg text-slate-400 font-light font-sans">
+                    <p className="text-lg text-muted-foreground font-light font-sans">
                         {t('projects.subtitle')}
                     </p>
                 </div>
@@ -56,44 +56,40 @@ export const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: i * 0.1 }}
-                            className="group relative bg-slate-900/40 border border-slate-800 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-500"
+                            className="group relative bg-card border border-border rounded-2xl overflow-hidden hover:border-cyan-500/50 hover:shadow-lg dark:hover:shadow-none transition-all duration-500"
                         >
                             {/* Holographic header effect */}
-                            <div className="h-2 bg-gradient-to-r from-cyan-500 via-brand-500 to-violet-500 opacity-70"></div>
+                            <div className="h-2 bg-linear-to-r from-cyan-500 via-brand-500 to-violet-500 opacity-70"></div>
 
                             <div className="p-8">
                                 <div className="flex justify-between items-start mb-6">
-                                    <div className="p-3 bg-slate-800 rounded-lg text-cyan-400 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_10px_rgba(34,211,238,0.2)]">
+                                    <div className="p-3 bg-muted rounded-lg text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform duration-300 shadow-sm dark:shadow-[0_0_10px_rgba(34,211,238,0.2)]">
                                         <project.icon size={24} />
                                     </div>
-                                    <span className="text-[10px] font-mono uppercase tracking-wider py-1 px-2 rounded bg-slate-800 text-slate-400 border border-slate-700">
+                                    <span className="text-[10px] font-mono uppercase tracking-wider py-1 px-2 rounded bg-muted text-muted-foreground border border-border">
                                         {project.status}
                                     </span>
                                 </div>
 
-                                <h3 className="scanline-effect text-xl font-bold text-white mb-3 font-display">{t(project.titleKey)}</h3>
-                                <p className="text-slate-400 text-sm mb-6 leading-relaxed font-sans h-20">
+                                <h3 className="dark:scanline-effect text-xl font-bold text-foreground mb-3 font-display">{t(project.titleKey)}</h3>
+                                <p className="text-muted-foreground text-sm mb-6 leading-relaxed font-sans h-20 group-hover:text-foreground transition-colors">
                                     {t(project.descKey)}
                                 </p>
 
                                 <div className="flex flex-wrap gap-2 mb-6">
                                     {project.techs.map((tech, ti) => (
-                                        <span key={ti} className="text-xs font-mono text-slate-500 bg-slate-900/80 px-2 py-1 rounded border border-slate-800">
+                                        <span key={ti} className="text-xs font-mono text-muted-foreground bg-muted/50 px-2 py-1 rounded border border-border group-hover:border-cyan-500/30 transition-colors">
                                             {tech}
                                         </span>
                                     ))}
                                 </div>
 
-                                <div className="flex items-center justify-between pt-6 border-t border-slate-800/50">
-                                    <span className="text-xs font-bold text-brand-500 uppercase tracking-widest">{t(project.tagKey)}</span>
+                                <div className="flex items-center justify-between pt-6 border-t border-border">
+                                    <span className="text-xs font-bold text-brand-600 dark:text-brand-500 uppercase tracking-widest">{t(project.tagKey)}</span>
                                     <div className="flex gap-3">
-                                        {project.externalLink && <a href={project.externalLink} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                                        {project.externalLink && <a href={project.externalLink} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
                                             <ExternalLink size={18} />
                                         </a>}
-                                        {/* {project.githubLink && <button className="text-slate-400 hover:text-white transition-colors">
-                                <button className="text-cyan-400 hover:text-white transition-colors">
-                                    <Github size={18} />
-                                </button>} */}
                                     </div>
                                 </div>
                             </div>
