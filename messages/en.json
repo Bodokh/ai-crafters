@@ -170,7 +170,76 @@
     }
   },
   "footer": {
-    "rights": "AI Crafters. Intelligent Business Solutions."
+    "rights": "AI Crafters. Intelligent Business Solutions.",
+    "terms": "Terms of Service"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last Updated",
+    "intro": {
+      "title": "Introduction",
+      "content": "Welcome to AI Crafters website. These Terms of Service govern your use of our website and services. By using this website, you agree to these terms in full. If you do not agree to these terms, please refrain from using the website."
+    },
+    "company": {
+      "title": "Company Information",
+      "content": "AI Crafters is an Israeli company providing artificial intelligence development services, smart agents, and automation solutions for businesses.",
+      "list": [
+        "Address: Tel Aviv, Israel",
+        "Email: automate@aicrafters.com",
+        "Phone: 052-357-8977"
+      ]
+    },
+    "services": {
+      "title": "Service Description",
+      "content": "We provide a variety of services in the field of artificial intelligence:",
+      "list": [
+        "Development of autonomous agents",
+        "Business process automation",
+        "Business intelligence and data analytics",
+        "Custom integration",
+        "Organizational knowledge management"
+      ]
+    },
+    "pricing": {
+      "title": "Pricing and Payments",
+      "content": "Prices for our services are determined according to the project scope and specific client requirements. Every price quote will be presented clearly and in writing before work begins. Prices include VAT as required by law. Payment terms will be detailed in the service agreement."
+    },
+    "cancellation": {
+      "title": "Engagement Terms and Termination",
+      "content": "Our services are provided under individual service agreements tailored to each client. Engagement terms, timelines, payments, and termination conditions are detailed in the specific service agreement signed with each client. In case of any conflict between these Terms of Service and the service agreement, the service agreement shall prevail."
+    },
+    "userRights": {
+      "title": "User Rights and Obligations",
+      "content": "When using our website and services, you agree to:",
+      "list": [
+        "Provide accurate and up-to-date information",
+        "Not use the services for illegal purposes",
+        "Maintain the confidentiality of your access credentials",
+        "Not infringe on intellectual property rights",
+        "Cooperate with our team to facilitate service delivery"
+      ]
+    },
+    "privacy": {
+      "title": "Privacy and Personal Information",
+      "content": "We are committed to protecting your privacy. Information collected is used solely for providing and improving our services. We do not sell or share personal information with third parties without your explicit consent, except as required by law."
+    },
+    "ip": {
+      "title": "Intellectual Property",
+      "content": "All content on the website, including texts, graphics, logos, and software, is the exclusive property of AI Crafters or its licensors. No copying, distribution, or commercial use of the content is permitted without prior written approval."
+    },
+    "liability": {
+      "title": "Limitation of Liability",
+      "content": "Services are provided as-is. We make reasonable efforts to provide quality service, but we do not guarantee specific results. Our total liability shall not exceed the amount paid for the specific service."
+    },
+    "disputes": {
+      "title": "Dispute Resolution",
+      "content": "Any dispute will first be resolved through direct negotiation. If no agreement is reached, the dispute will be brought for resolution in the competent court in Tel Aviv-Jaffa. The applicable law is the law of the State of Israel."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "content": "For any questions or inquiries regarding the Terms of Service, you can contact us:"
+    },
+    "amendment13Notice": "These Terms of Service were prepared in accordance with Israeli law"
   },
   "careers": {
     "hiring": "We are Hiring",

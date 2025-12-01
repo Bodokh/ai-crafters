@@ -3,10 +3,19 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Globe, Menu, X } from 'lucide-react';
+import { Globe, Menu, X, Accessibility } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useRouter, usePathname } from '@/i18n/routing';
 import { ThemeToggle } from './ThemeToggle';
+
+// Declare UserWay global type
+declare global {
+  interface Window {
+    UserWay?: {
+      widgetOpen: () => void;
+    };
+  }
+}
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,12 +39,33 @@ export const Navbar = () => {
     router.replace(pathname, { locale: newLocale });
   };
 
+  const openAccessibilityWidget = () => {
+    if (window.UserWay) {
+      window.UserWay.widgetOpen();
+    }
+  };
+
+  // Check if we're on the home page
+  // With localePrefix 'as-needed', pathname is always without locale prefix
+  const isHomePage = pathname === '/';
+  
+  // Helper function to get the correct href for anchor links
+  const getAnchorHref = (anchor: string) => {
+    if (isHomePage) {
+      return anchor;
+    }
+    // If not on home page, navigate to home page with anchor
+    // Since localePrefix is 'as-needed', Hebrew (default) doesn't need prefix
+    const homePath = locale === 'he' ? '/' : `/${locale}`;
+    return `${homePath}${anchor}`;
+  };
+
   const navLinks = [
-    { name: t('nav.services'), href: '#services' },
-    { name: t('nav.process'), href: '#process' },
-    { name: t('nav.work'), href: '#work' },
-    { name: t('nav.about'), href: '#about' },
-    { name: t('nav.contact'), href: '#contact' },
+    { name: t('nav.services'), href: getAnchorHref('#services') },
+    { name: t('nav.process'), href: getAnchorHref('#process') },
+    { name: t('nav.work'), href: getAnchorHref('#work') },
+    { name: t('nav.about'), href: getAnchorHref('#about') },
+    { name: t('nav.contact'), href: getAnchorHref('#contact') },
     { name: t('nav.careers'), href: '/careers' },
   ];
 
@@ -87,8 +117,20 @@ export const Navbar = () => {
 
           <ThemeToggle />
 
+          <button
+            onClick={openAccessibilityWidget}
+            className="group p-2 rounded-full border border-border hover:border-purple-500/50 transition-all hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]"
+            aria-label={locale === 'he' ? 'אפשרויות נגישות' : 'Accessibility options'}
+            title={locale === 'he' ? 'נגישות' : 'Accessibility'}
+          >
+            <Accessibility 
+              size={18} 
+              className="text-cyan-500 group-hover:text-purple-500 transition-colors"
+            />
+          </button>
+
           <a
-            href="#contact"
+            href={getAnchorHref('#contact')}
             className="px-6 py-2 bg-cyan-900/5 dark:bg-cyan-900/20 text-cyan-600 dark:text-cyan-400 border border-cyan-500/50 hover:bg-cyan-500 hover:text-white hover:border-cyan-400 text-xs font-mono font-bold uppercase tracking-wider transition-all shadow-[0_0_10px_rgba(6,182,212,0.1)] hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]"
           >
             {t('nav.start')}
@@ -96,8 +138,17 @@ export const Navbar = () => {
         </div>
 
         {/* Mobile Actions */}
-        <div className="md:hidden flex items-center gap-4">
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            onClick={openAccessibilityWidget}
+            className="p-1.5 text-cyan-500 hover:text-purple-500 transition-colors"
+            aria-label={locale === 'he' ? 'אפשרויות נגישות' : 'Accessibility options'}
+          >
+            <Accessibility size={20} />
+          </button>
+          
           <ThemeToggle />
+          
           <button
             onClick={toggleLanguage}
             className="flex items-center gap-1 text-muted-foreground"
@@ -136,7 +187,7 @@ export const Navbar = () => {
                 </a>
               ))}
               <a
-                href="#contact"
+                href={getAnchorHref('#contact')}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="mt-4 px-6 py-3 bg-cyan-600 text-center text-white font-mono font-bold uppercase tracking-widest"
               >

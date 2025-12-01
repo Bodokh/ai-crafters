@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { JetBrains_Mono, Outfit, Rubik, Space_Grotesk } from 'next/font/google';
 import { Locale, NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -57,6 +58,22 @@ export default async function RootLayout({
 
     return (
         <html lang={locale} dir={dir} className="scroll-smooth" suppressHydrationWarning>
+            <head>
+                {/* UserWay Accessibility Widget - Replace YOUR_ACCOUNT_ID with your UserWay account ID */}
+                {/* The default icon is hidden - use the custom accessibility button in the navbar */}
+                <Script
+                    src="https://cdn.userway.org/widget.js"
+                    data-account="YOUR_ACCOUNT_ID"
+                    strategy="lazyOnload"
+                />
+                {/* Hide default UserWay icon - using custom trigger in navbar */}
+                <style>{`
+                    .userway_buttons_wrapper,
+                    .uwy.userway_p3 {
+                        display: none !important;
+                    }
+                `}</style>
+            </head>
             <body
                 className={`${outfit.variable} ${spaceGrotesk.variable} ${rubik.variable} ${jetbrainsMono.variable} antialiased bg-[var(--background)] text-[var(--foreground)]`}
             >

@@ -98,7 +98,7 @@ const JobCard: React.FC<JobCardProps> = ({ jobId, tags, tagColors, icon, isExpan
 
                     {/* Brief Description - Always Visible */}
                     <div className="prose prose-invert max-w-none">
-                        <p className="text-lg border-l-2 border-brand-500 pl-4 py-2 bg-muted/50 rounded-r text-foreground">
+                        <p className="text-lg border-l-2 border-brand-500 px-4 py-2 bg-muted/50 rounded-r text-foreground">
                             {t(`jobs.${jobId}.intro`)}
                         </p>
                     </div>
