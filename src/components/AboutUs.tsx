@@ -21,6 +21,7 @@ const FounderCard = ({ nameKey, imageSrc, linkedinUrl }: { nameKey: string, imag
           src={imageSrc}
           alt={t('name')}
           fill
+          loading="lazy"
           className="object-cover"
         />
       </div>

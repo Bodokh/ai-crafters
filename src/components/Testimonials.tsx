@@ -35,7 +35,7 @@ export const Testimonials = () => {
               quoteKey: 'testimonials.3.quote',
               nameKey: 'testimonials.3.name',
               roleKey: 'testimonials.3.role',
-              img: '/images/testimonials/saar-litmanovitz.jpeg'
+              img: '/images/testimonials/nitzan_shaulof.webp'
             }
           ].map((item, i) => (
             <motion.div
@@ -51,7 +51,7 @@ export const Testimonials = () => {
 
               <p className={`text-muted-foreground mb-8 leading-relaxed relative z-10 font-sans`}>"{t(item.quoteKey)}"</p>
               <div className="flex items-center gap-4">
-                <Image src={item.img} alt={t(item.nameKey)} width={48} height={48} className="w-12 h-12 rounded-full border-2 border-border" />
+                <Image src={item.img} alt={t(item.nameKey)} width={48} height={48} loading="lazy" className="w-12 h-12 rounded-full border-2 border-border" />
                 <div>
                   <h4 className="text-foreground font-semibold">{t(item.nameKey)}</h4>
                   <span className="text-sm text-brand-400">{t(item.roleKey)}</span>

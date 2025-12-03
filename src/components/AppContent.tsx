@@ -5,6 +5,7 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 import { useLocale } from 'next-intl';
 import { Navbar } from './Navbar';
 import { Hero } from './Hero';
+import { LogoSlider } from './LogoSlider';
 import { Services } from './Services';
 import { Process } from './Process';
 import { AboutUs } from './AboutUs';
@@ -55,10 +56,11 @@ export const AppContent = () => {
 
       <main className="relative z-10 flex flex-col gap-0">
         <Hero />
-        <TechStack />
+        {/* <TechStack /> */}
         <Services />
         <Projects />
         <Process />
+        <LogoSlider />
         <AboutUs />
         <Testimonials />
         <Contact />

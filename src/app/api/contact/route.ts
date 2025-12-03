@@ -7,9 +7,51 @@ type ContactPayload = {
   email: string;
   message: string;
   locale?: string;
+  recaptchaToken?: string;
+};
+
+type RecaptchaResponse = {
+  success: boolean;
+  score?: number;
+  action?: string;
+  challenge_ts?: string;
+  hostname?: string;
+  'error-codes'?: string[];
 };
 
 const CONTACT_FORM_RECIPIENT = process.env.CONTACT_FORM_RECIPIENT;
+const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
+const RECAPTCHA_SCORE_THRESHOLD = 0.5;
+
+async function verifyRecaptcha(token: string): Promise<{ success: boolean; score: number }> {
+  if (!RECAPTCHA_SECRET_KEY) {
+    console.warn('RECAPTCHA_SECRET_KEY is not configured, skipping verification');
+    return { success: true, score: 1 };
+  }
+
+  try {
+    const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        secret: RECAPTCHA_SECRET_KEY,
+        response: token,
+      }),
+    });
+
+    const data: RecaptchaResponse = await response.json();
+
+    return {
+      success: data.success && (data.score ?? 0) >= RECAPTCHA_SCORE_THRESHOLD,
+      score: data.score ?? 0,
+    };
+  } catch (error) {
+    console.error('reCAPTCHA verification failed:', error);
+    return { success: false, score: 0 };
+  }
+}
 
 const sanitize = (value: unknown) => (typeof value === 'string' ? value.trim() : '');
 
@@ -31,6 +73,26 @@ export async function POST(request: Request) {
     const email = sanitize(body.email).toLowerCase();
     const message = sanitize(body.message);
     const locale = sanitize(body.locale);
+    const recaptchaToken = sanitize(body.recaptchaToken);
+
+    // Verify reCAPTCHA token if secret key is configured
+    if (RECAPTCHA_SECRET_KEY) {
+      if (!recaptchaToken) {
+        return NextResponse.json(
+          { message: 'reCAPTCHA verification required.' },
+          { status: 400 }
+        );
+      }
+
+      const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+      if (!recaptchaResult.success) {
+        console.warn(`reCAPTCHA verification failed. Score: ${recaptchaResult.score}`);
+        return NextResponse.json(
+          { message: 'reCAPTCHA verification failed. Please try again.' },
+          { status: 400 }
+        );
+      }
+    }
 
     const errors: Record<string, string> = {};
 

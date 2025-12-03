@@ -1,0 +1,128 @@
+.logo-slider {
+  position: relative;
+  overflow-x: hidden;
+
+  --logo-slider-gap: 48px;
+  --logo-slider-logo-height: 48px;
+  --logo-slider-fade-color: var(--background);
+}
+
+.logo-slider--scale-hover {
+  padding-top: calc(var(--logo-slider-logo-height) * 0.1);
+  padding-bottom: calc(var(--logo-slider-logo-height) * 0.1);
+}
+
+.logo-slider__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  user-select: none;
+}
+
+.logo-slider__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.logo-slider__item {
+  flex: 0 0 auto;
+  margin-right: var(--logo-slider-gap);
+  font-size: var(--logo-slider-logo-height);
+  line-height: 1;
+}
+
+.logo-slider__item:last-child {
+  margin-right: var(--logo-slider-gap);
+}
+
+.logo-slider__item img {
+  height: var(--logo-slider-logo-height);
+  width: auto;
+  max-width: 100%;
+  max-height: var(--logo-slider-logo-height);
+  display: block;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-user-drag: none;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+/* Dark mode: invert and brighten logos for visibility */
+:is(.dark, [data-theme="dark"]) .logo-slider__item img {
+  filter: grayscale(100%) invert(1) brightness(0.9);
+  opacity: 0.7;
+}
+
+/* Light logos that are already light-colored - skip invert in dark mode */
+html.dark .logo-slider__item img[data-light-logo="true"],
+:is(.dark, [data-theme="dark"]) .logo-slider__item img[data-light-logo="true"] {
+  filter: grayscale(100%) brightness(2) !important;
+  opacity: 1 !important;
+}
+
+/* Light logos in light mode - ensure visibility */
+.logo-slider__item img[data-light-logo="true"] {
+  filter: grayscale(100%) brightness(0.8);
+  opacity: 0.85;
+}
+
+.logo-slider__item:hover img {
+  opacity: 0.85;
+}
+
+.logo-slider--scale-hover .logo-slider__item {
+  overflow: visible;
+}
+
+.logo-slider--scale-hover .logo-slider__item:hover img {
+  transform: scale(1.15);
+  transform-origin: center center;
+}
+
+/* Fade edges */
+.logo-slider--fade::before,
+.logo-slider--fade::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(32px, 10%, 150px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.logo-slider--fade::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--logo-slider-fade-color) 0%,
+    transparent 100%
+  );
+}
+
+.logo-slider--fade::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--logo-slider-fade-color) 0%,
+    transparent 100%
+  );
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .logo-slider__track {
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  .logo-slider__item img {
+    transition: none !important;
+  }
+}
+

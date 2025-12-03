@@ -14,7 +14,7 @@ export const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <Image src="/images/logo.png" alt="AI Crafters" width={100} height={64} className="h-18 w-auto object-contain dark:brightness-100 brightness-0" />
+            <Image src="/images/logo.png" alt="AI Crafters" width={100} height={64} loading="lazy" className="h-18 w-auto object-contain dark:brightness-100 brightness-0" />
           </div>
 
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">

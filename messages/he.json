@@ -1,4 +1,8 @@
 {
+  "clients": {
+    "title": "הלקוחות שסומכים עלינו",
+    "subtitle": "הלקוחות שלנו"
+  },
   "nav": {
     "services": "פתרונות",
     "process": "תהליך",
@@ -138,9 +142,9 @@
       "role": "Chief Data Officer at EveryWatch"
     },
     "3": {
-      "quote": "דבשיפט הביאו מנהיגות טכנולוגית חזקה וביצוע מדויק לפיתוח הארגוני שלנו. הם התמודדו עם אתגרים מורכבים בלי לסרבל את התהליך וסיפקו פתרון מובנה ועובד, תוך מתן סיוע גם ברמה האסטרטגית והניהולית.",
-      "name": "סער ליטמנוביץ",
-      "role": "CTO at Colors AI"
+      "quote": "ערן סיפק פתרון מורכב ברבע מהזמן הצפוי. המומחיות הטכנית והחשיבה האסטרטגית שלו הפכו מה שנראה כפרויקט של חודשיים למציאות של שבועיים.",
+      "name": "ניצן שאולוף",
+      "role": "Senior Research AssistantSorry"
     }
   },
   "contact": {
@@ -247,6 +251,39 @@
     "highlight": "למהפכה",
     "subtitle": "בנו את האינטליגנציה שמניעה את העתיד.",
     "clickToExpand": "לחצו לפרטים מלאים ←",
+    "applicationForm": {
+      "title": "הגשת מועמדות",
+      "subtitle": "מלאו את הפרטים והעלו קורות חיים",
+      "fullName": "שם מלא",
+      "phone": "מספר טלפון",
+      "email": "אימייל",
+      "cv": "קורות חיים (PDF, DOC, DOCX - עד 5MB)",
+      "cvUpload": "לחצו להעלאה או גררו קובץ",
+      "cvSelected": "קובץ נבחר",
+      "linkedinUrl": "פרופיל LinkedIn (אופציונלי)",
+      "heardFrom": "איך שמעתם עלינו? (אופציונלי)",
+      "heardFromPlaceholder": "בחרו אפשרות",
+      "heardFromOptions": {
+        "linkedin": "LinkedIn",
+        "google": "Google",
+        "other": "אחר"
+      },
+      "heardFromOther": "פרטו בבקשה",
+      "submit": "שליחת מועמדות",
+      "sending": "שולחים...",
+      "success": "המועמדות נשלחה בהצלחה! נעבור עליה ונחזור אליכם בהקדם.",
+      "error": "משהו השתבש. נסו שוב או שלחו מייל ל-careers@aicrafters.com.",
+      "validation": {
+        "fullName": "אנא הזינו שם מלא.",
+        "phone": "אנא הזינו מספר טלפון.",
+        "email": "אנא הזינו כתובת אימייל.",
+        "emailFormat": "אנא הזינו כתובת אימייל תקינה.",
+        "cv": "אנא העלו קורות חיים.",
+        "cvSize": "קובץ קורות החיים חייב להיות קטן מ-5MB.",
+        "cvFormat": "קורות חיים חייבים להיות בפורמט PDF או Word.",
+        "linkedinUrl": "אנא הזינו קישור LinkedIn תקין."
+      }
+    },
     "jobs": {
       "aiEngineer": {
         "title": "🚀 Senior Software Engineer - מומחה AI Agent",

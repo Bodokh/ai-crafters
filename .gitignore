@@ -25,3 +25,6 @@ dist-ssr
 
 .next
 .env
+
+.specstory
+next-env.d.ts

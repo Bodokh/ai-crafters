@@ -1,4 +1,8 @@
 {
+  "clients": {
+    "title": "Trusted by Industry Leaders",
+    "subtitle": "Our Clients"
+  },
   "nav": {
     "services": "Solutions",
     "process": "Approach",
@@ -138,9 +142,9 @@
       "role": "Chief Data Officer at EveryWatch"
     },
     "3": {
-      "quote": "Eran brought strong technological leadership and precise execution to our organizational development. They handled complex challenges without complicating the process and delivered a structured, working solution, while also providing assistance at the strategic and managerial level.",
-      "name": "Saar Litmanovitz",
-      "role": "CTO at Colors AI"
+      "quote": "Nitzan provided a complex solution in a quarter of the expected time. His technical expertise and strategic thinking transformed what seemed like a months-long project into a reality in just a few weeks.",
+      "name": "Nitzan Shaulof",
+      "role": "Senior Research Assistant"
     }
   },
   "contact": {
@@ -247,6 +251,39 @@
     "highlight": "Revolution",
     "subtitle": "Build the intelligence that powers the future.",
     "clickToExpand": "Click for full details →",
+    "applicationForm": {
+      "title": "Apply for Position",
+      "subtitle": "Fill in your details and upload your CV",
+      "fullName": "Full Name",
+      "phone": "Phone Number",
+      "email": "Email",
+      "cv": "CV (PDF, DOC, DOCX - Max 5MB)",
+      "cvUpload": "Click to upload or drag and drop",
+      "cvSelected": "Selected file",
+      "linkedinUrl": "LinkedIn Profile (Optional)",
+      "heardFrom": "How did you hear about us? (Optional)",
+      "heardFromPlaceholder": "Select an option",
+      "heardFromOptions": {
+        "linkedin": "LinkedIn",
+        "google": "Google",
+        "other": "Other"
+      },
+      "heardFromOther": "Please specify",
+      "submit": "Submit Application",
+      "sending": "Submitting...",
+      "success": "Application submitted successfully! We will review it and get back to you soon.",
+      "error": "Something went wrong. Please try again or email careers@aicrafters.com.",
+      "validation": {
+        "fullName": "Please enter your full name.",
+        "phone": "Please enter your phone number.",
+        "email": "Please enter your email address.",
+        "emailFormat": "Please enter a valid email address.",
+        "cv": "Please upload your CV.",
+        "cvSize": "CV file must be smaller than 5MB.",
+        "cvFormat": "CV must be a PDF or Word document.",
+        "linkedinUrl": "Please enter a valid LinkedIn URL."
+      }
+    },
     "jobs": {
       "aiEngineer": {
         "title": "🚀 Senior Software Engineer - AI Agent Expert",

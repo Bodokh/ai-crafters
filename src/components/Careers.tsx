@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Briefcase, Code, TrendingUp, Sparkles, Zap, Shield, Terminal, ChevronDown, CheckCircle2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { ApplicationDialog } from './ApplicationDialog';
 
 const DecodedText: React.FC<{ text: string, className?: string, delay?: number }> = ({ text, className, delay = 0 }) => {
     const [displayText, setDisplayText] = useState('');
@@ -45,12 +46,13 @@ interface JobCardProps {
     icon: React.ReactNode;
     isExpanded: boolean;
     onToggle: () => void;
+    onApply: (jobTitle: string) => void;
     t: any;
     reqCount: number;
     advCount: number;
 }
 
-const JobCard: React.FC<JobCardProps> = ({ jobId, tags, tagColors, icon, isExpanded, onToggle, t, reqCount, advCount }) => {
+const JobCard: React.FC<JobCardProps> = ({ jobId, tags, tagColors, icon, isExpanded, onToggle, onApply, t, reqCount, advCount }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -160,12 +162,13 @@ const JobCard: React.FC<JobCardProps> = ({ jobId, tags, tagColors, icon, isExpan
                                             <code className="block dir-ltr bg-background p-3 rounded text-xs font-mono text-cyan-400 border border-border mb-4">
                                                 &gt; send_cv --to careers@aicrafters.com --attach portfolio
                                             </code>
-                                            <a 
-                                                href="mailto:careers@aicrafters.com" 
-                                                className="dark:scanline-effect inline-block px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-bold uppercase tracking-wider text-sm transition-all shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.5)]"
+                                            <button 
+                                                type="button"
+                                                onClick={() => onApply(t(`jobs.${jobId}.title`))}
+                                                className="dark:scanline-effect inline-block px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-bold uppercase tracking-wider text-sm transition-all shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.5)] cursor-pointer"
                                             >
                                                 {t(`jobs.${jobId}.apply.label`)}
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -193,6 +196,13 @@ const JobCard: React.FC<JobCardProps> = ({ jobId, tags, tagColors, icon, isExpan
 export const Careers: React.FC = () => {
     const t = useTranslations('careers');
     const [expandedJob, setExpandedJob] = useState<string | null>(null);
+    const [applicationDialogOpen, setApplicationDialogOpen] = useState(false);
+    const [selectedJobTitle, setSelectedJobTitle] = useState('');
+
+    const handleApply = (jobTitle: string) => {
+        setSelectedJobTitle(jobTitle);
+        setApplicationDialogOpen(true);
+    };
 
     const jobs = [
         {
@@ -273,6 +283,7 @@ export const Careers: React.FC = () => {
                             icon={job.icon}
                             isExpanded={expandedJob === job.id}
                             onToggle={() => toggleJob(job.id)}
+                            onApply={handleApply}
                             t={t}
                             reqCount={job.reqCount}
                             advCount={job.advCount}
@@ -280,6 +291,13 @@ export const Careers: React.FC = () => {
                     ))}
                 </div>
             </div>
+
+            {/* Application Dialog */}
+            <ApplicationDialog
+                open={applicationDialogOpen}
+                onOpenChange={setApplicationDialogOpen}
+                jobTitle={selectedJobTitle}
+            />
         </div>
     );
 };

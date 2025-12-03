@@ -1,9 +1,10 @@
 'use client';
 
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useCallback, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, PhoneCall, Send, SendHorizonal, Terminal } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
+import { useRecaptcha } from '@/hooks/useRecaptcha';
 
 type ContactFormState = {
   firstName: string;
@@ -32,6 +33,16 @@ export const Contact = () => {
   const [errors, setErrors] = useState<ContactFormErrors>({});
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const { ref: recaptchaRef, executeRecaptcha } = useRecaptcha();
+
+  // Combine refs for the section element
+  const sectionRef = useCallback(
+    (node: HTMLElement | null) => {
+      recaptchaRef(node);
+    },
+    [recaptchaRef]
+  );
 
   const validate = (): ContactFormErrors => {
     const validationErrors: ContactFormErrors = {};
@@ -75,12 +86,15 @@ export const Contact = () => {
     setStatus('idle');
 
     try {
+      // Execute reCAPTCHA and get token
+      const recaptchaToken = await executeRecaptcha('contact_submit');
+
       const response = await fetch(`/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ...formData, locale }),
+        body: JSON.stringify({ ...formData, locale, recaptchaToken }),
       });
 
       if (!response.ok) {
@@ -102,7 +116,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background relative overflow-hidden border-t border-border">
+    <section ref={sectionRef} id="contact" className="py-24 bg-background relative overflow-hidden border-t border-border">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent shadow-[0_0_10px_rgba(6,182,212,0.5)]"></div>
       
       <div className="container mx-auto px-6 relative z-10">
