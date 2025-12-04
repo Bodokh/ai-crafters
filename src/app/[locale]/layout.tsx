@@ -36,7 +36,7 @@ const jetbrainsMono = JetBrains_Mono({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 // Get OG image URL - use NEXT_PUBLIC_SITE_URL if available, otherwise use relative path
 const getOgImageUrl = (): string => {
-    const logoPath = '/images/logo.png';
+const logoPath = '/images/aic_on_black.png';
     
     if (siteUrl) {
         // Remove trailing slash if present and construct absolute URL
@@ -49,31 +49,44 @@ const getOgImageUrl = (): string => {
 
 const ogImageUrl = getOgImageUrl();
 
-export const metadata: Metadata = {
-    title: 'AI Crafters | AI Agents & Automation',
-    description:
-        'A high-performance, animated landing page for AI Crafters showcasing modern web technologies and professional development services.',
-    openGraph: {
-        title: 'AI Crafters | AI Agents & Automation',
-        description:
-            'A high-performance, animated landing page for AI Crafters showcasing modern web technologies and professional development services.',
-        images: [
-            {
-                url: ogImageUrl,
-                width: 1200,
-                height: 630,
-                alt: 'AI Crafters Logo',
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'AI Crafters | AI Agents & Automation',
-        description:
-            'A high-performance, animated landing page for AI Crafters showcasing modern web technologies and professional development services.',
-        images: [ogImageUrl],
-    },
-};
+export async function generateMetadata({
+    params
+}: {
+    params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+    const resolvedParams = await params;
+    const locale = (resolvedParams?.locale as Locale) || 'he';
+    
+    // Load translations for metadata
+    const messages = (await import(`../../../messages/${locale}.json`)).default;
+    const metadata = messages.metadata || messages;
+
+    const title = metadata.title || 'AI Crafters';
+    const description = metadata.description || '';
+
+    return {
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            images: [
+                {
+                    url: ogImageUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: 'AI Crafters Logo',
+                },
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title,
+            description,
+            images: [ogImageUrl],
+        },
+    };
+}
 
 export default async function RootLayout({
     children,
