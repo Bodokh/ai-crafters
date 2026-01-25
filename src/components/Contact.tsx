@@ -142,7 +142,7 @@ export const Contact = () => {
             
             <div className="space-y-6">
               {[
-                { icon: Mail, text: "automate@aicrafters.com", href: "mailto:automate@aicrafters.com" },
+                { icon: Mail, text: "automate@ai-crafters.com", href: "mailto:automate@ai-crafters.com" },
                 { icon: PhoneCall, text: t('contact.coverage'), href: `tel:${t('contact.coverage')}` },
                 { icon: MapPin, text: t('contact.location') }
               ].map((item, idx) => (

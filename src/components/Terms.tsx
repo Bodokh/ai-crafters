@@ -87,11 +87,11 @@ export const Terms = () => {
           <h2 className="text-xl font-semibold mb-4 font-outfit">{t('contact.title')}</h2>
           <p className="text-muted-foreground mb-4">{t('contact.content')}</p>
           <a
-            href="mailto:automate@aicrafters.com"
+            href="mailto:automate@ai-crafters.com"
             className="inline-flex items-center gap-2 text-cyan-500 hover:text-cyan-400 transition-colors"
           >
             <Mail className="w-4 h-4" />
-            automate@aicrafters.com
+            automate@ai-crafters.com
           </a>
         </motion.div>
 

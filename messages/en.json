@@ -157,7 +157,7 @@
       "2": "Automate?"
     },
     "location": "Tel Aviv, Israel",
-    "coverage": "052-357-8977",
+    "coverage": "055-562-1018",
     "desc": "Stop wasting time on manual tasks. Let's build your digital workforce today.",
     "form": {
       "firstName": "Name",
@@ -167,7 +167,7 @@
       "submit": "Get Efficiency",
       "sending": "Sending...",
       "success": "Message received! We'll reply within one business day.",
-      "error": "Something went wrong. Email automate@aicrafters.com and we'll help.",
+      "error": "Something went wrong. Email automate@ai-crafters.com and we'll help.",
       "validation": {
         "firstName": "Please tell us who we should contact.",
         "lastName": "Let us know the company you represent.",
@@ -193,8 +193,8 @@
       "content": "AI Crafters is an Israeli company providing artificial intelligence development services, smart agents, and automation solutions for businesses.",
       "list": [
         "Address: Tel Aviv, Israel",
-        "Email: automate@aicrafters.com",
-        "Phone: 052-357-8977"
+        "Email: automate@ai-crafters.com",
+        "Phone: 055-562-1018"
       ]
     },
     "services": {
