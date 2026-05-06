@@ -116,14 +116,14 @@
       "title": "CEO",
       "desc1": "6 years in Unit 8200 (2x team lead, 1x training commander)",
       "desc2": "CTO-as-a-Service & BizDev in cyber",
-      "desc3": "Co-Founder & CTO, ColorsAI – built 4 AI products, $500K sales"
+      "desc3": "Co-Founder & CTO, ColorsAI – built 4 AI products shipped to market"
     },
     "eran": {
       "name": "Eran Bodokh",
       "title": "CTO",
       "desc1": "10+ years of experience in software development",
       "desc2": "7+ years managing development teams in startups",
-      "desc3": "VP R&D and CTO at several startups – led teams of up to 15 developers, delivered 5+ AI products, sales of more than $2M"
+      "desc3": "VP R&D and CTO at several startups – led teams of up to 15 developers, delivered 5+ AI products end-to-end"
     },
     "dvir": {
       "name": "Dvir Cohen",
@@ -157,7 +157,7 @@
       "2": "Automate?"
     },
     "location": "Tel Aviv, Israel",
-    "coverage": "055-562-1018",
+    "coverage": "+972 54-217-7133",
     "desc": "Stop wasting time on manual tasks. Let's build your digital workforce today.",
     "form": {
       "firstName": "Name",
@@ -194,7 +194,7 @@
       "list": [
         "Address: Tel Aviv, Israel",
         "Email: automate@ai-crafters.com",
-        "Phone: 055-562-1018"
+        "Phone: +972 54-217-7133"
       ]
     },
     "services": {

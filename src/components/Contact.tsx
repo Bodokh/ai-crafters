@@ -36,6 +36,9 @@ export const Contact = () => {
 
   const { ref: recaptchaRef, executeRecaptcha } = useRecaptcha();
 
+  const coverageDisplay = t('contact.coverage');
+  const coverageTelHref = `tel:+${coverageDisplay.replace(/\D/g, '')}`;
+
   // Combine refs for the section element
   const sectionRef = useCallback(
     (node: HTMLElement | null) => {
@@ -143,7 +146,7 @@ export const Contact = () => {
             <div className="space-y-6">
               {[
                 { icon: Mail, text: "automate@ai-crafters.com", href: "mailto:automate@ai-crafters.com" },
-                { icon: PhoneCall, text: t('contact.coverage'), href: `tel:${t('contact.coverage')}` },
+                { icon: PhoneCall, text: coverageDisplay, href: coverageTelHref },
                 { icon: MapPin, text: t('contact.location') }
               ].map((item, idx) => (
                 <a key={idx} href={item.href} className="flex items-center gap-4 text-foreground group p-4 rounded-lg hover:bg-muted transition-colors border border-transparent hover:border-border">
