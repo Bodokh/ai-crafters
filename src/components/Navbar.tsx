@@ -60,13 +60,18 @@ export const Navbar = () => {
     return `${homePath}${anchor}`;
   };
 
+  const getRouteHref = (path: string) => {
+    return locale === 'he' ? path : `/${locale}${path}`;
+  };
+
   const navLinks = [
     { name: t('nav.services'), href: getAnchorHref('#services') },
     { name: t('nav.process'), href: getAnchorHref('#process') },
     { name: t('nav.work'), href: getAnchorHref('#work') },
+    { name: t('nav.useCases'), href: getRouteHref('/use-cases') },
     { name: t('nav.about'), href: getAnchorHref('#about') },
     { name: t('nav.contact'), href: getAnchorHref('#contact') },
-    { name: t('nav.careers'), href: '/careers' },
+    { name: t('nav.careers'), href: getRouteHref('/careers') },
   ];
 
   return (
