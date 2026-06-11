@@ -91,16 +91,16 @@ export const Navbar = () => {
             alt="AI Crafters"
             width={120}
             height={40}
-            className="h-10 w-auto object-contain transition-transform scale-150 group-hover:scale-[175%] dark:brightness-100 brightness-0"
+            className="h-10 w-auto object-contain transition-transform scale-125 group-hover:scale-150 xl:scale-150 xl:group-hover:scale-[175%] dark:brightness-100 brightness-0"
             priority
           />
-          <div className="text-xs font-mono font-medium uppercase tracking-widest relative group">
+          <div className="hidden sm:block text-xs font-mono font-medium uppercase tracking-widest relative group">
             AI Crafters
           </div>
         </a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden xl:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -143,7 +143,7 @@ export const Navbar = () => {
         </div>
 
         {/* Mobile Actions */}
-        <div className="md:hidden flex items-center gap-3">
+        <div className="xl:hidden flex items-center gap-3">
           <button
             onClick={openAccessibilityWidget}
             className="p-1.5 text-cyan-500 hover:text-purple-500 transition-colors"
@@ -178,7 +178,7 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden"
+            className="xl:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden"
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
