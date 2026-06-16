@@ -19,6 +19,14 @@
   user-select: none;
 }
 
+.logo-slider--auto .logo-slider__track {
+  animation: logo-slider-scroll 42s linear infinite;
+}
+
+.logo-slider--auto:hover .logo-slider__track {
+  animation-play-state: paused;
+}
+
 .logo-slider__list {
   display: flex;
   align-items: center;
@@ -118,6 +126,7 @@ html.dark .logo-slider__item img[data-light-logo="true"],
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .logo-slider__track {
+    animation: none !important;
     transform: translate3d(0, 0, 0) !important;
   }
 
@@ -126,3 +135,12 @@ html.dark .logo-slider__item img[data-light-logo="true"],
   }
 }
 
+@keyframes logo-slider-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-33.333%, 0, 0);
+  }
+}

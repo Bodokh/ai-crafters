@@ -1,65 +1,57 @@
-'use client';
-
-import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { Shield, TrendingUp, Rocket, Linkedin } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Linkedin, Rocket, Shield, TrendingUp } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
-const FounderCard = ({ nameKey, imageSrc, linkedinUrl }: { nameKey: string, imageSrc: string, linkedinUrl: string }) => {
+type FounderCardProps = {
+  nameKey: string;
+  imageSrc: string;
+  linkedinUrl: string;
+};
+
+const FounderCard = ({ nameKey, imageSrc, linkedinUrl }: FounderCardProps) => {
   const t = useTranslations(`about.${nameKey}`);
 
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="bg-card border border-border p-8 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col items-center group hover:border-brand-500/50"
-    >
-      <div className="relative w-32 h-32 mb-6 rounded-full overflow-hidden border-4 border-background shadow-xl group-hover:border-brand-500 transition-colors">
+    <article className="group flex flex-col items-center rounded-2xl border border-border bg-card p-8 shadow-sm transition-all hover:border-brand-500/50 hover:shadow-md">
+      <div className="relative mb-6 h-32 w-32 overflow-hidden rounded-full border-4 border-background shadow-xl transition-colors group-hover:border-brand-500">
         <Image
           src={imageSrc}
           alt={t('name')}
           fill
+          sizes="128px"
           loading="lazy"
           className="object-cover"
         />
       </div>
-      
-      <h3 className="text-2xl font-bold text-foreground mb-1">{t('name')}</h3>
-      <p className="text-cyan-600 dark:text-cyan-400 font-medium mb-4">{t('title')}</p>
-      
-      <a 
-        href={linkedinUrl} 
-        target="_blank" 
+
+      <h3 className="mb-1 text-2xl font-bold text-foreground">{t('name')}</h3>
+      <p className="mb-4 font-medium text-cyan-600 dark:text-cyan-400">{t('title')}</p>
+
+      <a
+        href={linkedinUrl}
+        target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-muted-foreground hover:text-brand-500 transition-colors mb-8 text-sm"
+        className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-brand-500"
       >
         <Linkedin size={16} />
         <span>LinkedIn Profile</span>
       </a>
 
-      <div className="space-y-4 w-full">
-        <div className="flex gap-3 items-start">
-          <div className="mt-1 text-cyan-500 shrink-0">
-            <Shield size={20} />
+      <div className="w-full space-y-4">
+        {[
+          { icon: Shield, text: t('desc1') },
+          { icon: TrendingUp, text: t('desc2') },
+          { icon: Rocket, text: t('desc3') },
+        ].map((item) => (
+          <div key={item.text} className="flex items-start gap-3">
+            <div className="mt-1 shrink-0 text-cyan-500">
+              <item.icon size={20} />
+            </div>
+            <p className="text-sm text-muted-foreground">{item.text}</p>
           </div>
-          <p className="text-muted-foreground text-sm">{t('desc1')}</p>
-        </div>
-        <div className="flex gap-3 items-start">
-          <div className="mt-1 text-cyan-500 shrink-0">
-            <TrendingUp size={20} />
-          </div>
-          <p className="text-muted-foreground text-sm">{t('desc2')}</p>
-        </div>
-        <div className="flex gap-3 items-start">
-          <div className="mt-1 text-cyan-500 shrink-0">
-            <Rocket size={20} />
-          </div>
-          <p className="text-muted-foreground text-sm">{t('desc3')}</p>
-        </div>
+        ))}
       </div>
-    </motion.div>
+    </article>
   );
 };
 
@@ -74,31 +66,30 @@ export const AboutUs = () => {
     },
     {
       key: 'eran',
-      image: '/images/team/eran.png', // Placeholder path - user needs to add file
-      linkedin: 'https://www.linkedin.com/in/eran-bodokh/', 
+      image: '/images/team/eran.png',
+      linkedin: 'https://www.linkedin.com/in/eran-bodokh/',
     },
     {
       key: 'dvir',
-      image: '/images/team/dvir.png', // Placeholder path - user needs to add file
+      image: '/images/team/dvir.png',
       linkedin: 'https://www.linkedin.com/in/dvircohen1/',
-    }
+    },
   ];
 
   return (
-    <section id="about" className="py-24 bg-background relative overflow-hidden">
-      {/* Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--grid-color)_1px,transparent_1px),linear-gradient(to_bottom,var(--grid-color)_1px,transparent_1px)] bg-size-[2rem_2rem] opacity-20 pointer-events-none"></div>
+    <section id="about" className="relative overflow-hidden bg-background py-24">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--grid-color)_1px,transparent_1px),linear-gradient(to_bottom,var(--grid-color)_1px,transparent_1px)] bg-size-[2rem_2rem] opacity-20 pointer-events-none" />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="inline-block font-display font-bold text-4xl md:text-5xl text-foreground mb-6">
+      <div className="container relative z-10 mx-auto px-6">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <h2 className="inline-block font-display text-4xl font-bold text-foreground md:text-5xl">
             {t('title')}
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
           {founders.map((founder) => (
-            <FounderCard 
+            <FounderCard
               key={founder.key}
               nameKey={founder.key}
               imageSrc={founder.image}
@@ -110,4 +101,3 @@ export const AboutUs = () => {
     </section>
   );
 };
-

@@ -1,7 +1,6 @@
 'use client';
 
 import { ChangeEvent, FormEvent, useCallback, useState } from 'react';
-import { motion } from 'framer-motion';
 import { Mail, MapPin, PhoneCall, Send, SendHorizonal, Terminal } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useRecaptcha } from '@/hooks/useRecaptcha';
@@ -124,11 +123,7 @@ export const Contact = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <motion.div
-            initial={{ opacity: 0, x: dir === 'rtl' ? 30 : -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <div className="flex items-center gap-2 text-cyan-500 mb-4 font-mono text-sm">
                 <Terminal size={16} />
                 <span>root@aicrafters:~# ./initiate_automation.sh</span>
@@ -157,14 +152,9 @@ export const Contact = () => {
                 </a>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: dir === 'rtl' ? -30 : 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="p-1 rounded-3xl bg-gradient-to-b from-muted to-background"
-          >
+          <div className="p-1 rounded-3xl bg-gradient-to-b from-muted to-background">
             <div className="bg-card rounded-[22px] p-8 border border-border">
                 <form className="space-y-6" noValidate onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -275,7 +265,7 @@ export const Contact = () => {
                 </button>
                 </form>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

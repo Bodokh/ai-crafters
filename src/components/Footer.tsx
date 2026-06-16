@@ -1,13 +1,11 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
-import { Github, Linkedin, Twitter } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 
 export const Footer = () => {
   const t = useTranslations();
   const locale = useLocale();
+  const termsHref = locale === 'he' ? '/he/terms' : '/terms';
   
   return (
     <footer className="bg-background border-t border-border py-12 text-sm">
@@ -19,7 +17,7 @@ export const Footer = () => {
 
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
             <Link
-              href={`/${locale}/terms`}
+              href={termsHref}
               className="text-muted-foreground hover:text-cyan-400 transition-colors"
             >
               {t('footer.terms')}

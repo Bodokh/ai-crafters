@@ -7,8 +7,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: var(--font-outfit), Rubik, ui-sans-serif, system-ui;
-  --font-display: var(--font-space-grotesk), Rubik, ui-sans-serif, system-ui;
+  --font-sans: var(--font-rubik), Rubik, ui-sans-serif, system-ui;
+  --font-display: var(--font-rubik), Rubik, ui-sans-serif, system-ui;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 
   --color-brand-50: #f0f9ff;

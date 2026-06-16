@@ -8,8 +8,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-outfit)', 'Rubik', 'sans-serif'],
-        display: ['var(--font-space-grotesk)', 'Rubik', 'sans-serif'],
+        sans: ['var(--font-rubik)', 'Rubik', 'sans-serif'],
+        display: ['var(--font-rubik)', 'Rubik', 'sans-serif'],
         mono: ['var(--font-jetbrains-mono)', 'monospace']
       },
       colors: {
@@ -70,4 +70,3 @@ const config: Config = {
 };
 
 export default config;
-

@@ -2,20 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Globe, Menu, X, Accessibility } from 'lucide-react';
+import { Globe, Menu, X } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useRouter, usePathname } from '@/i18n/routing';
 import { ThemeToggle } from './ThemeToggle';
-
-// Declare UserWay global type
-declare global {
-  interface Window {
-    UserWay?: {
-      widgetOpen: () => void;
-    };
-  }
-}
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,14 +29,8 @@ export const Navbar = () => {
     router.replace(pathname, { locale: newLocale });
   };
 
-  const openAccessibilityWidget = () => {
-    if (window.UserWay) {
-      window.UserWay.widgetOpen();
-    }
-  };
-
   // Check if we're on the home page
-  // With localePrefix 'as-needed', pathname is always without locale prefix
+  // With localePrefix 'as-needed', the default locale does not need a prefix
   const isHomePage = pathname === '/';
   
   // Helper function to get the correct href for anchor links
@@ -55,14 +39,15 @@ export const Navbar = () => {
       return anchor;
     }
     // If not on home page, navigate to home page with anchor
-    // Since localePrefix is 'as-needed', Hebrew (default) doesn't need prefix
-    const homePath = locale === 'he' ? '/' : `/${locale}`;
+    const homePath = locale === 'en' ? '/' : `/${locale}`;
     return `${homePath}${anchor}`;
   };
 
   const getRouteHref = (path: string) => {
-    return locale === 'he' ? path : `/${locale}${path}`;
+    return locale === 'en' ? path : `/${locale}${path}`;
   };
+
+  const homeHref = locale === 'en' ? '/' : `/${locale}`;
 
   const navLinks = [
     { name: t('nav.services'), href: getAnchorHref('#services') },
@@ -75,17 +60,14 @@ export const Navbar = () => {
   ];
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+    <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled
           ? 'bg-background/80 backdrop-blur-md border-border py-4'
           : 'bg-transparent border-transparent py-6'
         }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="/" className="flex items-center gap-2 group text-foreground/80 hover:text-cyan-400 transition-colors" aria-label="AI Crafters home">
+        <a href={homeHref} className="flex items-center gap-2 group text-foreground/80 hover:text-cyan-400 transition-colors" aria-label="AI Crafters home">
           <Image
             src="/images/logo.png"
             alt="AI Crafters"
@@ -122,18 +104,6 @@ export const Navbar = () => {
 
           <ThemeToggle />
 
-          <button
-            onClick={openAccessibilityWidget}
-            className="group p-2 rounded-full border border-border hover:border-purple-500/50 transition-all hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]"
-            aria-label={locale === 'he' ? 'אפשרויות נגישות' : 'Accessibility options'}
-            title={locale === 'he' ? 'נגישות' : 'Accessibility'}
-          >
-            <Accessibility 
-              size={18} 
-              className="text-cyan-500 group-hover:text-purple-500 transition-colors"
-            />
-          </button>
-
           <a
             href={getAnchorHref('#contact')}
             className="px-6 py-2 bg-cyan-900/5 dark:bg-cyan-900/20 text-cyan-600 dark:text-cyan-400 border border-cyan-500/50 hover:bg-cyan-500 hover:text-white hover:border-cyan-400 text-xs font-mono font-bold uppercase tracking-wider transition-all shadow-[0_0_10px_rgba(6,182,212,0.1)] hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]"
@@ -144,14 +114,6 @@ export const Navbar = () => {
 
         {/* Mobile Actions */}
         <div className="xl:hidden flex items-center gap-3">
-          <button
-            onClick={openAccessibilityWidget}
-            className="p-1.5 text-cyan-500 hover:text-purple-500 transition-colors"
-            aria-label={locale === 'he' ? 'אפשרויות נגישות' : 'Accessibility options'}
-          >
-            <Accessibility size={20} />
-          </button>
-          
           <ThemeToggle />
           
           <button
@@ -172,14 +134,8 @@ export const Navbar = () => {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="xl:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden"
-          >
+      {isMobileMenuOpen && (
+          <div className="xl:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden">
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
                 <a
@@ -199,9 +155,8 @@ export const Navbar = () => {
                 {t('nav.start')}
               </a>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
-    </motion.nav>
+    </nav>
   );
 };

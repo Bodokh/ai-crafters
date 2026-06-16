@@ -1,164 +1,11 @@
-'use client';
-
-import { useEffect, useRef, useState } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Bot, Zap, TrendingUp } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Bot, TrendingUp, Zap } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
-import { useTheme } from 'next-themes';
 
-// --- Neural Network Background Component ---
-const NeuralBackground = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const { theme, resolvedTheme } = useTheme();
-  const isDark = (resolvedTheme || theme) === 'dark';
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
-    
-    // Nodes
-    const nodes: {x: number, y: number, vx: number, vy: number}[] = [];
-    const numNodes = Math.floor((width * height) / 18000); // Slightly less dense
-
-    for (let i = 0; i < numNodes; i++) {
-      nodes.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.3, // Slower movement for stability
-        vy: (Math.random() - 0.5) * 0.3
-      });
-    }
-
-    let animationFrameId: number;
-    let mouse = { x: -1000, y: -1000 };
-
-    const handleMouseMove = (e: MouseEvent) => {
-      mouse = { x: e.clientX, y: e.clientY };
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-
-    const draw = () => {
-      ctx.clearRect(0, 0, width, height);
-      // Colors based on theme - darker colors for light mode for better visibility
-      const mainColor = isDark ? '#0ea5e9' : '#0369a1'; // brand-500 vs brand-700
-      const accentColor = isDark ? '#22d3ee' : '#0284c7'; // Cyan-400 for dark, brand-600 for light
-      
-      ctx.fillStyle = mainColor;
-      ctx.strokeStyle = mainColor;
-
-      // Update and Draw Nodes
-      nodes.forEach((node, i) => {
-        node.x += node.vx;
-        node.y += node.vy;
-
-        // Bounce
-        if (node.x < 0 || node.x > width) node.vx *= -1;
-        if (node.y < 0 || node.y > height) node.vy *= -1;
-
-        // Draw Node
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Connect to neighbors
-        for (let j = i + 1; j < nodes.length; j++) {
-          const other = nodes[j];
-          const dx = node.x - other.x;
-          const dy = node.y - other.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 120) {
-            ctx.globalAlpha = (1 - dist / 120) * 1;
-            ctx.beginPath();
-            ctx.moveTo(node.x, node.y);
-            ctx.lineTo(other.x, other.y);
-            ctx.stroke();
-            ctx.globalAlpha = 1;
-          }
-        }
-
-        // Connect to Mouse
-        const dx = node.x - mouse.x;
-        const dy = node.y - mouse.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 200) {
-            ctx.globalAlpha = (1 - dist / 200) * 1;
-            ctx.strokeStyle = accentColor;
-            ctx.beginPath();
-            ctx.moveTo(node.x, node.y);
-            ctx.lineTo(mouse.x, mouse.y);
-            ctx.stroke();
-            ctx.strokeStyle = mainColor; // Reset
-            ctx.globalAlpha = 1;
-            
-            // Push away slightly
-            if (dist < 100) {
-                node.x += dx * 0.01;
-                node.y += dy * 0.01;
-            }
-        }
-      });
-
-      animationFrameId = requestAnimationFrame(draw);
-    };
-
-    draw();
-
-    const handleResize = () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    };
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('mousemove', handleMouseMove);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, [isDark]); // Re-run when theme changes
-
-  return <canvas ref={canvasRef} className="absolute inset-0 z-0 opacity-50 dark:opacity-40" />;
-};
-
-// --- Decoding Text Effect ---
-const DecodedText = ({ text, className, delay = 0 }: { text: string; className?: string; delay?: number }) => {
-    const [displayText, setDisplayText] = useState('');
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&";
-    
-    useEffect(() => {
-        let iteration = 0;
-        let interval: any = null;
-        
-        const start = setTimeout(() => {
-            interval = setInterval(() => {
-                setDisplayText(text.split("").map((letter, index) => {
-                    if (index < iteration) {
-                        return text[index];
-                    }
-                    return chars[Math.floor(Math.random() * chars.length)];
-                }).join(""));
-                
-                if (iteration >= text.length) {
-                    clearInterval(interval);
-                }
-                
-                iteration += 1 / 3;
-            }, 30);
-        }, delay * 1000);
-
-        return () => {
-            clearTimeout(start);
-            clearInterval(interval);
-        };
-    }, [text, delay]);
-
-    return <span className={className}>{displayText}</span>;
-}
+const heroFeatures = [
+  { icon: Bot, label: 'hero.feature.fast', desc: 'hero.feature.fastDesc' },
+  { icon: Zap, label: 'hero.feature.secure', desc: 'hero.feature.secureDesc' },
+  { icon: TrendingUp, label: 'hero.feature.global', desc: 'hero.feature.globalDesc' },
+];
 
 export const Hero = () => {
   const t = useTranslations();
@@ -167,106 +14,60 @@ export const Hero = () => {
   const ArrowIcon = dir === 'rtl' ? ArrowLeft : ArrowRight;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-background">
-      <NeuralBackground />
-      
-      {/* Dark/Light Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background/90 pointer-events-none z-0"></div>
+    <section className="relative min-h-[92vh] overflow-hidden bg-background pt-28 md:pt-36">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(14,165,233,0.12),transparent_32rem)]" />
+      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-[linear-gradient(to_right,rgba(100,116,139,0.16)_1px,transparent_1px),linear-gradient(to_bottom,rgba(100,116,139,0.16)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:linear-gradient(to_top,black,transparent)] dark:bg-[linear-gradient(to_right,rgba(14,165,233,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(14,165,233,0.12)_1px,transparent_1px)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/20 to-background" />
 
-      {/* Cyber Grid Floor - Dark Mode */}
-      <div className="hidden dark:block absolute bottom-0 left-0 right-0 h-1/2 bg-[linear-gradient(to_right,rgba(14,165,233,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(14,165,233,0.12)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:linear-gradient(to_top,black,transparent)] transform perspective-[1000px] rotateX(60deg) origin-bottom z-0"></div>
-      
-      {/* Cyber Grid Floor - Light Mode */}
-      <div className="dark:hidden absolute bottom-0 left-0 right-0 h-1/2 bg-[linear-gradient(to_right,rgba(100,116,139,0.2)_1px,transparent_1px),linear-gradient(to_bottom,rgba(100,116,139,0.2)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:linear-gradient(to_top,black,transparent)] transform perspective-[1000px] rotateX(60deg) origin-bottom z-0"></div>
+      <div className="container relative z-10 mx-auto px-6 text-center">
+        <p className="mx-auto mb-8 inline-flex items-center gap-2 border border-cyan-500/30 bg-background/80 px-4 py-2 font-mono text-xs uppercase tracking-widest text-cyan-600 shadow-[0_0_15px_rgba(6,182,212,0.12)] dark:text-cyan-300">
+          <span className="h-2 w-2 rounded-full bg-cyan-500" />
+          {t('hero.badge')}
+        </p>
 
-      <div className="container mx-auto px-6 relative z-10 text-center">
-        {/* <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 py-1 px-4 rounded-full bg-slate-900/80 border border-brand-500/30 backdrop-blur-md text-cyan-400 text-sm font-mono mb-8 shadow-[0_0_15px_rgba(6,182,212,0.2)]"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+        <h1 className="mx-auto max-w-5xl font-display text-5xl font-bold leading-[1.02] tracking-normal text-foreground md:text-7xl lg:text-8xl">
+          <span className="block dark:scanline-effect">{t('hero.title.1')}</span>
+          <span className="mt-3 block bg-gradient-to-r from-cyan-400 via-brand-500 to-violet-500 bg-clip-text pb-2 text-transparent dark:scanline-effect">
+            {t('hero.title.2')}
           </span>
-          <DecodedText text={t('hero.badge')} delay={0.2} />
-        </motion.div> */}
+        </h1>
 
-        <div className="font-display font-bold text-5xl md:text-7xl mt-10 lg:text-8xl tracking-tight text-foreground mb-8 leading-none">
-          <div className="overflow-hidden mb-2">
-            <motion.div initial={{ y: 100 }} animate={{ y: 0 }} transition={{ duration: 0.8, ease: "circOut" }} className="dark:scanline-effect inline-block">
-                {t('hero.title.1')}
-            </motion.div>
-          </div>
-          <div className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-brand-500 to-violet-500 pb-2 dark:scanline-effect inline-block">
-             <DecodedText text={t('hero.title.2')} delay={0.8} />
-          </div>
-        </div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed font-light font-sans"
-        >
+        <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
           {t('hero.desc')}
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.4 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6"
-        >
+        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href="#contact"
-            className="dark:scanline-effect group relative px-8 py-4 bg-brand-600 rounded-none skew-x-[-10deg] text-white font-bold tracking-wider hover:bg-brand-500 transition-all border border-brand-400 shadow-[0_0_20px_rgba(14,165,233,0.4)]"
+            className="group inline-flex min-h-14 items-center justify-center gap-2 border border-brand-400 bg-brand-600 px-7 py-4 font-bold tracking-wider text-white shadow-[0_0_20px_rgba(14,165,233,0.28)] transition-colors hover:bg-brand-500"
           >
-            <div className="skew-x-[10deg] flex items-center gap-2">
-               {t('hero.cta.primary')} <ArrowIcon size={18} />
-            </div>
+            {t('hero.cta.primary')} <ArrowIcon size={18} />
           </a>
           <a
             href="#services"
-            className="dark:scanline-effect group px-8 py-4 rounded-none skew-x-[-10deg] bg-muted/50 border border-border text-foreground hover:text-cyan-400 hover:border-cyan-400 transition-all backdrop-blur-sm"
+            className="inline-flex min-h-14 items-center justify-center border border-border bg-muted/50 px-7 py-4 font-bold tracking-wider text-foreground backdrop-blur-sm transition-colors hover:border-cyan-400 hover:text-cyan-500"
           >
-             <div className="skew-x-[10deg] flex items-center gap-2">
-                {t('hero.cta.secondary')}
-             </div>
+            {t('hero.cta.secondary')}
           </a>
-        </motion.div>
+        </div>
 
-        {/* HUD Elements */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.8 }}
-          className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto"
-        >
-          {[
-            { icon: Bot, label: 'hero.feature.fast', desc: 'hero.feature.fastDesc' },
-            { icon: Zap, label: 'hero.feature.secure', desc: 'hero.feature.secureDesc' },
-            { icon: TrendingUp, label: 'hero.feature.global', desc: 'hero.feature.globalDesc' },
-          ].map((item, idx) => (
-            <div 
-              key={idx} 
-              className="relative p-6 group"
-            >
-              {/* Corner Brackets */}
-              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-border group-hover:border-cyan-500 transition-colors duration-300"></div>
-              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-border group-hover:border-cyan-500 transition-colors duration-300"></div>
-              
+        <div className="mx-auto mt-20 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
+          {heroFeatures.map((item) => (
+            <div key={item.label} className="group relative p-6">
+              <div className="absolute left-0 top-0 h-8 w-8 border-l-2 border-t-2 border-border transition-colors group-hover:border-cyan-500" />
+              <div className="absolute bottom-0 right-0 h-8 w-8 border-b-2 border-r-2 border-border transition-colors group-hover:border-cyan-500" />
               <div className="flex flex-col items-center">
-                  <div className="p-4 rounded-full bg-muted/50 border border-border text-brand-400 mb-4 group-hover:text-cyan-400 group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(14,165,233,0.1)]">
-                    <item.icon size={28} strokeWidth={1.5} />
-                  </div>
-                  <h3 className="dark:scanline-effect text-foreground font-mono font-bold text-lg mb-1 tracking-wide">{t(item.label)}</h3>
-                  <p className="text-muted-foreground text-sm font-sans">{t(item.desc)}</p>
+                <div className="mb-4 rounded-full border border-border bg-muted/50 p-4 text-brand-500 shadow-[0_0_15px_rgba(14,165,233,0.08)] transition-colors group-hover:text-cyan-400">
+                  <item.icon size={28} strokeWidth={1.5} />
+                </div>
+                <h2 className="mb-1 font-mono text-lg font-bold tracking-wide text-foreground dark:scanline-effect">
+                  {t(item.label)}
+                </h2>
+                <p className="text-sm text-muted-foreground">{t(item.desc)}</p>
               </div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
