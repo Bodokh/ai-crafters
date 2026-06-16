@@ -20,11 +20,6 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/20 to-background" />
 
       <div className="container relative z-10 mx-auto px-6 text-center">
-        <p className="mx-auto mb-8 inline-flex items-center gap-2 border border-cyan-500/30 bg-background/80 px-4 py-2 font-mono text-xs uppercase tracking-widest text-cyan-600 shadow-[0_0_15px_rgba(6,182,212,0.12)] dark:text-cyan-300">
-          <span className="h-2 w-2 rounded-full bg-cyan-500" />
-          {t('hero.badge')}
-        </p>
-
         <h1 className="mx-auto max-w-5xl font-display text-5xl font-bold leading-[1.02] tracking-normal text-foreground md:text-7xl lg:text-8xl">
           <span className="block dark:scanline-effect">{t('hero.title.1')}</span>
           <span className="mt-3 block bg-gradient-to-r from-cyan-400 via-brand-500 to-violet-500 bg-clip-text pb-2 text-transparent dark:scanline-effect">
