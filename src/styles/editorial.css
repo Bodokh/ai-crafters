@@ -1,0 +1,237 @@
+.aic-editorial-hero .aic-title {
+  max-width: 1020px;
+}
+
+.aic-editorial-hero .aic-lead {
+  max-width: 780px;
+}
+
+.aic-editorial-body {
+  padding-block-start: 12px;
+}
+
+.aic-editorial-fit-grid,
+.aic-editorial-related-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+}
+
+.aic-editorial-fit-grid {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+.aic-editorial-panel,
+.aic-editorial-related-card {
+  padding: clamp(26px, 3.5vw, 42px);
+}
+
+.aic-editorial-page .aic-editorial-heading {
+  margin: 0;
+  color: #edf6fc;
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.aic-editorial-copy {
+  margin: 20px 0 0;
+  color: #b8cede;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.aic-editorial-icon {
+  margin-block-end: 24px;
+  color: #a8c5f4;
+}
+
+.aic-editorial-outcomes {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  color: #b8cede;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.aic-editorial-outcomes li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.aic-editorial-outcomes svg {
+  flex-shrink: 0;
+  margin-block-start: 5px;
+  color: #79e6fa;
+}
+
+.aic-editorial-process {
+  margin-block-start: 24px;
+}
+
+.aic-editorial-process-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.aic-editorial-process-list > li {
+  border-block-start: 1px solid #c4b5fd33;
+  padding-block-start: 24px;
+}
+
+.aic-editorial-step {
+  display: block;
+  color: #c4b5fd;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+.aic-editorial-related {
+  margin-block-start: clamp(56px, 7vw, 88px);
+}
+
+.aic-editorial-related-grid {
+  margin-block-start: 28px;
+}
+
+.aic-editorial-related-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  min-width: 0;
+  text-decoration: none;
+  transition: border-color 220ms ease, transform 220ms ease;
+}
+
+.aic-editorial-related-card .aic-editorial-copy {
+  margin: 0;
+}
+
+.aic-editorial-related-card .aic-editorial-metric {
+  margin: 0;
+  color: #c4b5fd;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.aic-editorial-link-icon {
+  align-self: flex-end;
+  flex-shrink: 0;
+  margin-block-start: auto;
+  color: #79e6fa;
+  transition: transform 220ms ease;
+}
+
+.aic-editorial-related-card:focus-visible {
+  outline: 2px solid #79e6fa;
+  outline-offset: 5px;
+}
+
+.aic-editorial-checklist {
+  display: grid;
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.aic-editorial-checklist-item {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 24px;
+  align-items: baseline;
+  padding: clamp(24px, 3.5vw, 38px);
+}
+
+.aic-editorial-checklist-item .aic-editorial-heading {
+  max-width: 750px;
+  font-size: clamp(21px, 2.1vw, 27px);
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.aic-editorial-contact {
+  max-width: 960px;
+  margin: 40px auto 0;
+}
+
+.aic-editorial-contact .aic-editorial-copy {
+  max-width: 760px;
+}
+
+.aic-editorial-contact .aic-button {
+  margin-block-start: 28px;
+}
+
+.aic-editorial-comparison {
+  max-width: 960px;
+  margin-inline: auto;
+  padding-block: 0;
+  padding-inline: clamp(26px, 4vw, 48px);
+}
+
+.aic-editorial-comparison article {
+  padding-block: clamp(28px, 4vw, 44px);
+}
+
+.aic-editorial-comparison article + article {
+  border-block-start: 1px solid #c4b5fd2b;
+}
+
+.aic-editorial-comparison .aic-editorial-copy {
+  margin: 0;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.8;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .aic-editorial-related-card:hover {
+    border-color: #c4b5fd8a;
+    transform: translateY(-3px);
+  }
+
+  .aic-editorial-related-card:hover .aic-editorial-link-icon {
+    transform: translate(2px, -2px);
+  }
+}
+
+@media (max-width: 760px) {
+  .aic-editorial-fit-grid,
+  .aic-editorial-related-grid,
+  .aic-editorial-process-list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .aic-editorial-checklist-item {
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .aic-editorial-copy,
+  .aic-editorial-outcomes {
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aic-editorial-related-card,
+  .aic-editorial-link-icon {
+    transition: none;
+    transform: none !important;
+  }
+}

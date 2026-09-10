@@ -1,0 +1,181 @@
+/* The same quiet, luminous palette as the homepage, for ordinary reading pages. */
+body.aic-site {
+  --background: #07121f;
+  --foreground: #edf6fc;
+  --card: #102237;
+  --card-foreground: #edf6fc;
+  --popover: #0d1d30;
+  --popover-foreground: #edf6fc;
+  --primary: #9ce7fa;
+  --primary-foreground: #111827;
+  --secondary: #152b40;
+  --secondary-foreground: #edf6fc;
+  --muted: #14273b;
+  --muted-foreground: #b8cede;
+  --accent: #252343;
+  --accent-foreground: #ede5ff;
+  --border: #a6b7da35;
+  --input: #9badce60;
+  --ring: #99e6ff;
+  --destructive: #ffacba;
+  --destructive-foreground: #07121f;
+  --aic-cyan: #79e6fa;
+  --aic-purple: #8b5cf6;
+  --aic-lavender: #c4b5fd;
+  --aic-header-height: 100px;
+  color-scheme: dark;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-rubik), Rubik, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.aic-site ::selection { background: #b8c5ff; color: #111827; }
+.aic-site :where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid #99e6ff;
+  outline-offset: 5px;
+}
+.aic-site :where(button, input, select, textarea) { font-family: inherit; }
+.aic-site :where(button, a) { -webkit-tap-highlight-color: transparent; }
+.aic-site :where(button:not(:disabled), summary) { cursor: pointer; }
+.aic-site :where(svg) { flex-shrink: 0; }
+
+.aic-container {
+  width: min(1180px, calc(100% - 96px));
+  margin-inline: auto;
+}
+.aic-page {
+  min-height: 70vh;
+  padding-top: var(--aic-header-height);
+  background: radial-gradient(ellipse 700px 430px at 90% 0%, #6848ae12, transparent 80%), var(--background);
+}
+.aic-hero { padding-block: clamp(64px, 7vw, 108px) 68px; }
+.aic-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #c4b5fd;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: .015em;
+}
+.aic-title {
+  margin: 22px 0 0;
+  color: var(--foreground);
+  font-size: clamp(46px, 5.5vw, 78px);
+  font-weight: 350;
+  line-height: 1.08;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+}
+.aic-lead {
+  max-width: 660px;
+  margin-top: 26px;
+  color: var(--muted-foreground);
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.85;
+  text-wrap: pretty;
+}
+.aic-section { padding-block: 64px 80px; }
+:where(.aic-section h2, .aic-card h2, .aic-card h3) {
+  color: var(--foreground);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -.035em;
+}
+:where(.aic-section h2) { font-size: clamp(28px, 3vw, 42px); }
+.aic-card {
+  position: relative;
+  min-width: 0;
+  padding: clamp(24px, 3vw, 36px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: linear-gradient(135deg, #122b40f5, #181b33f5);
+  box-shadow: 0 16px 50px #02071220;
+}
+:where(.aic-card p, .aic-card li) { color: var(--muted-foreground); }
+
+.aic-button {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  min-height: 52px;
+  max-width: 100%;
+  padding: 14px 24px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: #111827;
+  background: linear-gradient(110deg, #79e6fa, #b8c5ff 28%, #c3adff 52%, #a5d9ff 76%, #79e6fa);
+  background-size: 240% 100%;
+  background-position: 0% 50%;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 220ms cubic-bezier(.2,.75,.25,1), box-shadow 220ms ease, border-color 220ms ease;
+}
+.aic-button svg { width: 18px; height: 18px; stroke-width: 1.65; transition: transform 220ms ease; }
+.aic-button--secondary {
+  border-color: #b19bf766;
+  background-image: linear-gradient(110deg, #132d40, #29213f 45%, #173b4e 75%, #29213f);
+  color: #edf6fc;
+}
+.aic-button:focus-visible:not(:disabled) { box-shadow: 0 6px 26px #8b5cf63b; }
+@media (hover: hover) and (pointer: fine) {
+  .aic-button:hover:not(:disabled) {
+    animation: aic-button-spectrum 2s ease-in-out infinite alternate;
+    box-shadow: 0 8px 32px #8b5cf635;
+    transform: translateY(-2px);
+  }
+  .aic-button:hover:not(:disabled) svg { transform: translate(2px, -2px); }
+  a.aic-card:hover { border-color: #b2a3e285; }
+}
+.aic-button:active:not(:disabled) { transform: scale(.98); }
+.aic-button:disabled { cursor: wait; opacity: .65; animation: none; transform: none; }
+.aic-button:disabled svg { transform: none; }
+.aic-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #b7e7fb;
+  font-size: 12px;
+  line-height: 1.6;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+.aic-text-link svg { width: 16px; height: 16px; stroke-width: 1.7; }
+.aic-text-link:hover { color: #ede5ff; }
+@keyframes aic-button-spectrum { to { background-position: 100% 50%; } }
+
+.aic-site:dir(rtl) :is(.aic-title, .aic-section h2, .aic-card h2, .aic-card h3) { letter-spacing: -.025em; }
+@media (max-width: 960px) {
+  body.aic-site { --aic-header-height: 80px; }
+  .aic-container { width: calc(100% - 64px); }
+}
+@media (max-width: 600px) {
+  .aic-container { width: calc(100% - 48px); }
+  .aic-hero { padding-block: 54px 42px; }
+  .aic-title { font-size: clamp(40px, 10.5vw, 58px); line-height: 1.1; }
+  .aic-lead { font-size: 15px; line-height: 1.85; margin-top: 22px; }
+  .aic-section { padding-block: 36px 52px; }
+  .aic-card { padding: 24px; border-radius: 18px; }
+  .aic-button { min-height: 48px; padding: 13px 21px; gap: 17px; }
+}
+@media (max-width: 370px) { .aic-container { width: calc(100% - 40px); } }
+@media (prefers-reduced-motion: reduce) {
+  html.scroll-smooth { scroll-behavior: auto; }
+  .aic-site *, .aic-site *::before, .aic-site *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .aic-button:is(:hover, :active), .aic-button:hover svg { transform: none !important; }
+}

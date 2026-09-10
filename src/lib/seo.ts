@@ -54,8 +54,13 @@ export const createPageMetadata = ({
 
   return {
     metadataBase: new URL(siteUrl),
+    applicationName: company.name,
     title,
     description,
+    authors: [{ name: company.name, url: siteUrl }],
+    creator: company.name,
+    publisher: company.name,
+    category: 'technology',
     alternates: {
       canonical,
       languages: alternateLanguages(path),
@@ -67,17 +72,21 @@ export const createPageMetadata = ({
       siteName: company.name,
       type,
       locale: locale === 'he' ? 'he_IL' : 'en_US',
+      alternateLocale: locale === 'he' ? ['en_US'] : ['he_IL'],
       images: [
         {
           url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: `${company.name} logo`,
+          width: 1024,
+          height: 1024,
+          alt:
+            locale === 'he'
+              ? `${company.name} — פיתוח סוכני AI ואוטומציה`
+              : `${company.name} — AI agent development and automation`,
         },
       ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: 'summary',
       title,
       description,
       images: [imageUrl],

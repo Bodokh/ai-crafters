@@ -1,0 +1,145 @@
+{
+  "scrollSamples": {
+    "samples": [
+      {
+        "beat": "0",
+        "buttonVisible": true,
+        "fade": 1,
+        "mainInert": true,
+        "position": 0,
+        "progress": "0.00000"
+      },
+      {
+        "beat": "0",
+        "buttonVisible": false,
+        "fade": 0.8436,
+        "mainInert": false,
+        "position": 0.125,
+        "progress": "0.00000"
+      },
+      {
+        "beat": "0",
+        "buttonVisible": false,
+        "fade": 0.4996,
+        "mainInert": false,
+        "position": 0.25,
+        "progress": "0.00000"
+      },
+      {
+        "beat": "0",
+        "buttonVisible": false,
+        "fade": 0.1558,
+        "mainInert": false,
+        "position": 0.375,
+        "progress": "0.00000"
+      },
+      {
+        "beat": "0",
+        "buttonVisible": false,
+        "fade": 0,
+        "mainInert": false,
+        "position": 0.5,
+        "progress": "0.00000"
+      },
+      {
+        "beat": "0",
+        "buttonVisible": false,
+        "fade": 0,
+        "mainInert": false,
+        "position": 0.6,
+        "progress": "0.00000"
+      },
+      {
+        "beat": "19",
+        "buttonVisible": false,
+        "fade": 0,
+        "mainInert": false,
+        "position": 19.6,
+        "progress": "1.00000"
+      },
+      {
+        "beat": "19",
+        "buttonVisible": false,
+        "fade": 0,
+        "mainInert": false,
+        "position": 19.7,
+        "progress": "1.00000"
+      },
+      {
+        "beat": "19",
+        "buttonVisible": false,
+        "fade": 0.5004,
+        "mainInert": false,
+        "position": 19.95,
+        "progress": "1.00000"
+      },
+      {
+        "beat": "19",
+        "buttonVisible": true,
+        "fade": 1,
+        "mainInert": true,
+        "position": 20.2,
+        "progress": "1.00000"
+      },
+      {
+        "beat": "19",
+        "buttonVisible": false,
+        "fade": 0.5004,
+        "mainInert": false,
+        "position": 19.95,
+        "progress": "1.00000"
+      },
+      {
+        "beat": "19",
+        "buttonVisible": false,
+        "fade": 0,
+        "mainInert": false,
+        "position": 19.6,
+        "progress": "1.00000"
+      }
+    ],
+    "unit": 1308.4653465346537,
+    "viewport": [
+      1354,
+      1104
+    ]
+  },
+  "nativeWheel": {
+    "beat": "0",
+    "fade": 0.7218,
+    "scrollY": 227.2727203369141
+  },
+  "keyboardEntry": {
+    "beat": "0",
+    "fade": 0,
+    "focus": "Intelligence,put to work.",
+    "inert": false
+  },
+  "keyboardReturnToContact": {
+    "beat": "19",
+    "fade": 0,
+    "focus": "What couldwork smarter?",
+    "inert": false
+  },
+  "mobileResize": {
+    "beat": "0",
+    "fade": 0.4991,
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  "reducedMotion": {
+    "curtainDisplay": "none",
+    "mainInert": false,
+    "state": "static",
+    "visibleBeats": 20
+  },
+  "blockedSceneImport": {
+    "curtainDisplay": "none",
+    "mainInert": false,
+    "state": "static",
+    "visibleBeats": 20
+  },
+  "review": "Approved after adding loading escape and bounded fallback."
+}

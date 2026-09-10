@@ -126,7 +126,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: 'Email service unavailable.' }, { status: 503 });
     }
 
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: process.env.CONTACT_FORM_FROM || 'AI Crafters <notifications@updates.aicrafters.com>',
       to: toAddresses,
     //   reply_to: email,
@@ -144,10 +144,17 @@ export async function POST(request: Request) {
         .join('\n'),
     });
 
+    if (error || typeof data?.id !== 'string' || !data.id.trim()) {
+      console.error('Contact email was not accepted by the email service.');
+      return NextResponse.json(
+        { message: 'Unable to send your message. Please try again.' },
+        { status: 502 }
+      );
+    }
+
     return NextResponse.json({ ok: true }, { status: 200 });
-  } catch (error) {
-    console.error('Failed to handle contact submission.', error);
+  } catch {
+    console.error('Failed to handle contact submission.');
     return NextResponse.json({ message: 'Internal server error.' }, { status: 500 });
   }
 }
-

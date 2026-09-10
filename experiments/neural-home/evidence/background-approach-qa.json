@@ -1,0 +1,31 @@
+{
+  "beforeScroll": {
+    "scale": "1.0000",
+    "travel": "0.0000"
+  },
+  "afterScroll": {
+    "canvas": [
+      1474,
+      1214
+    ],
+    "contentOpacity": "0.984",
+    "matrix": {
+      "a": 1.1286678314208984,
+      "d": 1.1286678314208984,
+      "e": -19.20739364624023,
+      "f": -15.819387435913086
+    },
+    "scale": 1.0261,
+    "travel": 0.0434,
+    "viewport": [
+      1354,
+      1104
+    ]
+  },
+  "checks": [
+    "Native scrolling increased the field scale from1.0; the live canvas transform confirms centered scaling is applied.",
+    "Visual inspection confirmed the network remains behind readable content.",
+    "Independent review approved centered transform, bounds, clearing, reverse motion, and unchanged scheduling."
+  ],
+  "build": "passed"
+}

@@ -1,0 +1,1265 @@
+{
+  "stage": "Final mobile performance acceptance after readability, centered finale, autoplay and RTL changes",
+  "distinctRoutes": 34,
+  "totalRuns": 38,
+  "allPass": true,
+  "scoreRange": [
+    94,
+    99
+  ],
+  "lighthouseVersion": "13.4.1",
+  "date": "2026-09-09",
+  "environment": "Local Vite production preview at http://127.0.0.1:8274 with built Next production pages proxied from localhost:8273. No HMR; public production hosting was not audited.",
+  "config": {
+    "formFactor": "mobile",
+    "throttlingMethod": "simulate",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "screenEmulation": {
+      "mobile": true,
+      "width": 412,
+      "height": 823,
+      "deviceScaleFactor": 1.75,
+      "disabled": false
+    },
+    "onlyCategories": [
+      "performance"
+    ]
+  },
+  "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+  "finalHomeEntryAssets": [
+    "http://127.0.0.1:8274/assets/index-C3t_9s6P.js",
+    "http://127.0.0.1:8274/assets/index-CRFAiRHu.css"
+  ],
+  "resourceIntegrity": "No failed requests, HTTP 4xx/5xx resources, status-0 HTTP resources, or HTML MIME for scripts/styles/images/fonts; all requested and final URLs match.",
+  "routeSummaries": {
+    "http://127.0.0.1:8274/": {
+      "scores": [
+        94,
+        99,
+        94
+      ],
+      "median": 94,
+      "lcpMsRange": [
+        2109.1917,
+        2957.1084
+      ],
+      "tbtMsRange": [
+        12,
+        30
+      ]
+    },
+    "http://127.0.0.1:8274/careers": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2741.9915,
+        2741.9915
+      ],
+      "tbtMsRange": [
+        39,
+        39
+      ]
+    },
+    "http://127.0.0.1:8274/compare/ai-agency-vs-internal-ai-team": {
+      "scores": [
+        99
+      ],
+      "median": 99,
+      "lcpMsRange": [
+        2124.4065,
+        2124.4065
+      ],
+      "tbtMsRange": [
+        32,
+        32
+      ]
+    },
+    "http://127.0.0.1:8274/he": {
+      "scores": [
+        95,
+        95,
+        99
+      ],
+      "median": 95,
+      "lcpMsRange": [
+        2109.73905,
+        2796.5114
+      ],
+      "tbtMsRange": [
+        12,
+        26.5
+      ]
+    },
+    "http://127.0.0.1:8274/he/careers": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2731.57635,
+        2731.57635
+      ],
+      "tbtMsRange": [
+        34,
+        34
+      ]
+    },
+    "http://127.0.0.1:8274/he/compare/ai-agency-vs-internal-ai-team": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2726.0222,
+        2726.0222
+      ],
+      "tbtMsRange": [
+        15,
+        15
+      ]
+    },
+    "http://127.0.0.1:8274/he/resources/ai-agent-rfp-checklist": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2719.7268000000004,
+        2719.7268000000004
+      ],
+      "tbtMsRange": [
+        14,
+        14
+      ]
+    },
+    "http://127.0.0.1:8274/he/services/ai-agent-development": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2717.3881,
+        2717.3881
+      ],
+      "tbtMsRange": [
+        14.5,
+        14.5
+      ]
+    },
+    "http://127.0.0.1:8274/he/services/ai-business-intelligence": {
+      "scores": [
+        97
+      ],
+      "median": 97,
+      "lcpMsRange": [
+        2658.17425,
+        2658.17425
+      ],
+      "tbtMsRange": [
+        32,
+        32
+      ]
+    },
+    "http://127.0.0.1:8274/he/services/custom-ai-integration": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2730.03615,
+        2730.03615
+      ],
+      "tbtMsRange": [
+        40,
+        40
+      ]
+    },
+    "http://127.0.0.1:8274/he/services/enterprise-ai-agents": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2728.9593,
+        2728.9593
+      ],
+      "tbtMsRange": [
+        14,
+        14
+      ]
+    },
+    "http://127.0.0.1:8274/he/services/knowledge-base-ai": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2727.50755,
+        2727.50755
+      ],
+      "tbtMsRange": [
+        32,
+        32
+      ]
+    },
+    "http://127.0.0.1:8274/he/services/workflow-automation": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2725.4581000000003,
+        2725.4581000000003
+      ],
+      "tbtMsRange": [
+        32,
+        32
+      ]
+    },
+    "http://127.0.0.1:8274/he/terms": {
+      "scores": [
+        99
+      ],
+      "median": 99,
+      "lcpMsRange": [
+        1939.1412,
+        1939.1412
+      ],
+      "tbtMsRange": [
+        47,
+        47
+      ]
+    },
+    "http://127.0.0.1:8274/he/use-cases": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2727.72225,
+        2727.72225
+      ],
+      "tbtMsRange": [
+        11,
+        11
+      ]
+    },
+    "http://127.0.0.1:8274/he/use-cases/business-intelligence-qa": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2723.0853,
+        2723.0853
+      ],
+      "tbtMsRange": [
+        14,
+        14
+      ]
+    },
+    "http://127.0.0.1:8274/he/use-cases/cim-generator": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2716.1896,
+        2716.1896
+      ],
+      "tbtMsRange": [
+        13,
+        13
+      ]
+    },
+    "http://127.0.0.1:8274/he/use-cases/inspection-to-report": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2799.62055,
+        2799.62055
+      ],
+      "tbtMsRange": [
+        17,
+        17
+      ]
+    },
+    "http://127.0.0.1:8274/he/use-cases/insurance-claim-settlements": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2719.74965,
+        2719.74965
+      ],
+      "tbtMsRange": [
+        15,
+        15
+      ]
+    },
+    "http://127.0.0.1:8274/he/use-cases/vendor-bank-verification": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2719.1020000000003,
+        2719.1020000000003
+      ],
+      "tbtMsRange": [
+        14.5,
+        14.5
+      ]
+    },
+    "http://127.0.0.1:8274/resources/ai-agent-rfp-checklist": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2724.1058000000003,
+        2724.1058000000003
+      ],
+      "tbtMsRange": [
+        13.5,
+        13.5
+      ]
+    },
+    "http://127.0.0.1:8274/services/ai-agent-development": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2751.6005999999998,
+        2751.6005999999998
+      ],
+      "tbtMsRange": [
+        37,
+        37
+      ]
+    },
+    "http://127.0.0.1:8274/services/ai-business-intelligence": {
+      "scores": [
+        99
+      ],
+      "median": 99,
+      "lcpMsRange": [
+        2014.158,
+        2014.158
+      ],
+      "tbtMsRange": [
+        14.5,
+        14.5
+      ]
+    },
+    "http://127.0.0.1:8274/services/custom-ai-integration": {
+      "scores": [
+        98
+      ],
+      "median": 98,
+      "lcpMsRange": [
+        2447.8343,
+        2447.8343
+      ],
+      "tbtMsRange": [
+        13.5,
+        13.5
+      ]
+    },
+    "http://127.0.0.1:8274/services/enterprise-ai-agents": {
+      "scores": [
+        97
+      ],
+      "median": 97,
+      "lcpMsRange": [
+        2526.18935,
+        2526.18935
+      ],
+      "tbtMsRange": [
+        33,
+        33
+      ]
+    },
+    "http://127.0.0.1:8274/services/knowledge-base-ai": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2726.0611999999996,
+        2726.0611999999996
+      ],
+      "tbtMsRange": [
+        29.999999999999773,
+        29.999999999999773
+      ]
+    },
+    "http://127.0.0.1:8274/services/workflow-automation": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2735.30495,
+        2735.30495
+      ],
+      "tbtMsRange": [
+        30,
+        30
+      ]
+    },
+    "http://127.0.0.1:8274/terms": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2726.34665,
+        2726.34665
+      ],
+      "tbtMsRange": [
+        13.5,
+        13.5
+      ]
+    },
+    "http://127.0.0.1:8274/use-cases": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2721.38155,
+        2721.38155
+      ],
+      "tbtMsRange": [
+        14.5,
+        14.5
+      ]
+    },
+    "http://127.0.0.1:8274/use-cases/business-intelligence-qa": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2739.9700000000003,
+        2739.9700000000003
+      ],
+      "tbtMsRange": [
+        14.5,
+        14.5
+      ]
+    },
+    "http://127.0.0.1:8274/use-cases/cim-generator": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2714.89495,
+        2714.89495
+      ],
+      "tbtMsRange": [
+        13,
+        13
+      ]
+    },
+    "http://127.0.0.1:8274/use-cases/inspection-to-report": {
+      "scores": [
+        99
+      ],
+      "median": 99,
+      "lcpMsRange": [
+        2056.52685,
+        2056.52685
+      ],
+      "tbtMsRange": [
+        15.5,
+        15.5
+      ]
+    },
+    "http://127.0.0.1:8274/use-cases/insurance-claim-settlements": {
+      "scores": [
+        97
+      ],
+      "median": 97,
+      "lcpMsRange": [
+        2649.3345,
+        2649.3345
+      ],
+      "tbtMsRange": [
+        14,
+        14
+      ]
+    },
+    "http://127.0.0.1:8274/use-cases/vendor-bank-verification": {
+      "scores": [
+        96
+      ],
+      "median": 96,
+      "lcpMsRange": [
+        2725.4981500000004,
+        2725.4981500000004
+      ],
+      "tbtMsRange": [
+        14.5,
+        14.5
+      ]
+    }
+  },
+  "results": [
+    {
+      "url": "http://127.0.0.1:8274/careers",
+      "finalUrl": "http://127.0.0.1:8274/careers",
+      "performance": 96,
+      "fcpMs": 918.6610000000001,
+      "lcpMs": 2741.9915,
+      "tbtMs": 39,
+      "cls": 0,
+      "speedIndexMs": 918.6610000000001,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:21:32.418Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 17,
+      "entryAssets": [],
+      "report": "final/careers.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/compare/ai-agency-vs-internal-ai-team",
+      "finalUrl": "http://127.0.0.1:8274/compare/ai-agency-vs-internal-ai-team",
+      "performance": 99,
+      "fcpMs": 916.271,
+      "lcpMs": 2124.4065,
+      "tbtMs": 32,
+      "cls": 0,
+      "speedIndexMs": 916.271,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:21:48.140Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/compare--ai-agency-vs-internal-ai-team.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he/careers",
+      "finalUrl": "http://127.0.0.1:8274/he/careers",
+      "performance": 96,
+      "fcpMs": 915.0509,
+      "lcpMs": 2731.57635,
+      "tbtMs": 34,
+      "cls": 0,
+      "speedIndexMs": 915.0509,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:24:39.845Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 17,
+      "entryAssets": [],
+      "report": "final/he--careers.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he/compare/ai-agency-vs-internal-ai-team",
+      "finalUrl": "http://127.0.0.1:8274/he/compare/ai-agency-vs-internal-ai-team",
+      "performance": 96,
+      "fcpMs": 914.0147999999999,
+      "lcpMs": 2726.0222,
+      "tbtMs": 15,
+      "cls": 0,
+      "speedIndexMs": 914.0147999999999,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:24:53.912Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/he--compare--ai-agency-vs-internal-ai-team.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he/resources/ai-agent-rfp-checklist",
+      "finalUrl": "http://127.0.0.1:8274/he/resources/ai-agent-rfp-checklist",
+      "performance": 96,
+      "fcpMs": 911.1512,
+      "lcpMs": 2719.7268000000004,
+      "tbtMs": 14,
+      "cls": 0,
+      "speedIndexMs": 911.1512,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:25:10.111Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/he--resources--ai-agent-rfp-checklist.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he/services/ai-agent-development",
+      "finalUrl": "http://127.0.0.1:8274/he/services/ai-agent-development",
+      "performance": 96,
+      "fcpMs": 908.9254000000001,
+      "lcpMs": 2717.3881,
+      "tbtMs": 14.5,
+      "cls": 0,
+      "speedIndexMs": 908.9254000000001,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:25:22.560Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/he--services--ai-agent-development.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he/services/ai-business-intelligence",
+      "finalUrl": "http://127.0.0.1:8274/he/services/ai-business-intelligence",
+      "performance": 97,
+      "fcpMs": 917.4495,
+      "lcpMs": 2658.17425,
+      "tbtMs": 32,
+      "cls": 0,
+      "speedIndexMs": 917.4495,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:25:33.825Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/he--services--ai-business-intelligence.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he/services/custom-ai-integration",
+      "finalUrl": "http://127.0.0.1:8274/he/services/custom-ai-integration",
+      "performance": 96,
+      "fcpMs": 910.0241000000001,
+      "lcpMs": 2730.03615,
+      "tbtMs": 40,
+      "cls": 0,
+      "speedIndexMs": 910.0241000000001,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:26:41.939Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/he--services--custom-ai-integration.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he/services/enterprise-ai-agents",
+      "finalUrl": "http://127.0.0.1:8274/he/services/enterprise-ai-agents",
+      "performance": 96,
+      "fcpMs": 917.3062,
+      "lcpMs": 2728.9593,
+      "tbtMs": 14,
+      "cls": 0,
+      "speedIndexMs": 917.3062,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:26:52.676Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/he--services--enterprise-ai-agents.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he/services/knowledge-base-ai",
+      "finalUrl": "http://127.0.0.1:8274/he/services/knowledge-base-ai",
+      "performance": 96,
+      "fcpMs": 913.6717000000001,
+      "lcpMs": 2727.50755,
+      "tbtMs": 32,
+      "cls": 0,
+      "speedIndexMs": 913.6717000000001,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:27:03.504Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/he--services--knowledge-base-ai.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he/services/workflow-automation",
+      "finalUrl": "http://127.0.0.1:8274/he/services/workflow-automation",
+      "performance": 96,
+      "fcpMs": 912.3054,
+      "lcpMs": 2725.4581000000003,
+      "tbtMs": 32,
+      "cls": 0,
+      "speedIndexMs": 912.3054,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:27:15.011Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/he--services--workflow-automation.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he/terms",
+      "finalUrl": "http://127.0.0.1:8274/he/terms",
+      "performance": 99,
+      "fcpMs": 942.7608,
+      "lcpMs": 1939.1412,
+      "tbtMs": 47,
+      "cls": 0,
+      "speedIndexMs": 942.7608,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:27:26.219Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/he--terms.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he/use-cases/business-intelligence-qa",
+      "finalUrl": "http://127.0.0.1:8274/he/use-cases/business-intelligence-qa",
+      "performance": 96,
+      "fcpMs": 913.3902,
+      "lcpMs": 2723.0853,
+      "tbtMs": 14,
+      "cls": 0,
+      "speedIndexMs": 913.3902,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:27:49.399Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 22,
+      "entryAssets": [],
+      "report": "final/he--use-cases--business-intelligence-qa.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he/use-cases/cim-generator",
+      "finalUrl": "http://127.0.0.1:8274/he/use-cases/cim-generator",
+      "performance": 96,
+      "fcpMs": 910.1264000000001,
+      "lcpMs": 2716.1896,
+      "tbtMs": 13,
+      "cls": 0,
+      "speedIndexMs": 910.1264000000001,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:28:00.429Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 22,
+      "entryAssets": [],
+      "report": "final/he--use-cases--cim-generator.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he/use-cases/inspection-to-report",
+      "finalUrl": "http://127.0.0.1:8274/he/use-cases/inspection-to-report",
+      "performance": 96,
+      "fcpMs": 910.4137000000001,
+      "lcpMs": 2799.62055,
+      "tbtMs": 17,
+      "cls": 0,
+      "speedIndexMs": 910.4137000000001,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:28:11.237Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 22,
+      "entryAssets": [],
+      "report": "final/he--use-cases--inspection-to-report.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he/use-cases/insurance-claim-settlements",
+      "finalUrl": "http://127.0.0.1:8274/he/use-cases/insurance-claim-settlements",
+      "performance": 96,
+      "fcpMs": 909.8331000000001,
+      "lcpMs": 2719.74965,
+      "tbtMs": 15,
+      "cls": 0,
+      "speedIndexMs": 909.8331000000001,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:28:22.000Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 22,
+      "entryAssets": [],
+      "report": "final/he--use-cases--insurance-claim-settlements.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he/use-cases/vendor-bank-verification",
+      "finalUrl": "http://127.0.0.1:8274/he/use-cases/vendor-bank-verification",
+      "performance": 96,
+      "fcpMs": 910.068,
+      "lcpMs": 2719.1020000000003,
+      "tbtMs": 14.5,
+      "cls": 0,
+      "speedIndexMs": 910.068,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:28:32.979Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 22,
+      "entryAssets": [],
+      "report": "final/he--use-cases--vendor-bank-verification.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he/use-cases",
+      "finalUrl": "http://127.0.0.1:8274/he/use-cases",
+      "performance": 96,
+      "fcpMs": 920.4815000000001,
+      "lcpMs": 2727.72225,
+      "tbtMs": 11,
+      "cls": 0,
+      "speedIndexMs": 920.4815000000001,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:27:37.515Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 23,
+      "entryAssets": [],
+      "report": "final/he--use-cases.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he",
+      "finalUrl": "http://127.0.0.1:8274/he",
+      "performance": 95,
+      "fcpMs": 1549.42275,
+      "lcpMs": 2794.5073,
+      "tbtMs": 26.5,
+      "cls": 0,
+      "speedIndexMs": 1549.42275,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:48:30.817Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 12,
+      "entryAssets": [
+        "http://127.0.0.1:8274/assets/index-C3t_9s6P.js",
+        "http://127.0.0.1:8274/assets/index-CRFAiRHu.css"
+      ],
+      "report": "final/he-home.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/",
+      "finalUrl": "http://127.0.0.1:8274/",
+      "performance": 94,
+      "fcpMs": 1557.6084,
+      "lcpMs": 2957.1084,
+      "tbtMs": 30,
+      "cls": 0,
+      "speedIndexMs": 1557.6084,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:47:55.827Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 12,
+      "entryAssets": [
+        "http://127.0.0.1:8274/assets/index-C3t_9s6P.js",
+        "http://127.0.0.1:8274/assets/index-CRFAiRHu.css"
+      ],
+      "report": "final/home.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/resources/ai-agent-rfp-checklist",
+      "finalUrl": "http://127.0.0.1:8274/resources/ai-agent-rfp-checklist",
+      "performance": 96,
+      "fcpMs": 914.7372,
+      "lcpMs": 2724.1058000000003,
+      "tbtMs": 13.5,
+      "cls": 0,
+      "speedIndexMs": 914.7372,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:21:59.591Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/resources--ai-agent-rfp-checklist.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/services/ai-agent-development",
+      "finalUrl": "http://127.0.0.1:8274/services/ai-agent-development",
+      "performance": 96,
+      "fcpMs": 926.4004,
+      "lcpMs": 2751.6005999999998,
+      "tbtMs": 37,
+      "cls": 0,
+      "speedIndexMs": 926.4004,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:22:10.972Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/services--ai-agent-development.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/services/ai-business-intelligence",
+      "finalUrl": "http://127.0.0.1:8274/services/ai-business-intelligence",
+      "performance": 99,
+      "fcpMs": 942.7719999999999,
+      "lcpMs": 2014.158,
+      "tbtMs": 14.5,
+      "cls": 0,
+      "speedIndexMs": 942.7719999999999,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:22:22.873Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/services--ai-business-intelligence.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/services/custom-ai-integration",
+      "finalUrl": "http://127.0.0.1:8274/services/custom-ai-integration",
+      "performance": 98,
+      "fcpMs": 930.5562,
+      "lcpMs": 2447.8343,
+      "tbtMs": 13.5,
+      "cls": 0,
+      "speedIndexMs": 930.5562,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:22:36.293Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/services--custom-ai-integration.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/services/enterprise-ai-agents",
+      "finalUrl": "http://127.0.0.1:8274/services/enterprise-ai-agents",
+      "performance": 97,
+      "fcpMs": 928.7928999999999,
+      "lcpMs": 2526.18935,
+      "tbtMs": 33,
+      "cls": 0,
+      "speedIndexMs": 928.7928999999999,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:22:47.840Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/services--enterprise-ai-agents.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/services/knowledge-base-ai",
+      "finalUrl": "http://127.0.0.1:8274/services/knowledge-base-ai",
+      "performance": 96,
+      "fcpMs": 914.0408,
+      "lcpMs": 2726.0611999999996,
+      "tbtMs": 29.999999999999773,
+      "cls": 0,
+      "speedIndexMs": 914.0408,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:22:59.390Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/services--knowledge-base-ai.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/services/workflow-automation",
+      "finalUrl": "http://127.0.0.1:8274/services/workflow-automation",
+      "performance": 96,
+      "fcpMs": 920.2032999999999,
+      "lcpMs": 2735.30495,
+      "tbtMs": 30,
+      "cls": 0,
+      "speedIndexMs": 920.2032999999999,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:23:11.055Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/services--workflow-automation.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/terms",
+      "finalUrl": "http://127.0.0.1:8274/terms",
+      "performance": 96,
+      "fcpMs": 916.2311,
+      "lcpMs": 2726.34665,
+      "tbtMs": 13.5,
+      "cls": 0,
+      "speedIndexMs": 916.2311,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:23:22.504Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 16,
+      "entryAssets": [],
+      "report": "final/terms.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/use-cases/business-intelligence-qa",
+      "finalUrl": "http://127.0.0.1:8274/use-cases/business-intelligence-qa",
+      "performance": 96,
+      "fcpMs": 923.98,
+      "lcpMs": 2739.9700000000003,
+      "tbtMs": 14.5,
+      "cls": 0,
+      "speedIndexMs": 923.98,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:23:44.238Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 22,
+      "entryAssets": [],
+      "report": "final/use-cases--business-intelligence-qa.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/use-cases/cim-generator",
+      "finalUrl": "http://127.0.0.1:8274/use-cases/cim-generator",
+      "performance": 96,
+      "fcpMs": 909.2633000000001,
+      "lcpMs": 2714.89495,
+      "tbtMs": 13,
+      "cls": 0,
+      "speedIndexMs": 909.2633000000001,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:23:55.229Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 22,
+      "entryAssets": [],
+      "report": "final/use-cases--cim-generator.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/use-cases/inspection-to-report",
+      "finalUrl": "http://127.0.0.1:8274/use-cases/inspection-to-report",
+      "performance": 99,
+      "fcpMs": 921.0179,
+      "lcpMs": 2056.52685,
+      "tbtMs": 15.5,
+      "cls": 0,
+      "speedIndexMs": 921.0179,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:24:06.520Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 22,
+      "entryAssets": [],
+      "report": "final/use-cases--inspection-to-report.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/use-cases/insurance-claim-settlements",
+      "finalUrl": "http://127.0.0.1:8274/use-cases/insurance-claim-settlements",
+      "performance": 97,
+      "fcpMs": 914.223,
+      "lcpMs": 2649.3345,
+      "tbtMs": 14,
+      "cls": 0,
+      "speedIndexMs": 914.223,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:24:17.350Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 22,
+      "entryAssets": [],
+      "report": "final/use-cases--insurance-claim-settlements.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/use-cases/vendor-bank-verification",
+      "finalUrl": "http://127.0.0.1:8274/use-cases/vendor-bank-verification",
+      "performance": 96,
+      "fcpMs": 914.3321000000001,
+      "lcpMs": 2725.4981500000004,
+      "tbtMs": 14.5,
+      "cls": 0,
+      "speedIndexMs": 914.3321000000001,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:24:28.199Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 22,
+      "entryAssets": [],
+      "report": "final/use-cases--vendor-bank-verification.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/use-cases",
+      "finalUrl": "http://127.0.0.1:8274/use-cases",
+      "performance": 96,
+      "fcpMs": 911.5877,
+      "lcpMs": 2721.38155,
+      "tbtMs": 14.5,
+      "cls": 0,
+      "speedIndexMs": 911.5877,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:23:33.287Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 23,
+      "entryAssets": [],
+      "report": "final/use-cases.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he",
+      "finalUrl": "http://127.0.0.1:8274/he",
+      "performance": 95,
+      "fcpMs": 1550.7595,
+      "lcpMs": 2796.5114,
+      "tbtMs": 24,
+      "cls": 0,
+      "speedIndexMs": 1550.7595,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:48:42.019Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 12,
+      "entryAssets": [
+        "http://127.0.0.1:8274/assets/index-C3t_9s6P.js",
+        "http://127.0.0.1:8274/assets/index-CRFAiRHu.css"
+      ],
+      "report": "repeats/he-home-run-2.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/he",
+      "finalUrl": "http://127.0.0.1:8274/he",
+      "performance": 99,
+      "fcpMs": 1155.115875,
+      "lcpMs": 2109.73905,
+      "tbtMs": 12,
+      "cls": 0,
+      "speedIndexMs": 1155.115875,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:48:53.268Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 12,
+      "entryAssets": [
+        "http://127.0.0.1:8274/assets/index-C3t_9s6P.js",
+        "http://127.0.0.1:8274/assets/index-CRFAiRHu.css"
+      ],
+      "report": "repeats/he-home-run-3.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/",
+      "finalUrl": "http://127.0.0.1:8274/",
+      "performance": 99,
+      "fcpMs": 1059.1916999999999,
+      "lcpMs": 2109.1917,
+      "tbtMs": 12,
+      "cls": 0,
+      "speedIndexMs": 1059.1916999999999,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:48:08.332Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 12,
+      "entryAssets": [
+        "http://127.0.0.1:8274/assets/index-C3t_9s6P.js",
+        "http://127.0.0.1:8274/assets/index-CRFAiRHu.css"
+      ],
+      "report": "repeats/home-run-2.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/",
+      "finalUrl": "http://127.0.0.1:8274/",
+      "performance": 94,
+      "fcpMs": 1550.41605,
+      "lcpMs": 2943.91605,
+      "tbtMs": 24.5,
+      "cls": 0,
+      "speedIndexMs": 1550.41605,
+      "version": "13.4.1",
+      "fetchTime": "2026-09-09T10:48:19.412Z",
+      "warnings": [],
+      "runtimeError": null,
+      "networkFailures": [],
+      "wrongAssetMime": [],
+      "requestCount": 12,
+      "entryAssets": [
+        "http://127.0.0.1:8274/assets/index-C3t_9s6P.js",
+        "http://127.0.0.1:8274/assets/index-CRFAiRHu.css"
+      ],
+      "report": "repeats/home-run-3.report.json"
+    }
+  ]
+}

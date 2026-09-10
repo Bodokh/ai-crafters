@@ -1,6 +1,10 @@
 {
   "name": "AI Crafters",
   "short_name": "AIC",
+  "description": "AI Crafters builds production-grade AI agents, workflow automation, business intelligence, and custom AI integrations.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",

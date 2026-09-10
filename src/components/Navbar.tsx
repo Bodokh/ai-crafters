@@ -1,162 +1,140 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { Globe, Menu, X } from 'lucide-react';
+import { ArrowUpRight, Globe2, Menu, X } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
-import { useRouter, usePathname } from '@/i18n/routing';
-import { ThemeToggle } from './ThemeToggle';
+import { usePathname } from '@/i18n/routing';
+import { ContactButton } from '@/components/SiteContactDialog';
 
 export const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const t = useTranslations();
   const locale = useLocale();
-  const router = useRouter();
   const pathname = usePathname();
-  const dir = locale === 'he' ? 'rtl' : 'ltr';
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const toggleLanguage = () => {
-    const newLocale = locale === 'en' ? 'he' : 'en';
-    router.replace(pathname, { locale: newLocale });
-  };
-
-  // Check if we're on the home page
-  // With localePrefix 'as-needed', the default locale does not need a prefix
-  const isHomePage = pathname === '/';
-  
-  // Helper function to get the correct href for anchor links
-  const getAnchorHref = (anchor: string) => {
-    if (isHomePage) {
-      return anchor;
-    }
-    // If not on home page, navigate to home page with anchor
-    const homePath = locale === 'en' ? '/' : `/${locale}`;
-    return `${homePath}${anchor}`;
-  };
-
-  const getRouteHref = (path: string) => {
-    return locale === 'en' ? path : `/${locale}${path}`;
-  };
-
-  const homeHref = locale === 'en' ? '/' : `/${locale}`;
-
-  const navLinks = [
-    { name: t('nav.services'), href: getAnchorHref('#services') },
-    { name: t('nav.process'), href: getAnchorHref('#process') },
-    { name: t('nav.work'), href: getAnchorHref('#work') },
-    { name: t('nav.useCases'), href: getRouteHref('/use-cases') },
-    { name: t('nav.about'), href: getAnchorHref('#about') },
-    { name: t('nav.contact'), href: getAnchorHref('#contact') },
-    { name: t('nav.careers'), href: getRouteHref('/careers') },
+  const isHebrew = locale === 'he';
+  const routeHref = (path: string) => (isHebrew ? `/he${path === '/' ? '' : path}` : path);
+  const languageHref = isHebrew ? pathname : `/he${pathname === '/' ? '' : pathname}`;
+  const languageLabel = isHebrew ? 'מעבר לאנגלית' : 'Switch to Hebrew';
+  const contactLabel = t('nav.start');
+  const menuLabel = isHebrew ? 'תפריט' : 'Menu';
+  const links = [
+    { label: t('nav.services'), path: '/', section: 'services' },
+    { label: t('nav.work'), path: '/use-cases' },
+    { label: t('nav.careers'), path: '/careers' },
   ];
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const onPointerDown = (event: PointerEvent) => {
+      if (event.target instanceof Node && !headerRef.current?.contains(event.target)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      setIsMobileMenuOpen(false);
+      menuButtonRef.current?.focus();
+    };
+    const onFocusIn = (event: FocusEvent) => {
+      if (event.target instanceof Node && !headerRef.current?.contains(event.target)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    const desktop = window.matchMedia('(min-width: 961px)');
+    const onDesktop = () => {
+      if (desktop.matches) setIsMobileMenuOpen(false);
+    };
+    document.addEventListener('pointerdown', onPointerDown);
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('focusin', onFocusIn);
+    desktop.addEventListener('change', onDesktop);
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown);
+      document.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener('focusin', onFocusIn);
+      desktop.removeEventListener('change', onDesktop);
+    };
+  }, [isMobileMenuOpen]);
+
+  const closeMenu = () => setIsMobileMenuOpen(false);
+
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled
-          ? 'bg-background/80 backdrop-blur-md border-border py-4'
-          : 'bg-transparent border-transparent py-6'
-        }`}
-    >
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href={homeHref} className="flex items-center gap-2 group text-foreground/80 hover:text-cyan-400 transition-colors" aria-label="AI Crafters home">
-          <Image
-            src="/images/logo.png"
-            alt="AI Crafters"
-            width={120}
-            height={40}
-            className="h-10 w-auto object-contain transition-transform scale-125 group-hover:scale-150 xl:scale-150 xl:group-hover:scale-[175%] dark:brightness-100 brightness-0"
-            priority
-          />
-          <div className="hidden sm:block text-xs font-mono font-medium uppercase tracking-widest relative group">
-            AI Crafters
-          </div>
+    <header className="aic-header" ref={headerRef}>
+      <div className="aic-header__inner aic-container">
+        <a
+          href={routeHref('/')}
+          className="aic-brand"
+          aria-label={isHebrew ? 'AI Crafters — דף הבית' : 'AI Crafters home'}
+          onClick={closeMenu}
+        >
+          <span className="aic-brand__mark">
+            <Image src="/images/logo.png" width={116} height={116} alt="" priority />
+          </span>
+          <span className="aic-brand__name" dir="ltr">AI CRAFTERS</span>
         </a>
 
-        {/* Desktop Menu */}
-        <div className="hidden xl:flex items-center gap-8">
-          {navLinks.map((link) => (
+        <nav className="aic-header__desktop-nav" aria-label={isHebrew ? 'ניווט ראשי' : 'Main navigation'}>
+          {links.map(({ label, path, section }) => (
             <a
-              key={link.name}
-              href={link.href}
-              className="text-xs font-mono font-medium text-foreground/80 hover:text-cyan-400 transition-colors uppercase tracking-widest relative group"
+              key={path}
+              className="aic-header__link"
+              href={`${routeHref(path)}${section ? `#${section}` : ''}`}
+              aria-current={!section && (pathname === path || pathname.startsWith(`${path}/`)) ? 'page' : undefined}
             >
-              {link.name}
-              <span className={`absolute -bottom-1 h-px bg-cyan-400 transition-all duration-300 w-0 group-hover:w-full ${dir === 'rtl' ? 'right-0' : 'left-0'}`}></span>
+              {label}
             </a>
           ))}
-
-          <button
-            onClick={toggleLanguage}
-            className="flex items-center gap-2 px-3 py-1.5 rounded border border-border hover:border-cyan-500/50 text-foreground/80 hover:text-cyan-400 hover:bg-muted transition-all"
-          >
-            <Globe size={14} />
-            <span className="uppercase text-[10px] font-bold tracking-wider font-mono">{locale}</span>
-          </button>
-
-          <ThemeToggle />
-
-          <a
-            href={getAnchorHref('#contact')}
-            className="px-6 py-2 bg-cyan-900/5 dark:bg-cyan-900/20 text-cyan-600 dark:text-cyan-400 border border-cyan-500/50 hover:bg-cyan-500 hover:text-white hover:border-cyan-400 text-xs font-mono font-bold uppercase tracking-wider transition-all shadow-[0_0_10px_rgba(6,182,212,0.1)] hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]"
-          >
-            {t('nav.start')}
+          <a href={languageHref} className="aic-header__language" aria-label={languageLabel}>
+            <Globe2 size={15} aria-hidden="true" />
+            <span>{isHebrew ? 'EN' : 'HE'}</span>
           </a>
-        </div>
+        </nav>
 
-        {/* Mobile Actions */}
-        <div className="xl:hidden flex items-center gap-3">
-          <ThemeToggle />
-          
+        <div className="aic-header__actions">
+          <ContactButton className="aic-button aic-button--secondary aic-header__contact" onClick={closeMenu}>
+            {contactLabel}
+            <ArrowUpRight size={17} aria-hidden="true" />
+          </ContactButton>
           <button
-            onClick={toggleLanguage}
-            className="flex items-center gap-1 text-muted-foreground"
+            ref={menuButtonRef}
+            type="button"
+            className="aic-header__menu-toggle"
+            onClick={() => setIsMobileMenuOpen((open) => !open)}
+            aria-label={isMobileMenuOpen ? (isHebrew ? 'סגירת תפריט' : 'Close menu') : (isHebrew ? 'פתיחת תפריט' : 'Open menu')}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="aic-mobile-navigation"
           >
-            <Globe size={20} />
-            <span className="uppercase text-xs font-bold">{locale}</span>
-          </button>
-
-          <button
-            className="text-foreground hover:text-cyan-400 transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X /> : <Menu />}
+            <span>{menuLabel}</span>
+            {isMobileMenuOpen ? <X size={18} aria-hidden="true" /> : <Menu size={18} aria-hidden="true" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-          <div className="xl:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden">
-            <div className="flex flex-col p-6 gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-mono font-medium text-muted-foreground hover:text-cyan-400 uppercase"
-                >
-                  {link.name}
-                </a>
-              ))}
-              <a
-                href={getAnchorHref('#contact')}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="mt-4 px-6 py-3 bg-cyan-600 text-center text-white font-mono font-bold uppercase tracking-widest"
-              >
-                {t('nav.start')}
-              </a>
-            </div>
-          </div>
-        )}
-    </nav>
+      <nav
+        id="aic-mobile-navigation"
+        className="aic-header__mobile-nav"
+        aria-label={isHebrew ? 'ניווט לנייד' : 'Mobile navigation'}
+        hidden={!isMobileMenuOpen}
+      >
+        {links.map(({ label, path, section }) => (
+          <a
+            key={path}
+            href={`${routeHref(path)}${section ? `#${section}` : ''}`}
+            onClick={closeMenu}
+            aria-current={!section && (pathname === path || pathname.startsWith(`${path}/`)) ? 'page' : undefined}
+          >
+            {label}
+            <ArrowUpRight size={17} aria-hidden="true" />
+          </a>
+        ))}
+        <a href={languageHref} className="aic-header__mobile-language" onClick={closeMenu} lang={isHebrew ? 'en' : 'he'}>
+          <span><Globe2 size={17} aria-hidden="true" /> {isHebrew ? 'English' : 'עברית'}</span>
+          <span className="aic-header__language-code" aria-hidden="true">{isHebrew ? 'EN' : 'HE'}</span>
+        </a>
+      </nav>
+    </header>
   );
 };

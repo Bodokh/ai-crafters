@@ -14,6 +14,11 @@ type TermsPageProps = {
 const isLocaleKey = (locale: string): locale is LocaleKey =>
   routing.locales.includes(locale as LocaleKey);
 
+const termsSeoDescription = {
+  en: 'Read the AI Crafters terms governing use of our website, AI development services, privacy, intellectual property, payments, and customer responsibilities.',
+  he: 'קראו את תנאי השימוש של AI Crafters בנוגע לשימוש באתר, שירותי פיתוח AI, פרטיות, קניין רוחני, תשלומים ואחריות המשתמשים.',
+} as const;
+
 export async function generateMetadata({
   params,
 }: TermsPageProps): Promise<Metadata> {
@@ -29,11 +34,7 @@ export async function generateMetadata({
     locale,
     path: '/terms',
     title: `${messages.terms.title} | AI Crafters`,
-    description: messages.terms.intro.content,
-    robots: {
-      index: false,
-      follow: true,
-    },
+    description: termsSeoDescription[locale],
   });
 }
 
@@ -56,7 +57,7 @@ export default async function TermsPage({ params }: TermsPageProps) {
           locale,
           path: '/terms',
           title,
-          description: messages.terms.intro.content,
+          description: termsSeoDescription[locale],
         })}
       />
       <Terms />

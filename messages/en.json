@@ -1,112 +1,90 @@
 {
   "metadata": {
-    "title": "AI Crafters | AI Agent Development & Automation",
-    "description": "AI Crafters builds production-grade AI agents, workflow automation, business intelligence AI, and custom AI integrations for measurable business impact."
+    "title": "Custom AI Development & Business Automation | AI Crafters",
+    "description": "AI built around your business: custom agents, document processing and AI product integrations. Reduce manual work. Discuss your project with AI Crafters."
   },
   "clients": {
-    "title": "Trusted by Industry Leaders",
+    "title": "The Clients Who Trust Us",
     "subtitle": "Our Clients"
   },
   "nav": {
     "services": "Solutions",
-    "process": "Approach",
-    "work": "Projects",
+    "process": "Process",
+    "work": "Use Cases",
     "useCases": "Use Cases",
     "about": "Team",
     "contact": "Contact",
-    "start": "Start Now",
+    "start": "Discuss your project",
     "careers": "Careers"
   },
   "hero": {
     "title": {
-      "1": "Smart Agents.",
-      "2": "Real Efficiency."
+      "1": "Custom AI.",
+      "2": "Built around your business."
     },
-    "desc": "We design and build production-grade AI agents, workflow automation, business intelligence AI, and custom AI integrations for measurable operational impact.",
+    "desc": "We build AI agents, document workflows and product integrations around the way your business works—so your team spends less time on manual tasks and more time moving the business forward.",
     "cta": {
-      "primary": "Automate Now",
-      "secondary": "View Solutions"
+      "primary": "Discuss your project",
+      "secondary": "Explore use cases"
     },
     "feature": {
-      "fast": "Smart Automation",
-      "fastDesc": "Reduce manual tasks by 80%",
-      "secure": "Business Integration",
-      "secureDesc": "Seamless workflow connection",
-      "global": "Cost Efficiency",
-      "globalDesc": "Maximize ROI & reduce staff"
+      "fast": "Less manual work",
+      "fastDesc": "Automate repetitive steps in daily workflows",
+      "secure": "Your tools, connected",
+      "secureDesc": "AI that works with your existing systems",
+      "global": "Built for your goals",
+      "globalDesc": "A focused solution to a specific business need"
     }
   },
   "services": {
-    "title": "Intelligent",
-    "titleHighlight": "Solutions",
-    "subtitle": "We replace repetitive tasks with smart agents, allowing your team to focus on growth and strategy."
+    "title": "AI solutions.",
+    "titleHighlight": "Your requirements.",
+    "subtitle": "Whether you need to improve a workflow or add AI to your product, we design and build the solution around your data, systems and business goals."
   },
   "service": {
     "web": {
-      "title": "Autonomous Agents",
-      "desc": "Deploy digital workers that handle customer support, data entry, and scheduling 24/7 without human intervention."
+      "title": "Custom AI agents",
+      "desc": "Support customers and teams with agents that answer questions, update records and hand off decisions that need a person."
     },
     "mobile": {
-      "title": "Workflow Automation",
-      "desc": "Connect your existing tools (CRM, Email, Slack) into a unified, self-driving ecosystem."
+      "title": "Workflow automation",
+      "desc": "Connect CRM, email and business tools to move information between systems and reduce repetitive data entry."
     },
     "cloud": {
-      "title": "Business Intelligence",
-      "desc": "Turn raw data into actionable insights with predictive analytics and automated reporting systems."
+      "title": "AI reporting & insights",
+      "desc": "Turn scattered business data into clear reports, summaries and answers that help your team make informed decisions."
     },
     "ai": {
-      "title": "Custom Integration",
-      "desc": "Tailor-made AI solutions that fit perfectly into your company's specific operational needs and goals."
+      "title": "AI for your product",
+      "desc": "Add AI features to your software, from document processing and search to assistants built for your users."
     },
     "backend": {
-      "title": "Knowledge Base",
-      "desc": "Centralize your company knowledge, making it instantly accessible to employees and customers via chat."
+      "title": "Company knowledge assistants",
+      "desc": "Help employees find answers in your documents and internal knowledge, with source references and access controls."
     },
     "security": {
-      "title": "Scalable Growth",
-      "desc": "Grow your operations instantly without the need to hire, train, and manage large new teams."
-    }
-  },
-  "projects": {
-    "title": "Selected",
-    "titleHighlight": "Work",
-    "subtitle": "A glimpse into the intelligent systems we've deployed for our partners."
-  },
-  "project": {
-    "1": {
-      "title": "SupportBot Prime",
-      "desc": "A Tier-1 customer support agent capable of resolving 70% of tickets autonomously using RAG technology.",
-      "tag": "FinTech"
-    },
-    "2": {
-      "title": "LogiRoute AI",
-      "desc": "Dynamic supply chain optimization engine that reduced delivery times by 24% for a national courier.",
-      "tag": "Logistics"
-    },
-    "3": {
-      "title": "MedScan Assist",
-      "desc": "Computer vision system for preliminary analysis of X-ray imagery to assist radiologists in triage.",
-      "tag": "Healthcare"
+      "title": "Document processing",
+      "desc": "Extract and organize information from business documents, check key fields and route exceptions for human review."
     }
   },
   "process": {
-    "title": "Our Approach",
-    "subtitle": "How we transform your business operations in four simple steps.",
+    "title": "From business need to working AI",
+    "subtitle": "A clear process for choosing what to build, testing it with your team and improving it in use.",
     "1": {
-      "title": "Discovery",
-      "desc": "We analyze your current workflows to identify bottlenecks and opportunities for automation."
+      "title": "Understand the need",
+      "desc": "We map your workflow, data and constraints, then identify where AI could make a useful difference."
     },
     "2": {
-      "title": "Strategy",
-      "desc": "We design a custom AI roadmap tailored to your specific business size and goals."
+      "title": "Define the solution",
+      "desc": "Together, we define the scope, system connections and success criteria before development begins."
     },
     "3": {
-      "title": "Integration",
-      "desc": "We build and plug in smart agents that work alongside your existing team and software."
+      "title": "Build and test",
+      "desc": "We develop the solution, connect it to your systems and test it against real tasks with your team."
     },
     "4": {
-      "title": "Optimization",
-      "desc": "Continuous monitoring and refining to ensure your agents are always improving efficiency."
+      "title": "Launch and improve",
+      "desc": "We help put the solution into use, review its performance and identify the next improvements."
     }
   },
   "about": {
@@ -114,8 +92,8 @@
     "saar": {
       "name": "Saar Litmanovich",
       "title": "CEO",
-      "desc1": "6 years in Unit 8200 (2x team lead, 1x training commander)",
-      "desc2": "CTO-as-a-Service & BizDev in cyber",
+      "desc1": "6 years in Unit 8200 (twice a team lead and a training commander)",
+      "desc2": "CTO-as-a-Service and business development in cybersecurity",
       "desc3": "Co-Founder & CTO, ColorsAI – built 4 AI products shipped to market"
     },
     "eran": {
@@ -124,17 +102,10 @@
       "desc1": "10+ years of experience in software development",
       "desc2": "7+ years managing development teams in startups",
       "desc3": "VP R&D and CTO at several startups – led teams of up to 15 developers, delivered 5+ AI products end-to-end"
-    },
-    "dvir": {
-      "name": "Dvir Cohen",
-      "title": "COO",
-      "desc1": "6+ years of experience in operations management: 90 employees, hundreds of clients, and tens of millions in revenue.",
-      "desc2": "Expertise in technological efficiency and system implementation that doubled profitability.",
-      "desc3": "Industrial Engineering and Management (B.Sc) + Data Analyst – business vision and data analysis."
     }
   },
   "testimonials": {
-    "title": "Client Success",
+    "title": "Success Stories",
     "1": {
       "quote": "From idea to launch, everything was handled – development, cloud setup, and scalability. They guided us through the process with clarity and professionalism. A strong team that knows how to deliver results.",
       "name": "Yogev Moyal",
@@ -146,27 +117,28 @@
       "role": "Chief Data Officer at EveryWatch"
     },
     "3": {
-      "quote": "Nitzan provided a complex solution in a quarter of the expected time. His technical expertise and strategic thinking transformed what seemed like a months-long project into a reality in just a few weeks.",
+      "quote": "Eran delivered a complex solution in a quarter of the expected time. His technical expertise and strategic thinking turned what looked like a two-month project into a two-week reality.",
       "name": "Nitzan Shaulof",
       "role": "Senior Research Assistant"
     }
   },
   "contact": {
+    "eyebrow": "Let’s talk",
     "title": {
-      "1": "Ready to",
-      "2": "Automate?"
+      "1": "Let’s talk about",
+      "2": "your project."
     },
     "location": "Tel Aviv, Israel",
     "coverage": "+972 54-217-7133",
-    "desc": "Stop wasting time on manual tasks. Let's build your digital workforce today.",
+    "desc": "What would you like AI to do for your business? Tell us about a workflow that takes too much time, or an AI feature you want to build.",
     "form": {
-      "firstName": "Name",
+      "firstName": "Your name",
       "lastName": "Company",
-      "email": "Email",
-      "message": "How can we help?",
-      "submit": "Get Efficiency",
+      "email": "Work email",
+      "message": "What would you like to build or improve?",
+      "submit": "Discuss your project",
       "sending": "Sending...",
-      "success": "Message received! We'll reply within one business day.",
+      "success": "Thanks—your message is with us. We’ll reply by email to discuss your project.",
       "error": "Something went wrong. Email automate@ai-crafters.com and we'll help.",
       "validation": {
         "firstName": "Please tell us who we should contact.",
@@ -174,11 +146,13 @@
         "email": "An email address is required.",
         "emailFormat": "Enter a valid email address.",
         "message": "Share a short description of your challenge."
-      }
+      },
+      "messagePlaceholder": "Tell us about the process or product, the systems you use and what a useful result would look like.",
+      "nextStep": "We’ll review your message and reply to discuss your needs and the next steps."
     }
   },
   "footer": {
-    "rights": "AI Crafters. Intelligent Business Solutions.",
+    "rights": "AI Crafters. Custom AI solutions for business.",
     "terms": "Terms of Service"
   },
   "terms": {
@@ -252,8 +226,8 @@
   "careers": {
     "hiring": "We are Hiring",
     "title": "Join the",
-    "highlight": "Revolution",
-    "subtitle": "Build the intelligence that powers the future.",
+    "highlight": "team",
+    "subtitle": "Build custom AI solutions that help businesses solve real problems.",
     "clickToExpand": "Click for full details →",
     "applicationForm": {
       "title": "Apply for Position",

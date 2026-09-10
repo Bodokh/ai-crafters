@@ -50,47 +50,17 @@ export const Process = () => {
           </p>
         </div>
 
-        <div className="space-y-6 md:hidden">
-          {steps.map((step, index) => (
-            <article
-              key={step.titleKey}
-              className="rounded-2xl bg-gradient-to-br from-muted to-muted/50 p-1 transition-all duration-300 hover:from-cyan-500/50 hover:to-brand-500/50"
-            >
-              <div className="relative h-full overflow-hidden rounded-xl bg-background p-6 text-start">
-                <div
-                  className={`absolute top-0 p-3 font-mono text-7xl font-bold text-muted-foreground opacity-10 pointer-events-none ${
-                    dir === 'rtl' ? 'left-0' : 'right-0'
-                  }`}
-                >
-                  0{index + 1}
-                </div>
-                <div className="relative z-10 mb-3 flex items-center gap-3">
-                  <div className="rounded-lg border border-border bg-muted p-2.5 text-cyan-400 transition-colors">
-                    <step.icon size={20} />
-                  </div>
-                  <h3 className="font-mono text-lg font-bold text-foreground dark:scanline-effect">
-                    {t(step.titleKey)}
-                  </h3>
-                </div>
-                <p className="relative z-10 text-sm leading-relaxed text-muted-foreground">
-                  {t(step.descKey)}
-                </p>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div className="mx-auto hidden max-w-5xl grid-cols-2 gap-x-8 gap-y-4 md:grid">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-x-8 md:gap-y-4">
           {steps.map((step, index) => (
             <article
               key={step.titleKey}
               className={`rounded-2xl bg-gradient-to-br from-muted to-muted/50 p-1 transition-all duration-300 hover:from-cyan-500/50 hover:to-brand-500/50 ${
-                index % 2 === 0 ? 'mt-0' : 'mt-12'
+                index % 2 === 0 ? 'md:mt-0' : 'md:mt-12'
               }`}
             >
               <div className="relative h-full overflow-hidden rounded-xl bg-background p-6 text-start">
                 <div
-                  className={`absolute top-0 p-3 font-mono text-8xl font-bold text-muted-foreground opacity-10 pointer-events-none ${
+                  className={`pointer-events-none absolute top-0 p-3 font-mono text-7xl font-bold text-muted-foreground opacity-10 md:text-8xl ${
                     dir === 'rtl' ? 'left-0' : 'right-0'
                   }`}
                 >
@@ -98,7 +68,7 @@ export const Process = () => {
                 </div>
                 <div className="relative z-10 mb-3 flex items-center gap-3">
                   <div className="rounded-lg border border-border bg-muted p-2.5 text-cyan-400 transition-colors">
-                    <step.icon size={22} />
+                    <step.icon size={22} aria-hidden="true" />
                   </div>
                   <h3 className="font-mono text-lg font-bold text-foreground dark:scanline-effect">
                     {t(step.titleKey)}

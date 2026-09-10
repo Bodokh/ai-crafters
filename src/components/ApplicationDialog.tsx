@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useCallback, ChangeEvent, FormEvent } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import { Upload, X, FileText, Loader2 } from 'lucide-react';
+import { Upload, X, FileText, Loader2, ArrowUpRight } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -272,23 +272,23 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent
         ref={dialogContentRef}
-        className="max-w-md max-h-[90vh] overflow-y-auto bg-card border-border"
+        className="aic-application-dialog"
         dir={dir}
       >
-        <DialogHeader>
-          <DialogTitle className={`text-xl font-bold text-foreground ${alignmentClass}`}>
+        <DialogHeader className="aic-application-dialog__header">
+          <DialogTitle className={`aic-application-dialog__title ${alignmentClass}`}>
             {t('title')}
           </DialogTitle>
-          <DialogDescription className={`text-muted-foreground ${alignmentClass}`}>
+          <DialogDescription className={`aic-application-dialog__description ${alignmentClass}`}>
             {t('subtitle')}
           </DialogDescription>
         </DialogHeader>
 
         {status === 'success' ? (
-          <div className="py-8 text-center">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-emerald-500/20 flex items-center justify-center">
+          <div className="aic-application-dialog__success">
+            <div className="aic-application-dialog__success-icon">
               <svg
-                className="w-8 h-8 text-emerald-500"
+                className="w-8 h-8"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -301,11 +301,11 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
                 />
               </svg>
             </div>
-            <p className="text-foreground font-medium mb-2">{t('success')}</p>
+            <p className="aic-application-dialog__success-message">{t('success')}</p>
             <Button
               variant="outline"
               onClick={() => handleOpenChange(false)}
-              className="mt-4"
+              className="aic-button aic-button--secondary"
             >
               {locale === 'he' ? 'סגור' : 'Close'}
             </Button>
@@ -314,7 +314,7 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
           <form onSubmit={handleSubmit} className="space-y-4" noValidate>
             {/* Full Name */}
             <div className="space-y-2">
-              <Label htmlFor="fullName" className={`text-xs font-mono text-cyan-500 uppercase tracking-wider ${alignmentClass}`}>
+              <Label htmlFor="fullName" className={`aic-application-label ${alignmentClass}`}>
                 {t('fullName')} *
               </Label>
               <Input
@@ -322,11 +322,11 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
                 type="text"
                 value={formData.fullName}
                 onChange={handleChange('fullName')}
-                className={`bg-muted/50 border ${errors.fullName ? 'border-red-500' : 'border-border'} focus:border-cyan-500`}
+                className={`aic-application-input ${errors.fullName ? 'is-invalid' : ''}`}
                 aria-invalid={Boolean(errors.fullName)}
               />
               {errors.fullName && (
-                <p className={`text-xs text-red-400 font-mono ${alignmentClass}`}>
+                <p className={`aic-application-error ${alignmentClass}`}>
                   {errors.fullName}
                 </p>
               )}
@@ -334,7 +334,7 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
 
             {/* Phone */}
             <div className="space-y-2">
-              <Label htmlFor="phone" className={`text-xs font-mono text-cyan-500 uppercase tracking-wider ${alignmentClass}`}>
+              <Label htmlFor="phone" className={`aic-application-label ${alignmentClass}`}>
                 {t('phone')} *
               </Label>
               <PhoneInput
@@ -342,10 +342,10 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
                 value={formData.phone}
                 onChange={handlePhoneChange}
                 defaultCountry="IL"
-                className={`${errors.phone ? '[&_input]:border-red-500' : ''}`}
+                className={`aic-application-phone ${errors.phone ? 'is-invalid' : ''}`}
               />
               {errors.phone && (
-                <p className={`text-xs text-red-400 font-mono ${alignmentClass}`}>
+                <p className={`aic-application-error ${alignmentClass}`}>
                   {errors.phone}
                 </p>
               )}
@@ -353,7 +353,7 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
 
             {/* Email */}
             <div className="space-y-2">
-              <Label htmlFor="email" className={`text-xs font-mono text-cyan-500 uppercase tracking-wider ${alignmentClass}`}>
+              <Label htmlFor="email" className={`aic-application-label ${alignmentClass}`}>
                 {t('email')} *
               </Label>
               <Input
@@ -361,11 +361,11 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
                 type="email"
                 value={formData.email}
                 onChange={handleChange('email')}
-                className={`bg-muted/50 border ${errors.email ? 'border-red-500' : 'border-border'} focus:border-cyan-500`}
+                className={`aic-application-input ${errors.email ? 'is-invalid' : ''}`}
                 aria-invalid={Boolean(errors.email)}
               />
               {errors.email && (
-                <p className={`text-xs text-red-400 font-mono ${alignmentClass}`}>
+                <p className={`aic-application-error ${alignmentClass}`}>
                   {errors.email}
                 </p>
               )}
@@ -373,17 +373,11 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
 
             {/* CV Upload */}
             <div className="space-y-2">
-              <Label className={`text-xs font-mono text-cyan-500 uppercase tracking-wider ${alignmentClass}`}>
+              <Label className={`aic-application-label ${alignmentClass}`}>
                 {t('cv')} *
               </Label>
               <div
-                className={`relative border-2 border-dashed rounded-lg p-4 transition-colors cursor-pointer ${
-                  isDragging
-                    ? 'border-cyan-500 bg-cyan-500/10'
-                    : errors.cv
-                    ? 'border-red-500 bg-red-500/5'
-                    : 'border-border hover:border-cyan-500/50 hover:bg-muted/50'
-                }`}
+                className={`aic-application-upload ${isDragging ? 'is-dragging' : errors.cv ? 'is-invalid' : ''}`}
                 onDrop={handleDrop}
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
@@ -399,8 +393,8 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
                 {formData.cv ? (
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <FileText className="w-5 h-5 text-cyan-500" />
-                      <span className="text-sm text-foreground truncate max-w-[200px]">
+                      <FileText className="aic-application-upload__file-icon" />
+                      <span className="aic-application-upload__filename">
                         {formData.cv.name}
                       </span>
                     </div>
@@ -412,20 +406,20 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
                         e.stopPropagation();
                         removeFile();
                       }}
-                      className="h-8 w-8 text-muted-foreground hover:text-red-500"
+                      className="aic-application-upload__remove"
                     >
                       <X className="w-4 h-4" />
                     </Button>
                   </div>
                 ) : (
                   <div className="text-center py-2">
-                    <Upload className="w-8 h-8 mx-auto text-muted-foreground mb-2" />
-                    <p className="text-sm text-muted-foreground">{t('cvUpload')}</p>
+                    <Upload className="aic-application-upload__icon" />
+                    <p className="aic-application-upload__hint">{t('cvUpload')}</p>
                   </div>
                 )}
               </div>
               {errors.cv && (
-                <p className={`text-xs text-red-400 font-mono ${alignmentClass}`}>
+                <p className={`aic-application-error ${alignmentClass}`}>
                   {errors.cv}
                 </p>
               )}
@@ -433,7 +427,7 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
 
             {/* LinkedIn URL (Optional) */}
             <div className="space-y-2">
-              <Label htmlFor="linkedinUrl" className={`text-xs font-mono text-cyan-500 uppercase tracking-wider ${alignmentClass}`}>
+              <Label htmlFor="linkedinUrl" className={`aic-application-label ${alignmentClass}`}>
                 {t('linkedinUrl')}
               </Label>
               <Input
@@ -442,11 +436,11 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
                 value={formData.linkedinUrl}
                 onChange={handleChange('linkedinUrl')}
                 placeholder="https://linkedin.com/in/..."
-                className={`bg-muted/50 border ${errors.linkedinUrl ? 'border-red-500' : 'border-border'} focus:border-cyan-500`}
+                className={`aic-application-input ${errors.linkedinUrl ? 'is-invalid' : ''}`}
                 aria-invalid={Boolean(errors.linkedinUrl)}
               />
               {errors.linkedinUrl && (
-                <p className={`text-xs text-red-400 font-mono ${alignmentClass}`}>
+                <p className={`aic-application-error ${alignmentClass}`}>
                   {errors.linkedinUrl}
                 </p>
               )}
@@ -454,14 +448,14 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
 
             {/* How did you hear about us (Optional) */}
             <div className="space-y-2">
-              <Label className={`text-xs font-mono text-cyan-500 uppercase tracking-wider ${alignmentClass}`}>
+              <Label className={`aic-application-label ${alignmentClass}`}>
                 {t('heardFrom')}
               </Label>
               <Select value={formData.heardFrom} onValueChange={handleSelectChange}>
-                <SelectTrigger className="bg-muted/50 border border-border focus:border-cyan-500">
+                <SelectTrigger className="aic-application-input">
                   <SelectValue placeholder={t('heardFromPlaceholder')} />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="aic-application-select">
                   <SelectItem value="linkedin">{t('heardFromOptions.linkedin')}</SelectItem>
                   <SelectItem value="google">{t('heardFromOptions.google')}</SelectItem>
                   <SelectItem value="other">{t('heardFromOptions.other')}</SelectItem>
@@ -473,7 +467,7 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
                   value={formData.heardFromOther}
                   onChange={handleChange('heardFromOther')}
                   placeholder={t('heardFromOther')}
-                  className="mt-2 bg-muted/50 border border-border focus:border-cyan-500"
+                  className="aic-application-input mt-2"
                 />
               )}
             </div>
@@ -481,7 +475,7 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
             {/* Error Status */}
             {status === 'error' && (
               <div
-                className={`text-sm font-mono text-red-400 ${alignmentClass}`}
+                className={`aic-application-error ${alignmentClass}`}
                 role="status"
                 aria-live="polite"
               >
@@ -493,7 +487,7 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 bg-cyan-600 hover:bg-cyan-500 disabled:bg-muted disabled:text-muted-foreground text-white font-bold tracking-widest uppercase transition-all hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]"
+              className="aic-button aic-application-submit"
             >
               {isSubmitting ? (
                 <>
@@ -501,7 +495,10 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
                   {t('sending')}
                 </>
               ) : (
-                t('submit')
+                <>
+                  {t('submit')}
+                  <ArrowUpRight size={19} aria-hidden="true" />
+                </>
               )}
             </Button>
           </form>
@@ -510,4 +507,3 @@ export const ApplicationDialog: React.FC<ApplicationDialogProps> = ({
     </Dialog>
   );
 };
-

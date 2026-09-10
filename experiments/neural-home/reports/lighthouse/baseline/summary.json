@@ -1,0 +1,86 @@
+{
+  "lighthouseVersion": "13.4.1",
+  "environment": "Local production builds at http://127.0.0.1:8274, proxying Next production on localhost:8273; default Lighthouse mobile simulated4xCPU/150msRTT/1638.4kbps; sequential fresh browser runs.",
+  "results": [
+    {
+      "url": "http://127.0.0.1:8274/careers",
+      "performance": 96,
+      "fcpMs": 909.4871,
+      "lcpMs": 2713.23065,
+      "tbtMs": 12,
+      "cls": 0,
+      "speedIndexMs": 909.4871,
+      "report": "careers.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/compare/ai-agency-vs-internal-ai-team",
+      "performance": 96,
+      "fcpMs": 911.44,
+      "lcpMs": 2720.16,
+      "tbtMs": 14,
+      "cls": 0,
+      "speedIndexMs": 911.44,
+      "report": "compare--ai-agency-vs-internal-ai-team.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/",
+      "performance": 40,
+      "fcpMs": 1437.8975,
+      "lcpMs": 6420.397500000001,
+      "tbtMs": 5213.500000000001,
+      "cls": 0,
+      "speedIndexMs": 7207.077200997504,
+      "report": "home.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/resources/ai-agent-rfp-checklist",
+      "performance": 96,
+      "fcpMs": 913.7638,
+      "lcpMs": 2801.6457,
+      "tbtMs": 31,
+      "cls": 0,
+      "speedIndexMs": 913.7638,
+      "report": "resources--ai-agent-rfp-checklist.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/services/ai-agent-development",
+      "performance": 96,
+      "fcpMs": 911.9602,
+      "lcpMs": 2715.9403,
+      "tbtMs": 11.5,
+      "cls": 0,
+      "speedIndexMs": 911.9602,
+      "report": "services--ai-agent-development.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/terms",
+      "performance": 96,
+      "fcpMs": 910.6370999999999,
+      "lcpMs": 2718.95565,
+      "tbtMs": 14,
+      "cls": 0,
+      "speedIndexMs": 910.6370999999999,
+      "report": "terms.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/use-cases/inspection-to-report",
+      "performance": 97,
+      "fcpMs": 913.5047,
+      "lcpMs": 2646.25705,
+      "tbtMs": 13,
+      "cls": 0,
+      "speedIndexMs": 913.5047,
+      "report": "use-cases--inspection-to-report.report.json"
+    },
+    {
+      "url": "http://127.0.0.1:8274/use-cases",
+      "performance": 96,
+      "fcpMs": 943.6956,
+      "lcpMs": 2848.5434,
+      "tbtMs": 33,
+      "cls": 0,
+      "speedIndexMs": 943.6956,
+      "report": "use-cases.report.json"
+    }
+  ]
+}

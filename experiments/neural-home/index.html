@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const hebrew = /^\/he(?:\/|$)/.test(location.pathname);
+        root.lang = hebrew ? 'he' : 'en';
+        root.dir = hebrew ? 'rtl' : 'ltr';
+        const shortSide = Math.min(screen.width || innerWidth, screen.height || innerHeight);
+        root.dataset.renderer = matchMedia('(pointer: coarse)').matches && (shortSide <= 900 || innerWidth < 700) ? 'mobile' : 'desktop';
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches && innerHeight > 500) {
+          root.classList.add('is-enhanced');
+          root.dataset.journeyBoot = 'pending';
+          setTimeout(() => {
+            if (root.dataset.journeyBoot === 'pending') {
+              root.classList.remove('is-enhanced');
+              delete root.dataset.journeyBoot;
+            }
+          }, 8000);
+        }
+      })();
+    </script>
+    <meta name="theme-color" content="#07121f">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Custom AI agents, workflow automation and product integrations built around your business, data and existing systems. Discuss your project with AI Crafters." data-i18n-content="meta.description">
+    <title data-i18n="meta.title">Custom AI Development &amp; Automation | AI Crafters</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="/brand/favicon-96x96.png">
+    <link rel="preload" href="/rubik-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/src/styles.css">
+    <link rel="stylesheet" href="/src/localization.css">
+    <link rel="stylesheet" href="/src/readability.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+    <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+      <symbol id="i-document" viewbox="0 0 32 32"><path d="M8 4h11l6 6v18H8zM18 4v8h7M12 17h9M12 22h7"></path></symbol>
+      <symbol id="i-data" viewbox="0 0 32 32"><ellipse cx="16" cy="8" rx="10" ry="4"></ellipse><path d="M6 8v8c0 5 20 5 20 0V8M6 16v8c0 5 20 5 20 0v-8"></path></symbol>
+      <symbol id="i-branch" viewbox="0 0 32 32"><path d="M16 7v6M8 21v-8h16v8"></path><circle cx="16" cy="4" r="3"></circle><rect x="4" y="21" width="8" height="7" rx="2"></rect><rect x="20" y="21" width="8" height="7" rx="2"></rect></symbol>
+      <symbol id="i-spark" viewbox="0 0 32 32"><path d="m16 3 3.7 9.3L29 16l-9.3 3.7L16 29l-3.7-9.3L3 16l9.3-3.7Z"></path></symbol>
+      <symbol id="i-chart" viewbox="0 0 32 32"><path d="M5 4v23h24M10 22v-6M17 22V9M24 22V4"></path></symbol>
+      <symbol id="i-connect" viewbox="0 0 32 32"><path d="m12 20-3 3a5 5 0 0 1-7-7l6-6a5 5 0 0 1 7 0m5 2 3-3a5 5 0 0 1 7 7l-6 6a5 5 0 0 1-7 0M11 20l10-8"></path></symbol>
+      <symbol id="i-check" viewbox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></symbol>
+      <symbol id="i-arrow" viewbox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"></path></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5m7-7-7 7 7 7"></path></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"></path></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"></path></symbol>
+    </defs></svg>
+
+    <header class="site-header">
+      <a href="/" class="wordmark" aria-label="AI Crafters home" data-i18n-aria-label="aria.home"><span class="brand-logo"><img src="/_next/image?url=%2Fimages%2Flogo.png&amp;w=256&amp;q=75" width="256" height="256" alt="" fetchpriority="high"></span><span class="wordmark-text" dir="ltr">AI CRAFTERS</span></a>
+      <nav class="desktop-nav" aria-label="Main navigation" data-i18n-aria-label="aria.mainNav"><a href="/use-cases" data-i18n="nav.cases">Use cases</a><a href="/careers" data-i18n="nav.careers">Careers</a></nav>
+      <a class="language-switch" href="/he" hreflang="he" lang="he" aria-label="Switch to Hebrew" data-language-switch>עברית</a>
+      <button class="header-cta" type="button" data-contact-open aria-haspopup="dialog" data-i18n="nav.contact">Let’s talk <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+      <details class="mobile-menu"><summary data-i18n="nav.menu">Menu <span aria-hidden="true"><i></i><i></i></span></summary><nav aria-label="Mobile navigation" data-i18n-aria-label="aria.mobileNav"><a href="/use-cases" data-i18n="nav.cases">Use cases</a><a href="/careers" data-i18n="nav.careers">Careers</a><button type="button" data-contact-open aria-haspopup="dialog" data-i18n="nav.contact">Let’s talk</button></nav></details>
+    </header>
+
+    <main id="main">
+      <div class="journey" aria-label="From your knowledge to useful action" data-i18n-aria-label="aria.journey">
+        <div class="journey-stage">
+          <div class="neural-world" aria-hidden="true">
+<div class="scene-fallback"><img class="scene-poster" src="/neural-poster.webp" width="1408" height="880" alt="" decoding="async"></div>
+<canvas id="neural-field" aria-hidden="true"></canvas><canvas id="neural-canvas"></canvas>
+</div>
+          <div class="reading-shade" aria-hidden="true"></div>
+          <div class="journey-curtain" aria-hidden="true"></div>
+          <div class="chapters">
+            <section class="chapter is-active" id="start" data-chapter="0" aria-labelledby="heading-start">
+              <div class="story-beat beat-hero is-active" data-beat="0" data-side="left" data-key="hero"><div class="beat-content">
+<div class="hero-copy">
+<p class="eyebrow" data-i18n="hero.eyebrow"><span class="signal-dot" aria-hidden="true"></span>Tailored AI for your business</p>
+<h1 id="heading-start" tabindex="-1" data-i18n="hero.title">Custom AI.<br>Built for you.</h1>
+<p class="lead" data-i18n="hero.lead">Custom AI agents, workflows, and product features.<br>Built around your systems, data, and business goals.</p>
+<div class="hero-actions">
+<button class="button" type="button" data-contact-open aria-haspopup="dialog" data-i18n="hero.explore">Discuss your project <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button><a class="quiet-link" href="/use-cases" data-i18n="hero.work">See client results <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a>
+</div>
+<a class="hero-scroll-cue" href="#knowledge" aria-label="Scroll to explore the neural journey" data-i18n-aria-label="aria.scroll"><span class="mouse-shell" aria-hidden="true"><i class="mouse-wheel"></i></span><span data-i18n="hero.scroll">Scroll to explore</span></a>
+</div>
+              </div></div></section>
+
+            <section class="chapter" id="knowledge" data-chapter="1" aria-labelledby="beat-heading-1">
+              <div class="story-beat beat-sources" data-beat="1" data-side="right" data-key="sources">
+<div class="beat-heading">
+<p class="eyebrow" data-i18n="sources.eyebrow"><span class="signal-dot" aria-hidden="true"></span>Knowledge, connected</p>
+<h2 id="beat-heading-1" tabindex="-1" data-i18n="sources.title">It starts with what you know.</h2>
+</div>
+<div class="beat-content"><div class="source-pair">
+<article class="glass-card source-card"><svg class="icon" aria-hidden="true"><use href="#i-document"></use></svg><h3 data-i18n="sources.knowledgeTitle">What you know</h3>
+<p data-i18n="sources.knowledge">Policies, documents,<br>and team expertise.</p>
+<span class="card-tag" data-i18n="sources.knowledgeTag">Company knowledge</span></article><article class="glass-card source-card"><svg class="icon" aria-hidden="true"><use href="#i-data"></use></svg><h3 data-i18n="sources.dataTitle">What you see</h3>
+<p data-i18n="sources.data">Business data from<br>the systems you use.</p>
+<span class="card-tag" data-i18n="sources.dataTag">Trusted sources</span></article>
+</div></div>
+</div>
+<div class="story-beat beat-context" data-beat="2" data-side="right" data-key="context">
+<div class="beat-heading">
+<p class="eyebrow" data-i18n="context.eyebrow"><span class="signal-dot" aria-hidden="true"></span>Your context, connected</p>
+<h2 id="beat-heading-2" tabindex="-1" data-i18n="context.title">An answer with a foundation.</h2>
+</div>
+<div class="beat-content"><div class="context-composition">
+<article class="glass-card context-card"><span class="context-orbit" aria-hidden="true"><i></i><i></i><i></i></span><div>
+<p class="card-overline" data-i18n="context.overline">Shared context</p>
+<p data-i18n="context.description">Relevant sources. Clear permissions. Your business rules.</p>
+</div></article><p class="map-caption" data-i18n="context.caption"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Grounded in your information, with sources your team can check.</p>
+</div></div>
+</div></section>
+
+            <section class="chapter" id="agents" data-chapter="2" aria-labelledby="beat-heading-3">
+              <div class="story-beat beat-agent" data-beat="3" data-side="left" data-key="agent">
+<div class="beat-heading">
+<p class="eyebrow" data-i18n="agent.eyebrow"><span class="signal-dot" aria-hidden="true"></span>AI agents</p>
+<h2 id="beat-heading-3" tabindex="-1" data-i18n="agent.title">AI agents, built for your team.</h2>
+</div>
+<div class="beat-content">
+<article class="glass-card capability-card capability-feature"><div class="card-heading">
+<svg class="icon" aria-hidden="true"><use href="#i-spark"></use></svg><span data-i18n="agent.eyebrow">AI agents</span>
+</div>
+<p data-i18n="agent.description">Custom agents that read documents, use your tools, and follow your procedures, with your team reviewing key decisions.</p>
+<div class="agent-flow" aria-label="An agent follows four stages" data-i18n-aria-label="aria.agent">
+<span data-i18n="agent.understand"><i></i>Understand</span><span data-i18n="agent.decide"><i></i>Decide</span><span data-i18n="agent.act"><i></i>Act</span><span data-i18n="agent.review"><i></i>Review</span>
+</div>
+<a class="text-link" href="/services/ai-agent-development" data-i18n="agent.link">Explore custom AI agents <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a></article>
+                </div>
+</div>
+<div class="story-beat beat-workflow" data-beat="4" data-side="left" data-key="workflow">
+<div class="beat-heading">
+<p class="eyebrow" data-i18n="workflow.eyebrow"><span class="signal-dot" aria-hidden="true"></span>Workflow automation</p>
+<h2 id="beat-heading-4" tabindex="-1" data-i18n="workflow.title">Less busywork. More progress.</h2>
+</div>
+<div class="beat-content">
+<article class="glass-card capability-card"><div class="card-heading">
+<svg class="icon" aria-hidden="true"><use href="#i-branch"></use></svg><span data-i18n="workflow.eyebrow">Workflow automation</span>
+</div>
+<p data-i18n="workflow.description">Automate work across your CRM, email, and documents, with approvals built into the flow. Less chasing. Fewer handoffs.</p>
+<div class="workflow-diagram" aria-hidden="true">
+<span data-i18n="workflow.request">Request</span><i></i><span data-i18n="agent.review">Review</span><i></i><span data-i18n="workflow.done">Done <b>✓</b></span>
+</div></article>
+                </div>
+</div>
+<div class="story-beat beat-intelligence" data-beat="5" data-side="right" data-key="intelligence">
+<div class="beat-heading">
+<p class="eyebrow" data-i18n="intelligence.eyebrow"><span class="signal-dot" aria-hidden="true"></span>Business intelligence</p>
+<h2 id="beat-heading-5" tabindex="-1" data-i18n="intelligence.title">Ask your data.</h2>
+</div>
+<div class="beat-content">
+<article class="glass-card capability-card"><div class="card-heading">
+<svg class="icon" aria-hidden="true"><use href="#i-chart"></use></svg><span data-i18n="intelligence.eyebrow">Business intelligence</span>
+</div>
+<p data-i18n="intelligence.description">Get answers and charts from your existing business data, in plain language. Make the next decision with a clearer picture.</p>
+<div class="data-question" data-i18n="intelligence.question">
+<span aria-hidden="true">“</span>Which products are driving this quarter’s growth?</div></article>
+                </div>
+</div>
+<div class="story-beat beat-integrations" data-beat="6" data-side="right" data-key="integrations">
+<div class="beat-heading">
+<p class="eyebrow" data-i18n="integrations.eyebrow"><span class="signal-dot" aria-hidden="true"></span>Custom AI integrations</p>
+<h2 id="beat-heading-6" tabindex="-1" data-i18n="integrations.title">Fits into what you already use.</h2>
+</div>
+<div class="beat-content"><article class="glass-card capability-card integration-card"><div>
+<div class="card-heading">
+<svg class="icon" aria-hidden="true"><use href="#i-connect"></use></svg><span data-i18n="integrations.eyebrow">Custom AI integrations</span>
+</div>
+<p data-i18n="integrations.description">Add AI features to your product or connect AI to your operations, with the data access and controls your business needs.</p>
+</div>
+<div class="integration-chips" aria-label="Integration areas" data-i18n-aria-label="aria.integrations">
+<span data-i18n="integrations.product">Your product</span><span data-i18n="integrations.crm">Your CRM</span><span data-i18n="integrations.data">Your data</span><span data-i18n="integrations.rules">Your rules</span>
+</div></article></div>
+</div></section>
+
+            <section class="chapter" id="results" data-chapter="3" aria-labelledby="beat-heading-7">
+              <div class="story-beat beat-insurance" data-beat="7" data-side="left" data-key="insurance">
+<div class="beat-heading">
+<p class="eyebrow" data-i18n="insurance.eyebrow"><span class="signal-dot" aria-hidden="true"></span>Real impact / Insurance operations</p>
+<h2 id="beat-heading-7" tabindex="-1" data-i18n="insurance.title">A claim moves forward.</h2>
+</div>
+<div class="beat-content">
+<article class="glass-card result-card result-feature"><div class="result-top">
+<span data-i18n="insurance.industry">Insurance operations</span><span class="status-tag" data-i18n="results.live"><i></i>In production</span>
+</div>
+<p data-i18n="insurance.description">An AI agent reads policies, medical summaries, and invoices, then prepares a payout recommendation for the adjuster.</p>
+<div class="time-comparison" aria-label="Average claim handling time reduced from 10 minutes to 3 minutes" data-i18n-aria-label="aria.claimTime">
+<div>
+<span data-i18n="results.before">Before</span><strong>10 <small data-i18n="results.minutes">min</small></strong><i class="before-bar"></i>
+</div>
+<div>
+<span data-i18n="results.withAI">With AI</span><strong>3 <small data-i18n="results.minutes">min</small></strong><i class="after-bar"></i>
+</div>
+</div>
+<p class="result-caption" data-i18n="insurance.caption">Average handling time fell about 70% in this project.</p>
+<details class="case-details"><summary data-i18n="results.workflow">Inside the workflow <span aria-hidden="true">+</span></summary><div><p data-i18n="insurance.detail">The agent follows the insurer’s own claims procedure and grounds recommendations in the submitted policy and supporting documents. Accuracy controls and adjuster review remain part of the process.</p></div></details></article>
+                </div>
+</div>
+<div class="story-beat beat-reports" data-beat="8" data-side="left" data-key="reports">
+<div class="beat-heading">
+<p class="eyebrow" data-i18n="reports.eyebrow"><span class="signal-dot" aria-hidden="true"></span>Real impact / Field sales</p>
+<h2 id="beat-heading-8" tabindex="-1" data-i18n="reports.title">From inspection to a clean report.</h2>
+</div>
+<div class="beat-content">
+<article class="glass-card result-card result-report"><div class="result-top">
+<span data-i18n="reports.industry">Field sales</span><span class="status-tag" data-i18n="results.live"><i></i>In production</span>
+</div>
+<div class="report-metric">
+<strong>5<span data-i18n="results.minutes">min</span></strong><svg class="icon" aria-hidden="true"><use href="#i-document"></use></svg>
+</div>
+<p data-i18n="reports.description">In this project, video and voice findings become a scope of work ready for signature while the representative is on site.</p>
+<details class="case-details"><summary data-i18n="results.workflow">Inside the workflow <span aria-hidden="true">+</span></summary><div><p data-i18n="reports.detail">The field app captures findings, classifies severity, annotates photo hazards, and turns voice notes into a report. The previous process took more than a day or depended on a rough verbal offer.</p></div></details></article>
+                </div>
+</div>
+<div class="story-beat beat-revenue" data-beat="9" data-side="right" data-key="revenue">
+<div class="beat-heading">
+<p class="eyebrow" data-i18n="revenue.eyebrow"><span class="signal-dot" aria-hidden="true"></span>Real impact / Retail analytics</p>
+<h2 id="beat-heading-9" tabindex="-1" data-i18n="revenue.title">A new AI revenue stream.</h2>
+</div>
+<div class="beat-content"><article class="glass-card result-card result-bi"><div class="result-top">
+<span data-i18n="revenue.industry">Retail analytics</span><span class="status-tag" data-i18n="results.live"><i></i>In production</span>
+</div>
+<p data-i18n="revenue.description">We built a natural-language Q&amp;A layer over an existing BI platform, creating a paid module that business users can query directly.</p>
+<details class="case-details"><summary data-i18n="results.workflow">Inside the workflow <span aria-hidden="true">+</span></summary><div><p data-i18n="revenue.detail">Users ask business questions and receive answers and charts from the existing structured data model. Retrieval and calculation logic lets them explore their data without SQL, exports, or spreadsheets.</p></div></details></article></div>
+</div></section>
+
+            <section class="chapter" id="process" data-chapter="4" aria-labelledby="beat-heading-10">
+              <div class="story-beat beat-discovery" data-beat="10" data-side="right" data-key="discovery">
+<div class="beat-heading">
+<p class="eyebrow" data-i18n="discovery.eyebrow"><span class="signal-dot" aria-hidden="true"></span>Our approach / 01–02</p>
+<h2 id="beat-heading-10" tabindex="-1" data-i18n="discovery.title">Start with the right question.</h2>
+</div>
+<div class="beat-content"><ol class="process-steps">
+<li>
+<span class="step-node">01</span><div>
+<h3 data-i18n="discovery.firstTitle">Understand the work</h3>
+<p data-i18n="discovery.firstDescription">Map your workflow, find the bottleneck, and agree on a measurable business outcome.</p>
+<span class="step-output" data-i18n="discovery.firstOutput">Discovery &amp; mapping</span>
+</div>
+</li>
+<li>
+<span class="step-node">02</span><div>
+<h3 data-i18n="discovery.secondTitle">Design the right system</h3>
+<p data-i18n="discovery.secondDescription">Define the data, integrations, and review points. Shape the scope around your priorities.</p>
+<span class="step-output" data-i18n="discovery.secondOutput">Strategy &amp; architecture</span>
+</div>
+</li>
+</ol></div>
+</div>
+<div class="story-beat beat-delivery" data-beat="11" data-side="left" data-key="delivery">
+<div class="beat-heading">
+<p class="eyebrow" data-i18n="delivery.eyebrow"><span class="signal-dot" aria-hidden="true"></span>Our approach / 03–04</p>
+<h2 id="beat-heading-11" tabindex="-1" data-i18n="delivery.title">From idea to everyday use.</h2>
+</div>
+<div class="beat-content"><ol class="process-steps">
+<li>
+<span class="step-node">03</span><div>
+<h3 data-i18n="delivery.firstTitle">Build it into your day</h3>
+<p data-i18n="delivery.firstDescription">Connect your tools, test against real cases, and introduce the system with your team.</p>
+<span class="step-output" data-i18n="delivery.firstOutput">Build &amp; integration</span>
+</div>
+</li>
+<li>
+<span class="step-node">04</span><div>
+<h3 data-i18n="delivery.secondTitle">Keep making it better</h3>
+<p data-i18n="delivery.secondDescription">Measure results against your goals and improve the system as your business evolves.</p>
+<span class="step-output" data-i18n="delivery.secondOutput">Measure &amp; optimize</span>
+</div>
+</li>
+</ol></div>
+</div></section>
+
+            <section class="chapter" id="team" data-chapter="5" aria-labelledby="beat-heading-12">
+              <div class="story-beat beat-saar" data-beat="12" data-side="left" data-key="saar">
+<div class="beat-heading">
+<p class="eyebrow" data-i18n="people.eyebrow"><span class="signal-dot" aria-hidden="true"></span>The people behind the connections</p>
+<h2 id="beat-heading-12" tabindex="-1" data-i18n="saar.title">Builders, by nature.</h2>
+</div>
+<div class="beat-content"><article class="founder-card"><div class="founder-image">
+<img src="/team/saar.webp" width="520" height="560" alt="Saar Litmanovich" loading="lazy" decoding="async" data-i18n-alt="saar.name"><a href="https://www.linkedin.com/in/saar-litmanovich/" target="_blank" rel="noopener noreferrer" aria-label="Saar Litmanovich on LinkedIn, opens in a new tab" data-i18n-aria-label="aria.saar">in</a>
+</div>
+<div class="founder-heading">
+<h3 data-i18n="saar.name">Saar Litmanovich</h3>
+<span data-i18n="saar.role">CEO</span>
+</div>
+<p data-i18n="saar.description">Former Unit 8200 team lead. Co-founder and CTO of ColorsAI, with four AI products brought to market.</p></article></div>
+</div>
+<div class="story-beat beat-eran" data-beat="13" data-side="right" data-key="eran">
+<div class="beat-heading">
+<p class="eyebrow" data-i18n="people.eyebrow"><span class="signal-dot" aria-hidden="true"></span>The people behind the connections</p>
+<h2 id="beat-heading-13" tabindex="-1" data-i18n="eran.title">Built on technical depth.</h2>
+</div>
+<div class="beat-content"><article class="founder-card"><div class="founder-image">
+<img src="/team/eran.webp" width="520" height="560" alt="Eran Bodokh" loading="lazy" decoding="async" data-i18n-alt="eran.name"><a href="https://www.linkedin.com/in/bodokh/" target="_blank" rel="noopener noreferrer" aria-label="Eran Bodokh on LinkedIn, opens in a new tab" data-i18n-aria-label="aria.eran">in</a>
+</div>
+<div class="founder-heading">
+<h3 data-i18n="eran.name">Eran Bodokh</h3>
+<span data-i18n="eran.role">CTO</span>
+</div>
+<p data-i18n="eran.description">Over a decade in software development. Former VP R&amp;D and CTO, delivering AI products from architecture to launch.</p></article></div>
+</div>
+<div class="story-beat beat-trust" data-beat="14" data-side="left" data-key="trust">
+<div class="beat-heading">
+<p class="eyebrow" data-i18n="trust.eyebrow"><span class="signal-dot" aria-hidden="true"></span>In our clients’ words</p>
+<h2 id="beat-heading-14" tabindex="-1" data-i18n="trust.title">Good work travels.</h2>
+</div>
+<div class="beat-content">
+<figure class="client-quote"><blockquote data-i18n="trust.quote">“From idea to launch, everything was handled – development, cloud setup, and scalability. They guided us through the process with clarity and professionalism. A strong team that knows how to deliver results.”</blockquote>
+<figcaption><span data-i18n="trust.name">Yogev Moyal</span><span data-i18n="trust.role">CTO at Worklik</span></figcaption></figure>
+            </div>
+</div></section>
+
+            <section class="chapter" id="faq" data-chapter="6" aria-labelledby="beat-heading-15">
+              <div class="story-beat beat-questions" data-beat="15" data-side="left" data-key="questions">
+<div class="beat-heading">
+<p class="eyebrow" data-i18n="questions.eyebrow"><span class="signal-dot" aria-hidden="true"></span>A few things you might be thinking</p>
+<h2 id="beat-heading-15" tabindex="-1" data-i18n="questions.title">Good questions. Clear answers.</h2>
+</div>
+<div class="beat-content"><div class="faq-list">
+<details open=""><summary data-i18n="questions.offerTitle">What custom AI solutions do you build?<span aria-hidden="true">+</span></summary><div><p data-i18n="questions.offer">We build custom AI agents, automated workflows, knowledge assistants, business intelligence, and AI product features around your systems, data, and business goals.</p></div></details><details open=""><summary data-i18n="questions.fitTitle">When does custom AI make sense?<span aria-hidden="true">+</span></summary><div><p data-i18n="questions.fit">Custom AI makes sense when your workflow, data, or product needs go beyond a ready-made tool. Start with a repeated task or a new feature whose value you can measure.</p></div></details>
+</div></div>
+</div>
+<div class="story-beat beat-controls" data-beat="16" data-side="right" data-key="controls">
+<div class="beat-heading">
+<p class="eyebrow" data-i18n="hero.eyebrow"><span class="signal-dot" aria-hidden="true"></span>Tailored AI for your business</p>
+<h2 id="beat-heading-16" tabindex="-1" data-i18n="controls.title">Connected. And in control.</h2>
+</div>
+<div class="beat-content"><div class="faq-list">
+<details open=""><summary data-i18n="controls.toolsTitle">Does this work with our existing software?<span aria-hidden="true">+</span></summary><div><p data-i18n="controls.tools">We connect AI to your existing software where APIs, data access, and permissions allow. We check integration options and constraints before defining the solution.</p></div></details><details open=""><summary data-i18n="controls.reviewTitle">How do you keep AI decisions under control?<span aria-hidden="true">+</span></summary><div><p data-i18n="controls.review">Your team sets the rules. We define approved sources, access permissions, and human review points, then test real cases before rollout.</p></div></details>
+</div></div>
+</div>
+<div class="story-beat beat-first-step" data-beat="17" data-side="right" data-key="first-step">
+<div class="beat-heading">
+<p class="eyebrow" data-i18n="firstStep.eyebrow"><span class="signal-dot" aria-hidden="true"></span>Your first step</p>
+<h2 id="beat-heading-17" tabindex="-1" data-i18n="firstStep.title">Start with a conversation.</h2>
+</div>
+<div class="beat-content"><div class="faq-list"><details open=""><summary data-i18n="firstStep.question">How do you scope cost and timing?<span aria-hidden="true">+</span></summary><div><p data-i18n="firstStep.answer">Tell us about the workflow or product you want to improve. We review your goals, data, and integrations, then define a focused first scope, estimated cost, and timeline.</p></div></details></div></div>
+</div></section>
+
+            <section class="chapter" id="contact" data-chapter="7" aria-labelledby="heading-contact"><div class="story-beat beat-contact" data-beat="18" data-side="left" data-key="contact"><div class="beat-content"><div class="contact-composition">
+<div class="contact-content">
+<p class="eyebrow" data-i18n="contact.eyebrow"><span class="signal-dot" aria-hidden="true"></span>Your business. Your AI solution.</p>
+<h2 id="heading-contact" tabindex="-1" data-i18n="contact.title">What could<br>work smarter?</h2>
+<p class="lead" data-i18n="contact.lead">Tell us what you want to improve or build.<br>Let’s shape an AI solution around your business.</p>
+<button class="button" type="button" data-contact-open aria-haspopup="dialog" data-i18n="contact.start">Discuss your project <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button><a class="contact-email" href="mailto:automate@ai-crafters.com">automate@ai-crafters.com</a>
+</div>
+<footer class="site-footer aic-footer">
+<div class="aic-footer__inner">
+<a href="/" class="aic-footer__brand" aria-label="AI Crafters home" data-i18n-aria-label="aria.home"><span class="aic-footer__mark"><img src="/_next/image?url=%2Fimages%2Flogo.png&amp;w=256&amp;q=75" width="256" height="256" alt="" loading="lazy"></span><span class="aic-footer__wordmark" dir="ltr">AI CRAFTERS</span></a>
+<nav class="aic-footer__nav" aria-label="Footer navigation" data-i18n-aria-label="aria.footer"><a href="/use-cases" data-i18n="nav.casesFooter">Use Cases</a><a href="/careers" data-i18n="nav.careers">Careers</a><a href="/terms" aria-label="Terms of Service" data-i18n="footer.terms" data-i18n-aria-label="aria.terms">Terms</a></nav>
+<div class="aic-footer__contact"><a href="mailto:automate@ai-crafters.com" dir="ltr">automate@ai-crafters.com</a><a href="tel:+972542177133" dir="ltr">+972 54-217-7133</a></div>
+<div class="aic-footer__meta"><span data-i18n="footer.location">Tel Aviv, Israel</span><small dir="ltr">© 2026 AI Crafters</small></div>
+</div>
+</footer>
+</div></div></div></section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <aside class="journey-footer" aria-label="Page journey" data-i18n-aria-label="aria.pageJourney"><span class="current-checkpoint" data-i18n="chapters.start">Start</span><nav class="chapter-nav" aria-label="Jump to a checkpoint" data-i18n-aria-label="aria.checkpoint"><a href="#start" aria-current="step"><span class="nav-node"></span><span class="nav-label" data-i18n="chapters.start">Start</span></a><a href="#knowledge"><span class="nav-node"></span><span class="nav-label" data-i18n="chapters.knowledge">Knowledge</span></a><a href="#agents"><span class="nav-node"></span><span class="nav-label" data-i18n="chapters.capabilities">Capabilities</span></a><a href="#results"><span class="nav-node"></span><span class="nav-label" data-i18n="chapters.impact">Impact</span></a><a href="#process"><span class="nav-node"></span><span class="nav-label" data-i18n="chapters.approach">Our approach</span></a><a href="#team"><span class="nav-node"></span><span class="nav-label" data-i18n="chapters.people">People</span></a><a href="#faq"><span class="nav-node"></span><span class="nav-label" data-i18n="chapters.questions">Questions</span></a><a href="#contact"><span class="nav-node"></span><span class="nav-label" data-i18n="chapters.contact">Let’s talk</span></a></nav><div class="journey-beat-controls"><button type="button" data-previous-beat aria-label="Previous checkpoint" data-i18n-aria-label="aria.previous"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-left"></use></svg></button><span data-beat-counter>01 / 19</span><button type="button" data-next-beat aria-label="Next checkpoint" data-i18n-aria-label="aria.next"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></button></div><button class="motion-toggle" data-motion-toggle type="button" aria-pressed="false" hidden data-i18n="motion.pause">Pause motion</button></aside>
+    <div class="journey-progress" aria-hidden="true"><span></span></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

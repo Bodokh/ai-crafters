@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import { AppContent } from '@/components/AppContent';
@@ -64,7 +65,9 @@ export default async function HomePage({ params }: HomePageProps) {
           faqJsonLd(locale),
         ]}
       />
-      <AppContent />
+      <NextIntlClientProvider messages={{ contact: messages.contact }}>
+        <AppContent />
+      </NextIntlClientProvider>
     </>
   );
 }

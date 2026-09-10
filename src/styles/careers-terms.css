@@ -1,0 +1,124 @@
+/* Quiet companion pages for the neural homepage. Motion responds to interaction only. */
+.aic-site .careers-hero { max-width: 830px; }
+.aic-site .careers-hero .aic-eyebrow { display: inline-flex; align-items: center; gap: 10px; }
+.aic-site .careers-list { display: grid; gap: 22px; max-width: 960px; padding-bottom: 96px; }
+.aic-site .career-card { padding: clamp(24px, 3.5vw, 42px); transition: border-color 220ms ease, background-color 220ms ease; }
+.aic-site .career-card:hover,
+.aic-site .career-card[data-expanded="true"] { border-color: #72749f; }
+.aic-site .career-card__header { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: start; gap: 18px; }
+.aic-site .career-card__icon { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #547186; border-radius: 14px; color: #79e6fa; background: #153047; }
+.aic-site .career-card__heading h2 { margin: 0; color: #edf6fc; font-size: clamp(22px, 2.4vw, 29px); font-weight: 400; line-height: 1.3; letter-spacing: -.035em; }
+.aic-site .career-card__heading h2 button { text-align: start; cursor: pointer; }
+.aic-site .career-card__heading h2 button:focus-visible { outline: 2px solid #79e6fa; outline-offset: 5px; border-radius: 4px; }
+.aic-site .career-card__tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+.aic-site .career-card__tags span { padding: 6px 10px; border: 1px solid #42536d; border-radius: 999px; color: #c8d8e5; background: #15263a; font-size: 11px; font-weight: 400; line-height: 1.25; }
+.aic-site .career-card__tags span:last-child { color: #d3c5ff; border-color: #575176; background: #242339; }
+.aic-site .career-card__toggle { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #52647c; border-radius: 50%; color: #cadbea; background: #15283b; cursor: pointer; transition: color 180ms ease, border-color 180ms ease; }
+.aic-site .career-card__toggle svg { transition: transform 240ms cubic-bezier(.22, 1, .36, 1); }
+.aic-site .career-card__toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.aic-site .career-card__toggle:hover { color: #fff; border-color: #b6a5ef; }
+.aic-site .career-card__toggle:focus-visible { outline: 2px solid #79e6fa; outline-offset: 4px; }
+.aic-site .career-card__intro { max-width: 78ch; margin: 25px 0 0; color: #c3d6e4; font-size: 16px; line-height: 1.8; }
+.aic-site .career-card__expand { margin-top: 15px; min-height: 44px; font-size: 13px; }
+.aic-site .career-card__details { display: grid; gap: 32px; margin-top: 27px; padding-top: 27px; border-top: 1px solid #3b4b65; color: #b8cede; font-size: 15px; line-height: 1.85; }
+.aic-site .career-card__details > p { max-width: 78ch; }
+.aic-site .career-card__details h3 { display: flex; align-items: center; gap: 11px; margin-bottom: 17px; color: #edf6fc; font-size: 20px; font-weight: 400; letter-spacing: -.025em; }
+.aic-site .career-card__details h3 svg { color: #c4b5fd; flex-shrink: 0; }
+.aic-site .career-card__details ul { display: grid; gap: 13px; list-style: none; margin: 0; padding: 0; }
+.aic-site .career-card__details li { display: flex; align-items: start; gap: 12px; }
+.aic-site .career-card__details li svg { margin-top: 5px; flex-shrink: 0; color: #79e6fa; }
+.aic-site .career-card__advantages li svg { color: #bcb0ec; }
+.aic-site .career-card__apply { border-top: 1px solid #3b4b65; padding-top: 26px; }
+.aic-site .career-card__apply h4 { margin-bottom: 9px; color: #edf6fc; font-size: 18px; font-weight: 400; }
+.aic-site .career-card__apply p { max-width: 75ch; }
+.aic-site .career-card__apply .aic-button { margin-top: 23px; }
+
+.aic-site .terms-container { max-width: 950px; }
+.aic-site .terms-updated { margin-top: 25px; color: #b8cede; font-size: 14px; }
+.aic-site .terms-document { padding: 0 clamp(23px, 4vw, 48px); }
+.aic-site .terms-section { padding: 31px 0; }
+.aic-site .terms-section + .terms-section { border-top: 1px solid #364761; }
+.aic-site .terms-section__layout { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 21px; }
+.aic-site .terms-section__icon { padding-top: 4px; color: #b7a7f1; }
+.aic-site .terms-section__title { margin: 0 0 13px; color: #edf6fc; font-size: 22px; font-weight: 400; line-height: 1.4; letter-spacing: -.025em; }
+.aic-site .terms-section__copy { color: #b8cede; font-size: 15px; line-height: 1.9; overflow-wrap: anywhere; }
+.aic-site .terms-section__copy ul { margin-top: 13px; padding-inline-start: 22px; list-style: disc; }
+.aic-site .terms-section__copy li + li { margin-top: 6px; }
+.aic-site .terms-contact { margin-top: 28px; padding: 32px clamp(23px, 4vw, 48px); }
+.aic-site .terms-contact__copy { margin-bottom: 20px; color: #b8cede; font-size: 15px; line-height: 1.8; }
+.aic-site .terms-contact .aic-text-link { overflow-wrap: anywhere; font-size: 14px; }
+.aic-site .terms-notice { margin: 26px 0 80px; color: #a9bdce; font-size: 13px; line-height: 1.8; }
+
+/* Radix content is portalled to body, where the site theme lives. */
+.aic-site .aic-application-dialog { width: min(560px, calc(100% - 32px)); max-width: 560px; max-height: min(90dvh, 880px); overflow-y: auto; overscroll-behavior: contain; padding: 34px; border: 1px solid #5c587e; border-radius: 24px; color: #edf6fc; background: linear-gradient(135deg, #122b40, #171b30); box-shadow: 0 28px 90px #0009; scrollbar-color: #6c648e #122337; }
+.aic-site .aic-application-dialog__header { padding-inline-end: 35px; margin-bottom: 8px; }
+.aic-site .aic-application-dialog__title { color: #edf6fc; font-size: 30px; font-weight: 350; letter-spacing: -.045em; line-height: 1.2; }
+.aic-site .aic-application-dialog__description { margin-top: 12px; color: #b8cede; font-size: 14px; line-height: 1.7; }
+.aic-site .aic-application-dialog > button:last-child { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid #666485; border-radius: 50%; background: #20273d; color: #e6edfa; opacity: 1; transform: none; transition: border-color 180ms ease, background-color 180ms ease; }
+.aic-site .aic-application-dialog > button:last-child:hover { border-color: #c4b5fd; background: #2d304d; transform: none; }
+.aic-site .aic-application-dialog > button:last-child svg { width: 17px; height: 17px; transform: none; }
+.aic-site .aic-application-dialog > button:last-child:focus-visible { outline: 2px solid #79e6fa; outline-offset: 3px; }
+.aic-site .aic-application-label { display: block; color: #d3e1ed; font-size: 12px; font-weight: 400; line-height: 1.6; }
+.aic-site .aic-application-input,
+.aic-site .aic-application-phone input { min-height: 46px; height: auto; border: 1px solid #52627a; border-radius: 12px; background: #0b1a2b; color: #edf6fc; padding: 12px 14px; font-family: inherit; font-size: 14px; line-height: 1.4; box-shadow: none; transition: border-color 180ms ease; }
+.aic-site .aic-application-input::placeholder,
+.aic-site .aic-application-phone input::placeholder,
+.aic-site .aic-application-input[data-placeholder] { color: #95acc1; }
+.aic-site .aic-application-input:focus,
+.aic-site .aic-application-phone input:focus { outline: 2px solid #79e6fa; outline-offset: 2px; border-color: #79e6fa; box-shadow: none; }
+.aic-site .aic-application-phone { gap: 0; }
+.aic-site .aic-application-phone > button { min-height: 46px; border: 1px solid #52627a; border-inline-end: 0; border-radius: 12px 0 0 12px; color: #edf6fc; background: #142b40; }
+.aic-site .aic-application-phone input { border-radius: 0 12px 12px 0; }
+.aic-site .aic-application-input.is-invalid,
+.aic-site .aic-application-phone.is-invalid input { border-color: #f59aa5; }
+.aic-site .aic-application-error { color: #ffb3bc; font-size: 12px; line-height: 1.6; }
+.aic-site .aic-application-upload { position: relative; border: 1px dashed #687490; border-radius: 14px; padding: 18px; color: #b8cede; background: #102337; cursor: pointer; transition: border-color 180ms ease, background-color 180ms ease; }
+.aic-site .aic-application-upload:hover,
+.aic-site .aic-application-upload.is-dragging { border-color: #79e6fa; background: #143047; }
+.aic-site .aic-application-upload.is-invalid { border-color: #f59aa5; background: #2b2335; }
+.aic-site .aic-application-upload__icon { width: 26px; height: 26px; margin: 0 auto 10px; color: #a7bdeb; }
+.aic-site .aic-application-upload__file-icon { width: 20px; height: 20px; flex-shrink: 0; color: #79e6fa; }
+.aic-site .aic-application-upload__filename { color: #edf6fc; font-size: 13px; max-width: min(220px, 45vw); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.aic-site .aic-application-upload__hint { color: #bfd0e0; font-size: 13px; line-height: 1.6; }
+.aic-site .aic-application-upload__remove { width: 36px; height: 36px; border-radius: 50%; color: #ccd8e6; }
+.aic-site .aic-application-upload__remove:hover { color: #ffb3bc; background: #452b40; }
+.aic-site .aic-application-submit { width: 100%; height: auto; min-height: 50px; margin-top: 9px; }
+.aic-site .aic-application-submit:disabled { opacity: .65; cursor: wait; }
+.aic-site .aic-application-dialog__success { padding: 30px 0 10px; text-align: center; }
+.aic-site .aic-application-dialog__success-icon { display: grid; place-items: center; width: 64px; height: 64px; margin: 0 auto 22px; border: 1px solid #71bfae; border-radius: 50%; color: #9ee8cf; background: #173d3c; }
+.aic-site .aic-application-dialog__success-message { color: #edf6fc; font-size: 16px; line-height: 1.8; margin-bottom: 24px; }
+.aic-site .aic-application-select { border: 1px solid #5c587e; border-radius: 12px; background: #15263a; color: #edf6fc; }
+.aic-site .aic-application-select [role="option"] { min-height: 42px; margin: 2px 0; border-radius: 8px; }
+.aic-site .aic-application-select [role="option"]:focus,
+.aic-site .aic-application-select [role="option"][data-highlighted] { color: #fff; background: #343052; }
+
+@media (max-width: 600px) {
+  .aic-site .careers-list { gap: 17px; padding-bottom: 64px; }
+  .aic-site .career-card { padding: 23px 20px; }
+  .aic-site .career-card__header { grid-template-columns: minmax(0, 1fr) 40px; gap: 16px 12px; }
+  .aic-site .career-card__icon { width: 38px; height: 38px; border-radius: 12px; grid-column: 1; }
+  .aic-site .career-card__icon svg { width: 20px; height: 20px; }
+  .aic-site .career-card__heading { grid-row: 2; grid-column: 1 / -1; }
+  .aic-site .career-card__toggle { width: 40px; height: 40px; grid-column: 2; grid-row: 1; }
+  .aic-site .career-card__heading h2 { font-size: 24px; }
+  .aic-site .career-card__intro { margin-top: 20px; font-size: 14px; }
+  .aic-site .career-card__details { font-size: 14px; gap: 26px; }
+  .aic-site .career-card__details h3 { font-size: 19px; }
+  .aic-site .terms-section__layout { grid-template-columns: minmax(0, 1fr); gap: 13px; }
+  .aic-site .terms-section__title { font-size: 21px; }
+  .aic-site .terms-section__copy { font-size: 14px; }
+  .aic-site .aic-application-dialog { padding: 28px 22px; border-radius: 20px; max-height: calc(100dvh - 28px); }
+  .aic-site .aic-application-dialog__title { font-size: 27px; }
+  .aic-site .aic-application-input,
+  .aic-site .aic-application-phone input { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aic-site .career-card,
+  .aic-site .career-card__toggle,
+  .aic-site .career-card__toggle svg,
+  .aic-site .aic-application-dialog,
+  .aic-site .aic-application-dialog > button:last-child,
+  .aic-site .aic-application-input,
+  .aic-site .aic-application-upload { animation: none; transition: none; }
+}

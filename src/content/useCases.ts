@@ -37,71 +37,93 @@ export type LocalizedUseCase = {
 
 export const useCasesOverview = {
   title: {
-    en: 'AI systems shipped to production',
-    he: 'מערכות AI שעלו לפרודקשן',
+    en: 'Custom AI projects for business',
+    he: 'פרויקטי AI בהתאמה אישית לעסקים',
   },
   eyebrow: {
-    en: 'Selected use cases',
-    he: 'Use cases נבחרים',
+    en: 'Selected client projects',
+    he: 'פרויקטים נבחרים ללקוחות',
   },
   description: {
-    en: 'A sample of AI Crafters work across insurance, retail analytics, fintech, M&A software, and home services. Each system is grounded in the client data and workflow it needs to serve.',
-    he: 'מדגם מעבודות AI Crafters בביטוח, אנליטיקת ריטייל, פינטק, תוכנות M&A ושירותי שטח. כל מערכת מבוססת על הדאטה, הנהלים ותהליכי העבודה של הלקוח.',
+    en: 'Explore custom AI projects in insurance, retail analytics, fintech, M&A, and field services. Each solution is tailored to the client’s business and workflow.',
+    he: 'פרויקטי AI בביטוח, בניתוח נתוני קמעונאות, בפינטק, במיזוגים ורכישות ובשירותי שטח. כל פתרון מותאם לעסק ולתהליכי העבודה של הלקוח.',
   },
   proofPoints: {
     en: [
-      'Production-grade systems',
-      'Grounded in client-owned data',
-      'Accuracy controls and guardrails',
-      'Measurable ROI on focused engagements',
+      'Automating repetitive document work',
+      'Answering questions from business data',
+      'Voice agents for verification workflows',
+      'AI expertise alongside internal teams',
     ],
     he: [
-      'מערכות Production-grade',
-      'מבוססות על דאטה של הלקוח',
-      'בקרות דיוק ו-guardrails',
-      'ROI מדיד בפרויקטים ממוקדים',
+      'אוטומציה של עבודה חוזרת עם מסמכים',
+      'תשובות לשאלות מתוך נתוני העסק',
+      'סוכנים קוליים לתהליכי אימות',
+      'מומחיות AI לצד צוותי הפיתוח שלכם',
     ],
   },
   cta: {
-    en: 'Talk to us',
-    he: 'דברו איתנו',
+    en: 'Discuss your project',
+    he: 'נדבר על הפרויקט שלכם',
   },
   viewCase: {
-    en: 'View use case',
-    he: 'לצפייה ב-use case',
+    en: 'Explore the project',
+    he: 'לפרטי הפרויקט',
   },
   productionPattern: {
-    en: 'Production pattern',
-    he: 'דפוסי פרודקשן',
+    en: 'Where custom AI can help',
+    he: 'איפה AI מותאם יכול לעזור',
   },
   outcome: {
-    en: 'Outcome',
-    he: 'תוצאה',
+    en: 'Project highlight',
+    he: 'במוקד הפרויקט',
   },
   backToUseCases: {
-    en: 'Back to use cases',
-    he: 'חזרה ל-use cases',
+    en: 'Back to projects',
+    he: 'חזרה לפרויקטים',
+  },
+  homepage: {
+    title: {
+      en: 'Custom AI',
+      he: 'פרויקטי AI',
+    },
+    titleHighlight: {
+      en: 'in Practice',
+      he: 'נבחרים',
+    },
+    subtitle: {
+      en: 'See how we tailor AI to client workflows, from insurance claims and business data to voice verification.',
+      he: 'כך אנחנו מתאימים AI לתהליכי עבודה של לקוחות, מטיפול בתביעות ביטוח וניתוח נתונים ועד אימות קולי.',
+    },
+    showMore: {
+      en: 'See more projects',
+      he: 'לפרויקטים נוספים',
+    },
+    showLess: {
+      en: 'Show fewer projects',
+      he: 'הצגת פחות פרויקטים',
+    },
   },
   sections: {
     problem: {
-      en: 'The problem',
-      he: 'הבעיה',
+      en: 'The business challenge',
+      he: 'האתגר העסקי',
     },
     built: {
-      en: 'What we built',
-      he: 'מה בנינו',
+      en: 'What we delivered',
+      he: 'מה עשינו בפרויקט',
     },
     impact: {
       en: 'Business impact',
-      he: 'האימפקט העסקי',
+      he: 'הערך לעסק',
     },
     proof: {
-      en: 'Why it stands up',
-      he: 'למה זה מחזיק',
+      en: 'Project details',
+      he: 'פרטי הפרויקט',
     },
     related: {
-      en: 'Related use cases',
-      he: 'Use cases נוספים',
+      en: 'More custom AI projects',
+      he: 'עוד פרויקטי AI בהתאמה אישית',
     },
   },
 };
@@ -111,11 +133,11 @@ export const useCases: UseCase[] = [
     slug: 'insurance-claim-settlements',
     status: {
       en: 'In production',
-      he: 'בפרודקשן',
+      he: 'בשימוש פעיל',
     },
     valueTheme: {
-      en: 'Margin + customer experience',
-      he: 'מרווחיות + חוויית לקוח',
+      en: 'Less handling time + better service',
+      he: 'חיסכון בזמן טיפול + שירות טוב יותר',
     },
     title: {
       en: 'AI Agent for Insurance Claim Settlements',
@@ -126,20 +148,20 @@ export const useCases: UseCase[] = [
       he: 'חברת ביטוח בריאות ורפואה',
     },
     eyebrow: {
-      en: 'Document-grounded payout recommendations, handed straight to the adjuster.',
-      he: 'המלצות תשלום מבוססות מסמכים, ישירות לשולחן של מסלק התביעות.',
+      en: 'Turn claim documents into payout recommendations for adjuster review.',
+      he: 'ממסמכי התביעה להמלצת תשלום, לבדיקת מסלק התביעות.',
     },
     metric: {
       en: '~70% lower handling time',
       he: '~70% פחות זמן טיפול',
     },
     metricDetail: {
-      en: 'Average claim handling went from 10 minutes to 3. Work that once took days can now close in minutes.',
-      he: 'זמן הטיפול הממוצע ירד מ-10 דקות ל-3. עבודה שבעבר נמרחה ימים נסגרת בדקות.',
+      en: 'Reported project outcome: average claim handling time fell from 10 minutes to 3.',
+      he: 'תוצאה שדווחה בפרויקט: זמן הטיפול הממוצע בתביעה ירד מ-10 דקות ל-3.',
     },
     summary: {
-      en: 'The agent reads the same material a human adjuster receives, follows the insurer procedure, and returns the payout recommendation.',
-      he: 'הסוכן קורא את אותם חומרים שמסלק אנושי מקבל, עובד לפי נוהל חברת הביטוח, ומחזיר המלצת תשלום.',
+      en: 'A custom AI agent reviews claim documents against the insurer’s procedures and prepares payout recommendations for an adjuster to review.',
+      he: 'סוכן AI מותאם שבודק את מסמכי התביעה לפי נהלי חברת הביטוח ומכין המלצת תשלום לבדיקת מסלק התביעות.',
     },
     problem: {
       en: 'Claims were assessed by hand. Policyholders waited days for a decision while adjusters carried heavy, repetitive caseloads where small errors were easy to make.',
@@ -148,18 +170,18 @@ export const useCases: UseCase[] = [
     built: {
       en: [
         'A claims engine that accepts the policy, doctor summaries, invoices, and supporting paperwork.',
-        'A workflow that runs the claim through the insurer own claims-processing procedure.',
-        'A recommendation layer that returns the payout owed, ready for adjuster review.',
+        'A workflow that follows the insurer’s own claims-processing procedure.',
+        'A recommendation layer that prepares the proposed payout for adjuster review.',
       ],
       he: [
         'מנוע תביעות שמקבל פוליסה, סיכומי רופא, חשבוניות ומסמכים תומכים.',
-        'זרימת עבודה שמריצה את התביעה לפי נוהל סילוק התביעות של חברת הביטוח.',
-        'שכבת המלצה שמחזירה את סכום התשלום המגיע למבוטח, מוכן לבדיקת המסלק.',
+        'תהליך עבודה שפועל לפי נוהל סילוק התביעות של חברת הביטוח.',
+        'שכבת המלצה שמכינה את סכום התשלום המוצע לבדיקת המסלק.',
       ],
     },
     impact: {
-      en: 'Faster settlements and more consistent payout recommendations reduce cost per claim while improving customer satisfaction and the insurer reputation for fast handling.',
-      he: 'סילוק מהיר יותר והמלצות עקביות יותר מורידים עלות לתביעה, משפרים שביעות רצון, ובונים מוניטין של טיפול מהיר.',
+      en: 'Less handling time per claim gives adjusters more capacity and helps policyholders receive decisions sooner. Consistent recommendations support a more efficient claims process.',
+      he: 'פחות זמן טיפול בכל תביעה מאפשר למסלקים לטפל ביותר פניות ולמבוטחים לקבל החלטות מהר יותר. המלצות עקביות תומכות בתהליך סילוק יעיל יותר.',
     },
     proof: {
       en: [
@@ -168,7 +190,7 @@ export const useCases: UseCase[] = [
         'Grounded strictly in submitted policy terms',
       ],
       he: [
-        'חי בפרודקשן',
+        'בשימוש פעיל',
         'בקרות דיוק על כל המלצת תשלום',
         'מבוסס רק על תנאי הפוליסה והמסמכים שהוגשו',
       ],
@@ -178,39 +200,39 @@ export const useCases: UseCase[] = [
     slug: 'business-intelligence-qa',
     status: {
       en: 'In production',
-      he: 'בפרודקשן',
+      he: 'בשימוש פעיל',
     },
     valueTheme: {
       en: 'Growth + new recurring revenue',
       he: 'צמיחה + הכנסה חוזרת חדשה',
     },
     title: {
-      en: 'AI Q&A Layer over Business Intelligence',
-      he: 'שכבת Q&A ב-AI מעל בינה עסקית',
+      en: 'Custom AI Q&A for Business Intelligence',
+      he: 'שאלות ותשובות עם AI על נתוני העסק',
     },
     client: {
-      en: 'US retail-analytics / BI SaaS vendor',
-      he: 'חברת SaaS אמריקאית לאנליטיקת ריטייל ו-BI',
+      en: 'US retail analytics and business intelligence SaaS provider',
+      he: 'חברת SaaS אמריקאית לניתוח נתוני קמעונאות ובינה עסקית',
     },
     eyebrow: {
-      en: 'Plain-language answers over the existing data model, no analyst required.',
-      he: 'תשובות בשפה טבעית מעל מודל הדאטה הקיים, בלי תלות באנליסט.',
+      en: 'Let business users ask questions directly of their existing BI data.',
+      he: 'מאפשרים למשתמשים עסקיים לשאול שאלות ישירות על הנתונים שכבר במערכת.',
     },
     metric: {
       en: 'New recurring-revenue module',
-      he: 'מודול הכנסה חוזרת חדש',
+      he: 'רכיב מוצר חדש שמייצר הכנסה חוזרת',
     },
     metricDetail: {
-      en: 'A passive reporting product became a paid AI layer that every business user can query.',
-      he: 'מוצר דוחות פסיבי הפך לשכבת AI בתשלום שכל משתמש עסקי יכול לשאול.',
+      en: 'The reporting product gained a paid AI module that lets business users explore data through conversation.',
+      he: 'למוצר הדוחות נוסף רכיב AI בתשלום, שמאפשר למשתמשים עסקיים לחקור את הנתונים באמצעות שיחה.',
     },
     summary: {
-      en: 'Users ask business questions in plain language and receive precise answers and charts from the existing structured data model.',
-      he: 'משתמשים שואלים שאלות עסקיות בשפה טבעית ומקבלים תשובות וגרפים מדויקים מתוך מודל הדאטה המובנה.',
+      en: 'An AI layer inside the existing BI product turns plain-language business questions into answers and charts from structured data.',
+      he: 'שכבת AI בתוך מוצר הבינה העסקית הקיים הופכת שאלות בשפה יומיומית לתשובות ולגרפים מתוך הנתונים המובנים.',
     },
     problem: {
       en: 'Dashboards existed, but complex questions still required analysts to stitch together many queries in spreadsheets and pivot tables. Decision-makers waited on IT, and one quiet spreadsheet error could break the answer.',
-      he: 'היו דשבורדים, אבל שאלות מורכבות עדיין דרשו מאנליסטים לחבר עשרות שאילתות באקסלים וטבלאות ציר. מקבלי החלטות חיכו ל-IT, ושגיאה שקטה אחת יכלה לשבור את התשובה.',
+      he: 'לוחות הבקרה כבר היו קיימים, אבל שאלות מורכבות עדיין דרשו עבודה של אנליסטים עם שאילתות, גיליונות נתונים וטבלאות ציר. מקבלי החלטות חיכו לתשובות, ושגיאה אחת בגיליון יכלה לשנות את התוצאה.',
     },
     built: {
       en: [
@@ -219,14 +241,14 @@ export const useCases: UseCase[] = [
         'Charted answers delivered in seconds without SQL, exports, or spreadsheets.',
       ],
       he: [
-        'שכבת AI בשפה טבעית מעל מודל ה-BI הקיים.',
-        'לוגיקת שליפה וחישוב מדויקת לשאלות כמו sell-through רבעוני למוצרים מובילים.',
-        'תשובות וגרפים תוך שניות, בלי SQL, ייצוא או אקסלים.',
+        'שכבת AI שמאפשרת לשאול שאלות בשפה יומיומית על מודל הנתונים הקיים.',
+        'מנגנון שליפה וחישוב לשאלות כמו איזה שיעור מהמלאי נמכר ברבעון בכל אחד מהמוצרים המובילים.',
+        'תשובות וגרפים תוך שניות, בלי לכתוב שאילתות SQL, לייצא נתונים או לעבוד באקסל.',
       ],
     },
     impact: {
-      en: 'Usage expands from a few analysts to merchandising, planning, operations, and executive teams. That supports seat expansion, higher-tier upsell, and stronger net revenue retention.',
-      he: 'השימוש מתרחב ממספר אנליסטים לצוותי מרצנדייזינג, תכנון, תפעול והנהלה. זה תומך בהרחבת משתמשים, upsell למסלול גבוה יותר, ושיפור NRR.',
+      en: 'The module makes BI accessible to merchandising, planning, operations, and leadership teams. It supports broader adoption and a paid upgrade path within the existing product.',
+      he: 'הרכיב מרחיב את השימוש בנתונים לצוותי מסחר, תכנון, תפעול והנהלה. כך הוא תומך בהוספת משתמשים ובמעבר למסלולים בתשלום גבוה יותר במוצר הקיים.',
     },
     proof: {
       en: [
@@ -235,9 +257,9 @@ export const useCases: UseCase[] = [
         'Delivered as a productized revenue-generating module',
       ],
       he: [
-        'חי בפרודקשן',
-        'שליפה מדויקת בשפה טבעית מעל דאטה מובנה',
-        'נארז כמודול מוצרי שמייצר הכנסה',
+        'בשימוש פעיל',
+        'שליפה מדויקת של נתונים מובנים באמצעות שאלות בשפה יומיומית',
+        'רכיב מוצר בתשלום שמייצר הכנסה',
       ],
     },
   },
@@ -245,66 +267,66 @@ export const useCases: UseCase[] = [
     slug: 'vendor-bank-verification',
     status: {
       en: 'In rollout',
-      he: 'ב-rollout',
+      he: 'בתהליך הטמעה',
     },
     valueTheme: {
-      en: 'Margin + growth',
-      he: 'מרווחיות + צמיחה',
+      en: 'Lower verification costs + market expansion',
+      he: 'חיסכון בעלויות אימות + התרחבות לשווקים',
     },
     title: {
       en: 'AI Voice Agent for Vendor Bank Account Verification',
-      he: 'סוכן קול AI לאימות חשבונות בנק ספקים',
+      he: 'סוכן AI קולי לאימות חשבונות בנק של ספקים',
     },
     client: {
       en: 'Fintech payment-security provider',
       he: 'חברת פינטק לאבטחת תשלומים',
     },
     eyebrow: {
-      en: 'Callback verification calls, automated end to end at human conversation level.',
-      he: 'שיחות callback לאימות תשלום, אוטומטיות מקצה לקצה וברמת שיחה אנושית.',
+      en: 'Automate vendor verification calls around a defined payment-security process.',
+      he: 'אוטומציה של שיחות אימות לספקים, בהתאם לתהליך אבטחת התשלומים.',
     },
     metric: {
-      en: 'New markets, no local callers',
-      he: 'שווקים חדשים, בלי נציגים מקומיים',
+      en: 'Target: new markets without local callers',
+      he: 'היעד: שווקים חדשים בלי נציגים מקומיים',
     },
     metricDetail: {
-      en: 'Verification coverage reaches markets that previously required on-the-ground callers.',
-      he: 'כיסוי אימות מגיע לשווקים שבעבר דרשו נציגים מקומיים.',
+      en: 'The rollout aims to extend verification to markets that previously required local callers.',
+      he: 'ההטמעה נועדה להרחיב את שירותי האימות לשווקים שבעבר דרשו נציגים מקומיים.',
     },
     summary: {
-      en: 'The voice agent runs sensitive callback controls consistently and at lower cost per call, unlocking market expansion.',
-      he: 'הסוכן הקולי מריץ בקרות callback רגישות בצורה עקבית ובעלות נמוכה יותר לשיחה, ופותח שווקים חדשים.',
+      en: 'A custom AI voice agent, now in rollout, conducts vendor callback checks with the aim of improving consistency and reducing cost per call.',
+      he: 'סוכן AI קולי מותאם, שנמצא בתהליך הטמעה, מנהל שיחות חוזרות לאימות פרטי ספקים במטרה לשפר עקביות ולהפחית עלות לשיחה.',
     },
     problem: {
-      en: 'Vendor bank account verification depends on callback calls that block business email compromise and payment-redirection fraud before a new vendor is paid. Human callers made the process costly, inconsistent, and hard to scale internationally.',
-      he: 'אימות חשבון בנק ספק נשען על שיחות callback שחוסמות BEC והונאות שינוי פרטי תשלום לפני שמשלמים לספק חדש. נציגים אנושיים הפכו את התהליך ליקר, לא אחיד וקשה להרחבה בינלאומית.',
+      en: 'Vendor bank verification uses callback calls to help detect business email compromise and fraudulent payment-detail changes before a new vendor is paid. Reliance on human callers made the process costly, inconsistent, and hard to scale internationally.',
+      he: 'לפני תשלום לספק חדש, שיחות חוזרות לאימות חשבון הבנק עוזרות לזהות התחזות בדוא״ל ושינויים כוזבים בפרטי התשלום. התלות בנציגים אנושיים הפכה את התהליך ליקר, לא אחיד וקשה להרחבה למדינות נוספות.',
     },
     built: {
       en: [
         'An AI voice agent that conducts callback verification conversations itself.',
-        'Conversation flows designed for human-level interaction in a sensitive AP / procure-to-pay control.',
-        'Repeatable machine execution so every verification follows the same standard.',
+        'Conversation flows designed for natural interaction within a sensitive accounts-payable control.',
+        'A repeatable verification workflow designed to follow the same standard on each call.',
       ],
       he: [
-        'סוכן קול AI שמנהל בעצמו שיחות callback לאימות.',
-        'זרימות שיחה שמתאימות לאינטראקציה אנושית בבקרה רגישה של AP / procure-to-pay.',
-        'ביצוע מכונה עקבי כך שכל אימות עומד באותו סטנדרט.',
+        'סוכן AI קולי שמנהל שיחות חוזרות לאימות פרטי ספקים.',
+        'תהליכי שיחה טבעיים שמותאמים לבקרה רגישה לפני תשלום לספק.',
+        'תהליך אימות שנועד לפעול לפי אותו נוהל בכל שיחה.',
       ],
     },
     impact: {
-      en: 'A sensitive fraud-control process becomes more consistent and cheaper per call, while expansion into markets that used to require local callers creates new customer and revenue opportunities.',
-      he: 'בקרת הונאה רגישה הופכת עקבית וזולה יותר לשיחה, והתרחבות לשווקים שבעבר דרשו נציג מקומי מייצרת הזדמנויות ללקוחות ולהכנסה חדשה.',
+      en: 'The rollout targets a more consistent verification process, lower cost per call, and expansion into markets that previously required local callers.',
+      he: 'יעדי ההטמעה הם תהליך אימות עקבי יותר, עלות נמוכה יותר לשיחה וכניסה לשווקים שבעבר דרשו נציגים מקומיים.',
     },
     proof: {
       en: [
         'In rollout',
-        'Automates a human-only AP fraud-control stage',
-        'Human-level conversation with machine-level consistency',
+        'Automates a previously manual fraud-control step before supplier payment',
+        'Natural conversation designed around a consistent verification procedure',
       ],
       he: [
-        'ב-rollout',
-        'ממכן שלב בקרת הונאה שבעבר היה אנושי בלבד',
-        'שיחה ברמה אנושית עם עקביות של מכונה',
+        'בתהליך הטמעה',
+        'אוטומציה של שלב בקרת הונאה שבעבר בוצע על ידי נציגים בלבד',
+        'שיחה טבעית שנבנתה סביב נוהל אימות אחיד',
       ],
     },
   },
@@ -312,11 +334,11 @@ export const useCases: UseCase[] = [
     slug: 'inspection-to-report',
     status: {
       en: 'In production',
-      he: 'בפרודקשן',
+      he: 'בשימוש פעיל',
     },
     valueTheme: {
       en: 'Growth + sales conversion',
-      he: 'צמיחה + המרת מכירות',
+      he: 'צמיחה + קידום עסקאות',
     },
     title: {
       en: 'AI Inspection-to-Report for Field Sales',
@@ -327,52 +349,52 @@ export const useCases: UseCase[] = [
       he: 'קבלן שירותי בית לעבודות עליות גג וחללי זחילה',
     },
     eyebrow: {
-      en: 'Inspection findings become a signed-ready report before the rep leaves.',
-      he: 'ממצאי בדיקה הופכים לדוח מוכן לחתימה לפני שנציג המכירות יוצא מהבית.',
+      en: 'Turn on-site inspection findings into a report and scope of work while the rep is still with the customer.',
+      he: 'הופכים ממצאי בדיקת שטח לדוח ולהצעת עבודה, כשהנציג עדיין אצל הלקוח.',
     },
     metric: {
-      en: '5 minutes to a clean report',
-      he: '5 דקות לדוח נקי',
+      en: '5 minutes to a finished report',
+      he: '5 דקות לדוח מוכן',
     },
     metricDetail: {
-      en: 'The old flow took more than a day, or forced the rep to give a rough verbal offer on site.',
-      he: 'התהליך הישן לקח יותר מיום, או הכריח את הנציג לתת הצעה מילולית גסה במקום.',
+      en: 'Reported project outcome: a finished report within 5 minutes of inspection, replacing a process that took more than a day or relied on a rough verbal offer.',
+      he: 'תוצאה שדווחה בפרויקט: דוח מוכן תוך 5 דקות מהבדיקה, במקום להמתין יותר מיום או להסתפק בהצעה ראשונית בעל פה.',
     },
     summary: {
-      en: 'Inspectors capture video and voice findings on site, and the AI creates a signed-ready scope of work.',
-      he: 'בודקים מצלמים ומתעדים ממצאים בקול בשטח, וה-AI יוצר scope of work מוכן לחתימה.',
+      en: 'Inspectors capture video and voice notes on site. A custom AI workflow turns those findings into a report and scope of work ready for signature.',
+      he: 'בודקים מצלמים ומתעדים הערות קוליות בשטח. תהליך AI מותאם הופך את הממצאים לדוח ולהצעת עבודה מוכנה לחתימה.',
     },
     problem: {
-      en: 'After an inspection, the rep either handed over a rough report or waited more than a day to send a clean one. In that gap, prospects shopped the verbal offer to competitors and deals were lost.',
-      he: 'אחרי בדיקה, הנציג היה מוסר דוח גס או מחכה יותר מיום לשלוח דוח נקי. בזמן הזה לקוחות השוו את ההצעה מול מתחרים, ועסקאות אבדו.',
+      en: 'After an inspection, the rep either shared a preliminary report or waited more than a day to send a finished one. Prospects compared offers in the meantime, and deals were lost before the written proposal arrived.',
+      he: 'אחרי בדיקה, הנציג היה מוסר דוח ראשוני או מחכה יותר מיום לשליחת דוח מסודר. בינתיים לקוחות השוו הצעות, ועסקאות אבדו עוד לפני שהגיעה ההצעה הכתובה.',
     },
     built: {
       en: [
         'An on-site app for capturing video and voice memos for each finding.',
         'AI-written report overview and finding descriptions.',
         'Severity classification, photo hazard annotation, and live transcription from voice memos.',
-        'A signed-ready scope of work delivered while the rep is still on site.',
+        'A scope of work ready for signature while the rep is still on site.',
       ],
       he: [
-        'אפליקציית שטח ללכידת וידאו והערות קוליות לכל ממצא.',
-        'סקירת דוח ותיאורי ממצאים שנכתבים על ידי AI.',
+        'אפליקציית שטח לצילום וידאו ותיעוד הערות קוליות לכל ממצא.',
+        'תקציר דוח ותיאורי ממצאים שנכתבים בעזרת AI.',
         'סיווג חומרה, סימון מפגעים בתמונות ותמלול חי מהערות קוליות.',
-        'scope of work מוכן לחתימה בזמן שהנציג עדיין בבית הלקוח.',
+        'הצעת עבודה מפורטת ומוכנה לחתימה כשהנציג עדיין בבית הלקוח.',
       ],
     },
     impact: {
-      en: 'The quote lands before the prospect can shop it around. That shortens the sales cycle and is built to turn more inspections into signed orders.',
-      he: 'ההצעה מגיעה לפני שהלקוח מספיק להשוות אותה החוצה. זה מקצר את מחזור המכירה ונועד להפוך יותר בדיקות להזמנות חתומות.',
+      en: 'A clear written proposal is available while the customer and rep can still discuss the findings together. The workflow is designed to shorten the sales cycle and help more inspections progress to signed orders.',
+      he: 'הצעה כתובה וברורה זמינה כשהלקוח והנציג עדיין יכולים לעבור יחד על הממצאים. התהליך נועד לקצר את זמן המכירה ולעזור ליותר בדיקות להתקדם להזמנות חתומות.',
     },
     proof: {
       en: [
         'In production',
-        'Clean report within 5 minutes of inspection',
+        'Finished report within 5 minutes of inspection',
         'Video and voice captured on site with no manual write-up',
       ],
       he: [
-        'בפרודקשן',
-        'דוח נקי תוך 5 דקות מסיום הבדיקה',
+        'בשימוש פעיל',
+        'דוח מוכן תוך 5 דקות מסיום הבדיקה',
         'וידאו וקול נאספים בשטח בלי כתיבה ידנית',
       ],
     },
@@ -381,65 +403,65 @@ export const useCases: UseCase[] = [
     slug: 'cim-generator',
     status: {
       en: 'In production',
-      he: 'בפרודקשן',
+      he: 'בשימוש פעיל',
     },
     valueTheme: {
       en: 'Advisory + AI architecture',
-      he: 'ייעוץ + ארכיטקטורת AI',
+      he: 'ייעוץ + תכנון מערכות AI',
     },
     title: {
       en: 'AI CIM Generator for M&A Advisory',
-      he: 'מחולל CIM ב-AI לייעוץ M&A',
+      he: 'יצירת מסמכי CIM עם AI למיזוגים ורכישות',
     },
     client: {
       en: 'Legacy AI, platform for business brokers and M&A advisors',
-      he: 'Legacy AI, פלטפורמה לברוקרים עסקיים ויועצי M&A',
+      he: 'Legacy AI, פלטפורמה למתווכים עסקיים וליועצי מיזוגים ורכישות',
     },
     eyebrow: {
-      en: 'Architecture leadership and hands-on build behind the platform flagship CIM generator.',
-      he: 'הובלת ארכיטקטורה ובנייה Hands-on מאחורי מחולל ה-CIM המרכזי של הפלטפורמה.',
+      en: 'AI architecture and development support for Legacy AI’s flagship CIM generator.',
+      he: 'תכנון ארכיטקטורה ופיתוח לצד הצוות של Legacy AI, במחולל מסמכי ה-CIM המרכזי של הפלטפורמה.',
     },
     metric: {
       en: 'From days to hours',
       he: 'מימים לשעות',
     },
     metricDetail: {
-      en: 'CIM drafts that take days by hand are generated in 2 to 24 hours, depending on source-data quality.',
-      he: 'טיוטות CIM שלוקחות ימים ידנית נוצרות בתוך 2 עד 24 שעות, בהתאם לאיכות הדאטה שהלקוח מספק.',
+      en: 'Reported project outcome: CIM drafts are generated in 2 to 24 hours instead of days of manual work, depending on source-data quality.',
+      he: 'תוצאה שדווחה בפרויקט: טיוטות CIM נוצרות בתוך 2 עד 24 שעות במקום ימים של עבודה ידנית, בהתאם לאיכות נתוני המקור.',
     },
     summary: {
-      en: 'We consulted on and helped build the next-generation architecture for Legacy AI flagship CIM generator, inside their product team.',
-      he: 'ייעצנו ועזרנו לבנות את ארכיטקטורת הדור הבא למחולל ה-CIM המרכזי של Legacy AI, בתוך צוות המוצר שלהם.',
+      en: 'We advised on and helped build the next-generation architecture for Legacy AI’s flagship CIM generator, working alongside their internal product team.',
+      he: 'ייעצנו ועזרנו לבנות את ארכיטקטורת הדור הבא למחולל ה-CIM של Legacy AI, לצד צוות המוצר הפנימי שלהם.',
     },
     problem: {
-      en: 'A CIM, the document that markets a business to buyers, traditionally takes days of junior-analyst work. For a platform whose flagship feature is CIM generation, generation speed and quality are the product.',
-      he: 'CIM, המסמך שמשווק עסק לרוכשים, דורש באופן מסורתי ימים של עבודת אנליסטים. עבור פלטפורמה שמחולל CIM הוא מוצר הדגל שלה, מהירות ואיכות היצירה הן המוצר.',
+      en: 'A CIM presents a business to potential buyers and traditionally takes days of analyst work to prepare. For Legacy AI, improving the speed and quality of these drafts was central to its flagship product.',
+      he: 'מסמך CIM מציג עסק לרוכשים פוטנציאליים, והכנתו הידנית דורשת בדרך כלל ימים של עבודת אנליסטים. עבור Legacy AI, שיפור מהירות היצירה ואיכות הטיוטות היה צורך מרכזי במוצר הדגל.',
     },
     built: {
       en: [
-        'Specialist architecture leadership alongside Legacy AI in-house team.',
-        'Hands-on work on the new generation of the platform CIM generator.',
+        'Specialist architecture leadership alongside Legacy AI’s in-house team.',
+        'Hands-on development support for the new generation of the platform’s CIM generator.',
         'A product implementation that remains owned and operated by the client team.',
       ],
       he: [
         'הובלת ארכיטקטורה מקצועית לצד צוות הפיתוח הפנימי של Legacy AI.',
-        'עבודה Hands-on על הדור החדש של מחולל ה-CIM בפלטפורמה.',
-        'מימוש מוצרי שנשאר בבעלות ובהפעלה של צוות הלקוח.',
+        'השתתפות בפיתוח הדור החדש של מחולל ה-CIM בפלטפורמה.',
+        'מימוש שנשאר בבעלות ובהפעלה של צוות הלקוח.',
       ],
     },
     impact: {
-      en: 'Drafts that took days by hand now come out in 2 to 24 hours with repeatable quality. That gives the platform more capacity per engagement and room to serve more clients at once.',
-      he: 'טיוטות שלקחו ימים ידנית יוצאות עכשיו בתוך 2 עד 24 שעות באיכות עקבית. זה נותן לפלטפורמה יותר קיבולת לכל התקשרות ויכולת לשרת יותר לקוחות במקביל.',
+      en: 'Generating drafts in 2 to 24 hours reduces the manual work needed to prepare a CIM and gives the platform capacity to support more clients. The client’s team owns and operates the product independently.',
+      he: 'יצירת טיוטות בתוך 2 עד 24 שעות מצמצמת את העבודה הידנית בהכנת מסמכי CIM ומאפשרת לפלטפורמה לתמוך ביותר לקוחות. המוצר נשאר בבעלות צוות הלקוח ובהפעלתו העצמאית.',
     },
     proof: {
       en: [
         'In production and under active development',
-        'Architecture led inside the client product team',
+        'Architecture led alongside the client’s product team',
         'The client team runs it independently',
       ],
       he: [
-        'בפרודקשן ובפיתוח פעיל',
-        'ארכיטקטורה שהובלה בתוך צוות המוצר של הלקוח',
+        'בשימוש פעיל וממשיך להתפתח',
+        'הובלת ארכיטקטורה לצד צוות המוצר של הלקוח',
         'צוות הלקוח מפעיל את המערכת עצמאית',
       ],
     },
@@ -464,8 +486,15 @@ const localizeUseCase = (useCase: UseCase, locale: LocaleKey): LocalizedUseCase 
 
 export const useCaseSlugs = useCases.map((useCase) => useCase.slug);
 
+export const FEATURED_USE_CASE_LIMIT = 3;
+
 export const getUseCases = (locale: LocaleKey) =>
   useCases.map((useCase) => localizeUseCase(useCase, locale));
+
+export const getFeaturedUseCases = (
+  locale: LocaleKey,
+  limit = FEATURED_USE_CASE_LIMIT,
+) => getUseCases(locale).slice(0, limit);
 
 export const getUseCase = (slug: string, locale: LocaleKey) => {
   const useCase = useCases.find((item) => item.slug === slug);

@@ -41,7 +41,7 @@ Important context:
 
 ${sourceLink('Company overview', '/ai-content/company.md', 'Who AI Crafters is, what it builds, and how to contact the team.')}
 ${sourceLink('Services overview', '/ai-content/services.md', 'AI agent development, workflow automation, BI AI, RAG, and integration services.')}
-${sourceLink('Selected production use cases', '/ai-content/use-cases.md', 'Short summaries of production and rollout AI systems.')}
+${sourceLink('Selected custom AI projects', '/ai-content/use-cases.md', 'Project summaries with their individual delivery status and outcomes.')}
 ${sourceLink('FAQ', '/ai-content/faq.md', 'Answer-ready questions about AI Crafters and project fit.')}
 ${sourceLink('Founders', '/ai-content/founders.md', 'Leadership and founder context.')}
 
@@ -61,7 +61,7 @@ ${useCases
   )
   .join('\n')}
 
-## AEO and GEO Resources
+## Project Planning Resources
 
 ${comparisonPages
   .map((page) =>
@@ -103,7 +103,7 @@ ${founders
 
 export const renderServicesMarkdown = () => `# ${company.name} services
 
-${company.name} builds production AI systems around measurable operational workflows.
+${company.valueProposition[locale]}
 
 ${servicePages
   .map(
@@ -113,7 +113,7 @@ ${service.description[locale]}
 
 Audience: ${service.audience[locale]}
 
-Expected outcomes:
+Goals for the project:
 ${list(service.outcomes[locale])}
 
 Canonical page: ${localizedUrl(locale, `/services/${service.slug}`)}
@@ -141,7 +141,7 @@ ${service.audience[locale]}
 
 ${list(service.outcomes[locale])}
 
-## Implementation Pattern
+## How We Build It
 
 ${list(service.process[locale])}
 
@@ -278,13 +278,12 @@ export const renderLlmsFullTxt = () =>
     renderFaqMarkdown(),
     renderFoundersMarkdown(),
     section(
-      'AEO and GEO resources',
+      'Project planning resources',
       [
         ...comparisonPages.map((page) => `- ${page.title[locale]}: ${localizedUrl(locale, `/compare/${page.slug}`)}`),
         ...resourcePages.map((page) => `- ${page.title[locale]}: ${localizedUrl(locale, `/resources/${page.slug}`)}`),
       ].join('\n')
     ),
-    `Last updated: ${new Date().toISOString().slice(0, 10)}`,
   ].join('\n\n---\n\n');
 
 export const renderAiMarkdown = (slug: string[]) => {

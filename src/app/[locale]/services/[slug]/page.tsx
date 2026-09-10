@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
+import { ArrowUpRight, Check, Target, UsersRound } from 'lucide-react';
 import { JsonLd } from '@/components/JsonLd';
+import { ContactButton } from '@/components/SiteContactDialog';
+import { ProjectInquiry } from '@/components/ProjectInquiry';
 import { getServicePage, servicePages } from '@/content/site';
 import {
   getUseCase,
@@ -82,7 +85,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
     .filter(isLocalizedUseCase);
 
   return (
-    <main className="min-h-screen bg-background pt-24">
+    <main className="aic-page aic-editorial-page">
       <JsonLd
         data={[
           webPageJsonLd({
@@ -94,95 +97,103 @@ export default async function ServicePage({ params }: ServicePageProps) {
           serviceJsonLd(locale, service),
           breadcrumbJsonLd(locale, [
             { name: 'AI Crafters', path: '/' },
-            { name: locale === 'he' ? 'שירותים' : 'Services', path: '/' },
             { name: service.title[locale], path: `/services/${service.slug}` },
           ]),
         ]}
       />
 
-      <section className="border-b border-border">
-        <div className="container mx-auto px-6 py-16 md:py-24">
-          <p className="text-xs font-mono uppercase tracking-widest text-cyan-600 dark:text-cyan-300">
+      <section className="aic-hero aic-editorial-hero">
+        <div className="aic-container">
+          <p className="aic-eyebrow">
             {service.eyebrow[locale]}
           </p>
-          <h1 className="mt-5 max-w-4xl font-display text-5xl md:text-7xl font-bold leading-tight text-foreground">
+          <h1 className="aic-title">
             {service.title[locale]}
           </h1>
-          <p className="mt-8 max-w-3xl text-xl leading-9 text-muted-foreground">
+          <p className="aic-lead">
             {service.description[locale]}
           </p>
+          <ContactButton className="aic-button mt-8">
+            {locale === 'he' ? 'נדבר על הפרויקט שלכם' : 'Discuss your project'}
+            <ArrowUpRight size={19} aria-hidden="true" />
+          </ContactButton>
         </div>
       </section>
 
-      <section className="container mx-auto px-6 py-16 md:py-24">
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <article className="border border-border bg-card p-7 md:p-8">
-            <h2 className="font-display text-3xl font-bold text-foreground">
+      <section className="aic-container aic-section aic-editorial-body">
+        <div className="aic-editorial-fit-grid">
+          <article className="aic-card aic-editorial-panel">
+            <UsersRound className="aic-editorial-icon" size={26} strokeWidth={1.4} aria-hidden="true" />
+            <h2 className="aic-editorial-heading">
               {locale === 'he' ? 'למי זה מתאים' : 'Best Fit'}
             </h2>
-            <p className="mt-5 text-base leading-8 text-muted-foreground">
+            <p className="aic-editorial-copy">
               {service.audience[locale]}
             </p>
           </article>
 
-          <article className="border border-border bg-card p-7 md:p-8">
-            <h2 className="font-display text-3xl font-bold text-foreground">
-              {locale === 'he' ? 'תוצאות צפויות' : 'Expected Outcomes'}
+          <article className="aic-card aic-editorial-panel">
+            <Target className="aic-editorial-icon" size={26} strokeWidth={1.4} aria-hidden="true" />
+            <h2 className="aic-editorial-heading">
+              {locale === 'he' ? 'מה נרצה להשיג' : 'What we aim to improve'}
             </h2>
-            <ul className="mt-6 space-y-4">
+            <ul className="aic-editorial-outcomes">
               {service.outcomes[locale].map((outcome) => (
-                <li key={outcome} className="text-base leading-7 text-muted-foreground">
-                  {outcome}
+                <li key={outcome}>
+                  <Check size={18} strokeWidth={1.6} aria-hidden="true" />
+                  <span>{outcome}</span>
                 </li>
               ))}
             </ul>
           </article>
         </div>
 
-        <article className="mt-8 border border-border bg-card p-7 md:p-8">
-          <h2 className="font-display text-3xl font-bold text-foreground">
-            {locale === 'he' ? 'איך אנחנו בונים את זה' : 'Implementation Pattern'}
+        <article className="aic-card aic-editorial-panel aic-editorial-process">
+          <h2 className="aic-editorial-heading">
+            {locale === 'he' ? 'איך נבנה את הפתרון' : 'How we build your solution'}
           </h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <ol className="aic-editorial-process-list" role="list">
             {service.process[locale].map((step, index) => (
-              <div key={step} className="border border-border bg-background p-5">
-                <p className="text-xs font-mono text-cyan-600 dark:text-cyan-300">
-                  0{index + 1}
-                </p>
-                <p className="mt-4 text-base leading-7 text-muted-foreground">
+              <li key={step}>
+                <span className="aic-editorial-step" aria-hidden="true">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <p className="aic-editorial-copy">
                   {step}
                 </p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </article>
 
         {relatedUseCases.length > 0 && (
-          <section className="mt-16">
-            <h2 className="font-display text-3xl font-bold text-foreground">
-              {locale === 'he' ? 'Use cases קשורים' : 'Related Use Cases'}
+          <section className="aic-editorial-related">
+            <h2 className="aic-editorial-heading">
+              {locale === 'he' ? 'דוגמאות מפרויקטים' : 'Explore related projects'}
             </h2>
-            <div className="mt-6 grid gap-6 md:grid-cols-2">
+            <div className="aic-editorial-related-grid">
               {relatedUseCases.map((useCase) => (
                 <Link
                   key={useCase.slug}
                   href={`/use-cases/${useCase.slug}`}
-                  className="border border-border bg-card p-6 transition-colors hover:border-cyan-500"
+                  className="aic-card aic-editorial-related-card"
                 >
-                  <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+                  <p className="aic-editorial-metric">
                     {useCase.metric}
                   </p>
-                  <h3 className="mt-4 font-display text-2xl font-bold text-foreground">
+                  <h3 className="aic-editorial-heading">
                     {useCase.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-6 text-muted-foreground">
+                  <p className="aic-editorial-copy">
                     {useCase.summary}
                   </p>
+                  <ArrowUpRight className="aic-editorial-link-icon" size={22} strokeWidth={1.5} aria-hidden="true" />
                 </Link>
               ))}
             </div>
           </section>
         )}
+        <ProjectInquiry locale={locale} />
       </section>
     </main>
   );

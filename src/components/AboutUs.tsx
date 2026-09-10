@@ -67,12 +67,7 @@ export const AboutUs = () => {
     {
       key: 'eran',
       image: '/images/team/eran.png',
-      linkedin: 'https://www.linkedin.com/in/eran-bodokh/',
-    },
-    {
-      key: 'dvir',
-      image: '/images/team/dvir.png',
-      linkedin: 'https://www.linkedin.com/in/dvircohen1/',
+      linkedin: 'https://www.linkedin.com/in/bodokh/',
     },
   ];
 
@@ -87,7 +82,7 @@ export const AboutUs = () => {
           </h2>
         </div>
 
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
           {founders.map((founder) => (
             <FounderCard
               key={founder.key}

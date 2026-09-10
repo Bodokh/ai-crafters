@@ -1,0 +1,68 @@
+/* The lightweight renderer owns this flag. Desktop retains every existing
+   surface and effect, even when its browser window happens to be narrow. */
+html[data-renderer="mobile"] .neural-world #neural-canvas { display: none; }
+
+html[data-renderer="mobile"] .site-header,
+html[data-renderer="mobile"] .journey-footer,
+html[data-renderer="mobile"] .glass-card,
+html[data-renderer="mobile"] .process-steps,
+html[data-renderer="mobile"].is-enhanced .story-beat.has-card-motion .motion-card {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+html[data-renderer="mobile"] .site-header {
+  background: linear-gradient(180deg, #07121f 0%, #07121ff5 68%, #07121f00 100%);
+}
+
+html[data-renderer="mobile"] .journey-footer {
+  background: #081322;
+}
+
+html[data-renderer="mobile"] .glass-card,
+html[data-renderer="mobile"] .process-steps,
+html[data-renderer="mobile"].is-enhanced .story-beat.has-card-motion .motion-card {
+  background: linear-gradient(125deg, #122b40 0%, #181b33 100%);
+  box-shadow: 0 8px 22px #01071040, inset 0 1px 0 #c0edff0d;
+}
+
+/* Two concentric strokes still give the white leading dot a cyan glow. */
+html[data-renderer="mobile"] .card-edge .edge-halo { display: none; }
+html[data-renderer="mobile"] .card-edge .edge-glow { stroke-width: 6; opacity: .45; }
+
+/* Keep the progress lines and charged nodes, without rerasterizing a blurred
+   shadow each time their scroll-linked custom properties change. */
+html[data-renderer="mobile"].is-enhanced .has-card-motion .source-card > .icon {
+  filter: none;
+}
+
+html[data-renderer="mobile"].is-enhanced .has-card-motion :is(
+  .agent-flow i,
+  .workflow-diagram > span.motion-reached,
+  .motion-reached > .step-node
+),
+html[data-renderer="mobile"].is-enhanced .has-card-motion .agent-flow > span::after,
+html[data-renderer="mobile"].is-enhanced .has-card-motion .workflow-diagram > i::after,
+html[data-renderer="mobile"].is-enhanced .has-card-motion .integration-chips > span::after,
+html[data-renderer="mobile"].is-enhanced .has-card-motion .process-steps li::after,
+html[data-renderer="mobile"].is-enhanced .has-card-motion .faq-list details::before {
+  box-shadow: none;
+}
+
+html[data-renderer="mobile"].is-enhanced .has-card-motion .context-orbit {
+  box-shadow: 0 0 12px #59d5ff24, inset 0 0 10px #62d4ef18;
+}
+
+html[data-renderer="mobile"].is-enhanced .has-card-motion .client-quote blockquote {
+  text-shadow: none;
+}
+
+html[data-renderer="mobile"].is-enhanced .story-beat.has-card-motion .beat-heading {
+  text-shadow: 0 2px 4px #020b18;
+}
+
+html[data-renderer="mobile"] .contact-dialog::backdrop {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  background: #020712ed;
+}

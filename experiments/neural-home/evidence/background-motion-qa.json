@@ -1,0 +1,110 @@
+{
+  "backgroundOnlyFadeSamples": [
+    {
+      "backgroundBlack": 0.9809,
+      "beat": "0",
+      "contentInert": false,
+      "contentOpacity": "1",
+      "headerInert": false,
+      "mainInert": false,
+      "position": 0
+    },
+    {
+      "backgroundBlack": 0.3616,
+      "beat": "0",
+      "contentInert": false,
+      "contentOpacity": "1",
+      "headerInert": false,
+      "mainInert": false,
+      "position": 0.25
+    },
+    {
+      "backgroundBlack": 0,
+      "beat": "0",
+      "contentInert": false,
+      "contentOpacity": "1",
+      "headerInert": false,
+      "mainInert": false,
+      "position": 0.5
+    },
+    {
+      "backgroundBlack": 0,
+      "beat": "19",
+      "contentInert": false,
+      "contentOpacity": "1",
+      "headerInert": false,
+      "mainInert": false,
+      "position": 19.6
+    },
+    {
+      "backgroundBlack": 0.5004,
+      "beat": "19",
+      "contentInert": false,
+      "contentOpacity": "1",
+      "headerInert": false,
+      "mainInert": false,
+      "position": 19.95
+    },
+    {
+      "backgroundBlack": 1,
+      "beat": "19",
+      "contentInert": false,
+      "contentOpacity": "1",
+      "headerInert": false,
+      "mainInert": false,
+      "position": 20.2
+    }
+  ],
+  "parallaxSamples": [
+    {
+      "actualScroll": 5165.45458984375,
+      "beat": "3",
+      "contentOpacity": "0.7832",
+      "driftX": 16.73,
+      "driftY": -3.5,
+      "fieldTravel": 0.1946,
+      "position": 3.55,
+      "sceneProgress": "0.16991",
+      "settled": false
+    },
+    {
+      "actualScroll": 5692.72705078125,
+      "beat": "4",
+      "contentOpacity": "1",
+      "driftX": 17.76,
+      "driftY": -3.82,
+      "fieldTravel": 0.2122,
+      "position": 3.68,
+      "sceneProgress": "0.20571",
+      "settled": false
+    },
+    {
+      "actualScroll": 4697.2724609375,
+      "beat": "3",
+      "contentOpacity": "1",
+      "driftX": 15.64,
+      "driftY": -3.2,
+      "fieldTravel": 0.1777,
+      "position": 3.55,
+      "sceneProgress": "0.15789",
+      "settled": false
+    }
+  ],
+  "currentState": {
+    "backgroundBlack": "0",
+    "beat": "0",
+    "contentOpacity": "1",
+    "driftX": "2.92",
+    "driftY": "-0.53",
+    "fieldTravel": "0.0297",
+    "headerInert": false,
+    "mainInert": false,
+    "state": "ready"
+  },
+  "notes": [
+    "Header and content opacity remained1 and parent elements remained interactive at both black-background endpoints in the visual correction checks.",
+    "Parallax values changed within the configured shallow bounds during live scrolling. Scroll position continued changing during the settle probes, so their settled:false results do not establish convergence at fixed targets.",
+    "Independent code review approved clamping, reverse mapping, bounded offsets, and unchanged lifecycle/scheduling."
+  ],
+  "build": "passed"
+}

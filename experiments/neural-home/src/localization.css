@@ -1,0 +1,91 @@
+@font-face {
+  font-family: Rubik;
+  src: url('/rubik-hebrew.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: optional;
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+
+/* One always-visible switch, shared by the desktop and mobile header. */
+.site-header .language-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-width: 52px;
+  min-height: 44px;
+  padding-inline: 10px;
+  border: 1px solid #b19bf750;
+  border-radius: 999px;
+  background: #151d30;
+  color: #edf5ff;
+  font-size: 11px;
+  letter-spacing: 0;
+  line-height: 1;
+  transition: border-color .2s, background .2s;
+}
+.site-header .language-switch:hover { border-color: #c4b5fd; background: #2b2242; }
+.site-header .language-switch:focus-visible { outline: 2px solid #d8cbff; outline-offset: 4px; }
+
+/* The camera and checkpoint positions stay in their physical coordinates.
+   Reading direction applies to the content inside those positions. */
+html[dir='rtl'] .story-beat { direction: ltr; }
+html[dir='rtl'] :is(.beat-heading, .beat-content) { direction: rtl; text-align: start; }
+html[dir='rtl'] :is(h1, h2, h3, .lead, .eyebrow, .card-overline, .step-output) { letter-spacing: 0; }
+html[dir='rtl'] .contact-content { text-align: center; }
+html[dir='rtl'] .site-header .desktop-nav { margin-left: 0; margin-right: auto; }
+html[dir='rtl'] .site-header .mobile-menu nav { right: auto; left: var(--page-pad); }
+html[dir='rtl'] .site-header .mobile-menu nav button[data-contact-open] { text-align: right; }
+html[dir='rtl'] .site-header .desktop-nav a::after { transform-origin: right; }
+html[dir='rtl'] .skip-link { left: auto; right: 24px; }
+html[dir='rtl'] .chapter :is(.button, .quiet-link, .text-link) .icon,
+html[dir='rtl'] .header-cta .icon,
+html[dir='rtl'] .contact-dialog__submit .icon { scale: -1 1; }
+html[dir='rtl'] .journey-footer { direction: ltr; }
+html[dir='rtl'] .chapter-nav .nav-label { direction: rtl; }
+html[dir='rtl'] .motion-toggle { direction: rtl; }
+html[dir='rtl'] .journey-beat-controls { direction: rtl; }
+html[dir='rtl'] .journey-beat-controls button .icon { scale: -1 1; }
+html[dir='rtl'] [data-beat-counter] { direction: ltr; unicode-bidi: isolate; }
+html[dir='rtl'] .journey-progress > span { transform-origin: right; }
+html[dir='rtl'] .agent-flow > span::before,
+html[dir='rtl'] .has-card-motion .agent-flow > span::after { left: -4px; right: 4px; transform-origin: right; }
+html[dir='rtl'] .process-steps li::before,
+html[dir='rtl'] .has-card-motion .process-steps li::after { left: auto; right: 19px; }
+html[dir='rtl'] .workflow-diagram b { padding-left: 0; padding-right: 8px; }
+html[dir='rtl'] .has-card-motion .workflow-diagram > i::after,
+html[dir='rtl'] .has-card-motion .integration-chips > span::after,
+html[dir='rtl'] .has-card-motion .time-comparison i,
+html[dir='rtl'] :is(.report-line, .response-line) { transform-origin: right; }
+html[dir='rtl'] .card-motion-enabled .source-signal { scale: -1 1; }
+html[dir='rtl'] .report-metric > strong span { margin-left: 0; margin-right: 7px; }
+html[dir='rtl'] .card-motion-enabled .report-lines { margin-right: auto; margin-left: 21px; }
+html[dir='rtl'] .has-card-motion .faq-list details::before { left: auto; right: 0; }
+html[dir='rtl'] .faq-list details > div { padding-right: 0; }
+html[dir='rtl'] .contact-email { direction: ltr; unicode-bidi: isolate; }
+html[dir='rtl'] .contact-dialog__close { right: auto; left: 18px; }
+html[dir='rtl'] .contact-dialog__intro { padding-right: 0; padding-left: 38px; }
+html[dir='rtl'] .contact-dialog :is(input[type='email'], .contact-dialog__direct a) { direction: ltr; unicode-bidi: isolate; }
+html[dir='rtl'] .contact-dialog input[type='email'] { text-align: right; }
+html[dir='rtl'] .contact-dialog :is(.contact-dialog__title, .contact-dialog__eyebrow) { letter-spacing: 0; }
+
+@media (max-width: 960px) {
+  .site-header .language-switch { margin-inline-start: auto; }
+  .site-header .header-cta { margin-left: 0; }
+}
+@media (max-width: 600px) {
+  .site-header .language-switch { min-width: 44px; padding-inline: 9px; font-size: 10px; }
+  html[dir='rtl'] .site-header .mobile-menu nav { left: 24px; right: 24px; }
+  html[dir='rtl'] .chapter-nav { direction: rtl; }
+  html[dir='rtl'] .contact-dialog__close { left: 12px; }
+  html[dir='rtl'] .contact-dialog__intro { padding-left: 30px; }
+}
+@media (max-width: 440px) {
+  .site-header .wordmark-text { display: none; }
+  .site-header .header-cta,
+  .site-header .mobile-menu summary { min-height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header .language-switch { transition: none; }
+}

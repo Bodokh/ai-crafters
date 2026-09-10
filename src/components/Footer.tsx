@@ -1,39 +1,33 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 
 export const Footer = () => {
   const t = useTranslations();
   const locale = useLocale();
-  const termsHref = locale === 'he' ? '/he/terms' : '/terms';
-  
+  const isHebrew = locale === 'he';
+  const routeHref = (path: string) => (isHebrew ? `/he${path === '/' ? '' : path}` : path);
+
   return (
-    <footer className="bg-background border-t border-border py-12 text-sm">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2">
-            <Image src="/images/logo.png" alt="AI Crafters" width={100} height={64} loading="lazy" className="h-18 w-auto object-contain dark:brightness-100 brightness-0" />
-          </div>
-
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
-            <Link
-              href={termsHref}
-              className="text-muted-foreground hover:text-cyan-400 transition-colors"
-            >
-              {t('footer.terms')}
-            </Link>
-            <div className="text-muted-foreground">
-              &copy; {new Date().getFullYear()} {t('footer.rights')}
-            </div>
-          </div>
-
-          {/* <div className="flex gap-4">
-            {[Github, Twitter, Linkedin].map((Icon, i) => (
-              <a key={i} href="#" className="p-2 rounded-full bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors">
-                <Icon size={18} />
-              </a>
-            ))}
-          </div> */}
+    <footer className="aic-footer">
+      <div className="aic-footer__inner">
+        <a href={routeHref('/')} className="aic-footer__brand" aria-label={isHebrew ? 'AI Crafters — דף הבית' : 'AI Crafters home'}>
+          <span className="aic-footer__mark">
+            <Image src="/images/logo.png" width={88} height={88} alt="" loading="lazy" />
+          </span>
+          <span className="aic-footer__wordmark" dir="ltr">AI CRAFTERS</span>
+        </a>
+        <nav className="aic-footer__nav" aria-label={isHebrew ? 'ניווט בתחתית העמוד' : 'Footer navigation'}>
+          <a href={routeHref('/use-cases')}>{t('nav.work')}</a>
+          <a href={routeHref('/careers')}>{t('nav.careers')}</a>
+          <a href={routeHref('/terms')} aria-label={t('footer.terms')}>{isHebrew ? 'תנאים' : 'Terms'}</a>
+        </nav>
+        <div className="aic-footer__contact">
+          <a href="mailto:automate@ai-crafters.com" dir="ltr">automate@ai-crafters.com</a>
+          <a href="tel:+972542177133" dir="ltr">+972 54-217-7133</a>
+        </div>
+        <div className="aic-footer__meta">
+          <span>{isHebrew ? 'תל אביב, ישראל' : 'Tel Aviv, Israel'}</span>
+          <small dir="ltr">© {new Date().getFullYear()} AI Crafters</small>
         </div>
       </div>
     </footer>

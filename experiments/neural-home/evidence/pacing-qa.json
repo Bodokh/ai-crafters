@@ -1,0 +1,171 @@
+{
+  "readingHold": 0.2,
+  "transition": 0.8,
+  "desktop": {
+    "samples": [
+      {
+        "beat": "0",
+        "fraction": 0,
+        "progress": 0,
+        "station": "0"
+      },
+      {
+        "beat": "0",
+        "fraction": 0.1,
+        "progress": 0,
+        "station": "0"
+      },
+      {
+        "beat": "0",
+        "fraction": 0.19,
+        "progress": 0,
+        "station": "0"
+      },
+      {
+        "beat": "0",
+        "fraction": 0.2,
+        "progress": 0,
+        "station": "0"
+      },
+      {
+        "beat": "0",
+        "fraction": 0.3,
+        "progress": 0.00227,
+        "station": "0"
+      },
+      {
+        "beat": "0",
+        "fraction": 0.5,
+        "progress": 0.01664,
+        "station": "0"
+      },
+      {
+        "beat": "1",
+        "fraction": 0.7,
+        "progress": 0.03599,
+        "station": "1"
+      },
+      {
+        "beat": "1",
+        "fraction": 0.9,
+        "progress": 0.05037,
+        "station": "1"
+      },
+      {
+        "beat": "1",
+        "fraction": 1,
+        "progress": 0.05263,
+        "station": "1"
+      },
+      {
+        "beat": "1",
+        "fraction": 1.1,
+        "progress": 0.05263,
+        "station": "1"
+      },
+      {
+        "beat": "1",
+        "fraction": 0.7,
+        "progress": 0.03599,
+        "station": "1"
+      },
+      {
+        "beat": "0",
+        "fraction": 0.3,
+        "progress": 0.00227,
+        "station": "0"
+      },
+      {
+        "beat": "0",
+        "fraction": 0,
+        "progress": 0,
+        "station": "0"
+      }
+    ],
+    "unit": 1956.802030456853,
+    "unitRatio": 1.600001660226372,
+    "viewport": [
+      1354,
+      1223
+    ]
+  },
+  "navigation": {
+    "beat": "1",
+    "focus": "It starts with what you know.",
+    "progress": "0.05263"
+  },
+  "mobile": {
+    "samples": [
+      {
+        "beat": "0",
+        "fraction": 0,
+        "progress": 0,
+        "station": "0"
+      },
+      {
+        "beat": "0",
+        "fraction": 0.1,
+        "progress": 0,
+        "station": "0"
+      },
+      {
+        "beat": "0",
+        "fraction": 0.3,
+        "progress": 0.00227,
+        "station": "0"
+      },
+      {
+        "beat": "1",
+        "fraction": 0.8,
+        "progress": 0.04438,
+        "station": "1"
+      },
+      {
+        "beat": "19",
+        "fraction": 19,
+        "progress": 1,
+        "station": "16"
+      },
+      {
+        "beat": "19",
+        "fraction": 19.7,
+        "progress": 1,
+        "station": "19"
+      },
+      {
+        "beat": "0",
+        "fraction": 0,
+        "progress": 0,
+        "station": "3"
+      }
+    ],
+    "unit": 1392.5888324873097,
+    "unitRatio": 1.649986768349893,
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  "contactNavigation": {
+    "beat": "19",
+    "focus": "What couldwork smarter?",
+    "progress": "1.00000",
+    "sceneProgress": "1.0000",
+    "station": "19"
+  },
+  "restored": {
+    "beat": "0",
+    "progress": "0.00000",
+    "state": "ready",
+    "station": "0",
+    "viewport": [
+      1354,
+      1223
+    ]
+  },
+  "review": "Independent pacing review approved with no material findings.",
+  "notes": [
+    "Mobile quick samples allow180ms after scroll and may show camera interpolation during large instant jumps.",
+    "A later mobile settle-poll run timed out after repeated emulation; metrics were reset and the default viewport restored. This revision makes no new device-performance claim."
+  ]
+}

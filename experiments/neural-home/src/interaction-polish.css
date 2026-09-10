@@ -1,0 +1,266 @@
+/* Interaction accents share the journey palette without adding another render loop. */
+.quiet-link .icon {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.6;
+}
+
+.journey-beat-controls button {
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+
+.journey-beat-controls .icon {
+  display: block;
+  width: 15px;
+  height: 15px;
+  stroke-width: 1.6;
+}
+
+.button,
+.button:hover {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  background-image: linear-gradient(110deg, #79e6fa, #b8c5ff 28%, #c3adff 52%, #a5d9ff 76%, #79e6fa);
+  background-size: 240% 100%;
+  background-position: 0% 50%;
+  color: #111827;
+}
+
+.button,
+.header-cta,
+.mobile-menu summary,
+.motion-toggle,
+.journey-beat-controls button {
+  transition: transform 220ms cubic-bezier(.2, .75, .25, 1), box-shadow 220ms ease,
+    border-color 220ms ease, color 180ms ease, background-color 180ms ease;
+}
+
+.header-cta,
+.header-cta:hover {
+  appearance: none;
+  cursor: pointer;
+  background-image: linear-gradient(110deg, #132d40, #29213f 45%, #173b4e 75%, #29213f);
+  background-size: 240% 100%;
+  background-position: 0% 50%;
+}
+
+.button .icon,
+.header-cta .icon,
+.text-link .icon,
+.quiet-link .icon {
+  transition: transform 220ms cubic-bezier(.2, .75, .25, 1);
+}
+
+.button:focus-visible,
+.header-cta:focus-visible,
+.mobile-menu summary:focus-visible {
+  border-radius: 999px;
+}
+
+.button:focus-visible:not(:disabled),
+.header-cta:focus-visible {
+  animation: button-spectrum 2s ease-in-out infinite alternate;
+  animation-play-state: var(--ambient-play-state, running);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px #8b5cf642, 0 0 18px #79e6fa1f;
+}
+
+.button:focus-visible .icon,
+.header-cta:focus-visible .icon,
+.text-link:focus-visible .icon,
+.quiet-link:focus-visible .icon {
+  transform: translate(3px, -3px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover:not(:disabled),
+  .header-cta:hover {
+    animation: button-spectrum 2s ease-in-out infinite alternate;
+    animation-play-state: var(--ambient-play-state, running);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px #8b5cf642, 0 0 18px #79e6fa1f;
+  }
+
+  .header-cta:hover,
+  .mobile-menu summary:hover,
+  .motion-toggle:hover,
+  .journey-beat-controls button:hover {
+    border-color: #bdaaff;
+    color: #fff;
+  }
+
+  .button:hover:not(:disabled) .icon,
+  .header-cta:hover .icon,
+  .text-link:hover .icon,
+  .quiet-link:hover .icon {
+    transform: translate(3px, -3px);
+  }
+
+  .journey-beat-controls button:hover {
+    transform: translateX(2px);
+    box-shadow: 0 0 16px #8b5cf638;
+  }
+
+  .journey-beat-controls button[data-previous-beat]:hover {
+    transform: translateX(-2px);
+  }
+}
+
+.button:active:not(:disabled),
+.header-cta:active,
+.mobile-menu summary:active,
+.motion-toggle:active,
+.journey-beat-controls button:active,
+.journey-beat-controls button[data-previous-beat]:active {
+  transform: scale(.975);
+  transition-duration: 100ms;
+}
+
+.button:disabled {
+  cursor: wait;
+  animation: none;
+  transform: none;
+  box-shadow: none;
+}
+
+.button:disabled .icon {
+  transform: none;
+}
+
+.site-header .desktop-nav a {
+  position: relative;
+  padding-block: 9px;
+}
+
+.site-header .desktop-nav a::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, #79e6fa, #bdaaff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms cubic-bezier(.2, .75, .25, 1);
+}
+
+.site-header .desktop-nav a:is(:hover, :focus-visible)::after {
+  transform: scaleX(1);
+}
+
+.mobile-menu summary i {
+  transition: transform 180ms ease;
+}
+
+.site-header .mobile-menu nav button[data-contact-open] {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: #e2e8f5;
+  font: inherit;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.site-header .mobile-menu nav button[data-contact-open]:is(:hover, :focus-visible) {
+  background: #29203e;
+  color: #e3d9ff;
+}
+
+.mobile-menu[open] summary i:first-child {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.mobile-menu[open] summary i:last-child {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+@keyframes button-spectrum {
+  to { background-position: 100% 50%; }
+}
+
+/* Give every checkpoint its own equal tap area across the entire mobile rail. */
+@media (max-width: 600px) {
+  .journey-footer,
+  .is-enhanced .journey-footer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-rows: 36px;
+    align-items: center;
+    padding: 8px 14px;
+    gap: 4px 0;
+  }
+
+  .is-enhanced .journey-footer {
+    grid-template-rows: 36px 32px;
+  }
+
+  .journey-footer .chapter-nav,
+  .is-enhanced .journey-footer .chapter-nav {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 0;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .journey-footer .chapter-nav::before {
+    left: 6.25%;
+    right: 6.25%;
+    /* Center the 1px stroke itself on the dot/ring center, not its top edge. */
+    transform: translateY(-50%);
+  }
+
+  .journey-footer .chapter-nav a {
+    justify-content: center;
+    padding: 0;
+    min-height: 36px;
+    min-width: 0;
+  }
+
+  .is-enhanced .journey-footer .journey-beat-controls {
+    grid-column: 2;
+    grid-row: 2;
+    justify-content: center;
+    gap: 5px;
+    margin: 0;
+    min-width: 0;
+  }
+
+  .journey-footer .motion-toggle {
+    grid-column: 3;
+    grid-row: 2;
+    justify-self: end;
+    margin: 0;
+    min-height: 32px;
+    padding: 7px 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button:is(:hover, :focus-visible, :active),
+  .header-cta:is(:hover, :focus-visible, :active),
+  .mobile-menu summary:active,
+  .motion-toggle:active,
+  .journey-beat-controls button:is(:hover, :active),
+  .journey-beat-controls button[data-previous-beat]:hover,
+  .button .icon,
+  .header-cta .icon,
+  .text-link .icon,
+  .quiet-link .icon {
+    animation: none;
+    transform: none !important;
+  }
+}

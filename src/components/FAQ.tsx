@@ -10,12 +10,12 @@ export const FAQ = () => {
       <div className="container mx-auto px-6">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="font-display text-4xl font-bold text-foreground md:text-5xl">
-            {locale === 'he' ? 'שאלות נפוצות על AI Crafters' : 'AI Crafters FAQ'}
+            {locale === 'he' ? 'מה כדאי לדעת לפני שמתחילים פרויקט AI?' : 'What should you know before starting an AI project?'}
           </h2>
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
             {locale === 'he'
-              ? 'תשובות קצרות וברורות לשאלות נפוצות על פיתוח סוכני AI, אוטומציה והטמעה בארגון.'
-              : 'Clear answers about AI agent development, workflow automation, and production AI implementation.'}
+              ? 'תשובות על פתרונות AI מותאמים אישית, חיבור למערכות קיימות ואיך מתחילים לעבוד יחד.'
+              : 'Answers about custom AI solutions, working with your existing systems and getting started with AI Crafters.'}
           </p>
         </div>
 

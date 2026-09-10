@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import { JetBrains_Mono, Rubik } from 'next/font/google';
 import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
@@ -8,19 +7,24 @@ import { routing } from '@/i18n/routing';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { DeferredAnalytics } from '@/components/DeferredAnalytics';
+import { SiteContactProvider } from '@/components/SiteContactDialog';
 import { company } from '@/content/site';
-import { defaultOgImage, siteUrl, absoluteUrl } from '@/lib/seo';
+import { createPageMetadata } from '@/lib/seo';
 
 const rubik = Rubik({
     subsets: ['latin', 'hebrew'],
-    weight: ['400', '500', '600', '700'],
-    variable: '--font-rubik'
+    weight: ['300', '400', '500', '600', '700'],
+    variable: '--font-rubik',
+    display: 'optional'
 });
 
 const jetbrainsMono = JetBrains_Mono({
     subsets: ['latin'],
     weight: ['400', '700'],
-    variable: '--font-jetbrains-mono'
+    variable: '--font-jetbrains-mono',
+    display: 'optional',
+    preload: false
 });
 
 export function generateStaticParams() {
@@ -44,33 +48,11 @@ export async function generateMetadata({
 
     const title = metadata.title || 'AI Crafters';
     const description = metadata.description || company.description[locale];
-    const imageUrl = absoluteUrl(defaultOgImage);
-
-    return {
-        metadataBase: new URL(siteUrl),
-        applicationName: company.name,
+    return createPageMetadata({
+        locale,
         title,
         description,
-        openGraph: {
-            title,
-            description,
-            siteName: company.name,
-            images: [
-                {
-                    url: imageUrl,
-                    width: 1200,
-                    height: 630,
-                    alt: 'AI Crafters Logo',
-                },
-            ],
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title,
-            description,
-            images: [imageUrl],
-        },
-    };
+    });
 }
 
 export default async function RootLayout({
@@ -94,20 +76,8 @@ export default async function RootLayout({
     const dir = locale === 'he' ? 'rtl' : 'ltr';
 
     return (
-        <html lang={locale as Locale} dir={dir} className="scroll-smooth" suppressHydrationWarning>
+        <html lang={locale as Locale} dir={dir} className="scroll-smooth dark" suppressHydrationWarning>
             <head>
-                <Script
-                    src="https://www.googletagmanager.com/gtag/js?id=AW-17903861190"
-                    strategy="lazyOnload"
-                />
-                <Script id="google-analytics" strategy="lazyOnload">
-                    {`
-                        window.dataLayer = window.dataLayer || [];
-                        function gtag(){dataLayer.push(arguments);}
-                        gtag('js', new Date());
-                        gtag('config', 'AW-17903861190');
-                    `}
-                </Script>
                 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
                 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
                 <link rel="shortcut icon" href="/favicon.ico" />
@@ -116,18 +86,22 @@ export default async function RootLayout({
                 <link rel="manifest" href="/site.webmanifest" />
             </head>
             <body
-                className={`${rubik.variable} ${jetbrainsMono.variable} antialiased bg-[var(--background)] text-[var(--foreground)]`}
+                className={`${rubik.variable} ${jetbrainsMono.variable} aic-site antialiased bg-[var(--background)] text-[var(--foreground)]`}
             >
-                <NextIntlClientProvider messages={messages}>
+                <NextIntlClientProvider messages={{ nav: messages.nav, contact: messages.contact }}>
                     <ThemeProvider
                          attribute="class"
-                         defaultTheme="system"
-                         enableSystem={true}
+                         defaultTheme="dark"
+                         forcedTheme="dark"
+                         enableSystem={false}
                          disableTransitionOnChange
                     >
-                        <Navbar />
-                        {children}
-                        <Footer />
+                        <SiteContactProvider>
+                            <Navbar />
+                            {children}
+                            <Footer />
+                        </SiteContactProvider>
+                        <DeferredAnalytics measurementId="AW-17903861190" />
                     </ThemeProvider>
                 </NextIntlClientProvider>
             </body>

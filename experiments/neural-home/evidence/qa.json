@@ -1,0 +1,665 @@
+{
+  "date": "2026-09-08",
+  "environment": "Codex in-app Chromium on local Mac; responsive emulation, no CPU throttle",
+  "visibilityHandler": {
+    "simulatedHidden": true,
+    "frames": 0
+  },
+  "desktop": [
+    {
+      "index": 0,
+      "key": "hero",
+      "top": 292.6136169433594,
+      "bottom": 733.366455078125,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "0",
+      "scene": "0",
+      "overflow": false
+    },
+    {
+      "index": 1,
+      "key": "sources",
+      "top": 332.28692626953125,
+      "bottom": 693.7073516845703,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "1",
+      "scene": "1",
+      "overflow": false
+    },
+    {
+      "index": 2,
+      "key": "context",
+      "top": 360.9375,
+      "bottom": 665.0425872802734,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "2",
+      "scene": "2",
+      "overflow": false
+    },
+    {
+      "index": 3,
+      "key": "agent",
+      "top": 316.0653381347656,
+      "bottom": 709.9147338867188,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "3",
+      "scene": "3",
+      "overflow": false
+    },
+    {
+      "index": 4,
+      "key": "workflow",
+      "top": 348.2954406738281,
+      "bottom": 677.6846466064453,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "4",
+      "scene": "4",
+      "overflow": false
+    },
+    {
+      "index": 5,
+      "key": "intelligence",
+      "top": 340.1136169433594,
+      "bottom": 685.866455078125,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "5",
+      "scene": "5",
+      "overflow": false
+    },
+    {
+      "index": 6,
+      "key": "integrations",
+      "top": 350.7386169433594,
+      "bottom": 675.241455078125,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "6",
+      "scene": "6",
+      "overflow": false
+    },
+    {
+      "index": 7,
+      "key": "insurance",
+      "top": 300.710205078125,
+      "bottom": 725.2698669433594,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "7",
+      "scene": "7",
+      "overflow": false
+    },
+    {
+      "index": 8,
+      "key": "reports",
+      "top": 296.9460144042969,
+      "bottom": 729.0340576171875,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "8",
+      "scene": "8",
+      "overflow": false
+    },
+    {
+      "index": 9,
+      "key": "revenue",
+      "top": 358.9488525390625,
+      "bottom": 667.0312194824219,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "9",
+      "scene": "9",
+      "overflow": false
+    },
+    {
+      "index": 10,
+      "key": "discovery",
+      "top": 299.0625,
+      "bottom": 726.9317932128906,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "10",
+      "scene": "10",
+      "overflow": false
+    },
+    {
+      "index": 11,
+      "key": "delivery",
+      "top": 299.0625,
+      "bottom": 726.9317932128906,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "11",
+      "scene": "11",
+      "overflow": false
+    },
+    {
+      "index": 12,
+      "key": "saar",
+      "top": 302.79827880859375,
+      "bottom": 723.1817932128906,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "12",
+      "scene": "12",
+      "overflow": false
+    },
+    {
+      "index": 13,
+      "key": "eran",
+      "top": 302.79827880859375,
+      "bottom": 723.1817932128906,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "13",
+      "scene": "13",
+      "overflow": false
+    },
+    {
+      "index": 14,
+      "key": "dvir",
+      "top": 275.7954406738281,
+      "bottom": 750.1988220214844,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "14",
+      "scene": "14",
+      "overflow": false
+    },
+    {
+      "index": 15,
+      "key": "trust",
+      "top": 288.5653381347656,
+      "bottom": 737.428955078125,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "15",
+      "scene": "15",
+      "overflow": false
+    },
+    {
+      "index": 16,
+      "key": "questions",
+      "top": 273.8778381347656,
+      "bottom": 752.116455078125,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "16",
+      "scene": "16",
+      "overflow": false
+    },
+    {
+      "index": 17,
+      "key": "controls",
+      "top": 312.2585144042969,
+      "bottom": 713.7357482910156,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "17",
+      "scene": "17",
+      "overflow": false
+    },
+    {
+      "index": 18,
+      "key": "first-step",
+      "top": 389.1903381347656,
+      "bottom": 636.803955078125,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "18",
+      "scene": "18",
+      "overflow": false
+    },
+    {
+      "index": 19,
+      "key": "contact",
+      "top": 282.1448669433594,
+      "bottom": 743.8493957519531,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "active": "19",
+      "scene": "19",
+      "overflow": false
+    }
+  ],
+  "mobile": [
+    {
+      "index": 0,
+      "key": "hero",
+      "top": 325.241455078125,
+      "bottom": 621.0368957519531,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "0",
+      "scene": "0",
+      "overflow": false
+    },
+    {
+      "index": 1,
+      "key": "sources",
+      "top": 243.6505584716797,
+      "bottom": 583.9772644042969,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "1",
+      "scene": "1",
+      "overflow": false
+    },
+    {
+      "index": 2,
+      "key": "context",
+      "top": 265.52557373046875,
+      "bottom": 562.1164703369141,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "2",
+      "scene": "2",
+      "overflow": false
+    },
+    {
+      "index": 3,
+      "key": "agent",
+      "top": 210.24147033691406,
+      "bottom": 617.3863525390625,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "3",
+      "scene": "3",
+      "overflow": false
+    },
+    {
+      "index": 4,
+      "key": "workflow",
+      "top": 261.19317626953125,
+      "bottom": 566.4488372802734,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "4",
+      "scene": "4",
+      "overflow": false
+    },
+    {
+      "index": 5,
+      "key": "intelligence",
+      "top": 254.01988220214844,
+      "bottom": 573.6221466064453,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "5",
+      "scene": "5",
+      "overflow": false
+    },
+    {
+      "index": 6,
+      "key": "integrations",
+      "top": 224.0908966064453,
+      "bottom": 603.5369110107422,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "6",
+      "scene": "6",
+      "overflow": false
+    },
+    {
+      "index": 7,
+      "key": "insurance",
+      "top": 219.61647033691406,
+      "bottom": 608.0113525390625,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "7",
+      "scene": "7",
+      "overflow": false
+    },
+    {
+      "index": 8,
+      "key": "reports",
+      "top": 217.27272033691406,
+      "bottom": 610.3693237304688,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "8",
+      "scene": "8",
+      "overflow": false
+    },
+    {
+      "index": 9,
+      "key": "revenue",
+      "top": 252.76988220214844,
+      "bottom": 574.8721313476562,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "9",
+      "scene": "9",
+      "overflow": false
+    },
+    {
+      "index": 10,
+      "key": "discovery",
+      "top": 193.75,
+      "bottom": 633.8920288085938,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "10",
+      "scene": "10",
+      "overflow": false
+    },
+    {
+      "index": 11,
+      "key": "delivery",
+      "top": 204.2471466064453,
+      "bottom": 623.3948669433594,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "11",
+      "scene": "11",
+      "overflow": false
+    },
+    {
+      "index": 12,
+      "key": "saar",
+      "top": 243.9346466064453,
+      "bottom": 583.6931610107422,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "12",
+      "scene": "12",
+      "overflow": false
+    },
+    {
+      "index": 13,
+      "key": "eran",
+      "top": 243.9346466064453,
+      "bottom": 583.6931610107422,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "13",
+      "scene": "13",
+      "overflow": false
+    },
+    {
+      "index": 14,
+      "key": "dvir",
+      "top": 225.2130584716797,
+      "bottom": 602.4289703369141,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "14",
+      "scene": "14",
+      "overflow": false
+    },
+    {
+      "index": 15,
+      "key": "trust",
+      "top": 214.50283813476562,
+      "bottom": 613.1249694824219,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "15",
+      "scene": "15",
+      "overflow": false
+    },
+    {
+      "index": 16,
+      "key": "questions",
+      "top": 174.30397033691406,
+      "bottom": 653.3380432128906,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "16",
+      "scene": "16",
+      "overflow": false
+    },
+    {
+      "index": 17,
+      "key": "controls",
+      "top": 176.80397033691406,
+      "bottom": 650.8238525390625,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "17",
+      "scene": "17",
+      "overflow": false
+    },
+    {
+      "index": 18,
+      "key": "first-step",
+      "top": 267.2301025390625,
+      "bottom": 560.4119110107422,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "18",
+      "scene": "18",
+      "overflow": false
+    },
+    {
+      "index": 19,
+      "key": "contact",
+      "top": 206.8607940673828,
+      "bottom": 551.7755584716797,
+      "viewport": [
+        390,
+        844
+      ],
+      "active": "19",
+      "scene": "19",
+      "overflow": false
+    }
+  ],
+  "expandedProof": {
+    "bottom": 652.8692932128906,
+    "height": 844,
+    "open": true
+  },
+  "manualPause": {
+    "frames": 0,
+    "button": "Resume motion"
+  },
+  "pauseRestoration": {
+    "button": "Resume motion",
+    "hidden": false,
+    "pressed": "true",
+    "state": "ready"
+  },
+  "reducedMotion": {
+    "state": "static",
+    "sceneLoaded": false,
+    "visibleBeats": 20,
+    "inert": 0,
+    "overflow": false
+  },
+  "shortScreen": {
+    "beats": 20,
+    "overflow": false,
+    "size": [
+      844,
+      390
+    ],
+    "state": "static"
+  },
+  "noJavaScript": {
+    "beats": 20,
+    "contact": "mailto:automate@ai-crafters.com",
+    "enhanced": false,
+    "inert": 0
+  },
+  "contextLoss": {
+    "beats": 20,
+    "inert": 0,
+    "state": "static"
+  },
+  "loadFailure": {
+    "beats": 20,
+    "inert": 0,
+    "state": "static"
+  },
+  "mobileFrameSample": {
+    "viewport": [
+      390,
+      844
+    ],
+    "samples": 240,
+    "p50": 16.69999999999709,
+    "p95": 17.5,
+    "over50": 0,
+    "renderedFrames": 227,
+    "triangles": "376328",
+    "drawCalls": "19"
+  },
+  "ambientFinal": {
+    "seconds": 2,
+    "frames": 41,
+    "mode": "ambient"
+  },
+  "livingIdle": {
+    "seconds": 2,
+    "fieldFrames": 48,
+    "sceneFrames": 40,
+    "nodes": "85",
+    "edges": "166"
+  },
+  "scrollDuringHold": {
+    "before": "0.00000",
+    "after": "0.00000",
+    "station": "0",
+    "energy": "0.886"
+  },
+  "bothPaused": {
+    "fieldFrames": 0,
+    "sceneFrames": 0
+  },
+  "bothVisibilityHandler": {
+    "simulatedVisibility": true,
+    "fieldFrames": 0,
+    "sceneFrames": 0
+  },
+  "combinedMobileFrameSample": {
+    "viewport": [
+      390,
+      844
+    ],
+    "samples": 3,
+    "p50": 1084,
+    "p95": 2601.5999999999913,
+    "over50": 3,
+    "sceneFrames": 3,
+    "fieldFrames": 3
+  },
+  "defaultViewportCombined": {
+    "samples": 120,
+    "p95": 17.600000000034925,
+    "fieldFrames": 48,
+    "sceneFrames": 40,
+    "size": [
+      1354,
+      1223
+    ]
+  },
+  "combinedMobileAfterReset": {
+    "viewport": [
+      390,
+      844
+    ],
+    "samples": 240,
+    "p50": 16.70000000001164,
+    "p95": 17.600000000034925,
+    "over50": 0,
+    "sceneFrames": 239,
+    "fieldFrames": 96
+  },
+  "combinedFailureCleanup": {
+    "state": "static",
+    "fieldReady": false,
+    "fieldFrames": 0,
+    "visibleBeats": 20,
+    "inert": 0
+  },
+  "reducedBoth": {
+    "state": "static",
+    "animationAssets": 0,
+    "visibleBeats": 20
+  }
+}

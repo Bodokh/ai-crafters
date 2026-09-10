@@ -34,12 +34,12 @@ export const Hero = () => {
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href="#contact"
-            className="group inline-flex min-h-14 items-center justify-center gap-2 border border-brand-400 bg-brand-600 px-7 py-4 font-bold tracking-wider text-white shadow-[0_0_20px_rgba(14,165,233,0.28)] transition-colors hover:bg-brand-500"
+            className="group inline-flex min-h-14 items-center justify-center gap-2 border border-brand-500 bg-brand-700 px-7 py-4 font-bold tracking-wider text-white shadow-[0_0_20px_rgba(14,165,233,0.28)] transition-colors hover:bg-brand-600"
           >
             {t('hero.cta.primary')} <ArrowIcon size={18} />
           </a>
           <a
-            href="#services"
+            href="#work"
             className="inline-flex min-h-14 items-center justify-center border border-border bg-muted/50 px-7 py-4 font-bold tracking-wider text-foreground backdrop-blur-sm transition-colors hover:border-cyan-400 hover:text-cyan-500"
           >
             {t('hero.cta.secondary')}

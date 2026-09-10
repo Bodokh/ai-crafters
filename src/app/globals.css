@@ -168,6 +168,11 @@ body {
   direction: ltr;
 }
 
+.defer-rendering {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

@@ -22,6 +22,7 @@ export default function robots(): MetadataRoute.Robots {
           'Google-Extended',
         ],
         allow: '/',
+        disallow: ['/api/'],
       },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,

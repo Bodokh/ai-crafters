@@ -1,0 +1,13 @@
+{
+  "name": "ai-crafters-neural-journey",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host localhost --port 8268",
+    "build": "vite build",
+    "preview": "vite preview --host localhost --port 8268"
+  },
+  "dependencies": { "three": "0.185.1" },
+  "devDependencies": { "vite": "8.2.2" }
+}

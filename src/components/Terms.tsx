@@ -1,7 +1,4 @@
-'use client';
-
 import { useLocale, useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
 import { FileText, Shield, CreditCard, Clock, UserCheck, Database, Scale, AlertTriangle, Gavel, Mail } from 'lucide-react';
 
 export const Terms = () => {
@@ -23,47 +20,39 @@ export const Terms = () => {
   ];
 
   return (
-    <section className="min-h-screen pt-32 pb-20 bg-gradient-to-b from-background to-muted/20">
-      <div className="container mx-auto px-6 max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 font-outfit">
+    <main className="aic-page terms-page">
+      <div className="aic-container terms-container">
+        <header className="aic-hero terms-hero">
+          <h1 className="aic-title">
             {t('title')}
           </h1>
-          <p className="text-muted-foreground">
+          <p className="terms-updated">
             {t('lastUpdated')}: {isHebrew ? 'דצמבר 2024' : 'December 2024'}
           </p>
-        </motion.div>
+        </header>
 
-        <div className="space-y-8">
-          {sections.map((section, index) => {
+        <div className="aic-card terms-document">
+          {sections.map((section) => {
             const Icon = section.icon;
             const listItems = section.hasList ? t.raw(`${section.key}.list`) as string[] : null;
             
             return (
-              <motion.div
+              <section
                 key={section.key}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card border border-border rounded-lg p-6 shadow-sm"
+                className="terms-section"
               >
-                <div className={`flex items-start gap-4 ${isHebrew ? 'flex-row-reverse text-right' : ''}`}>
-                  <div className="p-2 bg-cyan-500/10 rounded-lg shrink-0">
-                    <Icon className="w-5 h-5 text-cyan-500" />
+                <div className="terms-section__layout">
+                  <div className="terms-section__icon">
+                    <Icon size={20} aria-hidden="true" />
                   </div>
-                  <div className="flex-1">
-                    <h2 className="text-xl font-semibold mb-3 font-outfit">
+                  <div className="terms-section__body">
+                    <h2 className="terms-section__title">
                       {t(`${section.key}.title`)}
                     </h2>
-                    <div className="text-muted-foreground space-y-2 leading-relaxed">
+                    <div className="terms-section__copy">
                       <p>{t(`${section.key}.content`)}</p>
                       {listItems && Array.isArray(listItems) && (
-                        <ul className={`list-disc ${isHebrew ? 'mr-6' : 'ml-6'} space-y-1 mt-3`}>
+                        <ul>
                           {listItems.map((item: string, i: number) => (
                             <li key={i}>{item}</li>
                           ))}
@@ -72,40 +61,29 @@ export const Terms = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </section>
             );
           })}
         </div>
 
         {/* Contact Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1 }}
-          className="mt-12 text-center bg-card border border-border rounded-lg p-8"
-        >
-          <h2 className="text-xl font-semibold mb-4 font-outfit">{t('contact.title')}</h2>
-          <p className="text-muted-foreground mb-4">{t('contact.content')}</p>
+        <section className="aic-card terms-contact">
+          <h2 className="terms-section__title">{t('contact.title')}</h2>
+          <p className="terms-contact__copy">{t('contact.content')}</p>
           <a
             href="mailto:automate@ai-crafters.com"
-            className="inline-flex items-center gap-2 text-cyan-500 hover:text-cyan-400 transition-colors"
+            className="aic-text-link"
           >
-            <Mail className="w-4 h-4" />
+            <Mail size={17} aria-hidden="true" />
             automate@ai-crafters.com
           </a>
-        </motion.div>
+        </section>
 
         {/* Amendment 13 Notice */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1.1 }}
-          className="mt-8 text-center text-sm text-muted-foreground"
-        >
+        <div className="terms-notice">
           <p>{t('amendment13Notice')}</p>
-        </motion.div>
+        </div>
       </div>
-    </section>
+    </main>
   );
 };
-
