@@ -6,7 +6,12 @@ export const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ai-crafters.com'
 ).replace(/\/$/, '');
 
-export const defaultOgImage = '/images/aic_on_black.png';
+export const defaultOgImage = '/images/og-image.jpg';
+
+const ogImageAlt = (locale: LocaleKey) =>
+  locale === 'he'
+    ? 'AI Crafters — פתרונות AI. בדיוק בשבילכם.'
+    : 'AI Crafters — Custom AI. Built for you.';
 
 export const localeNames: Record<LocaleKey, string> = {
   en: 'English',
@@ -76,20 +81,23 @@ export const createPageMetadata = ({
       images: [
         {
           url: imageUrl,
-          width: 1024,
-          height: 1024,
-          alt:
-            locale === 'he'
-              ? `${company.name} — פיתוח סוכני AI ואוטומציה`
-              : `${company.name} — AI agent development and automation`,
+          width: 1200,
+          height: 630,
+          type: 'image/jpeg',
+          alt: ogImageAlt(locale),
         },
       ],
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title,
       description,
-      images: [imageUrl],
+      images: {
+        url: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: ogImageAlt(locale),
+      },
     },
     robots,
   };

@@ -1,5 +1,9 @@
 const siteUrl = 'https://www.ai-crafters.com';
-const imageUrl = `${siteUrl}/images/aic_on_black.png`;
+const imageUrl = `${siteUrl}/images/og-image.jpg`;
+const ogImageAlt = locale =>
+  locale === 'he'
+    ? 'AI Crafters — פתרונות AI. בדיוק בשבילכם.'
+    : 'AI Crafters — Custom AI. Built for you.';
 const faqKeys = [
   ['questions.offerTitle', 'questions.offer'],
   ['questions.fitTitle', 'questions.fit'],
@@ -114,12 +118,15 @@ export function renderHomeSeo(html, locale = 'en', { indexable = false } = {}) {
     meta('property', 'og:locale', locale === 'he' ? 'he_IL' : 'en_US'),
     meta('property', 'og:locale:alternate', locale === 'he' ? 'en_US' : 'he_IL'),
     meta('property', 'og:image', imageUrl),
-    meta('property', 'og:image:alt', 'AI Crafters'),
-    meta('name', 'twitter:card', 'summary'),
+    meta('property', 'og:image:type', 'image/jpeg'),
+    meta('property', 'og:image:width', '1200'),
+    meta('property', 'og:image:height', '630'),
+    meta('property', 'og:image:alt', ogImageAlt(locale)),
+    meta('name', 'twitter:card', 'summary_large_image'),
     meta('name', 'twitter:title', title),
     meta('name', 'twitter:description', description),
     meta('name', 'twitter:image', imageUrl),
-    meta('name', 'twitter:image:alt', 'AI Crafters'),
+    meta('name', 'twitter:image:alt', ogImageAlt(locale)),
     `<script id="neural-home-schema" type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, '\\u003c')}</script>`,
     '<!-- neural-seo:end -->',
   ].join('\n    ');

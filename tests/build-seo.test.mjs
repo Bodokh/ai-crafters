@@ -77,8 +77,8 @@ test('every built page has complete, self-consistent SEO metadata', () => {
     assert.doesNotMatch(contentOf(html, 'robots'), /noindex/i, `${route}: noindex`);
     assert.equal(contentOf(html, 'og:title', 'property'), title, `${route}: og:title`);
     assert.equal(contentOf(html, 'og:description', 'property'), description, `${route}: og:description`);
-    assert.ok(contentOf(html, 'og:image', 'property'), `${route}: og:image`);
-    assert.ok(contentOf(html, 'twitter:card'), `${route}: twitter card`);
+    assert.match(contentOf(html, 'og:image', 'property'), /\/images\/og-image\.jpg$/, `${route}: og:image`);
+    assert.equal(contentOf(html, 'twitter:card'), 'summary_large_image', `${route}: twitter card`);
     for (const hreflang of ['en', 'he', 'x-default']) {
       const alternate = tags(html, 'link').find(tag => tag.rel === 'alternate' && tag.hreflang === hreflang);
       assert.match(alternate?.href ?? '', /^https?:\/\//, `${route}: ${hreflang} alternate`);

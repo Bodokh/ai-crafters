@@ -21,7 +21,10 @@ test('English metadata uses the rendered copy and preserves the entire journey b
   assert.equal(html.slice(html.indexOf('<body')), rendered.slice(rendered.indexOf('<body')));
   assert.match(html, /<link rel="canonical" href="https:\/\/www\.ai-crafters\.com\/">/);
   assert.match(html, /property="og:locale" content="en_US"/);
-  assert.match(html, /name="twitter:card" content="summary"/);
+  assert.match(html, /name="twitter:card" content="summary_large_image"/);
+  assert.match(html, /property="og:image" content="https:\/\/www\.ai-crafters\.com\/images\/og-image\.jpg"/);
+  assert.match(html, /property="og:image:width" content="1200"/);
+  assert.match(html, /property="og:image:alt" content="AI Crafters — Custom AI. Built for you."/);
   assert.match(html, /<meta name="robots" content="noindex, nofollow">/);
   assert.equal(graphNode(html, 'WebPage').inLanguage, 'en');
   assert.equal(graphNode(html, 'Organization').name, 'AI Crafters');
@@ -42,6 +45,7 @@ test('Hebrew metadata and all five FAQ answers follow the server-rendered transl
   assert.match(html, /<link rel="canonical" href="https:\/\/www\.ai-crafters\.com\/he">/);
   assert.match(html, /property="og:locale" content="he_IL"/);
   assert.match(html, /property="og:locale:alternate" content="en_US"/);
+  assert.match(html, /property="og:image:alt" content="AI Crafters — פתרונות AI. בדיוק בשבילכם."/);
   const page = graphNode(html, 'WebPage');
   assert.equal(page.name, hebrewCopy['meta.title']);
   assert.equal(page.description, hebrewCopy['meta.description']);
