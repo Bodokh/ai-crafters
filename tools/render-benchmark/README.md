@@ -1,24 +1,20 @@
-# Neural homepage rendering comparison
+# Neural homepage rendering benchmarks
 
 The [experiment results](RESULTS.md) include the measured desktop GPU improvement, mobile cost tradeoff, validation status, and raw evidence.
 
-## Build and inspect both versions
+## Build and inspect the accepted homepage
 
-Use Node.js 22.12 or newer; the installed Vite 8.2.2 also supports Node.js 20.19+ within the 20.x line (`^20.19.0 || >=22.12.0`). The older Node 18 prerequisite in the root README does not apply to this experiment. Install the dependencies in `experiments/neural-home` first. From the repository root, build the frozen baseline and current candidate together:
-
-```sh
-rtk proxy node tools/render-benchmark/build-comparison.mjs
-```
-
-Then, from `experiments/neural-home`, start the production preview:
+Use Node.js 22.12 or newer and Yarn Classic for the root lockfile. From the repository root:
 
 ```sh
-rtk npm run preview -- --port 8276 --host localhost --strictPort
+rtk proxy yarn install --frozen-lockfile
+rtk npm run build
+rtk npm start
 ```
 
-Open [the comparison viewer](http://localhost:8276/comparison.html). It displays one version at a time. Direct routes are `/baseline.html` and `/` for English, and `/he/baseline.html` and `/he` for Hebrew. The baseline is snapshot commit `29f9d3d`, which includes the original checkout's then-uncommitted and untracked homepage work. It is an experiment baseline, not a deployed production version.
+The accepted homepage is served at [English /](http://localhost:3000/) and [Hebrew /he](http://localhost:3000/he) by the main Next site. The build includes the vGPU-generated mobile artwork and the accepted SEO/copy. See the [homepage guide](../../experiments/neural-home/README.md) for its build and development workflow.
 
-The build script creates both production builds, checks for conflicting asset contents before combining them, and writes `dist/comparison-build.json`. A later ordinary homepage build replaces this comparison output; rerun the script to restore the viewer and baseline routes. The comparison is local and does not deploy anything.
+The visual comparison viewer, combined-build script, and baseline routes have been removed. Retained measurements compare the historical snapshot `29f9d3d` with the rendering candidate as it existed on September 10, 2026; they are not measurements of later contact or main-site integration changes. A new before/after benchmark requires separately built revisions, with their exact commits and asset hashes recorded.
 
 ## Replay measurements
 
@@ -30,7 +26,7 @@ const expression = `(${source})(${JSON.stringify({ label: 'baseline-desktop', du
 // Evaluate expression using the session's supported CDP API.
 ```
 
-Use `/baseline.html` and `/` on the same server, viewport, browser, device scale, and CPU throttle. Mobile must have touch/coarse-pointer emulation enabled **before navigation**; verify the returned `profile` is `mobile`. Keep the tested tab foreground and avoid concurrent browser work.
+Use the homepage route for each separately built revision with the same serving setup, viewport, browser, device scale, and CPU throttle. Mobile must have touch/coarse-pointer emulation enabled **before navigation**; verify the returned `profile` is `mobile`. Keep the tested tab foreground and avoid concurrent browser work.
 
 The desktop primary renderer uses `#neural-canvas`, reported under `scene`. The mobile primary renderer uses `#neural-field`, reported under `field`; its `scene` submissions are correctly empty. `primaryCanvasId` identifies the required renderer for sample validation, and snapshot dimensions refer to that primary canvas. Compare `field.replayTravel` for mobile performance.
 
@@ -60,6 +56,6 @@ Acceptance should consider visual screenshots, travel CPU p50/p95, travel submis
 Run `rtk proxy node --test tools/render-benchmark/replay.test.mjs` for a dependency-free harness check. It simulates known Canvas2D/GPU costs, aggregation, checkpoint labeling, warmup exclusion, restoration after failure, GPU result availability, disjoint events, queue limits, and external-query isolation. This is harness validation, not browser performance evidence.
 
 
-## Current phone preview
+## Phone testing
 
-Open https://eran.devshift.biz/ for the upgraded homepage or https://eran.devshift.biz/comparison.html to switch versions. The existing Cloudflare route still targets localhost:8268; that port now runs the worktree preview. The original checkout preview was preserved on localhost:8277, while the worktree comparison remains available on localhost:8276. No Cloudflare configuration or original checkout files changed. The supporting app proxy remains http://localhost:8287.
+The existing [phone-test URL](https://eran.devshift.biz/) uses the configured local port 8268. Serve the integrated Next site on that port to test the same `/` and `/he` routes as the main build. No Cloudflare route change is required. There is no comparison page. Local ports and tunnel availability depend on the running session and are not evidence of a production deployment.

@@ -75,6 +75,44 @@ test('the build can localize already-decorated English HTML without stale or dup
   assert.equal(graphNode(repeated, 'FAQPage').mainEntity[0].name, hebrewCopy['questions.offerTitle']);
 });
 
+test('production indexing is opt-in for both locales and leaves rendered copy and metadata unchanged', () => {
+  for (const locale of ['en', 'he']) {
+    const localized = renderLocalizedHome(source, locale);
+    const preview = renderHomeSeo(localized, locale);
+    const production = renderHomeSeo(localized, locale, { indexable: true });
+    assert.equal((production.match(/name="robots"/g) || []).length, 1);
+    assert.match(production, /name="robots" content="index, follow, max-image-preview:large"/);
+    assert.doesNotMatch(production, /noindex|nofollow/);
+    assert.equal(production.replace('index, follow, max-image-preview:large', 'noindex, nofollow'), preview);
+    assert.equal(production.slice(production.indexOf('<body')), localized.slice(localized.indexOf('<body')));
+    assert.equal(renderHomeSeo(production, locale, { indexable: false }), preview);
+    assert.equal(renderHomeSeo(production, locale), preview);
+  }
+});
+
+test('production localization is idempotent and normalizes duplicate robots directives', () => {
+  const duplicateSource = source.replace('</head>', `<meta content="noindex" name='ROBOTS'>
+    <meta name=robots content="nofollow">
+  </head>`);
+  const english = renderHomeSeo(renderLocalizedHome(duplicateSource, 'en'), 'en', { indexable: true });
+  const hebrew = renderHomeSeo(renderLocalizedHome(english, 'he'), 'he', { indexable: true });
+  const repeated = renderHomeSeo(hebrew, 'he', { indexable: true });
+  assert.equal(repeated, hebrew);
+  for (const html of [english, hebrew, repeated]) {
+    assert.equal((html.match(/\bname=["']?robots\b/gi) || []).length, 1);
+    assert.match(html, /name="robots" content="index, follow, max-image-preview:large"/);
+    assert.doesNotMatch(html, /noindex|nofollow/);
+    assert.equal((html.match(/rel="canonical"/g) || []).length, 1);
+    assert.equal((html.match(/property="og:title"/g) || []).length, 1);
+    assert.equal((html.match(/id="neural-home-schema"/g) || []).length, 1);
+    for (const locale of ['en', 'he', 'x-default']) {
+      assert.equal((html.match(new RegExp(`<link rel="alternate" hreflang="${locale}"`, 'g')) || []).length, 1);
+    }
+  }
+  assert.equal(graphNode(repeated, 'WebPage').name, hebrewCopy['meta.title']);
+  assert.equal(graphNode(repeated, 'FAQPage').mainEntity[0].name, hebrewCopy['questions.offerTitle']);
+});
+
 test('FAQ text is read from visible content, decodes entities, and cannot close its JSON script', () => {
   const copy = source
     .replace(/(<summary data-i18n="questions.offerTitle">)[\s\S]*?(<\/summary>)/,

@@ -1,6 +1,6 @@
 # AI Crafters: copy, conversion, SEO and AI search review
 
-Reviewed September 10, 2026. Implementation is local and uncommitted; it has not been deployed. The accepted homepage is the English/Hebrew neural journey in `experiments/neural-home`, previewed at [localhost:8268](http://localhost:8268/) and [/he](http://localhost:8268/he). The initial pass mistakenly targeted and showed the older Next.js homepage on port 8287. The correction applies the conversion copy to the neural homepage while preserving its animation and pacing; port 8287 supplies the preview's secondary pages and API.
+Reviewed September 10, 2026, with the subsequent main-site integration described below. The accepted homepage is the English/Hebrew neural journey, whose source remains in `experiments/neural-home`. It now supplies the main site's `/` and `/he` routes alongside the existing Next secondary pages and APIs. The earlier copy pass mistakenly targeted the older Next homepage before correcting the accepted neural content; the old homepage route and visual comparison viewer have since been removed. This document separates source integration and historical local validation from public deployment, recrawling, and search outcomes.
 
 ## Business goal and positioning
 
@@ -15,10 +15,10 @@ Working assumptions: retain English and Hebrew, remain workflow-led across indus
 
 ## What changed
 
-| Surface | Previous weakness | Local improvement |
+| Surface | Previous weakness | Retained improvement |
 |---|---|---|
 | Accepted neural homepage | The initial copy pass targeted the older Next homepage | “Custom AI. Built for you.” with tailored agents, workflows, and product AI fitted to the client's systems and data |
-| Older Next homepage | “Smart Agents. Real Efficiency.” did not explain the custom offer | Its earlier “Custom AI. Built around your business.” rewrite remains in source; this is not the accepted neural homepage preview |
+| Older Next homepage | The initial pass rewrote the wrong homepage | Its route is removed; the accepted neural journey is the main homepage |
 | Hebrew neural homepage | The accepted visual journey needed the same clear custom offer | “פתרונות AI. בדיוק בשבילכם.” and natural business Hebrew describing a solution fitted to the client's systems and needs |
 | Primary action | Generic automation promises and a neural hero action that continued the journey | “Discuss your project” opens the existing neural contact dialog; the secondary case-study link and scroll cue remain. App inquiry prompts describe the next step |
 | Supporting claims | Blanket 80% reduction, maximum ROI, fear of being left behind | Specific business benefits without numerical guarantees or urgency claims |
@@ -36,7 +36,13 @@ Working assumptions: retain English and Hebrew, remain workflow-led across indus
 
 The neural correction preserves the accepted 19 beats, eight chapters, SVGs, renderers, transitions, and scroll timing. Thirteen animation/controller/CSS files match the SHA-256 hashes captured before the correction. Quoted testimonials and founder biographies were preserved. The earlier app pass preserves route slugs, languages, legal terms, and job requirements; it corrected an accidental “Sorry” suffix on one Hebrew testimonial role.
 
-The neural homepage is still an isolated preview. Its localized titles, descriptions, language alternates, social metadata, and structured data now match the visible English/Hebrew content, including answers drawn from the visible FAQ. It retains `noindex,nofollow`. Integrating this homepage into the production route and deploying it remain separate release work; local metadata is not evidence of changed live search visibility.
+The neural homepage's localized titles, descriptions, language alternates, social metadata, and structured data match the visible English/Hebrew content, including answers drawn from the visible FAQ. Those changes are retained in the main-site build. An ordinary isolated Vite preview retains `noindex,nofollow`; the main site's `site` build emits indexable HTML. Source integration and local metadata do not establish changed live search visibility.
+
+### Main-site integration
+
+Root `npm run dev` and `npm run build` first build the accepted homepage through `build:home`. Vite's `site` mode writes its English/Hebrew HTML and assets into ignored `public/_home`; middleware serves that HTML at `/` and `/he` before Next's locale handling. `/en` redirects permanently to `/`. The previous Next homepage route is removed, while secondary pages, localized buyer content, and existing APIs remain in Next. The homepage includes links to all six service pages for discovery and defers the existing Google Ads tag. No comparison viewer or baseline route is shipped.
+
+The root postinstall installs the homepage's locked dependencies, and postbuild includes public/static assets in the Next standalone output. See the [root setup guide](../README.md) for the single-server workflow. These changes retain the accepted neural copy and vGPU rendering; they do not represent a new copy review or a fresh Lighthouse measurement. Supplementary Next Markdown remains generated from its existing content rather than from the neural template and requires separate editorial reconciliation.
 
 ## Verified search baseline
 
@@ -89,9 +95,9 @@ Search samples included [WhaleBiz's custom development page](https://whale.co.il
 
 ## SEO, AEO and GEO status
 
-**SEO foundations:** the existing Next app has localized URLs, metadata, language alternates, HTML content, and a sitemap. The app pass improves intent clarity, internal discovery, breadcrumbs, and freshness accuracy. The accepted neural homepage has a separate build and remains `noindex,nofollow` in this local preview; its metadata must be included when it is integrated and released. Relevant organic discovery is the main observed opportunity; the sample is too small to identify a CTR ceiling.
+**SEO foundations:** the existing Next app has localized URLs, metadata, language alternates, HTML content, and a sitemap. The app pass improves intent clarity, internal discovery, breadcrumbs, and freshness accuracy. The accepted neural homepage's metadata is now included through the main-site build, whose HTML is indexable; only the isolated Vite preview retains `noindex,nofollow`. Relevant organic discovery is the main observed opportunity; the sample is too small to identify a CTR ceiling.
 
-**AEO — answering buying questions:** the visible FAQs and expanded guides give direct answers about fit, integration, scope, and controls. Next app structured data and English Markdown reuse their underlying content. The neural homepage uses its own visible English/Hebrew FAQ for its structured answers. Production integration must also reconcile the homepage's supplementary Markdown with the accepted neural content; the current Next Markdown is not generated from the neural template.
+**AEO — answering buying questions:** the visible FAQs and expanded guides give direct answers about fit, integration, scope, and controls. Next app structured data and English Markdown reuse their underlying content. The neural homepage uses its own visible English/Hebrew FAQ for its structured answers. The homepage's supplementary Markdown still needs reconciliation with the accepted neural content; the retained Next Markdown is not generated from the neural template.
 
 **GEO — visibility in generated answers:** actual inclusion and citation performance remain unmeasured. Google says ordinary SEO fundamentals apply to its AI features: useful accessible text, internal links, appropriate crawl access, and structured data matching visible content. It does not require special AI files or schema. Existing `llms.txt`/Markdown are maintained as additional formats, not treated as a ranking guarantee. [Google guidance](https://developers.google.com/search/docs/appearance/ai-features)
 
@@ -106,7 +112,9 @@ Accuracy matters in crawl signals as well: modification dates should reflect sig
 5. **Check AI visibility separately.** Bing Webmaster Tools' AI Performance report can show citations across supported AI surfaces. Establish dated baseline queries and record cited URLs, sources, locale, and environment. Do not combine those counts with ordinary search CTR. [Bing AI Performance](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview)
 6. **Release checks.** Verify deployed content, sitemap submission status, actual contact inbox delivery, and account-side conversion recording. Provider acceptance is not proof of inbox delivery. Core Web Vitals, physical-device performance, and a new PageSpeed score were not measured in this copy pass.
 
-## Validation
+## Historical copy-pass validation
+
+The checks below describe the September 10 copy work before the later main-site integration. They are retained with their original scope and do not establish deployment or performance of the integrated build.
 
 ### Earlier Next app pass
 
@@ -128,6 +136,6 @@ These checks apply to the Next app and its older homepage, not to the separate n
 - Built English/Hebrew previews return HTTP 200 with localized canonical/social metadata, one schema block, 19 beats, and preview `noindex`. Main CSS/JS assets return HTTP 200 with correct MIME types; representative English/Hebrew service and use-case routes work through the preview proxy. Independent code review found no actionable issues.
 - No real CAPTCHA submission, inbox delivery, physical-device performance, or new PageSpeed measurement is claimed. Historical neural Lighthouse results remain version-specific in the [neural README](../experiments/neural-home/README.md).
 
-The correct homepage preview is [http://localhost:8268/](http://localhost:8268/), with [Hebrew at /he](http://localhost:8268/he). The Next backend on `http://localhost:8287/` supplies secondary pages and the contact API; its root is the older homepage and should not be used to review the accepted neural experience. Use the literal `localhost` bind hostname for this installed Next.js version: a loopback-normalization issue caused redirects when the server was bound to `127.0.0.1`; using `HOSTNAME=localhost` resolved it without application changes. [Upstream issue](https://github.com/vercel/next.js/issues/94745)
+The integrated homepage can now be reviewed through root `npm run dev`, or `npm run build` followed by `npm start`, at [English /](http://localhost:3000/) and [Hebrew /he](http://localhost:3000/he). The same Next server supplies secondary pages and the contact API; a separate homepage proxy is unnecessary. Use the literal `localhost` bind hostname for this installed Next.js version when overriding the host: the earlier preview encountered locale redirects when bound to `127.0.0.1`. [Upstream issue](https://github.com/vercel/next.js/issues/94745)
 
-No public deployment, search submission, analytics-account change, or real test email is included in this pass. Existing unrelated checkout work is preserved. The Vercel CLI session reports an outdated version; before using it for deployment, update with `npm i -g vercel@latest` for compatibility.
+No public deployment, search submission, analytics-account change, or real test email was included in the historical copy pass. The later source integration does not by itself verify any of those outcomes.

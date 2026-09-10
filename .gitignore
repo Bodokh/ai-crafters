@@ -28,3 +28,7 @@ dist-ssr
 
 .specstory
 next-env.d.ts
+
+# Built homepage assets are generated before Next starts or builds.
+/public/_home/
+*.tsbuildinfo

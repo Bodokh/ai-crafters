@@ -193,6 +193,20 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </div>
           </section>
         )}
+        <section className="aic-editorial-related" aria-labelledby="related-services-heading">
+          <h2 id="related-services-heading" className="aic-editorial-heading">
+            {locale === 'he' ? 'פתרונות AI נוספים' : 'Explore more AI services'}
+          </h2>
+          <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-3" role="list">
+            {servicePages.filter((related) => related.slug !== service.slug).map((related) => (
+              <li key={related.slug}>
+                <Link href={`/services/${related.slug}`} className="underline underline-offset-4">
+                  {related.title[locale]}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
         <ProjectInquiry locale={locale} />
       </section>
     </main>

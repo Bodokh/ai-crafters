@@ -21,7 +21,7 @@ export const Navbar = () => {
   const contactLabel = t('nav.start');
   const menuLabel = isHebrew ? 'תפריט' : 'Menu';
   const links = [
-    { label: t('nav.services'), path: '/', section: 'services' },
+    { label: t('nav.services'), path: '/', section: 'agents' },
     { label: t('nav.work'), path: '/use-cases' },
     { label: t('nav.careers'), path: '/careers' },
   ];

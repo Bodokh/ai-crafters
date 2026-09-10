@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --host localhost --port 8268",
     "build": "vite build",
+    "build:site": "vite build --mode site",
     "preview": "vite preview --host localhost --port 8268"
   },
   "dependencies": { "three": "0.185.1" },

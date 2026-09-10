@@ -4,9 +4,16 @@ import { renderLocalizedHome } from './src/localization.js';
 import { renderHomeSeo } from './build/seo.js';
 
 export default defineConfig(({ mode }) => {
+  const productionHome = mode === 'site';
   // Share the existing app's public captcha key; private credentials stay in Next.
   const repoRoot = fileURLToPath(new URL('../../', import.meta.url));
   const env = loadEnv(mode, repoRoot, 'NEXT_PUBLIC_RECAPTCHA_SITE_KEY');
+  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? '';
+  const localizeHome = (html, locale) => {
+    const localized = renderHomeSeo(renderLocalizedHome(html, locale), locale, { indexable: productionHome });
+    // This preload is added after Vite rewrites the template's other asset URLs.
+    return productionHome ? localized.replaceAll('href="/rubik-hebrew.woff2"', 'href="/_home/rubik-hebrew.woff2"') : localized;
+  };
   const localApp = {
     target: process.env.LOCAL_APP_ORIGIN || 'http://localhost:8272',
     // Preserve this preview's origin for Next's locale redirects.
@@ -43,7 +50,7 @@ export default defineConfig(({ mode }) => {
       handler(html, context) {
         const path = context.originalUrl || context.path;
         const locale = /^\/he(?:[/?]|$)/.test(path) ? 'he' : 'en';
-        return renderHomeSeo(renderLocalizedHome(html, locale), locale);
+        return localizeHome(html, locale);
       },
     },
     generateBundle: {
@@ -51,16 +58,27 @@ export default defineConfig(({ mode }) => {
       handler(_options, bundle) {
         const home = bundle['index.html'];
         if (home?.type === 'asset') {
-          this.emitFile({ type: 'asset', fileName: 'he/index.html', source: renderHomeSeo(renderLocalizedHome(String(home.source), 'he'), 'he') });
+          this.emitFile({ type: 'asset', fileName: 'he/index.html', source: localizeHome(String(home.source), 'he') });
         }
       },
     },
   };
 
   return {
-    plugins: [localePlugin],
+    base: productionHome ? '/_home/' : '/',
+    build: productionHome ? { outDir: fileURLToPath(new URL('../../public/_home/', import.meta.url)), emptyOutDir: true } : {},
+    plugins: [
+      ...(productionHome ? [{
+        name: 'site-analytics',
+        transformIndexHtml: {
+          order: 'pre',
+          handler: html => html.replace('</body>', '<script type="module" src="/src/site-analytics.js"></script>\n</body>'),
+        },
+      }] : []),
+      localePlugin,
+    ],
     define: {
-      'import.meta.env.VITE_RECAPTCHA_SITE_KEY': JSON.stringify(env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''),
+      'import.meta.env.VITE_RECAPTCHA_SITE_KEY': JSON.stringify(siteKey),
     },
     server: { proxy, allowedHosts: ['eran.devshift.biz', 'filler.devshift.biz'] },
     preview: { proxy, allowedHosts: ['eran.devshift.biz', 'filler.devshift.biz'] },

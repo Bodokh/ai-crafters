@@ -4,7 +4,7 @@ Measured on 2026-09-10 in the isolated `codex/homepage-vgpu-comparison` worktree
 
 ## Scope and baseline
 
-Baseline commit `29f9d3d` captures the original checkout's then-uncommitted and untracked homepage/SEO work. All experiment changes are in this separate worktree; the concurrent SEO agent's original checkout was left untouched. No production deployment was made. The worktree is now exposed through the existing phone-preview tunnel, as described below.
+Baseline commit `29f9d3d` captures the original checkout's then-uncommitted and untracked homepage/SEO work. At measurement time, rendering changes were isolated in a separate worktree and the concurrent SEO agent's original checkout was left untouched. No production deployment was part of those measurements. The accepted renderer and copy are now integrated into the main site's `/` and `/he` routes; the visual comparison viewer and combined-build script have been removed. The measurements below remain evidence for their original builds, not for the later main-site integration.
 
 - Desktop stays on Three.js. Tissue meshes are partitioned for culling. Revised material lighting and a simpler spatial grain calculation replace the previous fragment-noise calculations.
 - Mobile stays on the existing Canvas2D renderer. Four transparent 288×288 neuron sprites were baked offline with actual vGPU native Metal execution. The scene begins paused behind the opening cover; the browser requests those optional images after the first scene frame when scrolling activates the renderer, then replaces the existing sprite canvases. Failed asset loads retain the procedural fallback.
@@ -74,7 +74,7 @@ All six audits exited successfully with no runtime errors. The first baseline ru
 - [Browser checks](evidence/browser-checks.json) recorded a ready mobile fallback, reduced-motion static content with zero rendering-asset requests, and a ready Hebrew/RTL page with four assets and no horizontal overflow. The comparison viewer was also checked with English/Hebrew navigation and retained scroll position.
 - Six valid local Lighthouse mobile audits completed; both variants have a median performance score of 98. Public PageSpeed Insights and physical-device measurements remain unverified.
 - Startup timing is not scored from `load-checks.json`: those samples included already-ready scenes or restored scroll positions and do not provide a valid cold-start comparison.
-- Visual improvement is available for direct comparison in the viewer. Physical-phone smoothness, public-hosting performance, and production acceptance remain unverified.
+- Visual comparison was performed using the former viewer. Physical-phone smoothness, public-hosting performance, and production acceptance were not established by these checks.
 
 ### Follow-up: journey timeline alignment
 
@@ -87,20 +87,20 @@ The initial contact entrance added a 420 ms desktop depth reveal, a brief gradie
 
 The Lighthouse scores above describe the build before these contact-animation additions. This later change adds approximately 0.84 kB gzip of entry JavaScript and 0.14 kB gzip of CSS; it adds no image requests or animation library. Lighthouse was not rerun for this follow-up.
 
-`https://eran.devshift.biz/` serves this worktree from local port 8268, with the comparison viewer available at `/comparison.html`. Cloudflare configuration was not changed. The previous original-checkout preview remains running on port 8277, with its files untouched; the local worktree comparison also remains on port 8276. [Route verification](evidence/phone-preview-route.json) confirms public HTML and entry assets match the worktree build. The mobile browser also loaded all four vGPU-generated neuron assets through the public domain.
+At that follow-up, the phone-test domain served the worktree from local port 8268, while the original-checkout preview was preserved on port 8277 and a local comparison ran on port 8276. Cloudflare configuration was not changed. [Route verification](evidence/phone-preview-route.json) records matching public HTML and entry assets for that worktree build. The mobile browser also loaded all four vGPU-generated neuron assets through the public domain. These are historical server details; the later main-site integration removes the comparison viewer.
 
 ### Follow-up: visible mobile contact entrance
 
-The user selected the vGPU version and reported that the contact transition was not noticeable on their phone. The selected worktree remains the public phone preview. Mobile entrance now rises 36 px from scale 0.95 and opacity 0.2 over 360 ms, with a matching light sweep. Content finishes within 320 ms. Only transform and opacity animate; desktop entrance and homepage scroll timing are unchanged.
+The user selected the vGPU version and reported that the contact transition was not noticeable on their phone. The selected worktree was used for that phone-preview correction. Mobile entrance now rises 36 px from scale 0.95 and opacity 0.2 over 360 ms, with a matching light sweep. Content finishes within 320 ms. Only transform and opacity animate; desktop entrance and homepage scroll timing are unchanged.
 
 Mobile pointer opening focuses the close button, including on reopen, so the form does not request the software keyboard during entry. A field tap remains immediately usable. Keyboard and assistive activation retain immediate opening and first-field focus; reduced motion retains the 100 ms opacity fade. Matching pointer presses distinguish zero-detail touch clicks from keyboard activation. Automatic focus events no longer cancel the entrance, while intentional pointer or keyboard interaction finishes it immediately. Native dismissal, scroll restoration, and submission handling are unchanged.
 
 All seven motion tests and independent review passed. [New browser evidence](evidence/contact-mobile-followup.json) records visible intermediate frames at 390×844 and 4× CPU slowdown: 41 RAF samples, an 18 ms p95 interval, and zero remaining effects after settling. Early close and field clicks at a paused 80 ms entrance, rapid reopen, late focus, keyboard/reduced-motion modes, Hebrew fit, and desktop behavior also passed. The tool cannot dispatch trusted touch events, so the measured activation uses a trusted mouse pointer under mobile emulation; zero-detail touch classification is tested with synthetic events. Physical-phone keyboard behavior and performance remain unverified.
 
-The public HTML and `index-Gyh_GG4L.js` match the local build byte-for-byte. This correction adds approximately 0.16 kB gzip to the preceding entry script and no CSS, images, or dependencies. The historical Lighthouse comparison above has not been rerun for either contact follow-up.
+At verification time, the public HTML and `index-Gyh_GG4L.js` matched the local build byte-for-byte. This correction adds approximately 0.16 kB gzip to the preceding entry script and no CSS, images, or dependencies. The historical Lighthouse comparison above has not been rerun for either contact follow-up or the later main-site integration.
 
 ## Reproduce and inspect
 
-Follow the [comparison build and preview instructions](README.md#build-and-inspect-both-versions), then open `/comparison.html` on the local preview server. English before/after routes are `/baseline.html` and `/`; Hebrew routes are `/he/baseline.html` and `/he`.
+Follow the [main-site build instructions](README.md#build-and-inspect-the-accepted-homepage) to inspect the accepted homepage. The main-site build now serves its indexable English/Hebrew output alongside the existing Next secondary pages and APIs. The comparison viewer and combined baseline build are removed. New before/after measurements require separately built revisions under matching conditions.
 
 The original four JSON files in [evidence](evidence/) are byte-for-byte copies of the recorded comparison evidence and Lighthouse summary. The later [timeline alignment check](evidence/timeline-alignment.json) records the CSS follow-up separately. Keep them unchanged when adding later runs; report new evidence separately with its browser, device, throttle, build, and sample-selection details.

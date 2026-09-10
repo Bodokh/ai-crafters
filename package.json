@@ -4,11 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "postinstall": "npm --prefix experiments/neural-home ci --include=dev",
+    "build:home": "npm --prefix experiments/neural-home run build:site",
+    "predev": "npm run build:home",
     "dev": "next dev",
+    "prebuild": "npm run build:home",
     "build": "next build",
+    "postbuild": "node scripts/prepare-standalone.mjs",
     "start": "next start",
     "lint": "next lint"
   },
+  "engines": { "node": ">=22.12.0" },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-label": "^2.1.8",

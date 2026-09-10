@@ -8,6 +8,7 @@ const faqKeys = [
   ['firstStep.question', 'firstStep.answer'],
 ];
 const metadataBlock = /\n?\s*<!-- neural-seo:start -->[\s\S]*?<!-- neural-seo:end -->/g;
+const robotsMeta = /\n?\s*<meta\b(?=[^>]*\sname\s*=\s*(?:"robots"|'robots'|robots(?=\s|\/?>)))[^>]*>/gi;
 
 const escapePattern = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const escapeAttribute = value => value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -43,10 +44,11 @@ function contentAt(html, key) {
   return visibleText(match[2]);
 }
 
-/** Add preview-safe metadata after localization, both in dev and in built HTML. */
-export function renderHomeSeo(html, locale = 'en') {
+/** Add localized metadata; previews remain private unless the build opts in. */
+export function renderHomeSeo(html, locale = 'en', { indexable = false } = {}) {
   if (locale !== 'en' && locale !== 'he') throw new Error(`Unsupported homepage locale: ${locale}`);
-  const cleanHtml = html.replace(metadataBlock, '');
+  const cleanHtml = html.replace(metadataBlock, '').replace(/<head\b[^>]*>[\s\S]*?<\/head\s*>/i,
+    head => head.replace(robotsMeta, ''));
   if (!/<\/head\s*>/i.test(cleanHtml)) throw new Error('Missing neural homepage head');
   const title = visibleText(cleanHtml.match(/<title\b[^>]*>([\s\S]*?)<\/title\s*>/i)?.[1] || '');
   const descriptionTag = cleanHtml.match(/<meta\b(?=[^>]*\bname=["']description["'])[^>]*>/i)?.[0];
@@ -99,6 +101,7 @@ export function renderHomeSeo(html, locale = 'en') {
   const meta = (attribute, name, content) => `<meta ${attribute}="${name}" content="${escapeAttribute(content)}">`;
   const additions = [
     '<!-- neural-seo:start -->',
+    meta('name', 'robots', indexable ? 'index, follow, max-image-preview:large' : 'noindex, nofollow'),
     `<link rel="canonical" href="${canonical}">`,
     `<link rel="alternate" hreflang="en" href="${siteUrl}/">`,
     `<link rel="alternate" hreflang="he" href="${siteUrl}/he">`,
@@ -120,6 +123,5 @@ export function renderHomeSeo(html, locale = 'en') {
     `<script id="neural-home-schema" type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, '\\u003c')}</script>`,
     '<!-- neural-seo:end -->',
   ].join('\n    ');
-  // The existing noindex directive intentionally remains in this private preview.
   return cleanHtml.replace(/<\/head\s*>/i, `${additions}\n  </head>`);
 }

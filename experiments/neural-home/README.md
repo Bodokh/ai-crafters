@@ -1,27 +1,38 @@
 # AI Crafters — follow the signal
 
-The accepted English/Hebrew neural homepage design has 19 reading beats. The current user preview is [localhost:8268](http://localhost:8268/), with [Hebrew at /he](http://localhost:8268/he); the Next backend at `localhost:8287` supplies secondary pages and APIs. Opening port 8287 directly shows the older Next homepage. The allowed public tunnel host is `eran.devshift.biz`; its HTTP 200 response was verified in an earlier pass and was not rechecked for the September 10 copy correction. This remains an isolated preview, not a production deployment.
+The accepted English/Hebrew neural homepage has 19 reading beats and is integrated into the main site at `/` and `/he`. The historical `experiments/neural-home` directory is its source location. The main site's build includes the accepted custom AI copy, localized SEO, desktop rendering improvements, vGPU-generated mobile artwork, and contact entrance. The previous Next homepage and the visual comparison viewer are removed. Public deployment status must be verified separately from this source integration.
 
 ## Run locally
 
-Run both servers. To reproduce the current preview, start the existing Next app in production mode from `/Users/bodokh/projects/ai-crafters`:
+From the repository root, run the complete site:
+
+```sh
+rtk proxy yarn install --frozen-lockfile
+rtk npm run dev
+```
+
+Open [localhost:3000](http://localhost:3000/) or [Hebrew at /he](http://localhost:3000/he). Installation runs `npm --prefix experiments/neural-home ci --include=dev`. Both root `dev` and `build` run `build:home` first, which invokes `vite build --mode site` and emits indexable English/Hebrew HTML plus assets into ignored `public/_home`. Root `npm run build` followed by `npm start` serves the same homepage. The postbuild step also includes `public` and `.next/static` in the Next standalone output.
+
+Middleware rewrites `/` and `/he` to their built HTML before Next's locale middleware; `/en` redirects permanently to `/`. Service, project, career, legal, and API routes remain in Next. Only one server is needed for the integrated site. While root development is running, homepage source edits require `rtk npm run build:home` and a browser refresh; that source is not watched by the root development command.
+
+### Isolated visual development
+
+For Vite's direct source reload, start a Next server on an available port, then run these commands from `experiments/neural-home`:
+
+```sh
+rtk proxy env LOCAL_APP_ORIGIN=http://localhost:3000 npm run dev -- --port 8274 --strictPort
+```
+
+For an isolated built preview instead:
 
 ```sh
 rtk npm run build
-rtk npm run start -- --hostname localhost --port 8287
+rtk proxy env LOCAL_APP_ORIGIN=http://localhost:3000 npm run preview -- --port 8274 --strictPort
 ```
 
-Then, from `/Users/bodokh/projects/ai-crafters/experiments/neural-home`:
+An ordinary Vite build writes `dist` and retains `noindex,nofollow`; only `build:site` creates the indexable main-site output. The Vite scripts historically default to port 8268, so select an unused port when the complete site is already running there. `LOCAL_APP_ORIGIN` defaults to `http://localhost:8272` when unset. Use the literal `localhost` bind hostname for the installed Next version's locale behavior.
 
-```sh
-rtk npm install
-rtk npm run build
-rtk proxy env LOCAL_APP_ORIGIN=http://localhost:8287 npm run preview -- --strictPort
-```
-
-The prototype's `dev` and `preview` scripts default to `localhost:8268`. For development, run the existing app with `rtk npm run dev -- --hostname localhost --port 8272` and the prototype with `rtk npm run dev`; Vite defaults to `http://localhost:8272` when `LOCAL_APP_ORIGIN` is unset. Keep the Next hostname `localhost` to avoid the locale middleware's earlier self-redirect behavior. The existing `allowedDevOrigins: ['127.0.0.1']` setting supports development traffic when a loopback alias is used.
-
-Vite proxies ordinary page/locale routes, assets, `/_next` including WebSockets, and contact/careers APIs to the selected local Next origin. First-party page links are root-relative. English `/` and `/en`, and pretranslated Hebrew `/he`, stay on the preview. The language switch preserves query/hash; legacy `#services`, `#work`, and `#about` map to `#agents`, `#results`, and `#team`. Separately hosting `dist` requires equivalent locale/page/API routing. The isolated `127.0.0.1:8274` preview is reserved for Lighthouse audits; override the new defaults with `--host 127.0.0.1 --port 8274` when starting that audit server.
+Vite proxies ordinary page/locale routes, assets, `/_next` including WebSockets, and contact/careers APIs to the selected local Next origin. Its own English `/` and `/en`, and pretranslated Hebrew `/he`, stay on that isolated preview. First-party links are root-relative. The language switch preserves query/hash; legacy `#services`, `#work`, and `#about` map to `#agents`, `#results`, and `#team`. Serving `dist` separately still requires equivalent page/API routing; the integrated root build supplies those routes itself. The comparison viewer and combined baseline build are no longer part of this workflow.
 
 ## Journey and rendering
 
@@ -45,7 +56,7 @@ Ordinary Next pages use shared static styles and `SiteContactDialog`, without a 
 
 Contact controls open a localized native dialog using the existing API contract: Name → `firstName`, Company → `lastName`, `email`, `message`, the current `locale`, and `recaptchaToken` from v3 action `contact_submit`. Only the public site key is bundled. Google reCAPTCHA loads on dialog open; `execute` readiness is checked inside `grecaptcha.ready`, with retry after a failed load. Preserve those readiness/race guards, cancellation, duplicate-submit protection, draft retention, timeout handling, and focus restoration. The hidden floating badge is accompanied by visible Google Privacy/Terms disclosure. Local verification failures show honest errors and the real email fallback. Synthetic success/error tests are UI evidence; no real test email or delivery is claimed.
 
-Business copy, metrics, founder details, and all three quotations come from existing site content. Shared static presentation, footer/contact integration, and locale support are part of the authorized source changes; the neural homepage remains an isolated preview. Localized search/social metadata and visible FAQ structured data are part of the September 10 copy correction, while `noindex,nofollow` remains in place. Production homepage integration and deployment have not been completed. No private backend credentials are bundled and no deployed production backend is selected by the current preview.
+Business copy, metrics, founder details, and all three quotations come from existing site content. Shared static presentation, footer/contact integration, and locale support accompany the integrated homepage. Localized search/social metadata and visible FAQ structured data from the September 10 copy correction are included in the main-site build, where HTML is indexable; isolated Vite previews retain `noindex,nofollow`. The main-site homepage defers the existing Google Ads tag. No private backend credentials are bundled. Contact and secondary-page requests use the same Next origin as the homepage.
 
 ## September 10, 2026: copy and conversion correction
 
@@ -53,7 +64,7 @@ The initial content review mistakenly targeted and showed the older Next homepag
 
 Thirteen animation/controller/CSS files match the SHA-256 baseline captured before this correction. The 19 beats, eight chapters, SVGs, renderer behavior, and desktop/mobile pacing are preserved. The final build and all 44 neural tests passed: 39 existing controller, testimonial, and renderer tests plus five localized metadata tests. Independent code review found no actionable issues. Browser checks verified neuron rendering and journey navigation, English/Hebrew heroes and inquiry dialogs, English workflow-card wrapping, and navigation to client projects and back. Checked desktop and 390×844 layouts had no horizontal overflow. The narrow viewport used the desktop renderer; physical-phone/mobile-renderer visual acceptance, fresh Lighthouse results, and actual-phone performance were not measured.
 
-The [content and search review](../../docs/content-seo-review-2026-09-10.md) separates the older live-site Search Console baseline from these local changes. Built English/Hebrew HTML was verified for localized search/social metadata and a single FAQ schema block; CSS/JS assets and representative proxied service/use-case pages returned HTTP 200. This preview retains `noindex,nofollow`; production integration and release checks remain separate work.
+The [content and search review](../../docs/content-seo-review-2026-09-10.md) separates the older live-site Search Console baseline from these changes. In that copy pass, built English/Hebrew HTML was verified for localized search/social metadata and a single FAQ schema block; CSS/JS assets and representative proxied service/use-case pages returned HTTP 200. Those checks used a `noindex,nofollow` preview. The later main-site integration now uses indexable `site` output; the historical copy checks do not establish release or search-index status for that build.
 
 ## Historical mobile-renderer and carousel verification
 
