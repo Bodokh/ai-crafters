@@ -1,0 +1,55 @@
+{
+  "publicMatchesWorktree": true,
+  "entryAssetsMatch": true,
+  "cloudflareConfigurationChanged": false,
+  "newPreviewPort": 8268,
+  "previousPreviewPort": 8277,
+  "pages": [
+    {
+      "url": "http://localhost:8276/",
+      "sha256": "5d453dc8b1fab3453e65311a37519893133d28c54ff70d3118fa865feb0f30c6",
+      "scripts": [
+        "/assets/index-BW6heUs8.js"
+      ],
+      "stylesheets": [
+        "/assets/index-BJ8aWCS5.css"
+      ]
+    },
+    {
+      "url": "http://localhost:8268/",
+      "sha256": "5d453dc8b1fab3453e65311a37519893133d28c54ff70d3118fa865feb0f30c6",
+      "scripts": [
+        "/assets/index-BW6heUs8.js"
+      ],
+      "stylesheets": [
+        "/assets/index-BJ8aWCS5.css"
+      ]
+    },
+    {
+      "url": "https://eran.devshift.biz/",
+      "sha256": "5d453dc8b1fab3453e65311a37519893133d28c54ff70d3118fa865feb0f30c6",
+      "scripts": [
+        "/assets/index-BW6heUs8.js"
+      ],
+      "stylesheets": [
+        "/assets/index-BJ8aWCS5.css"
+      ]
+    },
+    {
+      "url": "https://eran.devshift.biz/he",
+      "sha256": "30a36b19535fbcb6cacf88b4f2681c2eb57f3a4cd379d128dabbc2098b5a9e6f",
+      "scripts": [
+        "/assets/index-BW6heUs8.js"
+      ],
+      "stylesheets": [
+        "/assets/index-BJ8aWCS5.css"
+      ]
+    },
+    {
+      "url": "https://eran.devshift.biz/comparison.html",
+      "sha256": "fa268a3389551879f0edecf5061e7e8721b8378b2e1c78cb4bd712c9af793450",
+      "scripts": [],
+      "stylesheets": []
+    }
+  ]
+}

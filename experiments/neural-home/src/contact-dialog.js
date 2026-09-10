@@ -1,3 +1,5 @@
+import { createContactDialogMotion } from './contact-dialog-motion.js';
+
 const EN_COPY = {
   close: 'Close contact form',
   eyebrow: 'Custom AI for your business',
@@ -169,6 +171,7 @@ export function createContactDialog({ siteKey } = {}) {
   surface.append(close, intro, form);
   dialog.append(surface);
   document.body.append(dialog);
+  const motion = createContactDialogMotion({ dialog, surface, intro, fields, submit, direct, legal, close });
 
   let disposed = false;
   let generation = 0;
@@ -181,6 +184,7 @@ export function createContactDialog({ siteKey } = {}) {
   let ownedScript = null;
   let captchaCleanup = () => {};
   let backdropStart = false;
+  let pointerActivation = null;
   const current = version => !disposed && dialog.open && version === generation;
 
   function showStatus(text, tone = '') {
@@ -287,6 +291,7 @@ export function createContactDialog({ siteKey } = {}) {
   function closed() {
     // Native close events are queued; an old close must not cancel a new session.
     if (dialog.open) return;
+    motion.cancel();
     generation += 1;
     activeRequest?.abort();
     activeRequest = null;
@@ -304,10 +309,11 @@ export function createContactDialog({ siteKey } = {}) {
   }
   function closeDialog() {
     if (!dialog.open) return;
+    motion.cancel();
     dialog.close();
     closed();
   }
-  function openDialog(opener) {
+  function openDialog(opener, { instant = false } = {}) {
     if (disposed || dialog.open) return;
     trigger = opener;
     ++generation;
@@ -316,20 +322,37 @@ export function createContactDialog({ siteKey } = {}) {
       rootOverflow: document.documentElement.style.overflow,
       bodyOverflow: document.body.style.overflow,
     };
+    const mobile = window.matchMedia('(max-width: 600px)').matches || document.documentElement.dataset.renderer === 'mobile';
+    // Avoid summoning the phone keyboard while the panel is entering, including
+    // on reopen when a browser may remember the previously focused text field.
+    close.autofocus = mobile && !instant;
     dialog.showModal();
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
     surface.scrollTop = 0;
-    inputs.get('firstName').focus({ preventScroll: true });
+    (close.autofocus ? close : inputs.get('firstName')).focus({ preventScroll: true });
     showStatus('');
+    motion.enter({ instant });
     // Warm up quietly; submission retries and reports any actual failure.
     void loadCaptcha().catch(() => {});
   }
+  document.addEventListener('pointerdown', event => {
+    const opener = event.target.closest?.('[data-contact-open]');
+    pointerActivation = opener ? { opener, time: event.timeStamp } : null;
+  }, { ...events, capture: true });
+  const clearPointerActivation = () => { pointerActivation = null; };
+  document.addEventListener('pointercancel', clearPointerActivation, events);
+  document.addEventListener('keydown', clearPointerActivation, { ...events, capture: true });
   document.addEventListener('click', event => {
     const opener = event.target.closest?.('[data-contact-open]');
+    const pointer = pointerActivation;
+    pointerActivation = null;
     if (!opener || event.defaultPrevented || event.button !== 0) return;
     event.preventDefault();
-    openDialog(opener);
+    // Touch-generated clicks can have detail=0. A matching recent pointer press
+    // distinguishes them from keyboard and assistive activation.
+    const fromPointer = Boolean(event.pointerType) || (pointer?.opener === opener && event.timeStamp - pointer.time < 1500);
+    openDialog(opener, { instant: event.detail === 0 && !fromPointer });
   }, { ...events, capture: true });
   close.addEventListener('click', closeDialog, events);
   dialog.addEventListener('cancel', event => { event.preventDefault(); closeDialog(); }, events);
@@ -405,6 +428,7 @@ export function createContactDialog({ siteKey } = {}) {
     dispose() {
       if (disposed) return;
       disposed = true;
+      motion.dispose();
       closeDialog();
       generation += 1;
       activeRequest?.abort();

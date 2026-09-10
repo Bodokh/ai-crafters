@@ -93,6 +93,7 @@ async function prepareBounds(geometry, checkpoint) {
     if (i % 512 === 0) await checkpoint();
   }
   sphere.radius = Math.sqrt(radiusSquared);
+  geometry.boundingBox = box;
   geometry.boundingSphere = sphere;
 }
 
@@ -112,22 +113,34 @@ const tissueFragment = `
   uniform float strength;
   varying vec3 vWorld;
   varying vec3 vNormal;
-  float hash(vec3 p) { return fract(sin(dot(p, vec3(127.1,311.7,74.7))) * 43758.5453); }
-  float noise(vec3 p) {
-    vec3 i = floor(p), f = fract(p); f = f*f*(3.0-2.0*f);
-    return mix(mix(mix(hash(i),hash(i+vec3(1,0,0)),f.x),mix(hash(i+vec3(0,1,0)),hash(i+vec3(1,1,0)),f.x),f.y),
-      mix(mix(hash(i+vec3(0,0,1)),hash(i+vec3(1,0,1)),f.x),mix(hash(i+vec3(0,1,1)),hash(i+vec3(1,1,1)),f.x),f.y),f.z);
-  }
   void main() {
     vec3 normal = normalize(vNormal);
-    vec3 view = normalize(cameraPosition-vWorld);
-    float rim = pow(1.0-abs(dot(normal,view)), 3.1);
-    float lit = max(0.0,dot(normal,normalize(vec3(-0.4,0.8,1.0))));
-    float detail = noise(vWorld*24.0);
-    float web = pow(1.0-abs(noise(vWorld*9.0)*2.0-1.0), 20.0);
-    float glint = pow(max(0.0,dot(reflect(-normalize(vec3(-0.5,0.8,1.0)),normal),view)),28.0);
-    vec3 color = tint*(0.025+lit*0.13+rim*0.64+detail*0.025+web*0.025) + vec3(0.68,0.88,1.0)*glint*0.48;
-    float fog = exp(-max(0.0,distance(cameraPosition,vWorld)-6.0)*0.047);
+    vec3 eye = cameraPosition-vWorld;
+    vec3 view = normalize(eye);
+    float facing = abs(dot(normal,view));
+    float edge = 1.0-facing;
+    float rim = edge*edge*edge;
+    // A broad cool key and violet fill give the tissue a readable, translucent
+    // volume. Analytical studio reflections replace sixteen 3D-noise hashes.
+    vec3 reflected = reflect(-view,normal);
+    float key = max(0.0,dot(normal,vec3(-0.298,0.596,0.745)));
+    float fill = max(0.0,dot(normal,vec3(0.842,-0.421,0.337)));
+    float softbox = max(0.0,dot(reflected,vec3(-0.349,0.698,0.628)));
+    float softbox2 = softbox*softbox;
+    float sheen = softbox2*softbox2;
+    float glint = sheen*sheen*sheen;
+    float violet = max(0.0,dot(reflected,vec3(0.873,0.218,-0.436)));
+    violet *= violet;
+    violet *= violet;
+    // Low-contrast, spatially stable striations retain organic detail without
+    // animated noise or the sparkling cells of the previous procedural web.
+    float grain = sin(dot(vWorld,vec3(17.0,23.0,13.0)))*.5+.5;
+    vec3 color = tint*(.021+key*.115+fill*.035+rim*.48+grain*.009)
+      + vec3(.34,.67,.88)*sheen*.14
+      + vec3(.72,.91,1.0)*glint*.34
+      + vec3(.36,.22,.62)*violet*edge*.15
+      + vec3(.10,.48,.60)*rim*key*.18;
+    float fog = exp(-max(0.0,length(eye)-6.0)*0.047);
     gl_FragColor = vec4(mix(vec3(0.027,0.071,0.122),color*strength,fog),1.0);
     #include <tonemapping_fragment>
     #include <colorspace_fragment>
@@ -237,37 +250,52 @@ export async function createNeuralScene({ canvas, cardSides, signal, initiallyPa
   }
 
   async function addMerged(parts, strength, tint) {
-    // Every tissue part has the same indexed position/normal/uv layout. Copy
-    // those buffers a part at a time instead of one long synchronous merge.
-    const vertexCount = parts.reduce((count, part) => count + part.attributes.position.count, 0);
-    const indexCount = parts.reduce((count, part) => count + part.index.count, 0);
-    const geometry = own(new THREE.BufferGeometry());
-    const indices = new (vertexCount > 65535 ? Uint32Array : Uint16Array)(indexCount);
-    for (const [name, size] of [['position', 3], ['normal', 3], ['uv', 2]]) {
-      const values = new Float32Array(vertexCount * size);
-      let offset = 0;
-      for (const part of parts) {
-        values.set(part.attributes[name].array, offset);
-        offset += part.attributes[name].array.length;
-        await checkpoint();
-      }
-      geometry.setAttribute(name, new THREE.BufferAttribute(values, size));
-    }
-    let indexOffset = 0, vertexOffset = 0;
-    for (const part of parts) {
-      const source = part.index.array;
-      for (let i = 0; i < source.length; i++) indices[indexOffset + i] = source[i] + vertexOffset;
-      indexOffset += source.length;
-      vertexOffset += part.attributes.position.count;
-      await checkpoint();
-    }
-    geometry.setIndex(new THREE.BufferAttribute(indices, 1));
-    for (const part of parts) part.dispose();
-    parts.length = 0;
-    await prepareBounds(geometry, checkpoint);
     const material = own(new THREE.ShaderMaterial({ vertexShader: tissueVertex, fragmentShader: tissueFragment,
       uniforms: { tint: { value: new THREE.Color(tint) }, strength: { value: strength } } }));
-    scene.add(new THREE.Mesh(geometry, material));
+    // Keep complete source surfaces in short route slabs. Attachment depth is
+    // enough to choose a slab; bounds below include every vertex, even when a
+    // long framing fiber crosses several slabs. No geometry or RNG changes.
+    const chunks = new Map();
+    for (const part of parts) {
+      const slab = Math.floor(part.attributes.position.getZ(0) / 16);
+      if (!chunks.has(slab)) chunks.set(slab, []);
+      chunks.get(slab).push(part);
+    }
+    for (const [slab, chunk] of chunks) {
+      // Copy matching indexed position/normal/uv buffers a source part at a time
+      // so preparation continues yielding within the existing startup budget.
+      const vertexCount = chunk.reduce((count, part) => count + part.attributes.position.count, 0);
+      const indexCount = chunk.reduce((count, part) => count + part.index.count, 0);
+      const geometry = own(new THREE.BufferGeometry());
+      const indices = new (vertexCount > 65535 ? Uint32Array : Uint16Array)(indexCount);
+      for (const [name, size] of [['position', 3], ['normal', 3], ['uv', 2]]) {
+        const values = new Float32Array(vertexCount * size);
+        let offset = 0;
+        for (const part of chunk) {
+          values.set(part.attributes[name].array, offset);
+          offset += part.attributes[name].array.length;
+          await checkpoint();
+        }
+        geometry.setAttribute(name, new THREE.BufferAttribute(values, size));
+      }
+      let indexOffset = 0, vertexOffset = 0;
+      for (const part of chunk) {
+        const source = part.index.array;
+        for (let i = 0; i < source.length; i++) indices[indexOffset + i] = source[i] + vertexOffset;
+        indexOffset += source.length;
+        vertexOffset += part.attributes.position.count;
+        await checkpoint();
+      }
+      geometry.setIndex(new THREE.BufferAttribute(indices, 1));
+      await prepareBounds(geometry, checkpoint);
+      const mesh = new THREE.Mesh(geometry, material);
+      mesh.name = `neural-tissue-${strength === 1 ? 'primary' : 'distant'}-${slab}`;
+      scene.add(mesh);
+    }
+    // The source arrays retain ownership until every chunk succeeds so aborts
+    // at any checkpoint still release both partial chunks and unmerged parts.
+    for (const part of parts) part.dispose();
+    parts.length = 0;
   }
 
   let signalCurve, signalLengths, signalMaterial, pulse, pulseHalo;

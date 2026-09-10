@@ -6,9 +6,10 @@ const sides = Array.from({ length: 19 }, (_, index) => index % 3 ? 'left' : 'rig
 
 // A deterministic 60Hz event loop checks real scheduling behavior, including
 // time spent drawing. Canvas methods are faked; no browser is started.
-function createHarness({ drawCost = 1, nullContext = false } = {}) {
+function createHarness({ drawCost = 1, nullContext = false, withImages = false } = {}) {
   let now = 0, id = 0;
   const events = new Map(), sprites = [], frames = [], clears = [];
+  const images = [], spriteCopies = [];
   const document = new EventTarget();
   const subscriptions = new Set();
   const addEvent = document.addEventListener.bind(document);
@@ -35,6 +36,19 @@ function createHarness({ drawCost = 1, nullContext = false } = {}) {
     clearTimeout: handle => events.delete(handle),
   };
   document.defaultView = window;
+  if (withImages) window.Image = class {
+    constructor() {
+      this.naturalWidth = this.naturalHeight = 288;
+      this.decoding = '';
+      this.decodePromise = new Promise((resolve, reject) => {
+        this.finishDecode = resolve;
+        this.failDecode = reject;
+      });
+      images.push(this);
+    }
+    decode() { return this.decodePromise; }
+    removeAttribute(name) { if (name === 'src') this.src = ''; }
+  };
   const gradient = { addColorStop() {} };
   function context(main = false) {
     let transform = [1, 0, 0, 1, 0, 0], currentFrame;
@@ -47,7 +61,7 @@ function createHarness({ drawCost = 1, nullContext = false } = {}) {
         now += drawCost;
       },
       drawImage(...args) {
-        if (!main) return;
+        if (!main) { spriteCopies.push(args); return; }
         if (failDraw) throw new Error('Simulated canvas failure');
         assert.ok(args.slice(1).every(Number.isFinite));
         if (!currentFrame.images++) frames.push(currentFrame);
@@ -85,7 +99,7 @@ function createHarness({ drawCost = 1, nullContext = false } = {}) {
   };
   const canvas = createCanvas(true);
   return {
-    canvas, window, document, events, sprites, frames, clears, subscriptions,
+    canvas, window, document, events, sprites, frames, clears, subscriptions, images, spriteCopies,
     setFailure(value) { failDraw = value; },
     run(duration) {
       const until = now + duration;
@@ -257,4 +271,71 @@ test('draw failures report once and readiness callbacks can pause immediately', 
   assert.equal(harness.frames.length, 1);
   assert.equal(harness.events.size, 0);
   scene.dispose();
+});
+
+test('baked sprites load after the first useful frame and reuse the four existing canvases', async () => {
+  const harness = createHarness({ withImages: true });
+  let ready = 0;
+  const scene = createMobileNeuralScene({ canvas: harness.canvas, cardSides: sides,
+    onReady: () => ready++ });
+  assert.equal(harness.images.length, 0);
+  harness.run(18);
+  assert.equal(ready, 1, 'Readiness must not wait for a network image');
+  assert.equal(harness.frames.length, 1);
+  assert.equal(harness.images.length, 0, 'No asset request competes with the first useful frame');
+  const originalCanvases = [...harness.sprites];
+  harness.run(18);
+  assert.equal(harness.images.length, 4);
+  assert.ok(harness.images.every(image => image.decoding === 'async'));
+  for (const image of harness.images) { image.onload(); image.finishDecode(); }
+  await Promise.resolve();
+  await Promise.resolve();
+  assert.equal(harness.spriteCopies.length, 4);
+  assert.deepEqual(harness.sprites, originalCanvases, 'Decode reuses the same owned raster surfaces');
+  assert.ok(harness.sprites.slice(2).every(sprite => sprite.width === 288 && sprite.height === 288));
+  harness.run(100);
+  assert.equal(ready, 1);
+  assert.ok(harness.frames.every(frame => frame.images <= 72));
+  scene.dispose();
+});
+
+test('failed, invalid, and late image decodes retain the fallback without reviving a disposed scene', async () => {
+  const harness = createHarness({ withImages: true });
+  const controller = new AbortController();
+  let errors = 0;
+  createMobileNeuralScene({ canvas: harness.canvas, cardSides: sides, signal: controller.signal,
+    onError: () => errors++ });
+  harness.run(40);
+  const [failedLoad, failedDecode, wrongSize, lateDecode] = harness.images;
+  failedLoad.onerror();
+  failedDecode.onload();
+  failedDecode.failDecode(new Error('Unsupported image'));
+  wrongSize.naturalWidth = 1;
+  wrongSize.onload();
+  wrongSize.finishDecode();
+  lateDecode.onload();
+  await Promise.resolve();
+  await Promise.resolve();
+  assert.equal(harness.spriteCopies.length, 0);
+  controller.abort();
+  lateDecode.finishDecode();
+  await Promise.resolve();
+  await Promise.resolve();
+  harness.run(300);
+  assert.equal(harness.spriteCopies.length, 0, 'Late decodes cannot repaint disposed canvases');
+  assert.ok(harness.sprites.every(sprite => sprite.width === 1 && sprite.height === 1));
+  assert.equal(harness.events.size, 0);
+  assert.equal(harness.subscriptions.size, 0);
+  assert.equal(errors, 0, 'Optional image upgrades never fail the functioning renderer');
+  assert.ok(harness.images.every(image => image.onload === null && image.onerror === null));
+});
+
+test('disposing from the readiness callback cancels the deferred image upgrade', () => {
+  const harness = createHarness({ withImages: true });
+  let scene;
+  scene = createMobileNeuralScene({ canvas: harness.canvas, cardSides: sides,
+    onReady: () => scene.dispose() });
+  harness.run(500);
+  assert.equal(harness.images.length, 0);
+  assert.equal(harness.events.size, 0);
 });

@@ -1,0 +1,220 @@
+[
+  {
+    "animations": [
+      {
+        "delay": 0,
+        "duration": 260,
+        "properties": [
+          "offset",
+          "easing",
+          "composite",
+          "transform",
+          "opacity",
+          "computedOffset"
+        ],
+        "target": "contact-dialog"
+      },
+      {
+        "delay": 0,
+        "duration": 180,
+        "properties": [
+          "offset",
+          "easing",
+          "composite",
+          "transform",
+          "opacity",
+          "computedOffset"
+        ],
+        "target": "contact-dialog__intro"
+      },
+      {
+        "delay": 15,
+        "duration": 180,
+        "properties": [
+          "offset",
+          "easing",
+          "composite",
+          "transform",
+          "opacity",
+          "computedOffset"
+        ],
+        "target": "contact-dialog__field contact-dialog__field--lastName"
+      },
+      {
+        "delay": 30,
+        "duration": 180,
+        "properties": [
+          "offset",
+          "easing",
+          "composite",
+          "transform",
+          "opacity",
+          "computedOffset"
+        ],
+        "target": "contact-dialog__field contact-dialog__field--email"
+      },
+      {
+        "delay": 45,
+        "duration": 180,
+        "properties": [
+          "offset",
+          "easing",
+          "composite",
+          "transform",
+          "opacity",
+          "computedOffset"
+        ],
+        "target": "contact-dialog__field contact-dialog__field--message"
+      },
+      {
+        "delay": 60,
+        "duration": 180,
+        "properties": [
+          "offset",
+          "easing",
+          "composite",
+          "transform",
+          "opacity",
+          "computedOffset"
+        ],
+        "target": "button contact-dialog__submit"
+      },
+      {
+        "delay": 75,
+        "duration": 180,
+        "properties": [
+          "offset",
+          "easing",
+          "composite",
+          "transform",
+          "opacity",
+          "computedOffset"
+        ],
+        "target": "contact-dialog__direct"
+      },
+      {
+        "delay": 75,
+        "duration": 180,
+        "properties": [
+          "offset",
+          "easing",
+          "composite",
+          "transform",
+          "opacity",
+          "computedOffset"
+        ],
+        "target": "contact-dialog__legal"
+      },
+      {
+        "delay": 0,
+        "duration": 180,
+        "properties": [
+          "offset",
+          "easing",
+          "composite",
+          "transform",
+          "opacity",
+          "computedOffset"
+        ],
+        "target": "contact-dialog__close"
+      },
+      {
+        "delay": 0,
+        "duration": 260,
+        "properties": [
+          "offset",
+          "easing",
+          "composite",
+          "transform",
+          "opacity",
+          "computedOffset"
+        ],
+        "target": "contact-dialog__sheen"
+      }
+    ],
+    "focused": "firstName",
+    "frameCount": 58,
+    "frameP95": 17.400000000001455,
+    "height": 844,
+    "open": true,
+    "panelFits": true,
+    "profile": "mobile",
+    "remainingAnimations": 0,
+    "scroll": 0,
+    "scrollAfter": 0,
+    "width": 390
+  },
+  {
+    "effects": 0,
+    "focused": "firstName",
+    "kind": "keyboard",
+    "open": true
+  },
+  {
+    "effects": [
+      {
+        "duration": 100,
+        "keyframes": [
+          {
+            "composite": "auto",
+            "computedOffset": 0,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "0.65"
+          },
+          {
+            "composite": "auto",
+            "computedOffset": 1,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "1"
+          }
+        ]
+      }
+    ],
+    "kind": "reduced-motion",
+    "open": true
+  },
+  {
+    "afterStaleClose": 10,
+    "focused": "firstName",
+    "immediatelyClosed": true,
+    "kind": "rapid-reopen",
+    "newCount": 10,
+    "oldEffectsCanceled": true,
+    "open": true
+  },
+  {
+    "kind": "public-mobile-scene",
+    "neuronAssets": [
+      {
+        "bytes": 8304,
+        "url": "https://eran.devshift.biz/assets/neuron-0-1TaL2UNg.webp"
+      },
+      {
+        "bytes": 7480,
+        "url": "https://eran.devshift.biz/assets/neuron-3-CjdW_Cl_.webp"
+      },
+      {
+        "bytes": 7798,
+        "url": "https://eran.devshift.biz/assets/neuron-1-uqGHWALG.webp"
+      },
+      {
+        "bytes": 8054,
+        "url": "https://eran.devshift.biz/assets/neuron-2-CrwefLIG.webp"
+      }
+    ],
+    "renderer": "mobile",
+    "state": "ready"
+  },
+  {
+    "dir": "rtl",
+    "focused": "firstName",
+    "kind": "hebrew-mobile",
+    "lang": "he",
+    "open": true,
+    "overflow": false,
+    "panelWidth": 365.98480224609375,
+    "width": 390
+  }
+]

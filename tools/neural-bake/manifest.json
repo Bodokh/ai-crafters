@@ -1,0 +1,41 @@
+{
+  "generator": "tools/neural-bake/bake.mjs",
+  "vgpu": "0.4.1",
+  "adapter": {
+    "name": "Metal driver on macOS Version 26.6.2 (Build 25G83)",
+    "type": "gpu"
+  },
+  "shaderSha256": "4f63a91504f72d2894060178ef6449e19bd29baed41e2761a88a6766a986f04a",
+  "size": 288,
+  "supersampling": 2,
+  "frames": [
+    {
+      "filename": "neuron-0.webp",
+      "seed": 87391,
+      "bytes": 8004,
+      "sha256": "7ebf045c07cb9f39660b09a59deb46df1b1d53f605f480e26ccd13ce8746a09a",
+      "branches": 396
+    },
+    {
+      "filename": "neuron-1.webp",
+      "seed": 87564,
+      "bytes": 7498,
+      "sha256": "a2c2d69cb58479b1f5ae24553a9f67375cc8a7d5f624961146406f3af938fcf4",
+      "branches": 396
+    },
+    {
+      "filename": "neuron-2.webp",
+      "seed": 87737,
+      "bytes": 7754,
+      "sha256": "553c88f1bb1b8c4b67afc504220a8a3e0104e67cda282d90ee4d5b8d1c651b31",
+      "branches": 396
+    },
+    {
+      "filename": "neuron-3.webp",
+      "seed": 87910,
+      "bytes": 7180,
+      "sha256": "626b78fb97ca8f14540e5b3add84ddffd2fbd3df713455958dc8f98627aef656",
+      "branches": 396
+    }
+  ]
+}

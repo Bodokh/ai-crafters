@@ -1,0 +1,5512 @@
+[
+  {
+    "checkpoints": [
+      {
+        "beat": "0",
+        "canvasHeight": 720,
+        "canvasWidth": 1265,
+        "commandedSegment": "travel-0-to-5",
+        "drawCalls": 23,
+        "progress": "0.00000",
+        "renderCount": 35,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 512,
+        "station": "0",
+        "triangles": 366288
+      },
+      {
+        "beat": "5",
+        "canvasHeight": 720,
+        "canvasWidth": 1265,
+        "commandedSegment": "travel-5-to-10",
+        "drawCalls": 22,
+        "progress": "0.27778",
+        "renderCount": 162,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 4779,
+        "station": "5",
+        "triangles": 366286
+      },
+      {
+        "beat": "10",
+        "canvasHeight": 720,
+        "canvasWidth": 1265,
+        "commandedSegment": "travel-10-to-15",
+        "drawCalls": 18,
+        "progress": "0.55556",
+        "renderCount": 302,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 9045,
+        "station": "10",
+        "triangles": 366278
+      },
+      {
+        "beat": "15",
+        "canvasHeight": 720,
+        "canvasWidth": 1265,
+        "commandedSegment": "travel-15-to-5",
+        "drawCalls": 13,
+        "progress": "0.83333",
+        "renderCount": 442,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 13312,
+        "station": "15",
+        "triangles": 366268
+      }
+    ],
+    "errors": [],
+    "field": {
+      "appAmbientTaggedSubmissions": 0,
+      "appTravelTaggedSubmissions": 0,
+      "drawingCallsPerSubmission": {
+        "max": 539,
+        "mean": 497,
+        "p50": 533,
+        "p95": 539,
+        "samples": 240
+      },
+      "renderSubmissions": 240,
+      "reportedDrawCalls": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "reportedTriangles": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "submissionEnvelopeMs": {
+        "max": 1.9,
+        "mean": 0.34,
+        "p50": 0.3,
+        "p95": 0.4,
+        "samples": 240
+      },
+      "submissionIntervalMs": {
+        "max": 63.1,
+        "mean": 41.631,
+        "p50": 35.1,
+        "p95": 50.9,
+        "samples": 232
+      }
+    },
+    "finalSnapshot": {
+      "beat": "5",
+      "canvasHeight": 720,
+      "canvasWidth": 1265,
+      "commandedSegment": "travel-15-to-5",
+      "drawCalls": 22,
+      "progress": "0.27778",
+      "renderCount": 538,
+      "renderMode": "travel",
+      "sceneState": "ready",
+      "scrollY": 4779,
+      "station": "6",
+      "triangles": 366286
+    },
+    "label": "desktop-baseline-1",
+    "limitations": [
+      "Submission envelope is CPU wall time from canvas clear through the last drawing API return, including intervening JavaScript and wrapper overhead. It excludes work before clear and after the last draw.",
+      "WebGL and Canvas2D APIs can queue GPU work. Submission intervals and RAF intervals are not GPU completion times or presented FPS.",
+      "Replay travel/checkpoint labels describe commanded scrolling; renderer easing can continue into a checkpoint. Desktop app renderMode tags are additionally counted where available.",
+      "Desktop ambient is intentionally around 20 Hz; mobile ambient 18 Hz and travel 30 Hz. Compare matched profiles and travel intervals separately.",
+      "Mobile browser emulation and CPU throttling do not establish performance on physical phones."
+    ],
+    "longTasks": {
+      "count": 0,
+      "durationMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "supported": true,
+      "totalBlockingTimeMs": 0,
+      "totalDurationMs": 0
+    },
+    "profile": "desktop",
+    "rafIntervalMs": {
+      "all": {
+        "max": 17.8,
+        "mean": 16.677,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 593
+      },
+      "replayCheckpoints": {
+        "max": 17.8,
+        "mean": 16.677,
+        "p50": 16.7,
+        "p95": 17.4,
+        "samples": 188
+      },
+      "replayTravel": {
+        "max": 17.8,
+        "mean": 16.677,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 405
+      }
+    },
+    "readiness": {
+      "note": "Scene readiness is observed by RAF polling. Already-ready pages have no measured scene first-frame time. This is not first contentful paint.",
+      "observationDelayFromInvocationMs": 31.4,
+      "observedSceneReadyFromNavigationMs": 316.3,
+      "sceneReadyAtInvocation": false,
+      "waitAfterInvocationMs": 30.3
+    },
+    "scene": {
+      "all": {
+        "appAmbientTaggedSubmissions": 52,
+        "appTravelTaggedSubmissions": 467,
+        "drawingCallsPerSubmission": {
+          "max": 24,
+          "mean": 18.586,
+          "p50": 18,
+          "p95": 24,
+          "samples": 519
+        },
+        "renderSubmissions": 519,
+        "reportedDrawCalls": {
+          "max": 24,
+          "mean": 18.586,
+          "p50": 18,
+          "p95": 24,
+          "samples": 519
+        },
+        "reportedTriangles": {
+          "max": 366290,
+          "mean": 366279.171,
+          "p50": 366278,
+          "p95": 366290,
+          "samples": 519
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.4,
+          "mean": 0.094,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 519
+        },
+        "submissionIntervalMs": {
+          "max": 63.7,
+          "mean": 19.01,
+          "p50": 16.7,
+          "p95": 49.8,
+          "samples": 511
+        }
+      },
+      "appRenderCountDelta": 519,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 39,
+        "appTravelTaggedSubmissions": 73,
+        "drawingCallsPerSubmission": {
+          "max": 23,
+          "mean": 18.429,
+          "p50": 18,
+          "p95": 23,
+          "samples": 112
+        },
+        "renderSubmissions": 112,
+        "reportedDrawCalls": {
+          "max": 23,
+          "mean": 18.429,
+          "p50": 18,
+          "p95": 23,
+          "samples": 112
+        },
+        "reportedTriangles": {
+          "max": 366288,
+          "mean": 366278.857,
+          "p50": 366278,
+          "p95": 366288,
+          "samples": 112
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.4,
+          "mean": 0.101,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 112
+        },
+        "submissionIntervalMs": {
+          "max": 63.7,
+          "mean": 27.707,
+          "p50": 16.9,
+          "p95": 50.9,
+          "samples": 108
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 13,
+        "appTravelTaggedSubmissions": 394,
+        "drawingCallsPerSubmission": {
+          "max": 24,
+          "mean": 18.629,
+          "p50": 18,
+          "p95": 24,
+          "samples": 407
+        },
+        "renderSubmissions": 407,
+        "reportedDrawCalls": {
+          "max": 24,
+          "mean": 18.629,
+          "p50": 18,
+          "p95": 24,
+          "samples": 407
+        },
+        "reportedTriangles": {
+          "max": 366290,
+          "mean": 366279.258,
+          "p50": 366278,
+          "p95": 366290,
+          "samples": 407
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.3,
+          "mean": 0.093,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 407
+        },
+        "submissionIntervalMs": {
+          "max": 24.6,
+          "mean": 16.679,
+          "p50": 16.7,
+          "p95": 17.6,
+          "samples": 403
+        }
+      }
+    },
+    "schema": "neural-render-benchmark-v1",
+    "timing": {
+      "beats": 19,
+      "endingLength": 0.5,
+      "measuredDurationMs": 10008.1,
+      "openingLength": 0.5,
+      "readingHold": 0.2,
+      "requestedDurationMs": 10000,
+      "scrollSpeed": 1.35,
+      "scrollUnitPx": 853.333
+    },
+    "url": "http://localhost:8276/baseline.html",
+    "viewport": {
+      "dpr": 1,
+      "height": 720,
+      "width": 1280
+    },
+    "browserWork": {
+      "TaskDuration": 3040.4419999999996,
+      "ScriptDuration": 366.05,
+      "LayoutDuration": 47.779999999999994,
+      "RecalcStyleDuration": 1885.0240000000001
+    }
+  },
+  {
+    "checkpoints": [
+      {
+        "beat": "0",
+        "canvasHeight": 720,
+        "canvasWidth": 1265,
+        "commandedSegment": "travel-0-to-5",
+        "drawCalls": 35,
+        "progress": "0.00000",
+        "renderCount": 35,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 512,
+        "station": "0",
+        "triangles": 294712
+      },
+      {
+        "beat": "5",
+        "canvasHeight": 720,
+        "canvasWidth": 1265,
+        "commandedSegment": "travel-5-to-10",
+        "drawCalls": 35,
+        "progress": "0.27778",
+        "renderCount": 163,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 4779,
+        "station": "5",
+        "triangles": 313486
+      },
+      {
+        "beat": "10",
+        "canvasHeight": 720,
+        "canvasWidth": 1265,
+        "commandedSegment": "travel-10-to-15",
+        "drawCalls": 29,
+        "progress": "0.55556",
+        "renderCount": 300,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 9045,
+        "station": "10",
+        "triangles": 271366
+      },
+      {
+        "beat": "15",
+        "canvasHeight": 720,
+        "canvasWidth": 1265,
+        "commandedSegment": "travel-15-to-5",
+        "drawCalls": 19,
+        "progress": "0.83333",
+        "renderCount": 440,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 13312,
+        "station": "15",
+        "triangles": 158908
+      }
+    ],
+    "errors": [],
+    "field": {
+      "appAmbientTaggedSubmissions": 0,
+      "appTravelTaggedSubmissions": 0,
+      "drawingCallsPerSubmission": {
+        "max": 539,
+        "mean": 497.763,
+        "p50": 533,
+        "p95": 539,
+        "samples": 240
+      },
+      "renderSubmissions": 240,
+      "reportedDrawCalls": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "reportedTriangles": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "submissionEnvelopeMs": {
+        "max": 0.5,
+        "mean": 0.32,
+        "p50": 0.3,
+        "p95": 0.4,
+        "samples": 240
+      },
+      "submissionIntervalMs": {
+        "max": 95.8,
+        "mean": 41.561,
+        "p50": 34.3,
+        "p95": 50.9,
+        "samples": 232
+      }
+    },
+    "finalSnapshot": {
+      "beat": "5",
+      "canvasHeight": 720,
+      "canvasWidth": 1265,
+      "commandedSegment": "travel-15-to-5",
+      "drawCalls": 35,
+      "progress": "0.27778",
+      "renderCount": 535,
+      "renderMode": "travel",
+      "sceneState": "ready",
+      "scrollY": 4779,
+      "station": "6",
+      "triangles": 313486
+    },
+    "label": "desktop-candidate-1",
+    "limitations": [
+      "Submission envelope is CPU wall time from canvas clear through the last drawing API return, including intervening JavaScript and wrapper overhead. It excludes work before clear and after the last draw.",
+      "WebGL and Canvas2D APIs can queue GPU work. Submission intervals and RAF intervals are not GPU completion times or presented FPS.",
+      "Replay travel/checkpoint labels describe commanded scrolling; renderer easing can continue into a checkpoint. Desktop app renderMode tags are additionally counted where available.",
+      "Desktop ambient is intentionally around 20 Hz; mobile ambient 18 Hz and travel 30 Hz. Compare matched profiles and travel intervals separately.",
+      "Mobile browser emulation and CPU throttling do not establish performance on physical phones."
+    ],
+    "longTasks": {
+      "count": 1,
+      "durationMs": {
+        "max": 50,
+        "mean": 50,
+        "p50": 50,
+        "p95": 50,
+        "samples": 1
+      },
+      "supported": true,
+      "totalBlockingTimeMs": 0,
+      "totalDurationMs": 50
+    },
+    "profile": "desktop",
+    "rafIntervalMs": {
+      "all": {
+        "max": 50.1,
+        "mean": 16.736,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 591
+      },
+      "replayCheckpoints": {
+        "max": 17.7,
+        "mean": 16.678,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 188
+      },
+      "replayTravel": {
+        "max": 50.1,
+        "mean": 16.763,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 403
+      }
+    },
+    "readiness": {
+      "note": "Scene readiness is observed by RAF polling. Already-ready pages have no measured scene first-frame time. This is not first contentful paint.",
+      "observationDelayFromInvocationMs": 22,
+      "observedSceneReadyFromNavigationMs": 301.3,
+      "sceneReadyAtInvocation": false,
+      "waitAfterInvocationMs": 21.7
+    },
+    "scene": {
+      "all": {
+        "appAmbientTaggedSubmissions": 52,
+        "appTravelTaggedSubmissions": 464,
+        "drawingCallsPerSubmission": {
+          "max": 39,
+          "mean": 29.415,
+          "p50": 29,
+          "p95": 38,
+          "samples": 516
+        },
+        "renderSubmissions": 516,
+        "reportedDrawCalls": {
+          "max": 39,
+          "mean": 29.415,
+          "p50": 29,
+          "p95": 38,
+          "samples": 516
+        },
+        "reportedTriangles": {
+          "max": 355680,
+          "mean": 264778.996,
+          "p50": 271366,
+          "p95": 348150,
+          "samples": 516
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.2,
+          "mean": 0.11,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 516
+        },
+        "submissionIntervalMs": {
+          "max": 51,
+          "mean": 19.172,
+          "p50": 16.7,
+          "p95": 49.9,
+          "samples": 508
+        }
+      },
+      "appRenderCountDelta": 516,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 41,
+        "appTravelTaggedSubmissions": 72,
+        "drawingCallsPerSubmission": {
+          "max": 37,
+          "mean": 28.92,
+          "p50": 29,
+          "p95": 36,
+          "samples": 113
+        },
+        "renderSubmissions": 113,
+        "reportedDrawCalls": {
+          "max": 37,
+          "mean": 28.92,
+          "p50": 29,
+          "p95": 36,
+          "samples": 113
+        },
+        "reportedTriangles": {
+          "max": 348150,
+          "mean": 258544.124,
+          "p50": 271366,
+          "p95": 345590,
+          "samples": 113
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.2,
+          "mean": 0.097,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 113
+        },
+        "submissionIntervalMs": {
+          "max": 51,
+          "mean": 27.984,
+          "p50": 16.8,
+          "p95": 50.4,
+          "samples": 109
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 11,
+        "appTravelTaggedSubmissions": 392,
+        "drawingCallsPerSubmission": {
+          "max": 39,
+          "mean": 29.553,
+          "p50": 29,
+          "p95": 38,
+          "samples": 403
+        },
+        "renderSubmissions": 403,
+        "reportedDrawCalls": {
+          "max": 39,
+          "mean": 29.553,
+          "p50": 29,
+          "p95": 38,
+          "samples": 403
+        },
+        "reportedTriangles": {
+          "max": 355680,
+          "mean": 266527.236,
+          "p50": 271366,
+          "p95": 348150,
+          "samples": 403
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.2,
+          "mean": 0.114,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 403
+        },
+        "submissionIntervalMs": {
+          "max": 48.7,
+          "mean": 16.764,
+          "p50": 16.7,
+          "p95": 17.6,
+          "samples": 399
+        }
+      }
+    },
+    "schema": "neural-render-benchmark-v1",
+    "timing": {
+      "beats": 19,
+      "endingLength": 0.5,
+      "measuredDurationMs": 10009.1,
+      "openingLength": 0.5,
+      "readingHold": 0.2,
+      "requestedDurationMs": 10000,
+      "scrollSpeed": 1.35,
+      "scrollUnitPx": 853.333
+    },
+    "url": "http://localhost:8276/",
+    "viewport": {
+      "dpr": 1,
+      "height": 720,
+      "width": 1280
+    },
+    "browserWork": {
+      "TaskDuration": 3045.4750000000004,
+      "ScriptDuration": 362.601,
+      "LayoutDuration": 46.823,
+      "RecalcStyleDuration": 1832.004
+    }
+  },
+  {
+    "checkpoints": [
+      {
+        "beat": "0",
+        "canvasHeight": 150,
+        "canvasWidth": 300,
+        "commandedSegment": "travel-0-to-5",
+        "drawCalls": null,
+        "progress": "0.00000",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 524.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "5",
+        "canvasHeight": 150,
+        "canvasWidth": 300,
+        "commandedSegment": "travel-5-to-10",
+        "drawCalls": null,
+        "progress": "0.27778",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 4274.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "10",
+        "canvasHeight": 150,
+        "canvasWidth": 300,
+        "commandedSegment": "travel-10-to-15",
+        "drawCalls": null,
+        "progress": "0.55556",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 8024.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "15",
+        "canvasHeight": 150,
+        "canvasWidth": 300,
+        "commandedSegment": "travel-15-to-5",
+        "drawCalls": null,
+        "progress": "0.83333",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 11774.545,
+        "station": null,
+        "triangles": null
+      }
+    ],
+    "errors": [],
+    "field": {
+      "appAmbientTaggedSubmissions": 0,
+      "appTravelTaggedSubmissions": 0,
+      "drawingCallsPerSubmission": {
+        "max": 79,
+        "mean": 76.584,
+        "p50": 77,
+        "p95": 79,
+        "samples": 293
+      },
+      "renderSubmissions": 293,
+      "reportedDrawCalls": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "reportedTriangles": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "submissionEnvelopeMs": {
+        "max": 1.7,
+        "mean": 0.572,
+        "p50": 0.6,
+        "p95": 1.1,
+        "samples": 293
+      },
+      "submissionIntervalMs": {
+        "max": 67.4,
+        "mean": 34.159,
+        "p50": 33.4,
+        "p95": 36.3,
+        "samples": 285
+      }
+    },
+    "finalSnapshot": {
+      "beat": "5",
+      "canvasHeight": 150,
+      "canvasWidth": 300,
+      "commandedSegment": "travel-15-to-5",
+      "drawCalls": null,
+      "progress": "0.27778",
+      "renderCount": null,
+      "renderMode": null,
+      "sceneState": "ready",
+      "scrollY": 4274.545,
+      "station": null,
+      "triangles": null
+    },
+    "label": "mobile-cpu4-baseline-1",
+    "limitations": [
+      "Submission envelope is CPU wall time from canvas clear through the last drawing API return, including intervening JavaScript and wrapper overhead. It excludes work before clear and after the last draw.",
+      "WebGL and Canvas2D APIs can queue GPU work. Submission intervals and RAF intervals are not GPU completion times or presented FPS.",
+      "Replay travel/checkpoint labels describe commanded scrolling; renderer easing can continue into a checkpoint. Desktop app renderMode tags are additionally counted where available.",
+      "Desktop ambient is intentionally around 20 Hz; mobile ambient 18 Hz and travel 30 Hz. Compare matched profiles and travel intervals separately.",
+      "Mobile browser emulation and CPU throttling do not establish performance on physical phones."
+    ],
+    "longTasks": {
+      "count": 0,
+      "durationMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "supported": true,
+      "totalBlockingTimeMs": 0,
+      "totalDurationMs": 0
+    },
+    "profile": "mobile",
+    "rafIntervalMs": {
+      "all": {
+        "max": 17.8,
+        "mean": 16.683,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 593
+      },
+      "replayCheckpoints": {
+        "max": 17.7,
+        "mean": 16.688,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 188
+      },
+      "replayTravel": {
+        "max": 17.8,
+        "mean": 16.681,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 405
+      }
+    },
+    "readiness": {
+      "note": "Scene readiness is observed by RAF polling. Already-ready pages have no measured scene first-frame time. This is not first contentful paint.",
+      "observationDelayFromInvocationMs": 37.2,
+      "observedSceneReadyFromNavigationMs": 485.1,
+      "sceneReadyAtInvocation": false,
+      "waitAfterInvocationMs": 29.7
+    },
+    "scene": {
+      "all": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      },
+      "appRenderCountDelta": null,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      }
+    },
+    "schema": "neural-render-benchmark-v1",
+    "timing": {
+      "beats": 19,
+      "endingLength": 0.5,
+      "measuredDurationMs": 10010.4,
+      "openingLength": 0.5,
+      "readingHold": 0.4,
+      "requestedDurationMs": 10000,
+      "scrollSpeed": 1.6875,
+      "scrollUnitPx": 749.956
+    },
+    "url": "http://localhost:8276/baseline.html",
+    "viewport": {
+      "dpr": 1.100000023841858,
+      "height": 767,
+      "width": 355
+    },
+    "browserWork": {
+      "TaskDuration": 3711.7870000000003,
+      "ScriptDuration": 773.9399999999999,
+      "LayoutDuration": 54.144,
+      "RecalcStyleDuration": 1059.892
+    }
+  },
+  {
+    "checkpoints": [
+      {
+        "beat": "0",
+        "canvasHeight": 150,
+        "canvasWidth": 300,
+        "commandedSegment": "travel-0-to-5",
+        "drawCalls": null,
+        "progress": "0.00000",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 524.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "5",
+        "canvasHeight": 150,
+        "canvasWidth": 300,
+        "commandedSegment": "travel-5-to-10",
+        "drawCalls": null,
+        "progress": "0.27778",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 4274.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "10",
+        "canvasHeight": 150,
+        "canvasWidth": 300,
+        "commandedSegment": "travel-10-to-15",
+        "drawCalls": null,
+        "progress": "0.55556",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 8024.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "15",
+        "canvasHeight": 150,
+        "canvasWidth": 300,
+        "commandedSegment": "travel-15-to-5",
+        "drawCalls": null,
+        "progress": "0.83333",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 11774.545,
+        "station": null,
+        "triangles": null
+      }
+    ],
+    "errors": [],
+    "field": {
+      "appAmbientTaggedSubmissions": 0,
+      "appTravelTaggedSubmissions": 0,
+      "drawingCallsPerSubmission": {
+        "max": 79,
+        "mean": 76.597,
+        "p50": 77,
+        "p95": 79,
+        "samples": 293
+      },
+      "renderSubmissions": 293,
+      "reportedDrawCalls": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "reportedTriangles": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "submissionEnvelopeMs": {
+        "max": 2.1,
+        "mean": 0.614,
+        "p50": 0.7,
+        "p95": 1.2,
+        "samples": 293
+      },
+      "submissionIntervalMs": {
+        "max": 67.4,
+        "mean": 34.169,
+        "p50": 33.4,
+        "p95": 35.7,
+        "samples": 285
+      }
+    },
+    "finalSnapshot": {
+      "beat": "5",
+      "canvasHeight": 150,
+      "canvasWidth": 300,
+      "commandedSegment": "travel-15-to-5",
+      "drawCalls": null,
+      "progress": "0.27778",
+      "renderCount": null,
+      "renderMode": null,
+      "sceneState": "ready",
+      "scrollY": 4274.545,
+      "station": null,
+      "triangles": null
+    },
+    "label": "mobile-cpu4-candidate-1",
+    "limitations": [
+      "Submission envelope is CPU wall time from canvas clear through the last drawing API return, including intervening JavaScript and wrapper overhead. It excludes work before clear and after the last draw.",
+      "WebGL and Canvas2D APIs can queue GPU work. Submission intervals and RAF intervals are not GPU completion times or presented FPS.",
+      "Replay travel/checkpoint labels describe commanded scrolling; renderer easing can continue into a checkpoint. Desktop app renderMode tags are additionally counted where available.",
+      "Desktop ambient is intentionally around 20 Hz; mobile ambient 18 Hz and travel 30 Hz. Compare matched profiles and travel intervals separately.",
+      "Mobile browser emulation and CPU throttling do not establish performance on physical phones."
+    ],
+    "longTasks": {
+      "count": 0,
+      "durationMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "supported": true,
+      "totalBlockingTimeMs": 0,
+      "totalDurationMs": 0
+    },
+    "profile": "mobile",
+    "rafIntervalMs": {
+      "all": {
+        "max": 17.8,
+        "mean": 16.681,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 593
+      },
+      "replayCheckpoints": {
+        "max": 17.8,
+        "mean": 16.68,
+        "p50": 16.7,
+        "p95": 17.6,
+        "samples": 188
+      },
+      "replayTravel": {
+        "max": 17.7,
+        "mean": 16.682,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 405
+      }
+    },
+    "readiness": {
+      "note": "Scene readiness is observed by RAF polling. Already-ready pages have no measured scene first-frame time. This is not first contentful paint.",
+      "observationDelayFromInvocationMs": 42,
+      "observedSceneReadyFromNavigationMs": 571.4,
+      "sceneReadyAtInvocation": false,
+      "waitAfterInvocationMs": 35.4
+    },
+    "scene": {
+      "all": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      },
+      "appRenderCountDelta": null,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      }
+    },
+    "schema": "neural-render-benchmark-v1",
+    "timing": {
+      "beats": 19,
+      "endingLength": 0.5,
+      "measuredDurationMs": 10010.7,
+      "openingLength": 0.5,
+      "readingHold": 0.4,
+      "requestedDurationMs": 10000,
+      "scrollSpeed": 1.6875,
+      "scrollUnitPx": 749.956
+    },
+    "url": "http://localhost:8276/",
+    "viewport": {
+      "dpr": 1.100000023841858,
+      "height": 767,
+      "width": 355
+    },
+    "browserWork": {
+      "TaskDuration": 3943.3190000000004,
+      "ScriptDuration": 817.11,
+      "LayoutDuration": 48.817000000000014,
+      "RecalcStyleDuration": 1136.9279999999999
+    }
+  },
+  {
+    "checkpoints": [
+      {
+        "beat": "0",
+        "canvasHeight": 150,
+        "canvasWidth": 300,
+        "commandedSegment": "travel-0-to-5",
+        "drawCalls": null,
+        "progress": "0.00000",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 524.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "5",
+        "canvasHeight": 150,
+        "canvasWidth": 300,
+        "commandedSegment": "travel-5-to-10",
+        "drawCalls": null,
+        "progress": "0.27778",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 4274.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "10",
+        "canvasHeight": 150,
+        "canvasWidth": 300,
+        "commandedSegment": "travel-10-to-15",
+        "drawCalls": null,
+        "progress": "0.55556",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 8024.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "15",
+        "canvasHeight": 150,
+        "canvasWidth": 300,
+        "commandedSegment": "travel-15-to-5",
+        "drawCalls": null,
+        "progress": "0.83333",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 11774.545,
+        "station": null,
+        "triangles": null
+      }
+    ],
+    "errors": [],
+    "field": {
+      "appAmbientTaggedSubmissions": 0,
+      "appTravelTaggedSubmissions": 0,
+      "drawingCallsPerSubmission": {
+        "max": 79,
+        "mean": 76.599,
+        "p50": 77,
+        "p95": 79,
+        "samples": 289
+      },
+      "renderSubmissions": 289,
+      "reportedDrawCalls": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "reportedTriangles": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "submissionEnvelopeMs": {
+        "max": 12.8,
+        "mean": 0.651,
+        "p50": 0.6,
+        "p95": 1.3,
+        "samples": 289
+      },
+      "submissionIntervalMs": {
+        "max": 105.1,
+        "mean": 34.667,
+        "p50": 33.3,
+        "p95": 49.5,
+        "samples": 281
+      }
+    },
+    "finalSnapshot": {
+      "beat": "5",
+      "canvasHeight": 150,
+      "canvasWidth": 300,
+      "commandedSegment": "travel-15-to-5",
+      "drawCalls": null,
+      "progress": "0.27778",
+      "renderCount": null,
+      "renderMode": null,
+      "sceneState": "ready",
+      "scrollY": 4274.545,
+      "station": null,
+      "triangles": null
+    },
+    "label": "mobile-cpu4-candidate-2",
+    "limitations": [
+      "Submission envelope is CPU wall time from canvas clear through the last drawing API return, including intervening JavaScript and wrapper overhead. It excludes work before clear and after the last draw.",
+      "WebGL and Canvas2D APIs can queue GPU work. Submission intervals and RAF intervals are not GPU completion times or presented FPS.",
+      "Replay travel/checkpoint labels describe commanded scrolling; renderer easing can continue into a checkpoint. Desktop app renderMode tags are additionally counted where available.",
+      "Desktop ambient is intentionally around 20 Hz; mobile ambient 18 Hz and travel 30 Hz. Compare matched profiles and travel intervals separately.",
+      "Mobile browser emulation and CPU throttling do not establish performance on physical phones."
+    ],
+    "longTasks": {
+      "count": 1,
+      "durationMs": {
+        "max": 66,
+        "mean": 66,
+        "p50": 66,
+        "p95": 66,
+        "samples": 1
+      },
+      "supported": true,
+      "totalBlockingTimeMs": 16,
+      "totalDurationMs": 66
+    },
+    "profile": "mobile",
+    "rafIntervalMs": {
+      "all": {
+        "max": 66.7,
+        "mean": 16.793,
+        "p50": 16.7,
+        "p95": 17.6,
+        "samples": 589
+      },
+      "replayCheckpoints": {
+        "max": 18.3,
+        "mean": 16.684,
+        "p50": 16.7,
+        "p95": 17.6,
+        "samples": 188
+      },
+      "replayTravel": {
+        "max": 66.7,
+        "mean": 16.844,
+        "p50": 16.7,
+        "p95": 17.6,
+        "samples": 401
+      }
+    },
+    "readiness": {
+      "note": "Scene readiness is observed by RAF polling. Already-ready pages have no measured scene first-frame time. This is not first contentful paint.",
+      "observationDelayFromInvocationMs": 64.9,
+      "observedSceneReadyFromNavigationMs": 387.1,
+      "sceneReadyAtInvocation": false,
+      "waitAfterInvocationMs": 51.4
+    },
+    "scene": {
+      "all": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      },
+      "appRenderCountDelta": null,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      }
+    },
+    "schema": "neural-render-benchmark-v1",
+    "timing": {
+      "beats": 19,
+      "endingLength": 0.5,
+      "measuredDurationMs": 10009.2,
+      "openingLength": 0.5,
+      "readingHold": 0.4,
+      "requestedDurationMs": 10000,
+      "scrollSpeed": 1.6875,
+      "scrollUnitPx": 749.956
+    },
+    "url": "http://localhost:8276/",
+    "viewport": {
+      "dpr": 1.100000023841858,
+      "height": 767,
+      "width": 355
+    },
+    "browserWork": {
+      "TaskDuration": 4073.0510000000004,
+      "ScriptDuration": 787.953,
+      "LayoutDuration": 58.471999999999994,
+      "RecalcStyleDuration": 1199.4530000000002
+    }
+  },
+  {
+    "checkpoints": [
+      {
+        "beat": "0",
+        "canvasHeight": 150,
+        "canvasWidth": 300,
+        "commandedSegment": "travel-0-to-5",
+        "drawCalls": null,
+        "progress": "0.00000",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 524.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "5",
+        "canvasHeight": 150,
+        "canvasWidth": 300,
+        "commandedSegment": "travel-5-to-10",
+        "drawCalls": null,
+        "progress": "0.27778",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 4274.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "10",
+        "canvasHeight": 150,
+        "canvasWidth": 300,
+        "commandedSegment": "travel-10-to-15",
+        "drawCalls": null,
+        "progress": "0.55556",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 8024.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "15",
+        "canvasHeight": 150,
+        "canvasWidth": 300,
+        "commandedSegment": "travel-15-to-5",
+        "drawCalls": null,
+        "progress": "0.83333",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 11774.545,
+        "station": null,
+        "triangles": null
+      }
+    ],
+    "errors": [],
+    "field": {
+      "appAmbientTaggedSubmissions": 0,
+      "appTravelTaggedSubmissions": 0,
+      "drawingCallsPerSubmission": {
+        "max": 79,
+        "mean": 76.604,
+        "p50": 77,
+        "p95": 79,
+        "samples": 293
+      },
+      "renderSubmissions": 293,
+      "reportedDrawCalls": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "reportedTriangles": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "submissionEnvelopeMs": {
+        "max": 3,
+        "mean": 0.615,
+        "p50": 0.6,
+        "p95": 1.4,
+        "samples": 293
+      },
+      "submissionIntervalMs": {
+        "max": 67,
+        "mean": 34.172,
+        "p50": 33.4,
+        "p95": 36,
+        "samples": 285
+      }
+    },
+    "finalSnapshot": {
+      "beat": "5",
+      "canvasHeight": 150,
+      "canvasWidth": 300,
+      "commandedSegment": "travel-15-to-5",
+      "drawCalls": null,
+      "progress": "0.27778",
+      "renderCount": null,
+      "renderMode": null,
+      "sceneState": "ready",
+      "scrollY": 4274.545,
+      "station": null,
+      "triangles": null
+    },
+    "label": "mobile-cpu4-baseline-2",
+    "limitations": [
+      "Submission envelope is CPU wall time from canvas clear through the last drawing API return, including intervening JavaScript and wrapper overhead. It excludes work before clear and after the last draw.",
+      "WebGL and Canvas2D APIs can queue GPU work. Submission intervals and RAF intervals are not GPU completion times or presented FPS.",
+      "Replay travel/checkpoint labels describe commanded scrolling; renderer easing can continue into a checkpoint. Desktop app renderMode tags are additionally counted where available.",
+      "Desktop ambient is intentionally around 20 Hz; mobile ambient 18 Hz and travel 30 Hz. Compare matched profiles and travel intervals separately.",
+      "Mobile browser emulation and CPU throttling do not establish performance on physical phones."
+    ],
+    "longTasks": {
+      "count": 0,
+      "durationMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "supported": true,
+      "totalBlockingTimeMs": 0,
+      "totalDurationMs": 0
+    },
+    "profile": "mobile",
+    "rafIntervalMs": {
+      "all": {
+        "max": 17.7,
+        "mean": 16.681,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 593
+      },
+      "replayCheckpoints": {
+        "max": 17.7,
+        "mean": 16.68,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 188
+      },
+      "replayTravel": {
+        "max": 17.7,
+        "mean": 16.681,
+        "p50": 16.7,
+        "p95": 17.4,
+        "samples": 405
+      }
+    },
+    "readiness": {
+      "note": "Scene readiness is observed by RAF polling. Already-ready pages have no measured scene first-frame time. This is not first contentful paint.",
+      "observationDelayFromInvocationMs": 38,
+      "observedSceneReadyFromNavigationMs": 801.3,
+      "sceneReadyAtInvocation": false,
+      "waitAfterInvocationMs": 28.3
+    },
+    "scene": {
+      "all": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      },
+      "appRenderCountDelta": null,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      }
+    },
+    "schema": "neural-render-benchmark-v1",
+    "timing": {
+      "beats": 19,
+      "endingLength": 0.5,
+      "measuredDurationMs": 10011,
+      "openingLength": 0.5,
+      "readingHold": 0.4,
+      "requestedDurationMs": 10000,
+      "scrollSpeed": 1.6875,
+      "scrollUnitPx": 749.956
+    },
+    "url": "http://localhost:8276/baseline.html",
+    "viewport": {
+      "dpr": 1.100000023841858,
+      "height": 767,
+      "width": 355
+    },
+    "browserWork": {
+      "TaskDuration": 3970.6829999999995,
+      "ScriptDuration": 831.237,
+      "LayoutDuration": 54.62999999999998,
+      "RecalcStyleDuration": 1134.045
+    }
+  },
+  {
+    "checkpoints": [
+      {
+        "beat": "0",
+        "canvasHeight": 1345,
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-0",
+        "drawCalls": 23,
+        "progress": "0.00000",
+        "renderCount": 35,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 870,
+        "station": "0",
+        "triangles": 366288
+      },
+      {
+        "beat": "5",
+        "canvasHeight": 1345,
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-5",
+        "drawCalls": 22,
+        "progress": "0.27778",
+        "renderCount": 162,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 8117.272,
+        "station": "5",
+        "triangles": 366286
+      },
+      {
+        "beat": "10",
+        "canvasHeight": 1345,
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-10",
+        "drawCalls": 16,
+        "progress": "0.55556",
+        "renderCount": 301,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 15364.545,
+        "station": "10",
+        "triangles": 366274
+      },
+      {
+        "beat": "15",
+        "canvasHeight": 1345,
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-15",
+        "drawCalls": 12,
+        "progress": "0.83333",
+        "renderCount": 440,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 22611.818,
+        "station": "15",
+        "triangles": 366266
+      }
+    ],
+    "errors": [],
+    "field": {
+      "appAmbientTaggedSubmissions": 0,
+      "appTravelTaggedSubmissions": 0,
+      "drawingCallsPerSubmission": {
+        "max": 545,
+        "mean": 503.263,
+        "p50": 539,
+        "p95": 545,
+        "samples": 240
+      },
+      "gpuTimeMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "renderSubmissions": 240,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": 545,
+          "mean": 428.039,
+          "p50": 422,
+          "p95": 539,
+          "samples": 77
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 77,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": 1.3,
+          "mean": 0.377,
+          "p50": 0.3,
+          "p95": 0.7,
+          "samples": 77
+        },
+        "submissionIntervalMs": {
+          "max": 51.1,
+          "mean": 41.781,
+          "p50": 49.2,
+          "p95": 50.9,
+          "samples": 73
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": 545,
+          "mean": 538.798,
+          "p50": 539,
+          "p95": 545,
+          "samples": 163
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 163,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": 3.8,
+          "mean": 0.464,
+          "p50": 0.4,
+          "p95": 0.9,
+          "samples": 163
+        },
+        "submissionIntervalMs": {
+          "max": 65.9,
+          "mean": 41.658,
+          "p50": 36.2,
+          "p95": 50.9,
+          "samples": 159
+        }
+      },
+      "reportedDrawCalls": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "reportedTriangles": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "submissionEnvelopeMs": {
+        "max": 3.8,
+        "mean": 0.436,
+        "p50": 0.4,
+        "p95": 0.8,
+        "samples": 240
+      },
+      "submissionIntervalMs": {
+        "max": 65.9,
+        "mean": 41.666,
+        "p50": 36.2,
+        "p95": 50.9,
+        "samples": 239
+      }
+    },
+    "finalSnapshot": {
+      "beat": "5",
+      "canvasHeight": 1345,
+      "canvasWidth": 1430,
+      "commandedSegment": "travel-15-to-5",
+      "drawCalls": 21,
+      "progress": "0.27778",
+      "renderCount": 535,
+      "renderMode": "travel",
+      "sceneState": "ready",
+      "scrollY": 8117.272,
+      "station": "6",
+      "triangles": 366284
+    },
+    "gpuTiming": {
+      "created": 516,
+      "discardedDisjoint": 0,
+      "invalid": 0,
+      "maxPendingPerContext": 8,
+      "peakPending": 2,
+      "pendingAtEnd": 0,
+      "requested": true,
+      "resolved": 516,
+      "skippedExternalQuery": 0,
+      "skippedQueueFull": 0,
+      "supported": true,
+      "warnings": []
+    },
+    "label": "desktop-gpu-baseline-1",
+    "limitations": [
+      "Submission envelope is CPU wall time from canvas clear through the last drawing API return, including intervening JavaScript and wrapper overhead. It excludes work before clear and after the last draw.",
+      "WebGL and Canvas2D APIs can queue GPU work. Submission intervals and RAF intervals are not GPU completion times or presented FPS.",
+      "Optional WebGL2 timer queries measure elapsed GPU time from clear through the frame end marker. They do not measure browser compositing or presented FPS; compare runs with matching gpuTiming settings.",
+      "Replay travel/checkpoint labels describe commanded scrolling; renderer easing can continue into a checkpoint. Desktop app renderMode tags are additionally counted where available.",
+      "Desktop ambient is intentionally around 20 Hz; mobile ambient 18 Hz and travel 30 Hz. Compare matched profiles and travel intervals separately.",
+      "Mobile browser emulation and CPU throttling do not establish performance on physical phones."
+    ],
+    "longTasks": {
+      "count": 0,
+      "durationMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "supported": true,
+      "totalBlockingTimeMs": 0,
+      "totalDurationMs": 0
+    },
+    "profile": "desktop",
+    "rafIntervalMs": {
+      "all": {
+        "max": 34,
+        "mean": 16.709,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 599
+      },
+      "replayCheckpoints": {
+        "max": 17.7,
+        "mean": 16.676,
+        "p50": 16.7,
+        "p95": 17.6,
+        "samples": 189
+      },
+      "replayTravel": {
+        "max": 34,
+        "mean": 16.719,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 403
+      }
+    },
+    "readiness": {
+      "note": "Scene readiness is observed by RAF polling. Already-ready pages have no measured scene first-frame time. This is not first contentful paint.",
+      "observationDelayFromInvocationMs": 87,
+      "observedSceneReadyFromNavigationMs": 2100.2,
+      "sceneReadyAtInvocation": false,
+      "waitAfterInvocationMs": 86.4
+    },
+    "scene": {
+      "all": {
+        "appAmbientTaggedSubmissions": 51,
+        "appTravelTaggedSubmissions": 465,
+        "drawingCallsPerSubmission": {
+          "max": 24,
+          "mean": 18.087,
+          "p50": 18,
+          "p95": 23,
+          "samples": 516
+        },
+        "gpuTimeMs": {
+          "max": 3.502,
+          "mean": 1.036,
+          "p50": 0.944,
+          "p95": 1.694,
+          "samples": 516
+        },
+        "renderSubmissions": 516,
+        "reportedDrawCalls": {
+          "max": 24,
+          "mean": 18.087,
+          "p50": 18,
+          "p95": 23,
+          "samples": 516
+        },
+        "reportedTriangles": {
+          "max": 366290,
+          "mean": 366278.174,
+          "p50": 366278,
+          "p95": 366288,
+          "samples": 516
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.6,
+          "mean": 0.11,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 516
+        },
+        "submissionIntervalMs": {
+          "max": 67.3,
+          "mean": 19.372,
+          "p50": 16.7,
+          "p95": 50,
+          "samples": 515
+        }
+      },
+      "appRenderCountDelta": 516,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 40,
+        "appTravelTaggedSubmissions": 72,
+        "drawingCallsPerSubmission": {
+          "max": 23,
+          "mean": 17.821,
+          "p50": 17,
+          "p95": 23,
+          "samples": 112
+        },
+        "gpuTimeMs": {
+          "max": 3.502,
+          "mean": 1.234,
+          "p50": 1.066,
+          "p95": 2.146,
+          "samples": 112
+        },
+        "renderSubmissions": 112,
+        "reportedDrawCalls": {
+          "max": 23,
+          "mean": 17.821,
+          "p50": 17,
+          "p95": 23,
+          "samples": 112
+        },
+        "reportedTriangles": {
+          "max": 366288,
+          "mean": 366277.643,
+          "p50": 366276,
+          "p95": 366288,
+          "samples": 112
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.3,
+          "mean": 0.12,
+          "p50": 0.1,
+          "p95": 0.3,
+          "samples": 112
+        },
+        "submissionIntervalMs": {
+          "max": 67.3,
+          "mean": 28.109,
+          "p50": 17,
+          "p95": 50.8,
+          "samples": 108
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 11,
+        "appTravelTaggedSubmissions": 393,
+        "drawingCallsPerSubmission": {
+          "max": 24,
+          "mean": 18.161,
+          "p50": 18,
+          "p95": 24,
+          "samples": 404
+        },
+        "gpuTimeMs": {
+          "max": 3.364,
+          "mean": 0.981,
+          "p50": 0.915,
+          "p95": 1.499,
+          "samples": 404
+        },
+        "renderSubmissions": 404,
+        "reportedDrawCalls": {
+          "max": 24,
+          "mean": 18.161,
+          "p50": 18,
+          "p95": 24,
+          "samples": 404
+        },
+        "reportedTriangles": {
+          "max": 366290,
+          "mean": 366278.322,
+          "p50": 366278,
+          "p95": 366290,
+          "samples": 404
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.6,
+          "mean": 0.108,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 404
+        },
+        "submissionIntervalMs": {
+          "max": 36,
+          "mean": 16.72,
+          "p50": 16.7,
+          "p95": 17.6,
+          "samples": 400
+        }
+      }
+    },
+    "schema": "neural-render-benchmark-v1",
+    "timing": {
+      "beats": 19,
+      "endingLength": 0.5,
+      "measuredDurationMs": 10009.2,
+      "openingLength": 0.5,
+      "readingHold": 0.2,
+      "requestedDurationMs": 10000,
+      "scrollSpeed": 1.35,
+      "scrollUnitPx": 1449.481
+    },
+    "url": "http://localhost:8276/baseline.html",
+    "viewport": {
+      "dpr": 1.100000023841858,
+      "height": 1223,
+      "width": 1314
+    },
+    "browserWork": {
+      "TaskDuration": 3335.701,
+      "ScriptDuration": 457.22400000000005,
+      "LayoutDuration": 52.634,
+      "RecalcStyleDuration": 2127.897
+    },
+    "harnessSha256": "cbe37911effdf94ae4ceed10f3f4410eaf1227af78bcdb4c93f746640a0abe19"
+  },
+  {
+    "checkpoints": [
+      {
+        "beat": "0",
+        "canvasHeight": 1345,
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-0",
+        "drawCalls": 35,
+        "progress": "0.00000",
+        "renderCount": 35,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 870,
+        "station": "0",
+        "triangles": 294712
+      },
+      {
+        "beat": "5",
+        "canvasHeight": 1345,
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-5",
+        "drawCalls": 35,
+        "progress": "0.27778",
+        "renderCount": 163,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 8117.272,
+        "station": "5",
+        "triangles": 313486
+      },
+      {
+        "beat": "10",
+        "canvasHeight": 1345,
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-10",
+        "drawCalls": 27,
+        "progress": "0.55556",
+        "renderCount": 302,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 15364.545,
+        "station": "10",
+        "triangles": 271362
+      },
+      {
+        "beat": "15",
+        "canvasHeight": 1345,
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-15",
+        "drawCalls": 18,
+        "progress": "0.83333",
+        "renderCount": 442,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 22611.818,
+        "station": "15",
+        "triangles": 158906
+      }
+    ],
+    "errors": [],
+    "field": {
+      "appAmbientTaggedSubmissions": 0,
+      "appTravelTaggedSubmissions": 0,
+      "drawingCallsPerSubmission": {
+        "max": 545,
+        "mean": 504.313,
+        "p50": 539,
+        "p95": 545,
+        "samples": 240
+      },
+      "gpuTimeMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "renderSubmissions": 240,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": 545,
+          "mean": 430.692,
+          "p50": 422,
+          "p95": 539,
+          "samples": 78
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 78,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.8,
+          "mean": 0.35,
+          "p50": 0.3,
+          "p95": 0.6,
+          "samples": 78
+        },
+        "submissionIntervalMs": {
+          "max": 51.8,
+          "mean": 41.465,
+          "p50": 34.1,
+          "p95": 50.8,
+          "samples": 74
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": 545,
+          "mean": 539.759,
+          "p50": 539,
+          "p95": 545,
+          "samples": 162
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 162,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.9,
+          "mean": 0.373,
+          "p50": 0.4,
+          "p95": 0.5,
+          "samples": 162
+        },
+        "submissionIntervalMs": {
+          "max": 69.3,
+          "mean": 41.606,
+          "p50": 34.3,
+          "p95": 50.7,
+          "samples": 158
+        }
+      },
+      "reportedDrawCalls": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "reportedTriangles": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "submissionEnvelopeMs": {
+        "max": 0.9,
+        "mean": 0.366,
+        "p50": 0.4,
+        "p95": 0.5,
+        "samples": 240
+      },
+      "submissionIntervalMs": {
+        "max": 69.3,
+        "mean": 41.672,
+        "p50": 34.4,
+        "p95": 50.7,
+        "samples": 239
+      }
+    },
+    "finalSnapshot": {
+      "beat": "5",
+      "canvasHeight": 1345,
+      "canvasWidth": 1430,
+      "commandedSegment": "travel-15-to-5",
+      "drawCalls": 34,
+      "progress": "0.27778",
+      "renderCount": 536,
+      "renderMode": "travel",
+      "sceneState": "ready",
+      "scrollY": 8117.272,
+      "station": "6",
+      "triangles": 313484
+    },
+    "gpuTiming": {
+      "created": 517,
+      "discardedDisjoint": 0,
+      "invalid": 0,
+      "maxPendingPerContext": 8,
+      "peakPending": 2,
+      "pendingAtEnd": 0,
+      "requested": true,
+      "resolved": 517,
+      "skippedExternalQuery": 0,
+      "skippedQueueFull": 0,
+      "supported": true,
+      "warnings": []
+    },
+    "label": "desktop-gpu-candidate-1",
+    "limitations": [
+      "Submission envelope is CPU wall time from canvas clear through the last drawing API return, including intervening JavaScript and wrapper overhead. It excludes work before clear and after the last draw.",
+      "WebGL and Canvas2D APIs can queue GPU work. Submission intervals and RAF intervals are not GPU completion times or presented FPS.",
+      "Optional WebGL2 timer queries measure elapsed GPU time from clear through the frame end marker. They do not measure browser compositing or presented FPS; compare runs with matching gpuTiming settings.",
+      "Replay travel/checkpoint labels describe commanded scrolling; renderer easing can continue into a checkpoint. Desktop app renderMode tags are additionally counted where available.",
+      "Desktop ambient is intentionally around 20 Hz; mobile ambient 18 Hz and travel 30 Hz. Compare matched profiles and travel intervals separately.",
+      "Mobile browser emulation and CPU throttling do not establish performance on physical phones."
+    ],
+    "longTasks": {
+      "count": 0,
+      "durationMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "supported": true,
+      "totalBlockingTimeMs": 0,
+      "totalDurationMs": 0
+    },
+    "profile": "desktop",
+    "rafIntervalMs": {
+      "all": {
+        "max": 32.9,
+        "mean": 16.708,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 599
+      },
+      "replayCheckpoints": {
+        "max": 17.7,
+        "mean": 16.685,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 188
+      },
+      "replayTravel": {
+        "max": 32.9,
+        "mean": 16.716,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 404
+      }
+    },
+    "readiness": {
+      "note": "Scene readiness is observed by RAF polling. Already-ready pages have no measured scene first-frame time. This is not first contentful paint.",
+      "observationDelayFromInvocationMs": 59.8,
+      "observedSceneReadyFromNavigationMs": 3491.9,
+      "sceneReadyAtInvocation": false,
+      "waitAfterInvocationMs": 58.3
+    },
+    "scene": {
+      "all": {
+        "appAmbientTaggedSubmissions": 52,
+        "appTravelTaggedSubmissions": 465,
+        "drawingCallsPerSubmission": {
+          "max": 38,
+          "mean": 28.925,
+          "p50": 29,
+          "p95": 37,
+          "samples": 517
+        },
+        "gpuTimeMs": {
+          "max": 2.866,
+          "mean": 0.721,
+          "p50": 0.624,
+          "p95": 1.42,
+          "samples": 517
+        },
+        "renderSubmissions": 517,
+        "reportedDrawCalls": {
+          "max": 38,
+          "mean": 28.925,
+          "p50": 29,
+          "p95": 37,
+          "samples": 517
+        },
+        "reportedTriangles": {
+          "max": 355680,
+          "mean": 264915.865,
+          "p50": 271366,
+          "p95": 348150,
+          "samples": 517
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.4,
+          "mean": 0.124,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 517
+        },
+        "submissionIntervalMs": {
+          "max": 51,
+          "mean": 19.299,
+          "p50": 16.7,
+          "p95": 49.9,
+          "samples": 516
+        }
+      },
+      "appRenderCountDelta": 517,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 41,
+        "appTravelTaggedSubmissions": 72,
+        "drawingCallsPerSubmission": {
+          "max": 37,
+          "mean": 28.23,
+          "p50": 28,
+          "p95": 36,
+          "samples": 113
+        },
+        "gpuTimeMs": {
+          "max": 2.366,
+          "mean": 0.935,
+          "p50": 0.779,
+          "p95": 1.609,
+          "samples": 113
+        },
+        "renderSubmissions": 113,
+        "reportedDrawCalls": {
+          "max": 37,
+          "mean": 28.23,
+          "p50": 28,
+          "p95": 36,
+          "samples": 113
+        },
+        "reportedTriangles": {
+          "max": 348150,
+          "mean": 258542.743,
+          "p50": 271364,
+          "p95": 345590,
+          "samples": 113
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.2,
+          "mean": 0.119,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 113
+        },
+        "submissionIntervalMs": {
+          "max": 51,
+          "mean": 27.997,
+          "p50": 16.9,
+          "p95": 50.5,
+          "samples": 109
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 11,
+        "appTravelTaggedSubmissions": 393,
+        "drawingCallsPerSubmission": {
+          "max": 38,
+          "mean": 29.119,
+          "p50": 29,
+          "p95": 37,
+          "samples": 404
+        },
+        "gpuTimeMs": {
+          "max": 2.866,
+          "mean": 0.661,
+          "p50": 0.607,
+          "p95": 1.134,
+          "samples": 404
+        },
+        "renderSubmissions": 404,
+        "reportedDrawCalls": {
+          "max": 38,
+          "mean": 29.119,
+          "p50": 29,
+          "p95": 37,
+          "samples": 404
+        },
+        "reportedTriangles": {
+          "max": 355680,
+          "mean": 266698.446,
+          "p50": 271366,
+          "p95": 348150,
+          "samples": 404
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.4,
+          "mean": 0.125,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 404
+        },
+        "submissionIntervalMs": {
+          "max": 36.3,
+          "mean": 16.723,
+          "p50": 16.7,
+          "p95": 17.5,
+          "samples": 400
+        }
+      }
+    },
+    "schema": "neural-render-benchmark-v1",
+    "timing": {
+      "beats": 19,
+      "endingLength": 0.5,
+      "measuredDurationMs": 10008.7,
+      "openingLength": 0.5,
+      "readingHold": 0.2,
+      "requestedDurationMs": 10000,
+      "scrollSpeed": 1.35,
+      "scrollUnitPx": 1449.481
+    },
+    "url": "http://localhost:8276/",
+    "viewport": {
+      "dpr": 1.100000023841858,
+      "height": 1223,
+      "width": 1314
+    },
+    "browserWork": {
+      "TaskDuration": 3435.6260000000007,
+      "ScriptDuration": 435.52000000000004,
+      "LayoutDuration": 52.702,
+      "RecalcStyleDuration": 2268.379
+    },
+    "harnessSha256": "cbe37911effdf94ae4ceed10f3f4410eaf1227af78bcdb4c93f746640a0abe19"
+  },
+  {
+    "checkpoints": [
+      {
+        "beat": "0",
+        "canvasHeight": 1345,
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-0",
+        "drawCalls": 35,
+        "progress": "0.00000",
+        "renderCount": 35,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 870,
+        "station": "0",
+        "triangles": 294712
+      },
+      {
+        "beat": "5",
+        "canvasHeight": 1345,
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-5",
+        "drawCalls": 35,
+        "progress": "0.27778",
+        "renderCount": 163,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 8117.272,
+        "station": "5",
+        "triangles": 313486
+      },
+      {
+        "beat": "10",
+        "canvasHeight": 1345,
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-10",
+        "drawCalls": 27,
+        "progress": "0.55556",
+        "renderCount": 302,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 15364.545,
+        "station": "10",
+        "triangles": 271362
+      },
+      {
+        "beat": "15",
+        "canvasHeight": 1345,
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-15",
+        "drawCalls": 18,
+        "progress": "0.83333",
+        "renderCount": 442,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 22611.818,
+        "station": "15",
+        "triangles": 158906
+      }
+    ],
+    "errors": [],
+    "field": {
+      "appAmbientTaggedSubmissions": 0,
+      "appTravelTaggedSubmissions": 0,
+      "drawingCallsPerSubmission": {
+        "max": 545,
+        "mean": 502.95,
+        "p50": 539,
+        "p95": 545,
+        "samples": 238
+      },
+      "gpuTimeMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "renderSubmissions": 238,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": 545,
+          "mean": 427.231,
+          "p50": 419,
+          "p95": 539,
+          "samples": 78
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 78,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.7,
+          "mean": 0.328,
+          "p50": 0.3,
+          "p95": 0.5,
+          "samples": 78
+        },
+        "submissionIntervalMs": {
+          "max": 51.1,
+          "mean": 41.473,
+          "p50": 34.2,
+          "p95": 50.7,
+          "samples": 74
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": 545,
+          "mean": 539.863,
+          "p50": 539,
+          "p95": 545,
+          "samples": 160
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 160,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": 3.2,
+          "mean": 0.398,
+          "p50": 0.4,
+          "p95": 0.6,
+          "samples": 160
+        },
+        "submissionIntervalMs": {
+          "max": 171.3,
+          "mean": 42.254,
+          "p50": 34.7,
+          "p95": 51.1,
+          "samples": 156
+        }
+      },
+      "reportedDrawCalls": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "reportedTriangles": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "submissionEnvelopeMs": {
+        "max": 3.2,
+        "mean": 0.375,
+        "p50": 0.3,
+        "p95": 0.6,
+        "samples": 238
+      },
+      "submissionIntervalMs": {
+        "max": 171.3,
+        "mean": 42.09,
+        "p50": 35,
+        "p95": 50.9,
+        "samples": 237
+      }
+    },
+    "finalSnapshot": {
+      "beat": "5",
+      "canvasHeight": 1345,
+      "canvasWidth": 1430,
+      "commandedSegment": "travel-15-to-5",
+      "drawCalls": 34,
+      "progress": "0.27778",
+      "renderCount": 529,
+      "renderMode": "travel",
+      "sceneState": "ready",
+      "scrollY": 8117.272,
+      "station": "6",
+      "triangles": 313484
+    },
+    "gpuTiming": {
+      "created": 510,
+      "discardedDisjoint": 0,
+      "invalid": 0,
+      "maxPendingPerContext": 8,
+      "peakPending": 2,
+      "pendingAtEnd": 0,
+      "requested": true,
+      "resolved": 510,
+      "skippedExternalQuery": 0,
+      "skippedQueueFull": 0,
+      "supported": true,
+      "warnings": []
+    },
+    "label": "desktop-gpu-candidate-2",
+    "limitations": [
+      "Submission envelope is CPU wall time from canvas clear through the last drawing API return, including intervening JavaScript and wrapper overhead. It excludes work before clear and after the last draw.",
+      "WebGL and Canvas2D APIs can queue GPU work. Submission intervals and RAF intervals are not GPU completion times or presented FPS.",
+      "Optional WebGL2 timer queries measure elapsed GPU time from clear through the frame end marker. They do not measure browser compositing or presented FPS; compare runs with matching gpuTiming settings.",
+      "Replay travel/checkpoint labels describe commanded scrolling; renderer easing can continue into a checkpoint. Desktop app renderMode tags are additionally counted where available.",
+      "Desktop ambient is intentionally around 20 Hz; mobile ambient 18 Hz and travel 30 Hz. Compare matched profiles and travel intervals separately.",
+      "Mobile browser emulation and CPU throttling do not establish performance on physical phones."
+    ],
+    "longTasks": {
+      "count": 1,
+      "durationMs": {
+        "max": 104,
+        "mean": 104,
+        "p50": 104,
+        "p95": 104,
+        "samples": 1
+      },
+      "supported": true,
+      "totalBlockingTimeMs": 54,
+      "totalDurationMs": 104
+    },
+    "profile": "desktop",
+    "rafIntervalMs": {
+      "all": {
+        "max": 116.7,
+        "mean": 16.907,
+        "p50": 16.7,
+        "p95": 17.6,
+        "samples": 592
+      },
+      "replayCheckpoints": {
+        "max": 17.7,
+        "mean": 16.68,
+        "p50": 16.7,
+        "p95": 17.6,
+        "samples": 188
+      },
+      "replayTravel": {
+        "max": 116.7,
+        "mean": 17.019,
+        "p50": 16.7,
+        "p95": 17.6,
+        "samples": 397
+      }
+    },
+    "readiness": {
+      "note": "Scene readiness is observed by RAF polling. Already-ready pages have no measured scene first-frame time. This is not first contentful paint.",
+      "observationDelayFromInvocationMs": 40.7,
+      "observedSceneReadyFromNavigationMs": 1813.9,
+      "sceneReadyAtInvocation": false,
+      "waitAfterInvocationMs": 40.2
+    },
+    "scene": {
+      "all": {
+        "appAmbientTaggedSubmissions": 52,
+        "appTravelTaggedSubmissions": 458,
+        "drawingCallsPerSubmission": {
+          "max": 38,
+          "mean": 28.888,
+          "p50": 29,
+          "p95": 37,
+          "samples": 510
+        },
+        "gpuTimeMs": {
+          "max": 2.337,
+          "mean": 0.723,
+          "p50": 0.653,
+          "p95": 1.283,
+          "samples": 510
+        },
+        "renderSubmissions": 510,
+        "reportedDrawCalls": {
+          "max": 38,
+          "mean": 28.888,
+          "p50": 29,
+          "p95": 37,
+          "samples": 510
+        },
+        "reportedTriangles": {
+          "max": 355680,
+          "mean": 264515.851,
+          "p50": 271366,
+          "p95": 348150,
+          "samples": 510
+        },
+        "submissionEnvelopeMs": {
+          "max": 1.9,
+          "mean": 0.134,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 510
+        },
+        "submissionIntervalMs": {
+          "max": 90.8,
+          "mean": 19.598,
+          "p50": 16.8,
+          "p95": 49.9,
+          "samples": 509
+        }
+      },
+      "appRenderCountDelta": 510,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 41,
+        "appTravelTaggedSubmissions": 72,
+        "drawingCallsPerSubmission": {
+          "max": 37,
+          "mean": 28.23,
+          "p50": 28,
+          "p95": 36,
+          "samples": 113
+        },
+        "gpuTimeMs": {
+          "max": 1.801,
+          "mean": 0.816,
+          "p50": 0.729,
+          "p95": 1.41,
+          "samples": 113
+        },
+        "renderSubmissions": 113,
+        "reportedDrawCalls": {
+          "max": 37,
+          "mean": 28.23,
+          "p50": 28,
+          "p95": 36,
+          "samples": 113
+        },
+        "reportedTriangles": {
+          "max": 348150,
+          "mean": 258542.743,
+          "p50": 271364,
+          "p95": 345590,
+          "samples": 113
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.4,
+          "mean": 0.122,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 113
+        },
+        "submissionIntervalMs": {
+          "max": 51.3,
+          "mean": 28.013,
+          "p50": 17.1,
+          "p95": 50.7,
+          "samples": 109
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 11,
+        "appTravelTaggedSubmissions": 386,
+        "drawingCallsPerSubmission": {
+          "max": 38,
+          "mean": 29.076,
+          "p50": 29,
+          "p95": 37,
+          "samples": 397
+        },
+        "gpuTimeMs": {
+          "max": 2.337,
+          "mean": 0.697,
+          "p50": 0.63,
+          "p95": 1.223,
+          "samples": 397
+        },
+        "renderSubmissions": 397,
+        "reportedDrawCalls": {
+          "max": 38,
+          "mean": 29.076,
+          "p50": 29,
+          "p95": 37,
+          "samples": 397
+        },
+        "reportedTriangles": {
+          "max": 355680,
+          "mean": 266216.005,
+          "p50": 271366,
+          "p95": 348150,
+          "samples": 397
+        },
+        "submissionEnvelopeMs": {
+          "max": 1.9,
+          "mean": 0.137,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 397
+        },
+        "submissionIntervalMs": {
+          "max": 90.8,
+          "mean": 17.02,
+          "p50": 16.7,
+          "p95": 17.7,
+          "samples": 393
+        }
+      }
+    },
+    "schema": "neural-render-benchmark-v1",
+    "timing": {
+      "beats": 19,
+      "endingLength": 0.5,
+      "measuredDurationMs": 10009.8,
+      "openingLength": 0.5,
+      "readingHold": 0.2,
+      "requestedDurationMs": 10000,
+      "scrollSpeed": 1.35,
+      "scrollUnitPx": 1449.481
+    },
+    "url": "http://localhost:8276/",
+    "viewport": {
+      "dpr": 1.100000023841858,
+      "height": 1223,
+      "width": 1314
+    },
+    "browserWork": {
+      "TaskDuration": 3555.866,
+      "ScriptDuration": 415.303,
+      "LayoutDuration": 52.904999999999994,
+      "RecalcStyleDuration": 2255.879
+    },
+    "harnessSha256": "cbe37911effdf94ae4ceed10f3f4410eaf1227af78bcdb4c93f746640a0abe19"
+  },
+  {
+    "checkpoints": [
+      {
+        "beat": "0",
+        "canvasHeight": 1345,
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-0",
+        "drawCalls": 23,
+        "progress": "0.00000",
+        "renderCount": 35,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 870,
+        "station": "0",
+        "triangles": 366288
+      },
+      {
+        "beat": "5",
+        "canvasHeight": 1345,
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-5",
+        "drawCalls": 22,
+        "progress": "0.27778",
+        "renderCount": 160,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 8117.272,
+        "station": "5",
+        "triangles": 366286
+      },
+      {
+        "beat": "10",
+        "canvasHeight": 1345,
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-10",
+        "drawCalls": 16,
+        "progress": "0.55556",
+        "renderCount": 299,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 15364.545,
+        "station": "10",
+        "triangles": 366274
+      },
+      {
+        "beat": "15",
+        "canvasHeight": 1345,
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-15",
+        "drawCalls": 12,
+        "progress": "0.83333",
+        "renderCount": 439,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 22611.818,
+        "station": "15",
+        "triangles": 366266
+      }
+    ],
+    "errors": [],
+    "field": {
+      "appAmbientTaggedSubmissions": 0,
+      "appTravelTaggedSubmissions": 0,
+      "drawingCallsPerSubmission": {
+        "max": 545,
+        "mean": 504.313,
+        "p50": 539,
+        "p95": 545,
+        "samples": 240
+      },
+      "gpuTimeMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "renderSubmissions": 240,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": 545,
+          "mean": 430.692,
+          "p50": 422,
+          "p95": 539,
+          "samples": 78
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 78,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": 1.2,
+          "mean": 0.379,
+          "p50": 0.4,
+          "p95": 0.6,
+          "samples": 78
+        },
+        "submissionIntervalMs": {
+          "max": 50.9,
+          "mean": 41.459,
+          "p50": 34.2,
+          "p95": 50.8,
+          "samples": 74
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": 545,
+          "mean": 539.759,
+          "p50": 539,
+          "p95": 545,
+          "samples": 162
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 162,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": 2.3,
+          "mean": 0.42,
+          "p50": 0.4,
+          "p95": 0.8,
+          "samples": 162
+        },
+        "submissionIntervalMs": {
+          "max": 87.7,
+          "mean": 41.606,
+          "p50": 34.8,
+          "p95": 50.9,
+          "samples": 158
+        }
+      },
+      "reportedDrawCalls": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "reportedTriangles": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "submissionEnvelopeMs": {
+        "max": 2.3,
+        "mean": 0.407,
+        "p50": 0.4,
+        "p95": 0.7,
+        "samples": 240
+      },
+      "submissionIntervalMs": {
+        "max": 87.7,
+        "mean": 41.668,
+        "p50": 39.1,
+        "p95": 50.8,
+        "samples": 239
+      }
+    },
+    "finalSnapshot": {
+      "beat": "5",
+      "canvasHeight": 1345,
+      "canvasWidth": 1430,
+      "commandedSegment": "travel-15-to-5",
+      "drawCalls": 21,
+      "progress": "0.27778",
+      "renderCount": 532,
+      "renderMode": "travel",
+      "sceneState": "ready",
+      "scrollY": 8117.272,
+      "station": "6",
+      "triangles": 366284
+    },
+    "gpuTiming": {
+      "created": 513,
+      "discardedDisjoint": 0,
+      "invalid": 0,
+      "maxPendingPerContext": 8,
+      "peakPending": 3,
+      "pendingAtEnd": 0,
+      "requested": true,
+      "resolved": 513,
+      "skippedExternalQuery": 0,
+      "skippedQueueFull": 0,
+      "supported": true,
+      "warnings": []
+    },
+    "label": "desktop-gpu-baseline-2",
+    "limitations": [
+      "Submission envelope is CPU wall time from canvas clear through the last drawing API return, including intervening JavaScript and wrapper overhead. It excludes work before clear and after the last draw.",
+      "WebGL and Canvas2D APIs can queue GPU work. Submission intervals and RAF intervals are not GPU completion times or presented FPS.",
+      "Optional WebGL2 timer queries measure elapsed GPU time from clear through the frame end marker. They do not measure browser compositing or presented FPS; compare runs with matching gpuTiming settings.",
+      "Replay travel/checkpoint labels describe commanded scrolling; renderer easing can continue into a checkpoint. Desktop app renderMode tags are additionally counted where available.",
+      "Desktop ambient is intentionally around 20 Hz; mobile ambient 18 Hz and travel 30 Hz. Compare matched profiles and travel intervals separately.",
+      "Mobile browser emulation and CPU throttling do not establish performance on physical phones."
+    ],
+    "longTasks": {
+      "count": 0,
+      "durationMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "supported": true,
+      "totalBlockingTimeMs": 0,
+      "totalDurationMs": 0
+    },
+    "profile": "desktop",
+    "rafIntervalMs": {
+      "all": {
+        "max": 51,
+        "mean": 16.819,
+        "p50": 16.7,
+        "p95": 17.6,
+        "samples": 595
+      },
+      "replayCheckpoints": {
+        "max": 17.7,
+        "mean": 16.675,
+        "p50": 16.7,
+        "p95": 17.6,
+        "samples": 189
+      },
+      "replayTravel": {
+        "max": 51,
+        "mean": 16.886,
+        "p50": 16.7,
+        "p95": 17.6,
+        "samples": 399
+      }
+    },
+    "readiness": {
+      "note": "Scene readiness is observed by RAF polling. Already-ready pages have no measured scene first-frame time. This is not first contentful paint.",
+      "observationDelayFromInvocationMs": 62.4,
+      "observedSceneReadyFromNavigationMs": 2963.5,
+      "sceneReadyAtInvocation": false,
+      "waitAfterInvocationMs": 61.9
+    },
+    "scene": {
+      "all": {
+        "appAmbientTaggedSubmissions": 51,
+        "appTravelTaggedSubmissions": 462,
+        "drawingCallsPerSubmission": {
+          "max": 24,
+          "mean": 18.074,
+          "p50": 18,
+          "p95": 23,
+          "samples": 513
+        },
+        "gpuTimeMs": {
+          "max": 3.608,
+          "mean": 1.06,
+          "p50": 0.968,
+          "p95": 1.901,
+          "samples": 513
+        },
+        "renderSubmissions": 513,
+        "reportedDrawCalls": {
+          "max": 24,
+          "mean": 18.074,
+          "p50": 18,
+          "p95": 23,
+          "samples": 513
+        },
+        "reportedTriangles": {
+          "max": 366290,
+          "mean": 366278.148,
+          "p50": 366278,
+          "p95": 366288,
+          "samples": 513
+        },
+        "submissionEnvelopeMs": {
+          "max": 1,
+          "mean": 0.112,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 513
+        },
+        "submissionIntervalMs": {
+          "max": 51,
+          "mean": 19.45,
+          "p50": 16.7,
+          "p95": 49.8,
+          "samples": 512
+        }
+      },
+      "appRenderCountDelta": 513,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 40,
+        "appTravelTaggedSubmissions": 73,
+        "drawingCallsPerSubmission": {
+          "max": 23,
+          "mean": 17.77,
+          "p50": 17,
+          "p95": 23,
+          "samples": 113
+        },
+        "gpuTimeMs": {
+          "max": 3.016,
+          "mean": 1.164,
+          "p50": 1.09,
+          "p95": 1.935,
+          "samples": 113
+        },
+        "renderSubmissions": 113,
+        "reportedDrawCalls": {
+          "max": 23,
+          "mean": 17.77,
+          "p50": 17,
+          "p95": 23,
+          "samples": 113
+        },
+        "reportedTriangles": {
+          "max": 366288,
+          "mean": 366277.54,
+          "p50": 366276,
+          "p95": 366288,
+          "samples": 113
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.7,
+          "mean": 0.122,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 113
+        },
+        "submissionIntervalMs": {
+          "max": 51,
+          "mean": 27.694,
+          "p50": 17,
+          "p95": 50.7,
+          "samples": 109
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 11,
+        "appTravelTaggedSubmissions": 389,
+        "drawingCallsPerSubmission": {
+          "max": 24,
+          "mean": 18.16,
+          "p50": 18,
+          "p95": 24,
+          "samples": 400
+        },
+        "gpuTimeMs": {
+          "max": 3.608,
+          "mean": 1.03,
+          "p50": 0.932,
+          "p95": 1.834,
+          "samples": 400
+        },
+        "renderSubmissions": 400,
+        "reportedDrawCalls": {
+          "max": 24,
+          "mean": 18.16,
+          "p50": 18,
+          "p95": 24,
+          "samples": 400
+        },
+        "reportedTriangles": {
+          "max": 366290,
+          "mean": 366278.32,
+          "p50": 366278,
+          "p95": 366290,
+          "samples": 400
+        },
+        "submissionEnvelopeMs": {
+          "max": 1,
+          "mean": 0.108,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 400
+        },
+        "submissionIntervalMs": {
+          "max": 42,
+          "mean": 16.89,
+          "p50": 16.7,
+          "p95": 18.7,
+          "samples": 396
+        }
+      }
+    },
+    "schema": "neural-render-benchmark-v1",
+    "timing": {
+      "beats": 19,
+      "endingLength": 0.5,
+      "measuredDurationMs": 10008.3,
+      "openingLength": 0.5,
+      "readingHold": 0.2,
+      "requestedDurationMs": 10000,
+      "scrollSpeed": 1.35,
+      "scrollUnitPx": 1449.481
+    },
+    "url": "http://localhost:8276/baseline.html",
+    "viewport": {
+      "dpr": 1.100000023841858,
+      "height": 1223,
+      "width": 1314
+    },
+    "browserWork": {
+      "TaskDuration": 3836.828,
+      "ScriptDuration": 453.692,
+      "LayoutDuration": 56.297,
+      "RecalcStyleDuration": 2583.335
+    },
+    "harnessSha256": "cbe37911effdf94ae4ceed10f3f4410eaf1227af78bcdb4c93f746640a0abe19"
+  },
+  {
+    "checkpoints": [
+      {
+        "beat": "0",
+        "canvasHeight": 1345,
+        "canvasId": "neural-canvas",
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-0",
+        "drawCalls": 23,
+        "progress": "0.00000",
+        "renderCount": 35,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 870,
+        "station": "0",
+        "triangles": 366288
+      },
+      {
+        "beat": "5",
+        "canvasHeight": 1345,
+        "canvasId": "neural-canvas",
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-5",
+        "drawCalls": 22,
+        "progress": "0.27778",
+        "renderCount": 163,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 8117.272,
+        "station": "5",
+        "triangles": 366286
+      },
+      {
+        "beat": "10",
+        "canvasHeight": 1345,
+        "canvasId": "neural-canvas",
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-10",
+        "drawCalls": 16,
+        "progress": "0.55556",
+        "renderCount": 300,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 15364.545,
+        "station": "10",
+        "triangles": 366274
+      },
+      {
+        "beat": "15",
+        "canvasHeight": 1345,
+        "canvasId": "neural-canvas",
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-15",
+        "drawCalls": 12,
+        "progress": "0.83333",
+        "renderCount": 439,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 22611.818,
+        "station": "15",
+        "triangles": 366266
+      }
+    ],
+    "errors": [],
+    "field": {
+      "appAmbientTaggedSubmissions": 0,
+      "appTravelTaggedSubmissions": 0,
+      "drawingCallsPerSubmission": {
+        "max": 545,
+        "mean": 503.548,
+        "p50": 539,
+        "p95": 545,
+        "samples": 241
+      },
+      "gpuTimeMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "renderSubmissions": 241,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": 545,
+          "mean": 427.308,
+          "p50": 419,
+          "p95": 539,
+          "samples": 78
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 78,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.9,
+          "mean": 0.295,
+          "p50": 0.3,
+          "p95": 0.4,
+          "samples": 78
+        },
+        "submissionIntervalMs": {
+          "max": 51.1,
+          "mean": 41.436,
+          "p50": 34.4,
+          "p95": 50.5,
+          "samples": 74
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": 545,
+          "mean": 540.031,
+          "p50": 539,
+          "p95": 545,
+          "samples": 163
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 163,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": 1.3,
+          "mean": 0.363,
+          "p50": 0.3,
+          "p95": 0.5,
+          "samples": 163
+        },
+        "submissionIntervalMs": {
+          "max": 76.9,
+          "mean": 41.551,
+          "p50": 34.2,
+          "p95": 50.7,
+          "samples": 159
+        }
+      },
+      "reportedDrawCalls": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "reportedTriangles": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "submissionEnvelopeMs": {
+        "max": 1.3,
+        "mean": 0.341,
+        "p50": 0.3,
+        "p95": 0.5,
+        "samples": 241
+      },
+      "submissionIntervalMs": {
+        "max": 76.9,
+        "mean": 41.629,
+        "p50": 34.4,
+        "p95": 50.7,
+        "samples": 240
+      }
+    },
+    "finalSnapshot": {
+      "beat": "5",
+      "canvasHeight": 1345,
+      "canvasId": "neural-canvas",
+      "canvasWidth": 1430,
+      "commandedSegment": "travel-15-to-5",
+      "drawCalls": 21,
+      "progress": "0.27778",
+      "renderCount": 534,
+      "renderMode": "travel",
+      "sceneState": "ready",
+      "scrollY": 8117.272,
+      "station": "6",
+      "triangles": 366284
+    },
+    "gpuTiming": {
+      "created": 515,
+      "discardedDisjoint": 0,
+      "invalid": 0,
+      "maxPendingPerContext": 8,
+      "peakPending": 2,
+      "pendingAtEnd": 0,
+      "requested": true,
+      "resolved": 515,
+      "skippedExternalQuery": 0,
+      "skippedQueueFull": 0,
+      "supported": true,
+      "warnings": []
+    },
+    "label": "desktop-gpu-baseline-3",
+    "limitations": [
+      "Submission envelope is CPU wall time from canvas clear through the last drawing API return, including intervening JavaScript and wrapper overhead. It excludes work before clear and after the last draw.",
+      "WebGL and Canvas2D APIs can queue GPU work. Submission intervals and RAF intervals are not GPU completion times or presented FPS.",
+      "Optional WebGL2 timer queries measure elapsed GPU time from clear through the frame end marker. They do not measure browser compositing or presented FPS; compare runs with matching gpuTiming settings.",
+      "Replay travel/checkpoint labels describe commanded scrolling; renderer easing can continue into a checkpoint. Desktop app renderMode tags are additionally counted where available.",
+      "Desktop ambient is intentionally around 20 Hz; mobile ambient 18 Hz and travel 30 Hz. Compare matched profiles and travel intervals separately.",
+      "Mobile browser emulation and CPU throttling do not establish performance on physical phones."
+    ],
+    "longTasks": {
+      "count": 0,
+      "durationMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "supported": true,
+      "totalBlockingTimeMs": 0,
+      "totalDurationMs": 0
+    },
+    "primaryCanvasId": "neural-canvas",
+    "profile": "desktop",
+    "rafIntervalMs": {
+      "all": {
+        "max": 49.7,
+        "mean": 16.735,
+        "p50": 16.7,
+        "p95": 17.6,
+        "samples": 598
+      },
+      "replayCheckpoints": {
+        "max": 17.7,
+        "mean": 16.68,
+        "p50": 16.7,
+        "p95": 17.6,
+        "samples": 188
+      },
+      "replayTravel": {
+        "max": 49.7,
+        "mean": 16.762,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 403
+      }
+    },
+    "readiness": {
+      "note": "Scene readiness is observed by RAF polling. Already-ready pages have no measured scene first-frame time. This is not first contentful paint.",
+      "observationDelayFromInvocationMs": 53,
+      "observedSceneReadyFromNavigationMs": 2197.2,
+      "sceneReadyAtInvocation": false,
+      "waitAfterInvocationMs": 52.5
+    },
+    "scene": {
+      "all": {
+        "appAmbientTaggedSubmissions": 51,
+        "appTravelTaggedSubmissions": 464,
+        "drawingCallsPerSubmission": {
+          "max": 24,
+          "mean": 18.085,
+          "p50": 18,
+          "p95": 23,
+          "samples": 515
+        },
+        "gpuTimeMs": {
+          "max": 2.354,
+          "mean": 1.079,
+          "p50": 0.988,
+          "p95": 1.649,
+          "samples": 515
+        },
+        "renderSubmissions": 515,
+        "reportedDrawCalls": {
+          "max": 24,
+          "mean": 18.085,
+          "p50": 18,
+          "p95": 23,
+          "samples": 515
+        },
+        "reportedTriangles": {
+          "max": 366290,
+          "mean": 366278.171,
+          "p50": 366278,
+          "p95": 366288,
+          "samples": 515
+        },
+        "submissionEnvelopeMs": {
+          "max": 1.2,
+          "mean": 0.111,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 515
+        },
+        "submissionIntervalMs": {
+          "max": 69.5,
+          "mean": 19.374,
+          "p50": 16.7,
+          "p95": 49.8,
+          "samples": 514
+        }
+      },
+      "appRenderCountDelta": 515,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 41,
+        "appTravelTaggedSubmissions": 72,
+        "drawingCallsPerSubmission": {
+          "max": 23,
+          "mean": 17.77,
+          "p50": 17,
+          "p95": 23,
+          "samples": 113
+        },
+        "gpuTimeMs": {
+          "max": 2.354,
+          "mean": 1.254,
+          "p50": 1.101,
+          "p95": 2.065,
+          "samples": 113
+        },
+        "renderSubmissions": 113,
+        "reportedDrawCalls": {
+          "max": 23,
+          "mean": 17.77,
+          "p50": 17,
+          "p95": 23,
+          "samples": 113
+        },
+        "reportedTriangles": {
+          "max": 366288,
+          "mean": 366277.54,
+          "p50": 366276,
+          "p95": 366288,
+          "samples": 113
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.7,
+          "mean": 0.106,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 113
+        },
+        "submissionIntervalMs": {
+          "max": 66.6,
+          "mean": 28.147,
+          "p50": 17.2,
+          "p95": 50.7,
+          "samples": 109
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 10,
+        "appTravelTaggedSubmissions": 392,
+        "drawingCallsPerSubmission": {
+          "max": 24,
+          "mean": 18.174,
+          "p50": 18,
+          "p95": 24,
+          "samples": 402
+        },
+        "gpuTimeMs": {
+          "max": 2.199,
+          "mean": 1.03,
+          "p50": 0.955,
+          "p95": 1.384,
+          "samples": 402
+        },
+        "renderSubmissions": 402,
+        "reportedDrawCalls": {
+          "max": 24,
+          "mean": 18.174,
+          "p50": 18,
+          "p95": 24,
+          "samples": 402
+        },
+        "reportedTriangles": {
+          "max": 366290,
+          "mean": 366278.348,
+          "p50": 366278,
+          "p95": 366290,
+          "samples": 402
+        },
+        "submissionEnvelopeMs": {
+          "max": 1.2,
+          "mean": 0.112,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 402
+        },
+        "submissionIntervalMs": {
+          "max": 69.5,
+          "mean": 16.77,
+          "p50": 16.7,
+          "p95": 17.5,
+          "samples": 398
+        }
+      }
+    },
+    "schema": "neural-render-benchmark-v1",
+    "timing": {
+      "beats": 19,
+      "endingLength": 0.5,
+      "measuredDurationMs": 10008.3,
+      "openingLength": 0.5,
+      "readingHold": 0.2,
+      "requestedDurationMs": 10000,
+      "scrollSpeed": 1.35,
+      "scrollUnitPx": 1449.481
+    },
+    "url": "http://localhost:8276/baseline.html",
+    "viewport": {
+      "dpr": 1.100000023841858,
+      "height": 1223,
+      "width": 1314
+    },
+    "browserWork": {
+      "TaskDuration": 3519.8010000000004,
+      "ScriptDuration": 403.315,
+      "LayoutDuration": 52.574,
+      "RecalcStyleDuration": 2140.699
+    },
+    "harnessSha256": "e9d8ffe6fa3f4bc1847e576ab9902a552d84db8f6668ae43f207b558c696c3d6"
+  },
+  {
+    "checkpoints": [
+      {
+        "beat": "0",
+        "canvasHeight": 1345,
+        "canvasId": "neural-canvas",
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-0",
+        "drawCalls": 35,
+        "progress": "0.00000",
+        "renderCount": 35,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 870,
+        "station": "0",
+        "triangles": 294712
+      },
+      {
+        "beat": "5",
+        "canvasHeight": 1345,
+        "canvasId": "neural-canvas",
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-5",
+        "drawCalls": 35,
+        "progress": "0.27778",
+        "renderCount": 163,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 8117.272,
+        "station": "5",
+        "triangles": 313486
+      },
+      {
+        "beat": "10",
+        "canvasHeight": 1345,
+        "canvasId": "neural-canvas",
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-10",
+        "drawCalls": 27,
+        "progress": "0.55556",
+        "renderCount": 302,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 15364.545,
+        "station": "10",
+        "triangles": 271362
+      },
+      {
+        "beat": "15",
+        "canvasHeight": 1345,
+        "canvasId": "neural-canvas",
+        "canvasWidth": 1430,
+        "commandedSegment": "checkpoint-15",
+        "drawCalls": 18,
+        "progress": "0.83333",
+        "renderCount": 442,
+        "renderMode": "ambient",
+        "sceneState": "ready",
+        "scrollY": 22611.818,
+        "station": "15",
+        "triangles": 158906
+      }
+    ],
+    "errors": [],
+    "field": {
+      "appAmbientTaggedSubmissions": 0,
+      "appTravelTaggedSubmissions": 0,
+      "drawingCallsPerSubmission": {
+        "max": 545,
+        "mean": 503.498,
+        "p50": 539,
+        "p95": 545,
+        "samples": 241
+      },
+      "gpuTimeMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "renderSubmissions": 241,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": 545,
+          "mean": 427.154,
+          "p50": 419,
+          "p95": 539,
+          "samples": 78
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 78,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": 1.1,
+          "mean": 0.342,
+          "p50": 0.3,
+          "p95": 0.8,
+          "samples": 78
+        },
+        "submissionIntervalMs": {
+          "max": 51,
+          "mean": 41.393,
+          "p50": 34.4,
+          "p95": 50.8,
+          "samples": 74
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": 545,
+          "mean": 540.031,
+          "p50": 539,
+          "p95": 545,
+          "samples": 163
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 163,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.9,
+          "mean": 0.372,
+          "p50": 0.4,
+          "p95": 0.6,
+          "samples": 163
+        },
+        "submissionIntervalMs": {
+          "max": 67.6,
+          "mean": 41.559,
+          "p50": 34.4,
+          "p95": 50.8,
+          "samples": 159
+        }
+      },
+      "reportedDrawCalls": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "reportedTriangles": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "submissionEnvelopeMs": {
+        "max": 1.1,
+        "mean": 0.363,
+        "p50": 0.3,
+        "p95": 0.6,
+        "samples": 241
+      },
+      "submissionIntervalMs": {
+        "max": 67.6,
+        "mean": 41.635,
+        "p50": 34.4,
+        "p95": 50.8,
+        "samples": 240
+      }
+    },
+    "finalSnapshot": {
+      "beat": "5",
+      "canvasHeight": 1345,
+      "canvasId": "neural-canvas",
+      "canvasWidth": 1430,
+      "commandedSegment": "travel-15-to-5",
+      "drawCalls": 34,
+      "progress": "0.27778",
+      "renderCount": 537,
+      "renderMode": "travel",
+      "sceneState": "ready",
+      "scrollY": 8117.272,
+      "station": "6",
+      "triangles": 313484
+    },
+    "gpuTiming": {
+      "created": 518,
+      "discardedDisjoint": 0,
+      "invalid": 0,
+      "maxPendingPerContext": 8,
+      "peakPending": 2,
+      "pendingAtEnd": 0,
+      "requested": true,
+      "resolved": 518,
+      "skippedExternalQuery": 0,
+      "skippedQueueFull": 0,
+      "supported": true,
+      "warnings": []
+    },
+    "label": "desktop-gpu-candidate-3",
+    "limitations": [
+      "Submission envelope is CPU wall time from canvas clear through the last drawing API return, including intervening JavaScript and wrapper overhead. It excludes work before clear and after the last draw.",
+      "WebGL and Canvas2D APIs can queue GPU work. Submission intervals and RAF intervals are not GPU completion times or presented FPS.",
+      "Optional WebGL2 timer queries measure elapsed GPU time from clear through the frame end marker. They do not measure browser compositing or presented FPS; compare runs with matching gpuTiming settings.",
+      "Replay travel/checkpoint labels describe commanded scrolling; renderer easing can continue into a checkpoint. Desktop app renderMode tags are additionally counted where available.",
+      "Desktop ambient is intentionally around 20 Hz; mobile ambient 18 Hz and travel 30 Hz. Compare matched profiles and travel intervals separately.",
+      "Mobile browser emulation and CPU throttling do not establish performance on physical phones."
+    ],
+    "longTasks": {
+      "count": 0,
+      "durationMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "supported": true,
+      "totalBlockingTimeMs": 0,
+      "totalDurationMs": 0
+    },
+    "primaryCanvasId": "neural-canvas",
+    "profile": "desktop",
+    "rafIntervalMs": {
+      "all": {
+        "max": 17.7,
+        "mean": 16.681,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 600
+      },
+      "replayCheckpoints": {
+        "max": 17.7,
+        "mean": 16.684,
+        "p50": 16.7,
+        "p95": 17.4,
+        "samples": 188
+      },
+      "replayTravel": {
+        "max": 17.7,
+        "mean": 16.682,
+        "p50": 16.7,
+        "p95": 17.6,
+        "samples": 405
+      }
+    },
+    "readiness": {
+      "note": "Scene readiness is observed by RAF polling. Already-ready pages have no measured scene first-frame time. This is not first contentful paint.",
+      "observationDelayFromInvocationMs": 39.7,
+      "observedSceneReadyFromNavigationMs": 3093.2,
+      "sceneReadyAtInvocation": false,
+      "waitAfterInvocationMs": 39.2
+    },
+    "scene": {
+      "all": {
+        "appAmbientTaggedSubmissions": 52,
+        "appTravelTaggedSubmissions": 466,
+        "drawingCallsPerSubmission": {
+          "max": 38,
+          "mean": 28.909,
+          "p50": 29,
+          "p95": 37,
+          "samples": 518
+        },
+        "gpuTimeMs": {
+          "max": 1.852,
+          "mean": 0.745,
+          "p50": 0.668,
+          "p95": 1.271,
+          "samples": 518
+        },
+        "renderSubmissions": 518,
+        "reportedDrawCalls": {
+          "max": 38,
+          "mean": 28.909,
+          "p50": 29,
+          "p95": 37,
+          "samples": 518
+        },
+        "reportedTriangles": {
+          "max": 355680,
+          "mean": 264747.625,
+          "p50": 271366,
+          "p95": 348150,
+          "samples": 518
+        },
+        "submissionEnvelopeMs": {
+          "max": 1.2,
+          "mean": 0.135,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 518
+        },
+        "submissionIntervalMs": {
+          "max": 51.3,
+          "mean": 19.296,
+          "p50": 16.7,
+          "p95": 49.7,
+          "samples": 517
+        }
+      },
+      "appRenderCountDelta": 518,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 41,
+        "appTravelTaggedSubmissions": 72,
+        "drawingCallsPerSubmission": {
+          "max": 37,
+          "mean": 28.23,
+          "p50": 28,
+          "p95": 36,
+          "samples": 113
+        },
+        "gpuTimeMs": {
+          "max": 1.852,
+          "mean": 0.896,
+          "p50": 0.769,
+          "p95": 1.545,
+          "samples": 113
+        },
+        "renderSubmissions": 113,
+        "reportedDrawCalls": {
+          "max": 37,
+          "mean": 28.23,
+          "p50": 28,
+          "p95": 36,
+          "samples": 113
+        },
+        "reportedTriangles": {
+          "max": 348150,
+          "mean": 258542.743,
+          "p50": 271364,
+          "p95": 345590,
+          "samples": 113
+        },
+        "submissionEnvelopeMs": {
+          "max": 0.8,
+          "mean": 0.132,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 113
+        },
+        "submissionIntervalMs": {
+          "max": 51.3,
+          "mean": 27.994,
+          "p50": 17,
+          "p95": 50.7,
+          "samples": 109
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 11,
+        "appTravelTaggedSubmissions": 394,
+        "drawingCallsPerSubmission": {
+          "max": 38,
+          "mean": 29.099,
+          "p50": 29,
+          "p95": 37,
+          "samples": 405
+        },
+        "gpuTimeMs": {
+          "max": 1.58,
+          "mean": 0.703,
+          "p50": 0.636,
+          "p95": 1.033,
+          "samples": 405
+        },
+        "renderSubmissions": 405,
+        "reportedDrawCalls": {
+          "max": 38,
+          "mean": 29.099,
+          "p50": 29,
+          "p95": 37,
+          "samples": 405
+        },
+        "reportedTriangles": {
+          "max": 355680,
+          "mean": 266478.864,
+          "p50": 271366,
+          "p95": 348150,
+          "samples": 405
+        },
+        "submissionEnvelopeMs": {
+          "max": 1.2,
+          "mean": 0.135,
+          "p50": 0.1,
+          "p95": 0.2,
+          "samples": 405
+        },
+        "submissionIntervalMs": {
+          "max": 21.1,
+          "mean": 16.687,
+          "p50": 16.7,
+          "p95": 17.6,
+          "samples": 401
+        }
+      }
+    },
+    "schema": "neural-render-benchmark-v1",
+    "timing": {
+      "beats": 19,
+      "endingLength": 0.5,
+      "measuredDurationMs": 10009.5,
+      "openingLength": 0.5,
+      "readingHold": 0.2,
+      "requestedDurationMs": 10000,
+      "scrollSpeed": 1.35,
+      "scrollUnitPx": 1449.481
+    },
+    "url": "http://localhost:8276/",
+    "viewport": {
+      "dpr": 1.100000023841858,
+      "height": 1223,
+      "width": 1314
+    },
+    "browserWork": {
+      "TaskDuration": 3468.5330000000004,
+      "ScriptDuration": 416.17,
+      "LayoutDuration": 53.89000000000001,
+      "RecalcStyleDuration": 2274.891
+    },
+    "harnessSha256": "e9d8ffe6fa3f4bc1847e576ab9902a552d84db8f6668ae43f207b558c696c3d6"
+  },
+  {
+    "checkpoints": [
+      {
+        "beat": "0",
+        "canvasHeight": 767,
+        "canvasId": "neural-field",
+        "canvasWidth": 355,
+        "commandedSegment": "checkpoint-0",
+        "drawCalls": null,
+        "progress": "0.00000",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 524.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "5",
+        "canvasHeight": 767,
+        "canvasId": "neural-field",
+        "canvasWidth": 355,
+        "commandedSegment": "checkpoint-5",
+        "drawCalls": null,
+        "progress": "0.27778",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 4274.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "10",
+        "canvasHeight": 767,
+        "canvasId": "neural-field",
+        "canvasWidth": 355,
+        "commandedSegment": "checkpoint-10",
+        "drawCalls": null,
+        "progress": "0.55556",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 8024.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "15",
+        "canvasHeight": 767,
+        "canvasId": "neural-field",
+        "canvasWidth": 355,
+        "commandedSegment": "checkpoint-15",
+        "drawCalls": null,
+        "progress": "0.83333",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 11774.545,
+        "station": null,
+        "triangles": null
+      }
+    ],
+    "errors": [],
+    "field": {
+      "appAmbientTaggedSubmissions": 0,
+      "appTravelTaggedSubmissions": 0,
+      "drawingCallsPerSubmission": {
+        "max": 79,
+        "mean": 76.582,
+        "p50": 77,
+        "p95": 79,
+        "samples": 292
+      },
+      "gpuTimeMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "renderSubmissions": 292,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": 79,
+          "mean": 76.682,
+          "p50": 77,
+          "p95": 79,
+          "samples": 88
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 88,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": 2.1,
+          "mean": 0.532,
+          "p50": 0.5,
+          "p95": 1.1,
+          "samples": 88
+        },
+        "submissionIntervalMs": {
+          "max": 67.1,
+          "mean": 36.032,
+          "p50": 33.4,
+          "p95": 51,
+          "samples": 84
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": 79,
+          "mean": 76.539,
+          "p50": 77,
+          "p95": 79,
+          "samples": 204
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 204,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": 3.1,
+          "mean": 0.525,
+          "p50": 0.5,
+          "p95": 1.2,
+          "samples": 204
+        },
+        "submissionIntervalMs": {
+          "max": 38.7,
+          "mean": 33.387,
+          "p50": 33.4,
+          "p95": 35.2,
+          "samples": 200
+        }
+      },
+      "reportedDrawCalls": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "reportedTriangles": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "submissionEnvelopeMs": {
+        "max": 3.1,
+        "mean": 0.527,
+        "p50": 0.5,
+        "p95": 1.2,
+        "samples": 292
+      },
+      "submissionIntervalMs": {
+        "max": 67.1,
+        "mean": 34.219,
+        "p50": 33.5,
+        "p95": 35.8,
+        "samples": 291
+      }
+    },
+    "finalSnapshot": {
+      "beat": "5",
+      "canvasHeight": 767,
+      "canvasId": "neural-field",
+      "canvasWidth": 355,
+      "commandedSegment": "travel-15-to-5",
+      "drawCalls": null,
+      "progress": "0.27778",
+      "renderCount": null,
+      "renderMode": null,
+      "sceneState": "ready",
+      "scrollY": 4274.545,
+      "station": null,
+      "triangles": null
+    },
+    "gpuTiming": {
+      "created": 0,
+      "discardedDisjoint": 0,
+      "invalid": 0,
+      "maxPendingPerContext": 8,
+      "peakPending": 0,
+      "pendingAtEnd": 0,
+      "requested": false,
+      "resolved": 0,
+      "skippedExternalQuery": 0,
+      "skippedQueueFull": 0,
+      "supported": false,
+      "warnings": []
+    },
+    "label": "mobile-cpu4-baseline-3",
+    "limitations": [
+      "Submission envelope is CPU wall time from canvas clear through the last drawing API return, including intervening JavaScript and wrapper overhead. It excludes work before clear and after the last draw.",
+      "WebGL and Canvas2D APIs can queue GPU work. Submission intervals and RAF intervals are not GPU completion times or presented FPS.",
+      "Optional WebGL2 timer queries measure elapsed GPU time from clear through the frame end marker. They do not measure browser compositing or presented FPS; compare runs with matching gpuTiming settings.",
+      "Replay travel/checkpoint labels describe commanded scrolling; renderer easing can continue into a checkpoint. Desktop app renderMode tags are additionally counted where available.",
+      "Desktop ambient is intentionally around 20 Hz; mobile ambient 18 Hz and travel 30 Hz. Compare matched profiles and travel intervals separately.",
+      "Mobile browser emulation and CPU throttling do not establish performance on physical phones."
+    ],
+    "longTasks": {
+      "count": 0,
+      "durationMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "supported": true,
+      "totalBlockingTimeMs": 0,
+      "totalDurationMs": 0
+    },
+    "primaryCanvasId": "neural-field",
+    "profile": "mobile",
+    "rafIntervalMs": {
+      "all": {
+        "max": 17.7,
+        "mean": 16.679,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 600
+      },
+      "replayCheckpoints": {
+        "max": 17.7,
+        "mean": 16.667,
+        "p50": 16.6,
+        "p95": 17.6,
+        "samples": 188
+      },
+      "replayTravel": {
+        "max": 17.7,
+        "mean": 16.684,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 405
+      }
+    },
+    "readiness": {
+      "note": "Scene readiness is observed by RAF polling. Already-ready pages have no measured scene first-frame time. This is not first contentful paint.",
+      "observationDelayFromInvocationMs": 35.6,
+      "observedSceneReadyFromNavigationMs": 959.4,
+      "sceneReadyAtInvocation": false,
+      "waitAfterInvocationMs": 28.5
+    },
+    "scene": {
+      "all": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      },
+      "appRenderCountDelta": null,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      }
+    },
+    "schema": "neural-render-benchmark-v1",
+    "timing": {
+      "beats": 19,
+      "endingLength": 0.5,
+      "measuredDurationMs": 10010.8,
+      "openingLength": 0.5,
+      "readingHold": 0.4,
+      "requestedDurationMs": 10000,
+      "scrollSpeed": 1.6875,
+      "scrollUnitPx": 749.956
+    },
+    "url": "http://localhost:8276/baseline.html",
+    "viewport": {
+      "dpr": 1.100000023841858,
+      "height": 767,
+      "width": 355
+    },
+    "browserWork": {
+      "TaskDuration": 3983.2499999999995,
+      "ScriptDuration": 763.992,
+      "LayoutDuration": 57.916,
+      "RecalcStyleDuration": 1155.775
+    },
+    "harnessSha256": "e9d8ffe6fa3f4bc1847e576ab9902a552d84db8f6668ae43f207b558c696c3d6"
+  },
+  {
+    "checkpoints": [
+      {
+        "beat": "0",
+        "canvasHeight": 767,
+        "canvasId": "neural-field",
+        "canvasWidth": 355,
+        "commandedSegment": "checkpoint-0",
+        "drawCalls": null,
+        "progress": "0.00000",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 524.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "5",
+        "canvasHeight": 767,
+        "canvasId": "neural-field",
+        "canvasWidth": 355,
+        "commandedSegment": "checkpoint-5",
+        "drawCalls": null,
+        "progress": "0.27778",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 4274.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "10",
+        "canvasHeight": 767,
+        "canvasId": "neural-field",
+        "canvasWidth": 355,
+        "commandedSegment": "checkpoint-10",
+        "drawCalls": null,
+        "progress": "0.55556",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 8024.545,
+        "station": null,
+        "triangles": null
+      },
+      {
+        "beat": "15",
+        "canvasHeight": 767,
+        "canvasId": "neural-field",
+        "canvasWidth": 355,
+        "commandedSegment": "checkpoint-15",
+        "drawCalls": null,
+        "progress": "0.83333",
+        "renderCount": null,
+        "renderMode": null,
+        "sceneState": "ready",
+        "scrollY": 11774.545,
+        "station": null,
+        "triangles": null
+      }
+    ],
+    "errors": [],
+    "field": {
+      "appAmbientTaggedSubmissions": 0,
+      "appTravelTaggedSubmissions": 0,
+      "drawingCallsPerSubmission": {
+        "max": 79,
+        "mean": 76.575,
+        "p50": 77,
+        "p95": 79,
+        "samples": 292
+      },
+      "gpuTimeMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "renderSubmissions": 292,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": 79,
+          "mean": 76.682,
+          "p50": 77,
+          "p95": 79,
+          "samples": 88
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 88,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": 2,
+          "mean": 0.61,
+          "p50": 0.6,
+          "p95": 1.3,
+          "samples": 88
+        },
+        "submissionIntervalMs": {
+          "max": 68.1,
+          "mean": 36.108,
+          "p50": 33.5,
+          "p95": 51.1,
+          "samples": 84
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": 79,
+          "mean": 76.529,
+          "p50": 77,
+          "p95": 79,
+          "samples": 204
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 204,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": 3.5,
+          "mean": 0.605,
+          "p50": 0.6,
+          "p95": 1.3,
+          "samples": 204
+        },
+        "submissionIntervalMs": {
+          "max": 37.3,
+          "mean": 33.354,
+          "p50": 33.3,
+          "p95": 34.9,
+          "samples": 200
+        }
+      },
+      "reportedDrawCalls": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "reportedTriangles": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "submissionEnvelopeMs": {
+        "max": 3.5,
+        "mean": 0.607,
+        "p50": 0.6,
+        "p95": 1.3,
+        "samples": 292
+      },
+      "submissionIntervalMs": {
+        "max": 68.1,
+        "mean": 34.222,
+        "p50": 33.4,
+        "p95": 36.2,
+        "samples": 291
+      }
+    },
+    "finalSnapshot": {
+      "beat": "5",
+      "canvasHeight": 767,
+      "canvasId": "neural-field",
+      "canvasWidth": 355,
+      "commandedSegment": "travel-15-to-5",
+      "drawCalls": null,
+      "progress": "0.27778",
+      "renderCount": null,
+      "renderMode": null,
+      "sceneState": "ready",
+      "scrollY": 4274.545,
+      "station": null,
+      "triangles": null
+    },
+    "gpuTiming": {
+      "created": 0,
+      "discardedDisjoint": 0,
+      "invalid": 0,
+      "maxPendingPerContext": 8,
+      "peakPending": 0,
+      "pendingAtEnd": 0,
+      "requested": false,
+      "resolved": 0,
+      "skippedExternalQuery": 0,
+      "skippedQueueFull": 0,
+      "supported": false,
+      "warnings": []
+    },
+    "label": "mobile-cpu4-candidate-3",
+    "limitations": [
+      "Submission envelope is CPU wall time from canvas clear through the last drawing API return, including intervening JavaScript and wrapper overhead. It excludes work before clear and after the last draw.",
+      "WebGL and Canvas2D APIs can queue GPU work. Submission intervals and RAF intervals are not GPU completion times or presented FPS.",
+      "Optional WebGL2 timer queries measure elapsed GPU time from clear through the frame end marker. They do not measure browser compositing or presented FPS; compare runs with matching gpuTiming settings.",
+      "Replay travel/checkpoint labels describe commanded scrolling; renderer easing can continue into a checkpoint. Desktop app renderMode tags are additionally counted where available.",
+      "Desktop ambient is intentionally around 20 Hz; mobile ambient 18 Hz and travel 30 Hz. Compare matched profiles and travel intervals separately.",
+      "Mobile browser emulation and CPU throttling do not establish performance on physical phones."
+    ],
+    "longTasks": {
+      "count": 0,
+      "durationMs": {
+        "max": null,
+        "mean": null,
+        "p50": null,
+        "p95": null,
+        "samples": 0
+      },
+      "supported": true,
+      "totalBlockingTimeMs": 0,
+      "totalDurationMs": 0
+    },
+    "primaryCanvasId": "neural-field",
+    "profile": "mobile",
+    "rafIntervalMs": {
+      "all": {
+        "max": 17.8,
+        "mean": 16.681,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 600
+      },
+      "replayCheckpoints": {
+        "max": 17.7,
+        "mean": 16.676,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 188
+      },
+      "replayTravel": {
+        "max": 17.8,
+        "mean": 16.677,
+        "p50": 16.7,
+        "p95": 17.5,
+        "samples": 405
+      }
+    },
+    "readiness": {
+      "note": "Scene readiness is observed by RAF polling. Already-ready pages have no measured scene first-frame time. This is not first contentful paint.",
+      "observationDelayFromInvocationMs": 42.1,
+      "observedSceneReadyFromNavigationMs": 809.2,
+      "sceneReadyAtInvocation": false,
+      "waitAfterInvocationMs": 35.1
+    },
+    "scene": {
+      "all": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      },
+      "appRenderCountDelta": null,
+      "replayCheckpoints": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      },
+      "replayTravel": {
+        "appAmbientTaggedSubmissions": 0,
+        "appTravelTaggedSubmissions": 0,
+        "drawingCallsPerSubmission": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "gpuTimeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "renderSubmissions": 0,
+        "reportedDrawCalls": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "reportedTriangles": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionEnvelopeMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        },
+        "submissionIntervalMs": {
+          "max": null,
+          "mean": null,
+          "p50": null,
+          "p95": null,
+          "samples": 0
+        }
+      }
+    },
+    "schema": "neural-render-benchmark-v1",
+    "timing": {
+      "beats": 19,
+      "endingLength": 0.5,
+      "measuredDurationMs": 10011.6,
+      "openingLength": 0.5,
+      "readingHold": 0.4,
+      "requestedDurationMs": 10000,
+      "scrollSpeed": 1.6875,
+      "scrollUnitPx": 749.956
+    },
+    "url": "http://localhost:8276/",
+    "viewport": {
+      "dpr": 1.100000023841858,
+      "height": 767,
+      "width": 355
+    },
+    "browserWork": {
+      "TaskDuration": 4095.267,
+      "ScriptDuration": 819.8950000000001,
+      "LayoutDuration": 58.585,
+      "RecalcStyleDuration": 1203.092
+    },
+    "harnessSha256": "e9d8ffe6fa3f4bc1847e576ab9902a552d84db8f6668ae43f207b558c696c3d6"
+  }
+]

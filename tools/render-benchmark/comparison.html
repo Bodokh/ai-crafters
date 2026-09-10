@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>AI Crafters — Rendering comparison</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#0b141e;color:#eef7fc;font:14px system-ui,sans-serif}
+    header{min-height:64px;padding:10px 20px;display:flex;align-items:center;gap:18px;border-bottom:1px solid #283744}
+    strong{font-size:14px;letter-spacing:.03em}nav{display:flex;padding:3px;gap:3px;background:#152230;border-radius:10px}
+    button,a{font:inherit}button{border:0;border-radius:7px;padding:9px 14px;background:transparent;color:#b3c4d2;cursor:pointer}
+    button[aria-pressed=true]{background:#a8ebf5;color:#081e2a}button:focus-visible,a:focus-visible{outline:2px solid #a8ebf5;outline-offset:3px}
+    a{color:#c6d8e6;text-underline-offset:4px;margin-left:auto}.hint{color:#94aabc;font-size:12px}
+    iframe{border:0;width:100%;height:calc(100dvh - 65px);display:block;background:#0b141e}
+    @media(max-width:700px){header{padding:8px 10px;gap:8px;flex-wrap:wrap}.hint{display:none}strong{font-size:12px}nav{margin-left:auto}button{padding:8px 10px}a{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <strong>AI CRAFTERS · VISUAL COMPARISON</strong>
+    <nav aria-label="Homepage version">
+      <button type="button" data-version="baseline" aria-pressed="false">Before</button>
+      <button type="button" data-version="candidate" aria-pressed="true">After</button>
+    </nav>
+    <span class="hint" id="status">Switch at any checkpoint. Scroll position is preserved.</span>
+    <a id="open-page" href="/" target="_blank" rel="noopener">Open full page ↗</a>
+  </header>
+  <iframe title="Homepage rendering preview" src="/" id="preview"></iframe>
+  <script>
+    const frame = document.querySelector('#preview');
+    const buttons = [...document.querySelectorAll('[data-version]')];
+    const routes = {en: {baseline: '/baseline.html', candidate: '/'}, he: {baseline: '/he/baseline.html', candidate: '/he'}};
+    let version = 'candidate';
+    let locale = 'en';
+    let onHomepage = true;
+    let pendingScroll = null;
+    function updateControls(path) {
+      for (const item of buttons) item.setAttribute('aria-pressed', String(onHomepage && item.dataset.version === version));
+      document.querySelector('#open-page').href = path;
+      document.querySelector('#status').textContent = onHomepage
+        ? 'Switch at any checkpoint. Scroll position is preserved.'
+        : 'Shared page. Choose Before or After to return to the homepage.';
+    }
+    frame.addEventListener('load', () => {
+      let location;
+      try { location = new URL(frame.contentWindow.location.href); }
+      catch { pendingScroll = null; onHomepage = false; updateControls(routes[locale][version]); return; }
+      const path = location.pathname.replace(/\/$/, '') || '/';
+      locale = /^\/he(?:\/|$)/.test(path) ? 'he' : 'en';
+      onHomepage = ['/', '/en', '/he', '/baseline.html', '/he/baseline.html'].includes(path);
+      if (onHomepage) {
+        // Language/home links in the frozen page remain original root routes.
+        // Keep those navigations within the selected comparison version.
+        const desired = routes[locale][version];
+        if (path !== desired && !(version === 'candidate' && path === '/en')) {
+          frame.src = desired + location.search + location.hash;
+          return;
+        }
+        if (pendingScroll !== null) frame.contentWindow.scrollTo({top: pendingScroll, behavior: 'instant'});
+      }
+      pendingScroll = null;
+      updateControls(location.href);
+    });
+    for (const button of buttons) button.addEventListener('click', () => {
+      const next = button.dataset.version;
+      if (version === next && onHomepage) return;
+      // The two frozen pages have identical layout and timeline controls.
+      if (pendingScroll === null) {
+        try { pendingScroll = onHomepage ? frame.contentWindow.scrollY : 0; }
+        catch { pendingScroll = 0; }
+      }
+      version = next;
+      onHomepage = true;
+      updateControls(routes[locale][version]);
+      frame.src = routes[locale][version];
+    });
+  </script>
+</body>
+</html>

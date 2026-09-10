@@ -1,0 +1,67 @@
+[
+  {
+    "file": "experiments/neural-home/src/main.js",
+    "unchanged": true,
+    "sha256": "03d5dab0f8bb7eb0dc0f995709cc630c77b1ef4a88d5b7ffb600309904689366"
+  },
+  {
+    "file": "experiments/neural-home/src/card-motion.js",
+    "unchanged": true,
+    "sha256": "9d5e0d561b1e3d09d559368950c274f027353045e4d6b62508c949ee7e1451f7"
+  },
+  {
+    "file": "experiments/neural-home/src/field.js",
+    "unchanged": true,
+    "sha256": "27d33c688cd15447226579f00c339de1aa58ac6b11373a0255b40e67b4f326e0"
+  },
+  {
+    "file": "experiments/neural-home/src/styles.css",
+    "unchanged": true,
+    "sha256": "02e57b258036b23cb447001e2903d71fc586472e8828d90ab5a116847a775764"
+  },
+  {
+    "file": "experiments/neural-home/src/mobile-performance.css",
+    "unchanged": true,
+    "sha256": "2df2455e4039cfba7026821e41f1703aa4f5e127ba116617f20251a6e08d9c68"
+  },
+  {
+    "file": "experiments/neural-home/src/localization.js",
+    "unchanged": true,
+    "sha256": "af0c40c77eb43da1b2493aeed7082e244323200b488d19db446b00e996054503"
+  },
+  {
+    "file": "experiments/neural-home/src/localization.css",
+    "unchanged": true,
+    "sha256": "17e7a05336e4963f14420560b3fa806b3a856cdee0678cdf8d2bf0c497c84880"
+  },
+  {
+    "file": "experiments/neural-home/src/readability.css",
+    "unchanged": true,
+    "sha256": "9409d42b26ea63080af08f8d1a0d496be09f26cff3f75fe2c4d980a51d7f63b8"
+  },
+  {
+    "file": "experiments/neural-home/index.html",
+    "unchanged": true,
+    "sha256": "65680ea934244533fdfcf5b7348b878c264e6b1bda8a0f741a7d2932d8f86a8b"
+  },
+  {
+    "file": "experiments/neural-home/build/seo.js",
+    "unchanged": true,
+    "sha256": "6da4d099cce1b1231d7634d5176d85f79efae2f9edf31f0e65e19262758e3dd1"
+  },
+  {
+    "file": "experiments/neural-home/vite.config.js",
+    "unchanged": true,
+    "sha256": "457be0fc05aa1df3a6d006db9f1f3235e7159857ac5e2b827362c3d5f0b813ae"
+  },
+  {
+    "file": "experiments/neural-home/package.json",
+    "unchanged": true,
+    "sha256": "b9e5d645ee497b3205498df247b1b469462c491170cd00ce483a75df2a283564"
+  },
+  {
+    "file": "experiments/neural-home/package-lock.json",
+    "unchanged": true,
+    "sha256": "66b86051c64c0af754340dca4ebe86f4fa762da70bf99a180275cc9fbdf9f6ed"
+  }
+]

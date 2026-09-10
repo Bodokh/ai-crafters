@@ -1,3 +1,5 @@
+import { upgradeMobileNeuronSprites } from './mobile-neuron-sprites.js';
+
 const clamp = (value, low = 0, high = 1) => Math.min(high, Math.max(low, value));
 const TAU = Math.PI * 2;
 const AXES = ['x', 'y', 'z'];
@@ -180,6 +182,7 @@ export function createMobileNeuralScene({ canvas, cardSides, signal, initiallyPa
   let width = 1, height = 1, pixelRatio = 1;
   let quality = 1, slowFrames = 0, lastDrawCost = 0, needsResolutionUpdate = false;
   let disposed = false, ready = false, paused = Boolean(initiallyPaused);
+  let cancelSpriteUpgrade = () => {};
   let frame = 0, timer = 0, lastTime = 0, nextFrameAt = 0, elapsed = 0;
   let progress = 0, targetProgress = 0, travel = 0, targetTravel = 0, activity = 0;
   let direction = 1;
@@ -373,7 +376,11 @@ export function createMobileNeuralScene({ canvas, cardSides, signal, initiallyPa
         slowFrames = 0;
         needsResolutionUpdate = true;
       }
-      if (!ready) { ready = true; onReady(); }
+      if (!ready) {
+        ready = true;
+        onReady();
+        if (!disposed) cancelSpriteUpgrade = upgradeMobileNeuronSprites(window, sprites);
+      }
       const moving = Math.abs(targetProgress - progress) > .00003 || activity > .08;
       const interval = 1000 / (moving ? 30 : 18);
       nextFrameAt = nextFrameAt && time - nextFrameAt < interval
@@ -392,6 +399,7 @@ export function createMobileNeuralScene({ canvas, cardSides, signal, initiallyPa
   function dispose() {
     if (disposed) return;
     disposed = true;
+    cancelSpriteUpgrade();
     cancelFrame();
     document.removeEventListener('visibilitychange', visibility);
     signal?.removeEventListener('abort', dispose);

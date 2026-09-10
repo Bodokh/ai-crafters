@@ -1,0 +1,42 @@
+{
+  "fallback": {
+    "bodyOverflow": false,
+    "canvas": [
+      355,
+      767
+    ],
+    "state": {
+      "beat": "0",
+      "chapter": "0",
+      "localized": "en",
+      "progress": "0.00000",
+      "renderer": "mobile",
+      "sceneState": "ready"
+    }
+  },
+  "reduced": {
+    "state": {
+      "localized": "en",
+      "renderer": "mobile",
+      "sceneState": "static"
+    },
+    "renderAssets": 0,
+    "visibleHeadings": [
+      "Custom AI.Built for you."
+    ]
+  },
+  "hebrew": {
+    "assets": 4,
+    "dir": "rtl",
+    "horizontalOverflow": false,
+    "lang": "he",
+    "state": {
+      "beat": "0",
+      "chapter": "0",
+      "localized": "he",
+      "progress": "0.00000",
+      "renderer": "mobile",
+      "sceneState": "ready"
+    }
+  }
+}

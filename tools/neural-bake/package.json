@@ -1,0 +1,13 @@
+{
+  "name": "neural-home-vgpu-bake",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "bake": "node bake.mjs"
+  },
+  "dependencies": {
+    "sharp": "0.34.5",
+    "vgpu": "0.4.1"
+  }
+}

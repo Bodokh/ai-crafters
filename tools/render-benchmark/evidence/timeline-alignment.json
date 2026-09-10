@@ -1,0 +1,174 @@
+[
+  {
+    "horizontal": false,
+    "lang": "en",
+    "maxError": 0.00005000000010113581,
+    "nodes": [
+      {
+        "center": 1262.5,
+        "label": "Start"
+      },
+      {
+        "center": 1262.5,
+        "label": "Knowledge"
+      },
+      {
+        "center": 1262.5,
+        "label": "Capabilities"
+      },
+      {
+        "center": 1262.5,
+        "label": "Impact"
+      },
+      {
+        "center": 1262.5,
+        "label": "Our approach"
+      },
+      {
+        "center": 1262.5,
+        "label": "People"
+      },
+      {
+        "center": 1262.5,
+        "label": "Questions"
+      },
+      {
+        "center": 1262.5,
+        "label": "Let’s talk"
+      }
+    ],
+    "rail": 1262.49995,
+    "scroll": 16178,
+    "url": "http://localhost:8276/",
+    "width": 1313
+  },
+  {
+    "horizontal": false,
+    "lang": "he",
+    "maxError": 0.000025000000050567905,
+    "nodes": [
+      {
+        "center": 1277.5,
+        "label": "התחלה"
+      },
+      {
+        "center": 1277.5,
+        "label": "ידע"
+      },
+      {
+        "center": 1277.5,
+        "label": "יכולות"
+      },
+      {
+        "center": 1277.5,
+        "label": "תוצאות"
+      },
+      {
+        "center": 1277.5,
+        "label": "הגישה שלנו"
+      },
+      {
+        "center": 1277.5,
+        "label": "האנשים"
+      },
+      {
+        "center": 1277.5,
+        "label": "שאלות"
+      },
+      {
+        "center": 1277.5,
+        "label": "בואו נדבר"
+      }
+    ],
+    "rail": 1277.500025,
+    "scroll": 0,
+    "url": "http://localhost:8276/he",
+    "width": 1313
+  },
+  {
+    "horizontal": true,
+    "lang": "he",
+    "maxError": 0,
+    "nodes": [
+      {
+        "center": 718,
+        "label": "התחלה"
+      },
+      {
+        "center": 718,
+        "label": "ידע"
+      },
+      {
+        "center": 718,
+        "label": "יכולות"
+      },
+      {
+        "center": 718,
+        "label": "תוצאות"
+      },
+      {
+        "center": 718,
+        "label": "הגישה שלנו"
+      },
+      {
+        "center": 718,
+        "label": "האנשים"
+      },
+      {
+        "center": 718,
+        "label": "שאלות"
+      },
+      {
+        "center": 718,
+        "label": "בואו נדבר"
+      }
+    ],
+    "rail": 718,
+    "scroll": 0,
+    "url": "http://localhost:8276/he",
+    "width": 390
+  },
+  {
+    "horizontal": true,
+    "lang": "en",
+    "maxError": 0,
+    "nodes": [
+      {
+        "center": 718,
+        "label": "Start"
+      },
+      {
+        "center": 718,
+        "label": "Knowledge"
+      },
+      {
+        "center": 718,
+        "label": "Capabilities"
+      },
+      {
+        "center": 718,
+        "label": "Impact"
+      },
+      {
+        "center": 718,
+        "label": "Our approach"
+      },
+      {
+        "center": 718,
+        "label": "People"
+      },
+      {
+        "center": 718,
+        "label": "Questions"
+      },
+      {
+        "center": 718,
+        "label": "Let’s talk"
+      }
+    ],
+    "rail": 718,
+    "scroll": 0,
+    "url": "http://localhost:8276/",
+    "width": 390
+  }
+]

@@ -1,0 +1,819 @@
+{
+  "capturedAt": "2026-09-10T09:47:22.525Z",
+  "build": "index-Gyh_GG4L.js",
+  "profile": {
+    "browser": "Codex in-app Chromium",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 1,
+    "cpuSlowdown": 4,
+    "touchEmulation": true
+  },
+  "limitations": [
+    "Trusted touch dispatch is unsupported by this browser tool. The measured opening uses a trusted mouse pointer on mobile emulation; touch detail=0 is exercised separately with synthetic DOM events.",
+    "Physical phone keyboard behavior and sustained device performance are not measured."
+  ],
+  "frameCount": 41,
+  "frameP95": 18,
+  "publicAssets": {
+    "htmlMatches": true,
+    "entryMatches": true,
+    "sha256": "932099afc9500b477f2f2da06e736110de8f12063b79c9e244779c54747c5e4e"
+  },
+  "opening": {
+    "autofocus": true,
+    "effects": [
+      {
+        "keyframes": [
+          {
+            "composite": "auto",
+            "computedOffset": 0,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "0.2",
+            "transform": "translateY(36px) scale(0.95)"
+          },
+          {
+            "composite": "auto",
+            "computedOffset": 1,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "1",
+            "transform": "none"
+          }
+        ],
+        "target": "contact-dialog",
+        "timing": {
+          "delay": 0,
+          "direction": "normal",
+          "duration": 360,
+          "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+          "endDelay": 0,
+          "fill": "both",
+          "iterationStart": 0,
+          "iterations": 1
+        }
+      },
+      {
+        "keyframes": [
+          {
+            "composite": "auto",
+            "computedOffset": 0,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "0.4",
+            "transform": "translateY(5px)"
+          },
+          {
+            "composite": "auto",
+            "computedOffset": 1,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "1",
+            "transform": "none"
+          }
+        ],
+        "target": "contact-dialog__intro",
+        "timing": {
+          "delay": 0,
+          "direction": "normal",
+          "duration": 220,
+          "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+          "endDelay": 0,
+          "fill": "both",
+          "iterationStart": 0,
+          "iterations": 1
+        }
+      },
+      {
+        "keyframes": [
+          {
+            "composite": "auto",
+            "computedOffset": 0,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "0.4",
+            "transform": "translateY(5px)"
+          },
+          {
+            "composite": "auto",
+            "computedOffset": 1,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "1",
+            "transform": "none"
+          }
+        ],
+        "target": "contact-dialog__field contact-dialog__field--firstName",
+        "timing": {
+          "delay": 20,
+          "direction": "normal",
+          "duration": 220,
+          "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+          "endDelay": 0,
+          "fill": "both",
+          "iterationStart": 0,
+          "iterations": 1
+        }
+      },
+      {
+        "keyframes": [
+          {
+            "composite": "auto",
+            "computedOffset": 0,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "0.4",
+            "transform": "translateY(5px)"
+          },
+          {
+            "composite": "auto",
+            "computedOffset": 1,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "1",
+            "transform": "none"
+          }
+        ],
+        "target": "contact-dialog__field contact-dialog__field--lastName",
+        "timing": {
+          "delay": 20,
+          "direction": "normal",
+          "duration": 220,
+          "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+          "endDelay": 0,
+          "fill": "both",
+          "iterationStart": 0,
+          "iterations": 1
+        }
+      },
+      {
+        "keyframes": [
+          {
+            "composite": "auto",
+            "computedOffset": 0,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "0.4",
+            "transform": "translateY(5px)"
+          },
+          {
+            "composite": "auto",
+            "computedOffset": 1,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "1",
+            "transform": "none"
+          }
+        ],
+        "target": "contact-dialog__field contact-dialog__field--email",
+        "timing": {
+          "delay": 40,
+          "direction": "normal",
+          "duration": 220,
+          "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+          "endDelay": 0,
+          "fill": "both",
+          "iterationStart": 0,
+          "iterations": 1
+        }
+      },
+      {
+        "keyframes": [
+          {
+            "composite": "auto",
+            "computedOffset": 0,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "0.4",
+            "transform": "translateY(5px)"
+          },
+          {
+            "composite": "auto",
+            "computedOffset": 1,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "1",
+            "transform": "none"
+          }
+        ],
+        "target": "contact-dialog__field contact-dialog__field--message",
+        "timing": {
+          "delay": 60,
+          "direction": "normal",
+          "duration": 220,
+          "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+          "endDelay": 0,
+          "fill": "both",
+          "iterationStart": 0,
+          "iterations": 1
+        }
+      },
+      {
+        "keyframes": [
+          {
+            "composite": "auto",
+            "computedOffset": 0,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "0.4",
+            "transform": "translateY(5px)"
+          },
+          {
+            "composite": "auto",
+            "computedOffset": 1,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "1",
+            "transform": "none"
+          }
+        ],
+        "target": "button contact-dialog__submit",
+        "timing": {
+          "delay": 80,
+          "direction": "normal",
+          "duration": 220,
+          "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+          "endDelay": 0,
+          "fill": "both",
+          "iterationStart": 0,
+          "iterations": 1
+        }
+      },
+      {
+        "keyframes": [
+          {
+            "composite": "auto",
+            "computedOffset": 0,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "0.4",
+            "transform": "translateY(5px)"
+          },
+          {
+            "composite": "auto",
+            "computedOffset": 1,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "1",
+            "transform": "none"
+          }
+        ],
+        "target": "contact-dialog__direct",
+        "timing": {
+          "delay": 100,
+          "direction": "normal",
+          "duration": 220,
+          "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+          "endDelay": 0,
+          "fill": "both",
+          "iterationStart": 0,
+          "iterations": 1
+        }
+      },
+      {
+        "keyframes": [
+          {
+            "composite": "auto",
+            "computedOffset": 0,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "0.4",
+            "transform": "translateY(5px)"
+          },
+          {
+            "composite": "auto",
+            "computedOffset": 1,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "1",
+            "transform": "none"
+          }
+        ],
+        "target": "contact-dialog__legal",
+        "timing": {
+          "delay": 100,
+          "direction": "normal",
+          "duration": 220,
+          "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+          "endDelay": 0,
+          "fill": "both",
+          "iterationStart": 0,
+          "iterations": 1
+        }
+      },
+      {
+        "keyframes": [
+          {
+            "composite": "auto",
+            "computedOffset": 0,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "0",
+            "transform": "translateX(-110%)"
+          },
+          {
+            "composite": "auto",
+            "computedOffset": 0.3,
+            "easing": "linear",
+            "offset": 0.3,
+            "opacity": "0.45"
+          },
+          {
+            "composite": "auto",
+            "computedOffset": 1,
+            "easing": "linear",
+            "offset": null,
+            "opacity": "0",
+            "transform": "translateX(110%)"
+          }
+        ],
+        "target": "contact-dialog__sheen",
+        "timing": {
+          "delay": 0,
+          "direction": "normal",
+          "duration": 360,
+          "easing": "cubic-bezier(0.32, 0, 0.18, 1)",
+          "endDelay": 0,
+          "fill": "both",
+          "iterationStart": 0,
+          "iterations": 1
+        }
+      }
+    ],
+    "event": {
+      "detail": 1,
+      "isTrusted": true,
+      "pointerType": "mouse"
+    },
+    "focused": "contact-dialog__close",
+    "frames": [
+      {
+        "elapsed": 6.9000000059604645,
+        "height": 732.31640625,
+        "opacity": 0.2,
+        "raf": 50727.064,
+        "transform": "matrix(0.95, 0, 0, 0.95, 0, 36)",
+        "viewportHeight": 844,
+        "y": 91.833984375
+      },
+      {
+        "elapsed": 14.5,
+        "height": 732.31640625,
+        "opacity": 0.2,
+        "raf": 50744.4,
+        "transform": "matrix(0.95, 0, 0, 0.95, 0, 36)",
+        "viewportHeight": 844,
+        "y": 91.833984375
+      },
+      {
+        "elapsed": 28.69999998807907,
+        "height": 739.66455078125,
+        "opacity": 0.352519,
+        "raf": 50760.7,
+        "transform": "matrix(0.959532, 0, 0, 0.959532, 0, 29.1367)",
+        "viewportHeight": 844,
+        "y": 81.29656982421875
+      },
+      {
+        "elapsed": 45.69999998807907,
+        "height": 746.2509765625,
+        "opacity": 0.489225,
+        "raf": 50776.7,
+        "transform": "matrix(0.968077, 0, 0, 0.968077, 0, 22.9849)",
+        "viewportHeight": 844,
+        "y": 71.85159301757812
+      },
+      {
+        "elapsed": 62.099999994039536,
+        "height": 752.1382446289062,
+        "opacity": 0.611423,
+        "raf": 50793.2,
+        "transform": "matrix(0.975714, 0, 0, 0.975714, 0, 17.4859)",
+        "viewportHeight": 844,
+        "y": 63.40899658203125
+      },
+      {
+        "elapsed": 78.69999998807907,
+        "height": 756.977783203125,
+        "opacity": 0.711873,
+        "raf": 50809.8,
+        "transform": "matrix(0.981992, 0, 0, 0.981992, 0, 12.9657)",
+        "viewportHeight": 844,
+        "y": 56.468994140625
+      },
+      {
+        "elapsed": 96.2999999821186,
+        "height": 760.9697265625,
+        "opacity": 0.794729,
+        "raf": 50827.6,
+        "transform": "matrix(0.987171, 0, 0, 0.987171, 0, 9.2372)",
+        "viewportHeight": 844,
+        "y": 50.744537353515625
+      },
+      {
+        "elapsed": 111.69999998807909,
+        "height": 763.5986938476562,
+        "opacity": 0.849297,
+        "raf": 50843.3,
+        "transform": "matrix(0.990581, 0, 0, 0.990581, 0, 6.78165)",
+        "viewportHeight": 844,
+        "y": 46.9744873046875
+      },
+      {
+        "elapsed": 130.5,
+        "height": 765.8456420898438,
+        "opacity": 0.895934,
+        "raf": 50861.7,
+        "transform": "matrix(0.993496, 0, 0, 0.993496, 0, 4.68296)",
+        "viewportHeight": 844,
+        "y": 43.7523193359375
+      },
+      {
+        "elapsed": 145.2999999821186,
+        "height": 767.166748046875,
+        "opacity": 0.923356,
+        "raf": 50876.6,
+        "transform": "matrix(0.99521, 0, 0, 0.99521, 0, 3.44898)",
+        "viewportHeight": 844,
+        "y": 41.8577880859375
+      },
+      {
+        "elapsed": 161.90000000596046,
+        "height": 768.253173828125,
+        "opacity": 0.945904,
+        "raf": 50893.2,
+        "transform": "matrix(0.996619, 0, 0, 0.996619, 0, 2.43433)",
+        "viewportHeight": 844,
+        "y": 40.299957275390625
+      },
+      {
+        "elapsed": 178.2999999821186,
+        "height": 769.0514526367188,
+        "opacity": 0.962475,
+        "raf": 50910.1,
+        "transform": "matrix(0.997655, 0, 0, 0.997655, 0, 1.68864)",
+        "viewportHeight": 844,
+        "y": 39.15509033203125
+      },
+      {
+        "elapsed": 195.69999998807907,
+        "height": 769.618408203125,
+        "opacity": 0.974243,
+        "raf": 50926.8,
+        "transform": "matrix(0.99839, 0, 0, 0.99839, 0, 1.15909)",
+        "viewportHeight": 844,
+        "y": 38.342071533203125
+      },
+      {
+        "elapsed": 212.7999999821186,
+        "height": 770.04443359375,
+        "opacity": 0.983087,
+        "raf": 50944.5,
+        "transform": "matrix(0.998943, 0, 0, 0.998943, 0, 0.761107)",
+        "viewportHeight": 844,
+        "y": 37.731048583984375
+      },
+      {
+        "elapsed": 228.7999999821186,
+        "height": 770.3062744140625,
+        "opacity": 0.98852,
+        "raf": 50959.8,
+        "transform": "matrix(0.999282, 0, 0, 0.999282, 0, 0.5166)",
+        "viewportHeight": 844,
+        "y": 37.35565185546875
+      },
+      {
+        "elapsed": 245.7999999821186,
+        "height": 770.5169067382812,
+        "opacity": 0.992892,
+        "raf": 50977.3,
+        "transform": "matrix(0.999556, 0, 0, 0.999556, 0, 0.319849)",
+        "viewportHeight": 844,
+        "y": 37.0535888671875
+      },
+      {
+        "elapsed": 263.69999998807907,
+        "height": 770.655517578125,
+        "opacity": 0.995768,
+        "raf": 50994.4,
+        "transform": "matrix(0.999736, 0, 0, 0.999736, 0, 0.190435)",
+        "viewportHeight": 844,
+        "y": 36.8548583984375
+      },
+      {
+        "elapsed": 279.2999999821186,
+        "height": 770.7406005859375,
+        "opacity": 0.997533,
+        "raf": 51010.2,
+        "transform": "matrix(0.999846, 0, 0, 0.999846, 0, 0.111019)",
+        "viewportHeight": 844,
+        "y": 36.732940673828125
+      },
+      {
+        "elapsed": 295.90000000596046,
+        "height": 770.7982177734375,
+        "opacity": 0.998731,
+        "raf": 51027,
+        "transform": "matrix(0.999921, 0, 0, 0.999921, 0, 0.057124)",
+        "viewportHeight": 844,
+        "y": 36.65020751953125
+      },
+      {
+        "elapsed": 311.90000000596046,
+        "height": 770.831298828125,
+        "opacity": 0.999417,
+        "raf": 51043.3,
+        "transform": "matrix(0.999964, 0, 0, 0.999964, 0, 0.0262171)",
+        "viewportHeight": 844,
+        "y": 36.602752685546875
+      },
+      {
+        "elapsed": 328.40000000596046,
+        "height": 770.849365234375,
+        "opacity": 0.999791,
+        "raf": 51060,
+        "transform": "matrix(0.999987, 0, 0, 0.999987, 0, 0.00940115)",
+        "viewportHeight": 844,
+        "y": 36.576934814453125
+      },
+      {
+        "elapsed": 347.09999999403954,
+        "height": 770.8573608398438,
+        "opacity": 0.999958,
+        "raf": 51077.7,
+        "transform": "matrix(0.999997, 0, 0, 0.999997, 0, 0.00190933)",
+        "viewportHeight": 844,
+        "y": 36.5654296875
+      },
+      {
+        "elapsed": 363,
+        "height": 770.8592529296875,
+        "opacity": 0.999998,
+        "raf": 51094.2,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.000100255)",
+        "viewportHeight": 844,
+        "y": 36.562652587890625
+      },
+      {
+        "elapsed": 379.09999999403954,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51110.7,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      },
+      {
+        "elapsed": 396.90000000596046,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51128.7,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      },
+      {
+        "elapsed": 413.2999999821186,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51145.3,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      },
+      {
+        "elapsed": 429.2999999821186,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51160.7,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      },
+      {
+        "elapsed": 446.09999999403954,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51177.2,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      },
+      {
+        "elapsed": 463.59999999403954,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51195.1,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      },
+      {
+        "elapsed": 478.699999988079,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51210.5,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      },
+      {
+        "elapsed": 496.09999999403954,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51228.5,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      },
+      {
+        "elapsed": 512.5,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51244.2,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      },
+      {
+        "elapsed": 528.7999999821186,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51260.7,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      },
+      {
+        "elapsed": 546.5,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51278.7,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      },
+      {
+        "elapsed": 561.5999999940395,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51293.5,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      },
+      {
+        "elapsed": 579.7999999821186,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51312.2,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      },
+      {
+        "elapsed": 595.7999999821186,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51327.3,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      },
+      {
+        "elapsed": 612.2999999821186,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51344.2,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      },
+      {
+        "elapsed": 628.6999999880791,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51360.3,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      },
+      {
+        "elapsed": 644.5,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51376.8,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      },
+      {
+        "elapsed": 662.0999999940395,
+        "height": 770.859375,
+        "opacity": 1,
+        "raf": 51393.8,
+        "transform": "none",
+        "viewportHeight": 844,
+        "y": 36.5625
+      }
+    ],
+    "initialFocus": "contact-dialog__close",
+    "kind": "trusted-pointer-mobile-emulation",
+    "overflow": false,
+    "remainingAnimations": 0,
+    "width": 390
+  },
+  "checks": [
+    {
+      "afterLateFocus": 10,
+      "effects": 10,
+      "focused": "contact-dialog__close",
+      "kind": "synthetic-touch-detail-zero",
+      "open": true
+    },
+    {
+      "autofocus": false,
+      "effects": 0,
+      "focused": "firstName",
+      "kind": "keyboard",
+      "open": true
+    },
+    {
+      "effects": [
+        {
+          "duration": 100,
+          "frames": [
+            {
+              "composite": "auto",
+              "computedOffset": 0,
+              "easing": "linear",
+              "offset": null,
+              "opacity": "0.65"
+            },
+            {
+              "composite": "auto",
+              "computedOffset": 1,
+              "easing": "linear",
+              "offset": null,
+              "opacity": "1"
+            }
+          ]
+        }
+      ],
+      "focused": "contact-dialog__close",
+      "kind": "reduced-motion",
+      "open": true
+    },
+    {
+      "closed": true,
+      "effects": 0,
+      "focusReturned": true,
+      "kind": "early-close-at-80ms"
+    },
+    {
+      "effects": 0,
+      "focused": "firstName",
+      "kind": "early-input-at-80ms",
+      "open": true
+    },
+    {
+      "afterStaleClose": 10,
+      "focused": "contact-dialog__close",
+      "immediatelyClosed": true,
+      "kind": "rapid-reopen",
+      "newCount": 10,
+      "oldCanceled": true,
+      "open": true
+    },
+    {
+      "entry": "https://eran.devshift.biz/assets/index-Gyh_GG4L.js",
+      "focused": "contact-dialog__close",
+      "kind": "public-mobile-build",
+      "maxEffectMs": 360,
+      "open": true,
+      "overflow": false,
+      "url": "https://eran.devshift.biz/"
+    },
+    {
+      "dir": "rtl",
+      "focused": "contact-dialog__close",
+      "kind": "hebrew-mobile",
+      "lang": "he",
+      "open": true,
+      "overflow": false,
+      "panelWidth": 365.60980224609375,
+      "width": 390
+    },
+    {
+      "autofocus": false,
+      "focused": "firstName",
+      "kind": "desktop-regression",
+      "open": true,
+      "panelDuration": 420,
+      "width": 1280
+    }
+  ]
+}
