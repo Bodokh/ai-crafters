@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, FormEvent, useEffect, useId, useRef, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Mail, MapPin, PhoneCall, Send, SendHorizonal } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 
@@ -8,7 +8,7 @@ type ContactFormState = { firstName: string; lastName: string; email: string; me
 type ContactField = keyof ContactFormState;
 type ContactFormErrors = Partial<Record<ContactField, string>>;
 type Captcha = { ready: (callback: () => void) => void; execute: (key: string, options: { action: string }) => Promise<string> };
-type ContactProps = { variant?: 'section' | 'modal'; active?: boolean };
+type ContactProps = { variant?: 'section' | 'modal'; active?: boolean; onReady?: () => void };
 
 const initialFormState: ContactFormState = { firstName: '', lastName: '', email: '', message: '' };
 const fields: ContactField[] = ['firstName', 'lastName', 'email', 'message'];
@@ -90,7 +90,7 @@ function bounded<T>(operation: () => Promise<T>, signal: AbortSignal, millisecon
   });
 }
 
-export const Contact = ({ variant = 'section', active = true }: ContactProps = {}) => {
+export const Contact = ({ variant = 'section', active = true, onReady }: ContactProps = {}) => {
   const t = useTranslations();
   const locale = useLocale();
   const rtl = locale === 'he';
@@ -113,6 +113,9 @@ export const Contact = ({ variant = 'section', active = true }: ContactProps = {
     ? 'לא ניתן להשלים את האימות המאובטח. נסו שוב או כתבו ל־automate@ai-crafters.com.'
     : 'Secure verification could not complete. Please try again, or email automate@ai-crafters.com.';
 
+  useLayoutEffect(() => {
+    if (modal) onReady?.();
+  }, [modal, onReady]);
   useEffect(() => {
     mounted.current = true;
     return () => { mounted.current = false; attempt.current += 1; request.current?.abort(); };
@@ -135,7 +138,6 @@ export const Contact = ({ variant = 'section', active = true }: ContactProps = {
     };
     if (modal) {
       load();
-      formRef.current?.querySelector<HTMLInputElement>('input')?.focus({ preventScroll: true });
       return () => { cancelled = true; };
     }
     const observer = new IntersectionObserver(([entry]) => {

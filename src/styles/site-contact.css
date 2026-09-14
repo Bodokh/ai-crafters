@@ -1,3 +1,5 @@
+@import "./contact-dialog-motion.css";
+
 .aic-site-contact-dialog {
   width: min(660px, calc(100vw - 40px));
   max-width: none;
@@ -6,18 +8,20 @@
   margin: auto;
   color: #edf6fc;
   background: #0a1728;
-  border: 1px solid #a89be66b;
+  border: 1px solid #afc9eb70;
   border-radius: 26px;
-  box-shadow: 0 32px 130px #000b, 0 0 60px #9170da16;
+  box-shadow: 0 32px 130px #000b, 0 0 60px #9170da1f, 0 -8px 40px #7ce6ff0c;
   overflow: hidden;
   overscroll-behavior: contain;
   color-scheme: dark;
+  isolation: isolate;
+  transform-origin: center;
 }
 .aic-site-contact-dialog::backdrop { background: #020712cc; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
 /* Attribution remains visible in the form; challenge frames are untouched. */
 body:has(.aic-site-contact-dialog) .grecaptcha-badge { visibility: hidden; }
-.aic-site-contact-surface { position: relative; max-height: min(898px, calc(100dvh - 50px)); padding: 40px; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #7c759d #0a1728; background: radial-gradient(ellipse at 100% 0%, #6940b42e, transparent 52%), #0a1728; }
-.aic-site-contact-close { position: absolute; top: 18px; inset-inline-end: 18px; width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 1px solid #9ca8cf50; border-radius: 50%; background: #18263b; color: #edf6fc; cursor: pointer; transition: background .2s, border-color .2s, color .2s, box-shadow .2s; }
+.aic-site-contact-surface { position: relative; max-height: min(898px, calc(100dvh - 50px)); padding: 40px; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #7c759d #0a1728; background: radial-gradient(ellipse at 0% 0%, #68d9ed12, transparent 48%), radial-gradient(ellipse at 100% 0%, #6940b435, transparent 56%), #0a1728; }
+.aic-site-contact-close { position: absolute; z-index: 2; top: 18px; inset-inline-end: 18px; width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 1px solid #9ca8cf50; border-radius: 50%; background: #18263b; color: #edf6fc; cursor: pointer; transition: background .2s, border-color .2s, color .2s, box-shadow .2s; }
 .aic-site-contact-close svg { display: block; width: 18px; height: 18px; }
 .aic-site-contact-close:hover { background: #2d3652; border-color: #c4b5fd; color: #fff; box-shadow: 0 0 18px #a18ad92b; }
 .aic-contact-intro { padding-inline-end: 38px; margin-bottom: 28px; }

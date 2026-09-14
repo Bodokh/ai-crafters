@@ -1,4 +1,4 @@
-import { createContactDialogMotion } from './contact-dialog-motion.js';
+import { createContactDialogMotion } from '../../../src/lib/contact-dialog-motion.js';
 
 const EN_COPY = {
   close: 'Close contact form',

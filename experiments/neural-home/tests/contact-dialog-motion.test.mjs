@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict';
 import { getEventListeners } from 'node:events';
 import test from 'node:test';
-import { createContactDialogMotion } from '../src/contact-dialog-motion.js';
+import { createContactDialogMotion } from '../../../src/lib/contact-dialog-motion.js';
 
-function fixture({ mobile = false, reduced = false, supported = true } = {}) {
+function fixture({ mobile = false, reduced = false, supported = true, lazy = false } = {}) {
   const animations = [];
   const queries = new Map();
   class MediaQuery extends EventTarget {
@@ -44,8 +44,10 @@ function fixture({ mobile = false, reduced = false, supported = true } = {}) {
   parts.fields.children[0].append(input);
   document.activeElement = input;
   if (!supported) parts.dialog.animate = undefined;
-  const motion = createContactDialogMotion(parts);
-  return { ...parts, document, animations, queries, motion };
+  let ready = !lazy;
+  const motion = createContactDialogMotion({ ...parts, getContent: () => ready ? parts : {} });
+  const mountContent = () => { ready = true; motion.revealContent(); };
+  return { ...parts, document, animations, queries, motion, mountContent };
 }
 
 const settle = () => new Promise(resolve => queueMicrotask(resolve));
@@ -158,4 +160,49 @@ test('rapid close and reopen isolates old completions, reuses one layer, and dis
   const count = f.animations.length;
   f.motion.enter();
   assert.equal(f.animations.length, count);
+});
+
+
+test('lazy content joins the entrance once even after the shell finishes, without replaying it', async () => {
+  const f = fixture({ lazy: true, mobile: true });
+  f.motion.enter();
+  const shellEffects = [...f.animations];
+  assert.equal(shellEffects.length, 3, 'only shell, close, and sheen exist before the form mounts');
+  for (const animation of shellEffects) animation.finish();
+  await settle();
+  f.mountContent();
+  const contentEffects = f.animations.slice(shellEffects.length);
+  assert.equal(contentEffects.length, 7, 'intro, three unfocused fields, submit, direct, and legal');
+  assert.ok(contentEffects.every(animation => !shellEffects.some(shell => shell.node === animation.node)));
+  f.mountContent();
+  assert.equal(f.animations.length, shellEffects.length + contentEffects.length, 'readiness cannot double-animate content');
+  f.motion.dispose();
+});
+
+test('late lazy content stays still after dismissal, interaction, or an accessible instant opening', () => {
+  for (const mode of ['close', 'pointerdown', 'keydown', 'preference', 'instant', 'reduced', 'dispose']) {
+    const f = fixture({ lazy: true, reduced: mode === 'reduced' });
+    f.motion.enter({ instant: mode === 'instant' });
+    if (mode === 'close') { f.dialog.open = false; f.motion.cancel(); }
+    if (mode === 'pointerdown' || mode === 'keydown') f.dialog.dispatchEvent(new Event(mode));
+    if (mode === 'preference') f.queries.get('(prefers-reduced-motion: reduce)').change(true);
+    if (mode === 'dispose') f.motion.dispose();
+    const count = f.animations.length;
+    f.mountContent();
+    assert.equal(f.animations.length, count, mode);
+    f.motion.dispose();
+  }
+});
+
+test('content loaded while closed participates normally in the next entrance', () => {
+  const f = fixture({ lazy: true });
+  f.motion.enter();
+  f.dialog.open = false;
+  f.motion.cancel();
+  f.mountContent();
+  const count = f.animations.length;
+  f.dialog.open = true;
+  f.motion.enter();
+  assert.equal(f.animations.length - count, 10);
+  f.motion.dispose();
 });

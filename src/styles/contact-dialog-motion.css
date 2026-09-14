@@ -1,0 +1,21 @@
+:is(.contact-dialog, .aic-site-contact-dialog)::before {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  inset-inline: 24px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #a4edffad 32%, #c0a6ff91 72%, transparent);
+  pointer-events: none;
+}
+
+/* Created only on an animated open. The gradient is rasterized once; its
+   entrance moves only this layer, then releases the animation completely. */
+.contact-dialog__sheen {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  opacity: 0;
+  background: linear-gradient(115deg, transparent 34%, #87e9ff1c 44%, #e6faff30 48%, #b49aff24 53%, transparent 64%);
+  pointer-events: none;
+}

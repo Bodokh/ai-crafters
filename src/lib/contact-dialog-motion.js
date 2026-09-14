@@ -1,8 +1,18 @@
 const ENTER_EASING = 'cubic-bezier(0.23, 1, 0.32, 1)';
 
+/**
+ * @typedef {Object} ContactContent
+ * @property {Element | null} [intro]
+ * @property {Element | null} [fields]
+ * @property {Element | null} [submit]
+ * @property {Element | null} [direct]
+ * @property {Element | null} [legal]
+ */
+
 // The native dialog owns focus, scrolling, and dismissal. These effects only
 // decorate its entrance, and their underlying styles are always fully visible.
-export function createContactDialogMotion({ dialog, intro, fields, submit, direct, legal, close }) {
+/** @param {ContactContent & { dialog: HTMLDialogElement, close?: Element | null, getContent?: () => ContactContent }} options */
+export function createContactDialogMotion({ dialog, close, getContent, ...content }) {
   const document = dialog.ownerDocument;
   const view = document?.defaultView;
   const active = new Set();
@@ -11,6 +21,8 @@ export function createContactDialogMotion({ dialog, intro, fields, submit, direc
   let reducedMotion;
   let compact;
   let sheen;
+  let revealAllowed = false;
+  let revealed = new Set();
 
   function release(record) {
     if (!active.delete(record)) return;
@@ -18,6 +30,7 @@ export function createContactDialogMotion({ dialog, intro, fields, submit, direc
   }
 
   function cancel() {
+    revealAllowed = false;
     for (const record of [...active]) release(record);
   }
 
@@ -64,14 +77,13 @@ export function createContactDialogMotion({ dialog, intro, fields, submit, direc
       { opacity: 1, transform: 'none' },
     ], { duration: mobile ? 360 : 420 });
 
-    const fieldGroups = Array.from(fields?.children || [], (field, index) => [field, Math.max(1, index)]);
-    const groups = [[intro, 0], ...fieldGroups, [submit, 4], [direct, 5], [legal, 5], [close, 0]];
-    for (const [node, group] of groups) {
-      animate(node, [
-        { opacity: 0.4, transform: `translateY(${mobile ? 5 : 10}px)` },
-        { opacity: 1, transform: 'none' },
-      ], { duration: mobile ? 220 : 260, delay: group * (mobile ? 20 : 30) });
-    }
+    revealAllowed = true;
+    revealed = new Set();
+    revealContent();
+    animate(close, [
+      { opacity: 0.4, transform: `translateY(${mobile ? 5 : 10}px)` },
+      { opacity: 1, transform: 'none' },
+    ], { duration: mobile ? 220 : 260 });
 
     if (!sheen) {
       sheen = document.createElement('div');
@@ -86,8 +98,27 @@ export function createContactDialogMotion({ dialog, intro, fields, submit, direc
     ], { duration: mobile ? 360 : 600, delay: mobile ? 0 : 20, easing: 'cubic-bezier(0.32, 0, 0.18, 1)' });
   }
 
+  // A lazy form may mount after the shell begins. Join that same entrance once,
+  // without moving the shell again or restarting effects after interaction.
+  function revealContent() {
+    if (!revealAllowed || disposed || !dialog.open) return;
+    const { intro, fields, submit, direct, legal } = getContent?.() || content;
+    const mobile = compact?.matches || document.documentElement.dataset.renderer === 'mobile';
+    const fieldGroups = Array.from(fields?.children || [], (field, index) => [field, Math.max(1, index)]);
+    const groups = [[intro, 0], ...fieldGroups, [submit, 4], [direct, 5], [legal, 5]];
+    for (const [node, group] of groups) {
+      if (!node || revealed.has(node)) continue;
+      revealed.add(node);
+      animate(node, [
+        { opacity: 0.4, transform: `translateY(${mobile ? 5 : 10}px)` },
+        { opacity: 1, transform: 'none' },
+      ], { duration: mobile ? 220 : 260, delay: group * (mobile ? 20 : 30) });
+    }
+  }
+
   return {
     enter,
+    revealContent,
     cancel,
     dispose() {
       if (disposed) return;
